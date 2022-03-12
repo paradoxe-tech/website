@@ -3,6 +3,9 @@ for (const element of data) {
   let project = document.createElement('div')
     project.className = 'project'
 
+  let cover_c = document.createElement('div')
+    cover_c.className = 'project__cover-container'
+
   let cover = document.createElement('img')
     cover.src = element.cover_path
     cover.className = 'project__cover'
@@ -21,8 +24,9 @@ for (const element of data) {
     btn.innerHTML = 'see on Replit'
     btn.className = 'project__btn'
   */
-  
-  project.appendChild(cover)
+
+  cover_c.appendChild(cover)
+  project.appendChild(cover_c)
   project.appendChild(title)
   project.appendChild(desc)
   // project.appendChild(btn)
@@ -30,3 +34,11 @@ for (const element of data) {
   
 }
 
+let i = 0
+
+setInterval( () => {
+    document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace('<pink>', ``).replace('</pink>', ``)
+  document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace(subtitles[i], `<pink>${subtitles[i]}</pink>`)
+  i += 1
+  if(i === subtitles.length) i = 0
+},1000)
