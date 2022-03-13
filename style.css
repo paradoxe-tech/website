@@ -20,12 +20,14 @@ h1 {
 }
 
 .nav {
+  z-index: 10;
 	position: sticky;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	height: 60px;
 	top: 0;
+  background: black;
 }
 
 .nav li {
@@ -34,11 +36,6 @@ h1 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-.nav li:hover {
-  color: #0ff;
-  cursor: pointer;
 }
 
 .banner {
@@ -53,9 +50,12 @@ h1 {
   width: 275px
 }
 
-#projects-wrapper {
-  margin-top: 10px;
+.main {
   margin-left: calc(3% + 35px);
+  width: 1100px;
+}
+
+#projects-wrapper {
   width: calc(100% - margin-left);
   padding-right: 10px;
   padding-top: 20px;
@@ -77,7 +77,7 @@ h1 {
   transform: translate(0, -5px);
 }
 
-.project p, h2 {
+.project p, .project h2 {
   padding-left: 10px;
   padding-top: 10px;
   padding-right: 10px;
@@ -97,7 +97,8 @@ h1 {
 
 .project img:hover {
   filter: brightness(50%);
-  transform: scale(1.20)
+  transform: scale(1.20);
+  cursor: pointer;
 }
 
 pink {
@@ -113,4 +114,153 @@ cyan {
   border-top-right-radius: 10px;
   overflow: hidden;
   height: 175px;
+}
+
+.right {
+  margin-left: calc(3% + 525px);
+  width: 550px;
+}
+
+#actus-wrapper {
+  display: grid;
+  grid-template-columns: 730px 360px;
+  grid-template-areas:
+    "main    2nd"
+    "main    3rd";
+  grid-gap: 10px;
+}
+
+.actu-main {
+  transition: transform .3s ease-out;
+  grid-area: main;
+  display: inline-block;
+  margin: 0;
+  background: #171617;
+  width: 730px;
+  border-radius: 10px
+}
+
+.actu-main:hover {transform: translate(0, -5px);}
+
+.actu-main img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 340px;
+  transition: brightness 0.4s, transform 0.4s;
+}
+
+.actu-main__cover-container {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  float: left;
+  height: 340px;
+  width: 340px;
+}
+
+.actu-main img:hover {
+  filter: brightness(50%);
+  transform: scale(1.20);
+  cursor: pointer;
+}
+
+.actu-main p, .actu-main h2 {
+  padding-left: 360px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin: 0;
+}
+
+.actu-2nd {
+  transition: transform .3s ease-out;
+  grid-area: "2nd";
+  display: inline-block;
+  margin: 0;
+  background: #171617;
+  width: 360px;
+  border-radius: 10px
+}
+
+.actu-2nd:hover {transform: translate(0, -5px);}
+
+.actu-2nd p, .actu-2nd h2 {
+  padding-left: 175px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin: 0;
+}
+
+.actu-2nd img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 165px;
+  float: left;
+  transition: brightness 0.4s, transform 0.4s;
+}
+
+.actu-2nd__cover-container {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  float: left;
+  height: 165px;
+  width: 165px;
+}
+
+.actu-2nd img:hover {
+  filter: brightness(50%);
+  transform: scale(1.20);
+  cursor: pointer;
+}
+
+.actu-3rd {
+  transition: transform .3s ease-out;
+  grid-area: "2nd";
+  display: inline-block;
+  margin: 0;
+  background: #171617;
+  width: 360px;
+  border-radius: 10px
+}
+
+.actu-3rd:hover {transform: translate(0, -5px);}
+
+.actu-3rd p, .actu-3rd h2 {
+  padding-left: 175px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin: 0;
+}
+
+.actu-3rd img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 165px;
+  float: left;
+  transition: brightness 0.4s, transform 0.4s;
+}
+
+.actu-3rd__cover-container {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  float: left;
+  height: 165px;
+  width: 165px;
+}
+
+.actu-3rd img:hover {
+  filter: brightness(50%);
+  transform: scale(1.20);
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0ff;
+  cursor: pointer;
 }
