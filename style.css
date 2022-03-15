@@ -93,11 +93,11 @@ h1 {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width: 175px;
-  transition: brightness 0.4s, transform 0.4s;
+  transition: transform 0.4s;
 }
 
 .project img:hover {
-  filter: brightness(50%);
+  /* filter: brightness(50%); */
   transform: scale(1.20);
   cursor: pointer;
 }
@@ -147,7 +147,7 @@ cyan {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 340px;
-  transition: brightness 0.4s, transform 0.4s;
+  transition: transform 0.4s;
 }
 
 .actu-main__cover-container {
@@ -160,16 +160,21 @@ cyan {
 }
 
 .actu-main img:hover {
-  filter: brightness(50%);
+  /* filter: brightness(50%); */
   transform: scale(1.20);
   cursor: pointer;
 }
 
-.actu-main p, .actu-main h2 {
+.actu-main p, .actu-main h2 ,  .actu-main h4 {
   padding-left: 360px;
   padding-top: 10px;
   padding-right: 10px;
   margin: 0;
+}
+
+.actu-main h4 {
+  color: #828282;
+  font-weight: lighter;
 }
 
 .actu-2nd {
@@ -196,7 +201,7 @@ cyan {
   border-bottom-left-radius: 10px;
   width: 165px;
   float: left;
-  transition: brightness 0.4s, transform 0.4s;
+  transition: transform 0.4s;
 }
 
 .actu-2nd__cover-container {
@@ -209,7 +214,7 @@ cyan {
 }
 
 .actu-2nd img:hover {
-  filter: brightness(50%);
+  /* filter: brightness(50%); */
   transform: scale(1.20);
   cursor: pointer;
 }
@@ -238,7 +243,7 @@ cyan {
   border-bottom-left-radius: 10px;
   width: 165px;
   float: left;
-  transition: brightness 0.4s, transform 0.4s;
+  transition: transform 0.4s;
 }
 
 .actu-3rd__cover-container {
@@ -251,7 +256,7 @@ cyan {
 }
 
 .actu-3rd img:hover {
-  filter: brightness(50%);
+  /* filter: brightness(50%); */
   transform: scale(1.20);
   cursor: pointer;
 }
