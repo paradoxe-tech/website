@@ -17,9 +17,17 @@ body {
 }
 
 h1 {
-  line-height: 25%
+  line-height: 25%;
+  padding-top: 20px;
+  text-align:left;
+  display: inline-block;
 }
 
+.see-more {
+  display: inline;
+  text-align: end;
+  text-decoration: underline;
+}
 .nav {
   z-index: 10;
 	position: sticky;
@@ -59,7 +67,7 @@ h1 {
 #projects-wrapper {
   width: calc(100% - margin-left);
   padding-right: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
   display: grid;
   grid-template-columns: 175px 175px 175px 175px 175px 175px;
   grid-gap: 10px;
@@ -123,6 +131,8 @@ cyan {
 }
 
 #actus-wrapper {
+  display: block;
+  padding-top: 10px;
   display: grid;
   grid-template-columns: 730px 360px;
   grid-template-areas:

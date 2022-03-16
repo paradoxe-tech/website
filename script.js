@@ -1,6 +1,8 @@
 // ================================================================= { PROJECTS } 
 
-for (const element of projects) {
+for (var k =0; k < 6; k++) {
+
+  let element = projects[k]
     
   let project = document.createElement('div')
     project.className = 'project'
