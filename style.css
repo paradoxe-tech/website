@@ -1,5 +1,15 @@
+@font-face {
+ font-family: "Whitney Medium";
+ src: url("assets/fonts/whitneymedium.otf")
+}
+
+@font-face {
+ font-family: "Whitney Book";
+ src: url("assets/fonts/whitneybook.otf")
+}
+
 body {
-  font-family: arial;
+  font-family: 'Whitney Book', serif;
   background: black;
   margin: 0px;
   margin-top: 0px;
@@ -17,10 +27,19 @@ body {
 }
 
 h1 {
+  font-family: "Whitney Medium";
   line-height: 25%;
   padding-top: 20px;
   text-align:left;
   display: inline-block;
+}
+
+h2, h2, h4, h5 {
+  font-family: "Whitney Medium";
+}
+
+p {  
+  color: #c7c7c7;
 }
 
 .see-more {
@@ -28,6 +47,7 @@ h1 {
   text-align: end;
   text-decoration: underline;
 }
+
 .nav {
   z-index: 10;
 	position: sticky;
@@ -94,7 +114,8 @@ h1 {
 }
 
 .project p {
-  padding-bottom: 10px;
+  color: #c7c7c7;
+  padding-bottom: 15px;
 }
 
 .project img {
@@ -183,6 +204,7 @@ cyan {
 }
 
 .actu-main h4 {
+  font-family: "Whitney Medium";
   color: #828282;
   font-weight: lighter;
 }

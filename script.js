@@ -60,12 +60,12 @@ let main_actu_cover_c = document.createElement('div')
 
 let main_actu_cover = document.createElement('img')
   main_actu_cover.src = actus[0].cover_path
-  
-let main_actu_title = document.createElement('h2')  
-  main_actu_title.innerHTML = actus[0].name
 
 let main_actu_sub = document.createElement('h4')  
   main_actu_sub.innerHTML = actus[0].sub
+  
+let main_actu_title = document.createElement('h2')  
+  main_actu_title.innerHTML = actus[0].name
   
 let main_actu_text = document.createElement('p')
   main_actu_text.innerHTML = actus[0].desc
@@ -73,8 +73,8 @@ let main_actu_text = document.createElement('p')
 main_actu_cover_c.appendChild(main_actu_cover)
 main_actu.appendChild(main_actu_cover_c)
 main_actu.appendChild(main_actu_title)
-main_actu.appendChild(main_actu_text)
 main_actu.appendChild(main_actu_sub)
+main_actu.appendChild(main_actu_text)
 document.querySelector('#actus-wrapper').appendChild(main_actu)
 
 // ================================================================= { ACTU-2 } 
