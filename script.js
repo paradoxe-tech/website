@@ -123,6 +123,34 @@ third_actu.appendChild(third_actu_title)
 third_actu.appendChild(third_actu_text)
 document.querySelector('#actus-wrapper').appendChild(third_actu)
 
+// ================================================================= { SERVICES } 
+
+for (var k =0; k < services.length; k++) {
+
+  let element = services[k]
+    
+  let service = document.createElement('div')
+    service.className = 'service'
+
+  let service_icon = document.createElement('ion-icon')
+    service_icon.name = element.icon + "-outline"
+    service_icon.className = 'service__icon'
+
+  let service_title = document.createElement('h3')
+    service_title.innerHTML = element.name
+    service_title.className = 'service__title'
+  
+  let service_desc = document.createElement('p')
+    service_desc.innerHTML = element.desc
+    service_desc.className = 'service__text'
+
+  service.appendChild(service_icon)
+  service.appendChild(service_title)
+  service.appendChild(service_desc)
+  document.querySelector('#services-wrapper').appendChild(service)
+  
+}
+
 // ================================================================= { MOBILE-HANDLER } 
 
 if(isMobile()) location.href = "https://callmekitsu.kitsuforyou.repl.co/mobile.html"

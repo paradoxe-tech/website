@@ -16,6 +16,10 @@ body {
   color: white;
 }
 
+.main {
+  margin-bottom: 50px;
+}
+
 ::-moz-selection { /* Code for Firefox */
   color: black;
   background: #0ff;
@@ -318,4 +322,43 @@ a {
 a:hover {
   color: #0ff;
   cursor: pointer;
+}
+
+#services-wrapper {
+  display: block;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1100px;
+  grid-gap: 10px;
+}
+
+.service {
+  transition: transform .3s ease-out;
+  display: inline-block;
+  margin: 0;
+  background: #212121;
+  width: 1100px;
+  border-radius: 10px;
+}
+
+.service h3, .service p {
+  display: inline-block;
+  vertical-align:middle;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+ion-icon {
+  display: inline-block;
+  vertical-align:middle;
+  padding-left: 10px;
+  font-size: 25px;
+  margin: 0px
+}
+
+.service:hover {
+  transform: translate(0, -5px);
 }
