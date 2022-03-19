@@ -73,8 +73,8 @@ let main_actu_text = document.createElement('p')
 main_actu_cover_c.appendChild(main_actu_cover)
 main_actu.appendChild(main_actu_cover_c)
 main_actu.appendChild(main_actu_title)
-main_actu.appendChild(main_actu_sub)
 main_actu.appendChild(main_actu_text)
+main_actu.appendChild(main_actu_sub)
 document.querySelector('#actus-wrapper').appendChild(main_actu)
 
 // ================================================================= { ACTU-2 } 
