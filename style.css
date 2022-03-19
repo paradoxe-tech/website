@@ -26,6 +26,14 @@ body {
   background: #0ff;
 }
 
+.banner__title {
+  margin-bottom: 5px;
+}
+
+.banner__text {
+  margin-top: 15px;
+}
+
 h1 {
   font-family: "Whitney Medium";
   line-height: 25%;
