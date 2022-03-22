@@ -68,13 +68,13 @@ let main_actu_title = document.createElement('h2')
   main_actu_title.innerHTML = actus[0].name
   
 let main_actu_text = document.createElement('p')
-  main_actu_text.innerHTML = actus[0].desc
+  main_actu_text.innerHTML = md(actus[0].desc)
   
 main_actu_cover_c.appendChild(main_actu_cover)
 main_actu.appendChild(main_actu_cover_c)
 main_actu.appendChild(main_actu_title)
 main_actu.appendChild(main_actu_text)
-main_actu.appendChild(main_actu_sub)
+//main_actu.appendChild(main_actu_sub)
 document.querySelector('#actus-wrapper').appendChild(main_actu)
 
 // ================================================================= { ACTU-2 } 
@@ -162,4 +162,31 @@ function isMobile() {
   }
 
   return isMobile
+}
+
+function md(text) {
+  res = text
+  
+  for (const e of text.match(/\[(.*?)\]\((.*?)\)/g)) {
+    let desc = e.match(/\[(.*?)\]/g)[0].replace(']', '').replace('[', '')
+    let link = e.match(/\((.*?)\)/g)[0].replace('(', '').replace('(', '')
+    res = res.replace(e, `<a style='color: #0ff' href="${link}">${desc}</a>`)
+  }
+
+  for (const e of text.match(/\{(.*?)\}\((.*?)\)/g)) {
+    let txt = e.match(/\{(.*?)\}/g)[0].replace('}', '').replace('{', '')
+    let tip = e.match(/\((.*?)\)/g)[0].replace('(', '').replace('(', '')
+    res = res.replace(e, `<tooltip>${txt}<span class="tooltiptext">${tip}</span></tooltip>`)
+  }
+
+  for (const e of text.match(/(p\/)[^\s]+/g)) {
+    const SITE = "https://callmekitsu.kitsuforyou.repl.co"
+    
+    let name = e.replace('p/', '')
+
+    res = res.replace(e, `<a style='color: #f0f' href="${SITE}/${e.toLowerCase()}/">${e}</a>`)
+  }
+
+  return res
+  
 }
