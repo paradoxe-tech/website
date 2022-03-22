@@ -20,7 +20,7 @@ for (var k =0; k < 6; k++) {
     title.className = 'project__title'
   
   let desc = document.createElement('p')
-    desc.innerHTML = element.desc
+    desc.innerHTML = md(element.desc)
     desc.className = 'project__text'
   
   /*
@@ -92,7 +92,7 @@ let sec_actu_title = document.createElement('h2')
   sec_actu_title.innerHTML = actus[1].name
   
 let sec_actu_text = document.createElement('p')
-  sec_actu_text.innerHTML = actus[1].desc
+  sec_actu_text.innerHTML = md(actus[1].desc)
   
 sec_actu_cover_c.appendChild(sec_actu_cover)
 sec_actu.appendChild(sec_actu_cover_c)
@@ -115,7 +115,7 @@ let third_actu_title = document.createElement('h2')
   third_actu_title.innerHTML = actus[2].name
   
 let third_actu_text = document.createElement('p')
-  third_actu_text.innerHTML = actus[2].desc
+  third_actu_text.innerHTML = md(actus[2].desc)
 
 third_actu_cover_c.appendChild(third_actu_cover)
 third_actu.appendChild(third_actu_cover_c)
@@ -165,26 +165,32 @@ function isMobile() {
 }
 
 function md(text) {
-  res = text
   
-  for (const e of text.match(/\[(.*?)\]\((.*?)\)/g)) {
-    let desc = e.match(/\[(.*?)\]/g)[0].replace(']', '').replace('[', '')
-    let link = e.match(/\((.*?)\)/g)[0].replace('(', '').replace('(', '')
-    res = res.replace(e, `<a style='color: #0ff' href="${link}">${desc}</a>`)
+  res = text
+
+  if(text.match(/\[(.*?)\]\((.*?)\)/g)) {
+    for (const e of text.match(/\[(.*?)\]\((.*?)\)/g)) {
+      let desc = e.match(/\[(.*?)\]/g)[0].replace(']', '').replace('[', '')
+      let link = e.match(/\((.*?)\)/g)[0].replace('(', '').replace(')', '')
+      res = res.replace(e, `<a style='color: #0ff' href="${link}">${desc}</a>`)
+    }
   }
 
-  for (const e of text.match(/\{(.*?)\}\((.*?)\)/g)) {
-    let txt = e.match(/\{(.*?)\}/g)[0].replace('}', '').replace('{', '')
-    let tip = e.match(/\((.*?)\)/g)[0].replace('(', '').replace('(', '')
-    res = res.replace(e, `<tooltip>${txt}<span class="tooltiptext">${tip}</span></tooltip>`)
+  if( text.match(/\{(.*?)\}\((.*?)\)/g) ) {
+    for (const e of text.match(/\{(.*?)\}\((.*?)\)/g)) {
+      let txt = e.match(/\{(.*?)\}/g)[0].replace('}', '').replace('{', '')
+      let tip = e.match(/\((.*?)\)/g)[0].replace('(', '').replace(')', '')
+      res = res.replace(e, txt)
+      /*res = res.replace(e, `<tooltip>${txt}<span class="tooltiptext">${tip}</span></tooltip>`)*/
+    }
   }
-
-  for (const e of text.match(/(p\/)[^\s]+/g)) {
-    const SITE = "https://callmekitsu.kitsuforyou.repl.co"
-    
-    let name = e.replace('p/', '')
-
-    res = res.replace(e, `<a style='color: #f0f' href="${SITE}/${e.toLowerCase()}/">${e}</a>`)
+  
+  if(text.match(/(p\/)[^\s]+/g)) {
+    for (const e of text.match(/(p\/)[^\s]+/g)) {
+      const SITE = "https://callmekitsu.kitsuforyou.repl.co"
+      let name = e.replace('p/', '')
+      res = res.replace(e, `<a style='color: #f0f' href="${SITE}/${e.toLowerCase()}/">${e}</a>`)
+    }
   }
 
   return res
