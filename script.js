@@ -172,7 +172,7 @@ function md(text) {
     for (const e of text.match(/\[(.*?)\]\((.*?)\)/g)) {
       let desc = e.match(/\[(.*?)\]/g)[0].replace(']', '').replace('[', '')
       let link = e.match(/\((.*?)\)/g)[0].replace('(', '').replace(')', '')
-      res = res.replace(e, `<a style='color: #0ff' href="${link}">${desc}</a>`)
+      res = res.replace(e, `<a style='color: #0ff;' href="${link}">${desc}</a>`)
     }
   }
 
@@ -189,7 +189,7 @@ function md(text) {
     for (const e of text.match(/(p\/)[^\s]+/g)) {
       const SITE = "https://callmekitsu.kitsuforyou.repl.co"
       let name = e.replace('p/', '')
-      res = res.replace(e, `<a style='color: #f0f' href="${SITE}/${e.toLowerCase()}/">${e}</a>`)
+      res = res.replace(e, `<pink><a style='color: #f0f;' href="${SITE}/${e.toLowerCase()}/">${e}</a></pink>`)
     }
   }
 

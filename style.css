@@ -317,6 +317,7 @@ cyan {
 a {
   color: white;
   text-decoration: none;
+  filter: brightness(100%);
 }
 
 a:hover {
