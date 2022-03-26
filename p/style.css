@@ -1,0 +1,11 @@
+.project__title:after {
+  --test: white;
+  margin-left: 5px;
+  content:"\A";
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background: var(--pj-status);
+  display:inline-block;
+  vertical-align:middle;
+}

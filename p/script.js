@@ -17,7 +17,7 @@ for (const element of projects) {
 
   let cover_c = document.createElement('div')
     cover_c.className = 'project__cover-container'
-    if(element.site_path) cover_c.onclick = () => location.href = `p/${element.site_path}`
+    if(element.site_path) cover_c.onclick = () => location.href = `${URL}p/${element.site_path}`
 
   let cover = document.createElement('img')
     cover.src = "../" + element.cover_path
@@ -26,6 +26,17 @@ for (const element of projects) {
   let title = document.createElement('h2')
     title.innerHTML = element.name
     title.className = 'project__title'
+
+  let statut = "#FAA81A"
+
+  if(element.status) {
+    statut = '#3BA55D'
+  }
+  if(element.status === false) {
+    statut = 'red'
+  }
+  
+    title.style = `--pj-status: ${statut}`
   
   let desc = document.createElement('p')
     desc.innerHTML = md(element.desc)
