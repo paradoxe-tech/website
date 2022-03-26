@@ -27,14 +27,14 @@ for (const element of projects) {
     title.innerHTML = element.name
     title.className = 'project__title'
 
-  let statut = "#FAA81A"
-
-  if(element.status) {
-    statut = '#3BA55D'
-  }
-  if(element.status === false) {
-    statut = 'red'
-  }
+    let statut = "#FAA81A"
+  
+    if(element.status === true) {
+      statut = '#3BA55D'
+    }
+    if(element.status === false) {
+      statut = 'red'
+    }
   
     title.style = `--pj-status: ${statut}`
   
