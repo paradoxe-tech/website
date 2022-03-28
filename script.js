@@ -151,6 +151,22 @@ function main() {
     document.querySelector('#services-wrapper').appendChild(service)
     
   }
+
+  let main_comp = document.createElement('div')
+    main_comp.className = 'competence-main'
+
+  for (const _comp of competences) {
+    let comp = document.createElement('p')
+      comp.id = `comp__${_comp.name}`
+    main_comp.appendChild(comp)
+  }
+
+  document.querySelector('#competences-wrapper').appendChild(main_comp)
+
+  for (const _comp of competences) {
+    doStat(`#comp__${_comp.name}`, _comp.value, "cyan", `${_comp.name} `, "")
+  }
+  
 }
 
 // ================================================================= { MOBILE-HANDLER } 
@@ -194,5 +210,18 @@ function md(text) {
   }
 
   return res
+  
+}
+
+function doStat(selector, stat, color, start, end) {
+  document.querySelector(selector).innerHTML = start + "<grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey>" + end;
+    
+  (function myLoop(i) {
+    console.log(i)
+    setTimeout(function() {
+      document.querySelector(selector).innerHTML = document.querySelector(selector).innerHTML.replace('<grey>▱</grey>', `<${color}>▰</${color}>`)
+      if (--i) myLoop(i)
+    }, 300)
+  })(stat);
   
 }

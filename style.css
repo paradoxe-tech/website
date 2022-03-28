@@ -401,3 +401,23 @@ tooltip:hover .tooltiptext {
 tooltip {
   color: white
 }
+
+.competence-main, .competence-2nd, .competence-3rd {
+  transition: transform .3s ease-out;
+  display: inline-block;
+  margin: 0;
+  background: #212121;
+  width: 175px;
+  border-radius: 10px
+}
+
+.competence-main p, .competence-2nd p, .competence-3rd p {
+  display: inline-block;
+  vertical-align:middle;
+  padding: 10px;
+  margin: 0;
+}
+
+.competence-main:hover, .competence-2nd:hover, .competence-3rd:hover {
+  transform: translate(0, -5px);
+}
