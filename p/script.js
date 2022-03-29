@@ -9,7 +9,7 @@ setInterval( () => {
   if(i === subtitles.length) i = 0
 },1000)
 
-
+projects.sort(dateSort)
 for (const element of projects) {
     
   let project = document.createElement('div')
@@ -17,7 +17,7 @@ for (const element of projects) {
 
   let cover_c = document.createElement('div')
     cover_c.className = 'project__cover-container'
-    if(element.site_path) cover_c.onclick = () => location.href = `${URL}p/${element.site_path}`
+    if(element.site_path) cover_c.onclick = () => location.href = `${site_URL}p/${element.site_path}`
 
   let cover = document.createElement('img')
     cover.src = "../" + element.cover_path
@@ -56,4 +56,8 @@ for (const element of projects) {
   // project.appendChild(btn)
   document.querySelector('#projects-wrapper').appendChild(project)
   
+}
+
+function dateSort(a, b) {
+  return b.date - a.date
 }

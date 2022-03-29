@@ -407,13 +407,11 @@ tooltip {
   display: inline-block;
   margin: 0;
   background: #212121;
-  width: 175px;
+  width: 275px;
   border-radius: 10px
 }
 
 .competence-main p, .competence-2nd p, .competence-3rd p {
-  display: inline-block;
-  vertical-align:middle;
   padding: 10px;
   margin: 0;
 }

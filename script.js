@@ -10,7 +10,7 @@ function main() {
   
     let cover_c = document.createElement('div')
       cover_c.className = 'project__cover-container'
-      if(element.site_path) cover_c.onclick = () => location.href = `p/${element.site_path}`
+      if(element.site_URL_path) cover_c.onclick = () => location.href = `p/${element.site_URL_path}`
   
     let cover = document.createElement('img')
       cover.src = element.cover_path
@@ -164,7 +164,7 @@ function main() {
   document.querySelector('#competences-wrapper').appendChild(main_comp)
 
   for (const _comp of competences) {
-    doStat(`#comp__${_comp.name}`, _comp.value, "cyan", `${_comp.name} `, "")
+    doStat(`#comp__${_comp.name}`, _comp.value, "cyan", '', ` ${_comp.name}`)
   }
   
 }
@@ -203,9 +203,15 @@ function md(text) {
   
   if(text.match(/(p\/)[^\s]+/g)) {
     for (const e of text.match(/(p\/)[^\s]+/g)) {
-      const SITE = "https://callmekitsu.kitsuforyou.repl.co"
       let name = e.replace('p/', '')
-      res = res.replace(e, `<pink><a style='color: #f0f;' href="${SITE}/${e}/">${e}</a></pink>`)
+      res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/">${e}</a></pink>`)
+    }
+  }
+
+  if(text.match(/(s\/)[^\s]+/g)) {
+    for (const e of text.match(/(s\/)[^\s]+/g)) {
+      let name = e.replace('s/', '')
+      res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/">${e}</a></pink>`)
     }
   }
 
