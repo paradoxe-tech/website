@@ -9,7 +9,11 @@ setInterval( () => {
   if(i === subtitles.length) i = 0
 },1000)
 
-
+document.querySelector('#search-project').addEventListener("keyup", ({key}) => {
+  if (key === "Enter") {
+    document.location.replace(`${site_URL}/p/?find=${document.querySelector('#search-project').value}`)
+  }
+})
 
 let params = (new URL(document.location)).searchParams;
 let find = params.get('find')
