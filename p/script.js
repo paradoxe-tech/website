@@ -9,6 +9,19 @@ setInterval( () => {
   if(i === subtitles.length) i = 0
 },1000)
 
+
+
+let params = (new URL(document.location)).searchParams;
+let find = params.get('find')
+
+if(find) {
+  find = find.split(' ')
+
+  _pj = projects
+
+  projects = pjFind(_pj, find)
+}
+
 projects.sort(dateSort)
 for (const element of projects) {
     
@@ -60,4 +73,16 @@ for (const element of projects) {
 
 function dateSort(a, b) {
   return b.date - a.date
+}
+
+function pjFind(list, words) {
+  res = []
+  for (var w of words) {
+    w = w.toLowerCase()
+    for (var p of list) {
+      if(p.name.toLowerCase().includes(w) || p.desc.toLowerCase().includes(w)) res.push(p)
+    }
+  }
+
+  return res
 }
