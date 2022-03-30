@@ -10,7 +10,9 @@ function main() {
   
     let cover_c = document.createElement('div')
       cover_c.className = 'project__cover-container'
-      if(element.site_URL_path) cover_c.onclick = () => location.href = `p/${element.site_URL_path}`
+      if(element.site_path) cover_c.onclick = () => {  
+        document.location.href = element.site_path.replaceAll('__SITE__', site_URL + "p/")
+      }
   
     let cover = document.createElement('img')
       cover.src = element.cover_path

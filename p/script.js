@@ -34,7 +34,9 @@ for (const element of projects) {
 
   let cover_c = document.createElement('div')
     cover_c.className = 'project__cover-container'
-    if(element.site_path) cover_c.onclick = () => location.href = `${site_URL}p/${element.site_path}`
+    if(element.site_path) cover_c.onclick = () => {
+      document.location.href = element.site_path.replaceAll('__SITE__', site_URL + "p/")
+    }
 
   let cover = document.createElement('img')
     cover.src = "../" + element.cover_path
