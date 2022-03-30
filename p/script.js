@@ -35,12 +35,14 @@ for (const element of projects) {
   let cover_c = document.createElement('div')
     cover_c.className = 'project__cover-container'
     if(element.site_path) cover_c.onclick = () => {
+      if(element.site_path === "404") return
       document.location.href = element.site_path.replaceAll('__SITE__', site_URL + "p/")
     }
 
   let cover = document.createElement('img')
     cover.src = "../" + element.cover_path
     cover.className = 'project__cover'
+    if(element.site_path === "404") cover_c.style.cursor = 'auto'
   
   let title = document.createElement('h2')
     title.innerHTML = element.name

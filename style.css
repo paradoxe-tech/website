@@ -149,7 +149,6 @@ p {
 .project img:hover {
   /* filter: brightness(50%); */
   transform: scale(1.20);
-  cursor: pointer;
 }
 
 pink {
@@ -165,6 +164,7 @@ cyan {
   border-top-right-radius: 10px;
   overflow: hidden;
   height: 175px;
+  cursor: pointer;
 }
 
 .right {
