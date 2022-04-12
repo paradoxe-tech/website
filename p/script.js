@@ -2,12 +2,6 @@
 
 styleDesc()
 
-document.querySelector('#search-project').addEventListener("keyup", ({key}) => {
-  if (key === "Enter") {
-    document.location.replace(`${site_URL}/p/?find=${document.querySelector('#search-project').value}`)
-  }
-})
-
 let params = (new URL(document.location)).searchParams;
 let find = params.get('find')
 
@@ -71,6 +65,14 @@ for (const element of projects) {
   document.querySelector('#projects-wrapper').appendChild(project)
   
 }
+
+document.querySelector('#projets').outerHTML += `<input id="search-project" autofocus type='text 'style='margin-left: 698px;width: 270px;' class='see-more' placeholder='cherchez un projet..'>`
+
+document.querySelector('#search-project').addEventListener("keyup", ({key}) => {
+  if (key === "Enter") {
+    document.location.replace(`${site_URL}/p/?find=${document.querySelector('#search-project').value}`)
+  }
+})
 
 function dateSort(a, b) {
   return b.date - a.date
