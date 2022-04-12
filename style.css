@@ -402,21 +402,28 @@ tooltip {
   color: white
 }
 
-.competence-main, .competence-2nd, .competence-3rd {
+#competences-wrapper {
+  display: block;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 360px 360px 360px;
+  grid-gap: 10px;
+}
+
+.competence {
   transition: transform .3s ease-out;
   display: inline-block;
   margin: 0;
   background: #212121;
-  width: 275px;
   border-radius: 10px
 }
 
-.competence-main p, .competence-2nd p, .competence-3rd p {
+.competence p {
   padding: 10px;
   margin: 0;
 }
 
-.competence-main:hover, .competence-2nd:hover, .competence-3rd:hover {
+.competence:hover {
   transform: translate(0, -5px);
 }
 

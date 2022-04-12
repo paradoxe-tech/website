@@ -78,19 +78,38 @@ function main() {
     
   }
 
-  let main_comp = document.createElement('div')
-    main_comp.className = 'competence-main'
+  Array.prototype.withIndexes = function(indexes) {
+    res = []
 
-  for (const _comp of competences) {
-    let comp = document.createElement('p')
-      comp.id = `comp__${_comp.name.split(' ')[0].toLowerCase()}`
-    main_comp.appendChild(comp)
+    for(const index of indexes) {
+      res.push(this[index])
+    }
+
+    res.sort()
+
+    return res
   }
 
-  document.querySelector('#competences-wrapper').appendChild(main_comp)
+  // ================================================================= { COMPETENCES } 
+  
+    function addComp(list) {
+      let main_comp = document.createElement('div')
+        main_comp.className = 'competence'
+    
+      for (const _comp of list) {
+        let comp = document.createElement('p')
+          comp.id = `comp__${_comp.name.split(' ')[0].toLowerCase()}`
+        main_comp.appendChild(comp)
+      }
+      document.querySelector('#competences-wrapper').appendChild(main_comp)
+    }
 
+  addComp(competences.withIndexes([0,1,2]))
+  addComp(competences.withIndexes([3,4,5,6]))
+  addComp(competences.withIndexes([0,1,2]))
+  
   for (const _comp of competences) {
-    doStat(`#comp__${_comp.name.split(' ')[0].toLowerCase()}`, _comp.value, _comp.type, '', ` ${_comp.name}`)
+    doStat(`#comp__${_comp.name.split(' ')[0].toLowerCase()}`, _comp.value, _comp.type, `${_comp.name} `, ` 99%`)
   }
   
 }
@@ -149,7 +168,6 @@ function doStat(selector, stat, color, start, end) {
   document.querySelector(selector).innerHTML = start + "<grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey>" + end;
     
   (function myLoop(i) {
-    console.log(i)
     setTimeout(function() {
       document.querySelector(selector).innerHTML = document.querySelector(selector).innerHTML.replace('<grey>▱</grey>', `<${color}>▰</${color}>`)
       if (--i) myLoop(i)
