@@ -142,7 +142,7 @@ function md(text) {
     for (const e of text.match(/\{(.*?)\}\((.*?)\)/g)) {
       let txt = e.match(/\{(.*?)\}/g)[0].replace('}', '').replace('{', '')
       let tip = e.match(/\((.*?)\)/g)[0].replace('(', '').replace(')', '')
-      res = res.replace(e, `<a title="${tip.replace("'", "\'").replace('"', '\"')}" style='color: white;'>${txt}</a>`)
+      res = res.replace(e, `<a title="${tip.replace("'", "\'").replace('"', '\"')}" style='color: white;cursor: help;'>${txt}</a>`)
     }
   }
   
