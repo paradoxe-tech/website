@@ -278,6 +278,7 @@ cyan {
   background: #212121;
   width: 360px;
   border-radius: 10px
+  
 }
 
 .actu-3rd:hover {transform: translate(0, -5px);}

@@ -126,7 +126,7 @@ function isMobile() {
   return isMobile
 }
 
-function md(text) {
+function md(text, truncate) {
   
   res = text
 
@@ -158,6 +158,19 @@ function md(text) {
       let name = e.replace('s/', '')
       res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/">${e}</a></pink>`)
     }
+  }
+
+  if(text.match(/\s#[^\s]+/g)) {
+    for (const e of text.match(/\s#[^\s]+/g)) {
+      res = res.replace(e, ``)
+    }
+  }
+
+  if(truncate) {
+    if (res.length >= (truncate -3)) {
+      res = res.slice(0, truncate - 3) + '...'
+    }
+    
   }
 
   return res
@@ -234,7 +247,7 @@ function doActus(list, theme, modifier) {
     sec_actu_title.innerHTML = actus[1].name
     
   let sec_actu_text = document.createElement('p')
-    sec_actu_text.innerHTML = md(actus[1].desc)
+    sec_actu_text.innerHTML = md(actus[1].desc, 120)
     
   sec_actu_cover_c.appendChild(sec_actu_cover)
   sec_actu.appendChild(sec_actu_cover_c)
@@ -258,7 +271,7 @@ function doActus(list, theme, modifier) {
     third_actu_title.innerHTML = actus[2].name
     
   let third_actu_text = document.createElement('p')
-    third_actu_text.innerHTML = md(actus[2].desc)
+    third_actu_text.innerHTML = md(actus[2].desc, 120)
   
   third_actu_cover_c.appendChild(third_actu_cover)
   third_actu.appendChild(third_actu_cover_c)
