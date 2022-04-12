@@ -419,3 +419,7 @@ tooltip {
 .competence-main:hover, .competence-2nd:hover, .competence-3rd:hover {
   transform: translate(0, -5px);
 }
+
+grey {
+  color: #707070;
+}

@@ -1,13 +1,6 @@
 // ================================================================= { HIGHLIGHT } 
 
-let i = 0
-
-setInterval( () => {
-    document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace('<pink>', ``).replace('</pink>', ``)
-  document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace(subtitles[i], `<pink>${subtitles[i]}</pink>`)
-  i += 1
-  if(i === subtitles.length) i = 0
-},1000)
+styleDesc()
 
 document.querySelector('#search-project').addEventListener("keyup", ({key}) => {
   if (key === "Enter") {
@@ -81,16 +74,4 @@ for (const element of projects) {
 
 function dateSort(a, b) {
   return b.date - a.date
-}
-
-function pjFind(list, words) {
-  res = []
-  for (var w of words) {
-    w = w.toLowerCase()
-    for (var p of list) {
-      if(p.name.toLowerCase().includes(w) || p.desc.toLowerCase().includes(w)) res.push(p)
-    }
-  }
-
-  return res
 }

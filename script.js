@@ -55,78 +55,7 @@ function main() {
     if(i === subtitles.length) i = 0
   },1000)
   
-  // ================================================================= { ACTU-1 } 
-  
-  let main_actu = document.createElement('div')
-    main_actu.className = 'actu-main'
-  
-  let main_actu_cover_c = document.createElement('div')
-    main_actu_cover_c.className = 'actu-main__cover-container'
-  
-  let main_actu_cover = document.createElement('img')
-    main_actu_cover.src = actus[0].cover_path
-  
-  let main_actu_sub = document.createElement('h4')  
-    main_actu_sub.innerHTML = actus[0].sub
-    
-  let main_actu_title = document.createElement('h2')  
-    main_actu_title.innerHTML = actus[0].name
-    
-  let main_actu_text = document.createElement('p')
-    main_actu_text.innerHTML = md(actus[0].desc)
-    
-  main_actu_cover_c.appendChild(main_actu_cover)
-  main_actu.appendChild(main_actu_cover_c)
-  main_actu.appendChild(main_actu_title)
-  main_actu.appendChild(main_actu_text)
-  //main_actu.appendChild(main_actu_sub)
-  document.querySelector('#actus-wrapper').appendChild(main_actu)
-  
-  // ================================================================= { ACTU-2 } 
-  
-  let sec_actu = document.createElement('div')
-    sec_actu.className = 'actu-2nd'
-  
-  let sec_actu_cover_c = document.createElement('div')
-    sec_actu_cover_c.className = 'actu-2nd__cover-container'
-  
-  let sec_actu_cover = document.createElement('img')
-    sec_actu_cover.src = actus[1].cover_path
-    
-  let sec_actu_title = document.createElement('h2')  
-    sec_actu_title.innerHTML = actus[1].name
-    
-  let sec_actu_text = document.createElement('p')
-    sec_actu_text.innerHTML = md(actus[1].desc)
-    
-  sec_actu_cover_c.appendChild(sec_actu_cover)
-  sec_actu.appendChild(sec_actu_cover_c)
-  sec_actu.appendChild(sec_actu_title)
-  sec_actu.appendChild(sec_actu_text)
-  document.querySelector('#actus-wrapper').appendChild(sec_actu)
-  
-  // ================================================================= { ACTU-3 } 
-  
-  let third_actu = document.createElement('div')
-    third_actu.className = 'actu-3rd'
-  
-  let third_actu_cover_c = document.createElement('div')
-    third_actu_cover_c.className = 'actu-3rd__cover-container'
-  
-  let third_actu_cover = document.createElement('img')
-    third_actu_cover.src = actus[2].cover_path
-    
-  let third_actu_title = document.createElement('h2')  
-    third_actu_title.innerHTML = actus[2].name
-    
-  let third_actu_text = document.createElement('p')
-    third_actu_text.innerHTML = md(actus[2].desc)
-  
-  third_actu_cover_c.appendChild(third_actu_cover)
-  third_actu.appendChild(third_actu_cover_c)
-  third_actu.appendChild(third_actu_title)
-  third_actu.appendChild(third_actu_text)
-  document.querySelector('#actus-wrapper').appendChild(third_actu)
+  doActus(actus, '', '')
   
   // ================================================================= { SERVICES } 
   
@@ -161,14 +90,14 @@ function main() {
 
   for (const _comp of competences) {
     let comp = document.createElement('p')
-      comp.id = `comp__${_comp.name}`
+      comp.id = `comp__${_comp.name.split(' ')[0].toLowerCase()}`
     main_comp.appendChild(comp)
   }
 
   document.querySelector('#competences-wrapper').appendChild(main_comp)
 
   for (const _comp of competences) {
-    doStat(`#comp__${_comp.name}`, _comp.value, "cyan", '', ` ${_comp.name}`)
+    doStat(`#comp__${_comp.name.split(' ')[0].toLowerCase()}`, _comp.value, _comp.type, '', ` ${_comp.name}`)
   }
   
 }
@@ -231,7 +160,109 @@ function doStat(selector, stat, color, start, end) {
     setTimeout(function() {
       document.querySelector(selector).innerHTML = document.querySelector(selector).innerHTML.replace('<grey>▱</grey>', `<${color}>▰</${color}>`)
       if (--i) myLoop(i)
-    }, 300)
+    }, 200)
   })(stat);
   
+}
+
+function pjFind(list, words) {
+  res = []
+  for (var w of words) {
+    w = w.toLowerCase()
+    for (var p of list) {
+      if(p.name.toLowerCase().includes(w) || p.desc.toLowerCase().includes(w)) res.push(p)
+    }
+  }
+
+  return res
+}
+
+function doActus(list, theme, modifier) {
+    // ================================================================= { ACTU-1 } 
+  let actus = pjFind(list, [theme])
+  
+  if(!actus[0]) return 
+  
+  let main_actu = document.createElement('div')
+    main_actu.className = 'actu-main'
+  
+  let main_actu_cover_c = document.createElement('div')
+    main_actu_cover_c.className = 'actu-main__cover-container'
+  
+  let main_actu_cover = document.createElement('img')
+    main_actu_cover.src = modifier + actus[0].cover_path
+  
+  let main_actu_sub = document.createElement('h4')  
+    main_actu_sub.innerHTML = actus[0].sub
+    
+  let main_actu_title = document.createElement('h2')  
+    main_actu_title.innerHTML = actus[0].name
+    
+  let main_actu_text = document.createElement('p')
+    main_actu_text.innerHTML = md(actus[0].desc)
+    
+  main_actu_cover_c.appendChild(main_actu_cover)
+  main_actu.appendChild(main_actu_cover_c)
+  main_actu.appendChild(main_actu_title)
+  main_actu.appendChild(main_actu_text)
+  //main_actu.appendChild(main_actu_sub)
+  document.querySelector('#actus-wrapper').appendChild(main_actu)
+  
+  // ================================================================= { ACTU-2 } 
+  if(!actus[1]) return 
+  let sec_actu = document.createElement('div')
+    sec_actu.className = 'actu-2nd'
+  
+  let sec_actu_cover_c = document.createElement('div')
+    sec_actu_cover_c.className = 'actu-2nd__cover-container'
+  
+  let sec_actu_cover = document.createElement('img')
+    sec_actu_cover.src = modifier + actus[1].cover_path
+    
+  let sec_actu_title = document.createElement('h2')  
+    sec_actu_title.innerHTML = actus[1].name
+    
+  let sec_actu_text = document.createElement('p')
+    sec_actu_text.innerHTML = md(actus[1].desc)
+    
+  sec_actu_cover_c.appendChild(sec_actu_cover)
+  sec_actu.appendChild(sec_actu_cover_c)
+  sec_actu.appendChild(sec_actu_title)
+  sec_actu.appendChild(sec_actu_text)
+  document.querySelector('#actus-wrapper').appendChild(sec_actu)
+  
+  // ================================================================= { ACTU-3 } 
+  if(!actus[2]) return 
+  
+  let third_actu = document.createElement('div')
+    third_actu.className = 'actu-3rd'
+  
+  let third_actu_cover_c = document.createElement('div')
+    third_actu_cover_c.className = 'actu-3rd__cover-container'
+  
+  let third_actu_cover = document.createElement('img')
+    third_actu_cover.src = modifier + actus[2].cover_path
+    
+  let third_actu_title = document.createElement('h2')  
+    third_actu_title.innerHTML = actus[2].name
+    
+  let third_actu_text = document.createElement('p')
+    third_actu_text.innerHTML = md(actus[2].desc)
+  
+  third_actu_cover_c.appendChild(third_actu_cover)
+  third_actu.appendChild(third_actu_cover_c)
+  third_actu.appendChild(third_actu_title)
+  third_actu.appendChild(third_actu_text)
+  document.querySelector('#actus-wrapper').appendChild(third_actu)
+}
+
+function styleDesc() {
+  let i = 0
+
+  setInterval( () => {
+      document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace('<pink>', ``).replace('</pink>', ``)
+    document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace(subtitles[i], `<pink>${subtitles[i]}</pink>`)
+    i += 1
+    if(i === subtitles.length) i = 0
+  },1000)
 }
