@@ -57,7 +57,7 @@ p {
 .see-more {
   display: inline;
   text-align: end;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .see-more {
