@@ -16,7 +16,7 @@ function main() {
       }
   
     let cover = document.createElement('img')
-      cover.src = element.cover_path
+      cover.src = element.cover_path.replace('__SITE__', "")
       cover.className = 'project__cover'
       if(element.site_path === "404") cover_c.style.cursor = 'auto'
     
@@ -281,10 +281,14 @@ function doActus(list, theme, modifier) {
 }
 
 function styleDesc() {
+
+  let actual_banner = banners[Math.floor(Math.random() * banners.length)]
+  document.body.style.setProperty("--var-url-banner", `url(${actual_banner})`)
+  
   let i = 0
 
   setInterval( () => {
-      document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace('<pink>', ``).replace('</pink>', ``)
+    document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace('<pink>', ``).replace('</pink>', ``)
     document.querySelector("body > div.banner > div > p").innerHTML = document.querySelector("body > div.banner > div > p").innerHTML.replace(subtitles[i], `<pink>${subtitles[i]}</pink>`)
     i += 1
     if(i === subtitles.length) i = 0

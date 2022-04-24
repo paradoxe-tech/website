@@ -27,7 +27,7 @@ for (const element of projects) {
     }
 
   let cover = document.createElement('img')
-    cover.src = "../" + element.cover_path
+    cover.src = element.cover_path.replace('__SITE__', "../")
     cover.className = 'project__cover'
     if(element.site_path === "404") cover_c.style.cursor = 'auto'
   
