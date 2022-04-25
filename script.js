@@ -153,8 +153,8 @@ function md(text, truncate) {
     }
   }
 
-  if(text.match(/(s\/)[^\s]+/g)) {
-    for (const e of text.match(/(s\/)[^\s]+/g)) {
+  if(text.match(/(h\/)[^\s]+/g)) {
+    for (const e of text.match(/(h\/)[^\s]+/g)) {
       let name = e.replace('h/', '')
       res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/">${e}</a></pink>`)
     }
