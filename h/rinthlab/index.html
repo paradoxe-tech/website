@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id='main'><h1> Rinth Lab</h1>
+  <h3>Algorithme d'Exploration exhaustive</h3>
+  <p>On part d'un labyrinthe dans lequel tous les murs sont fermés. Au fur et à mesure de la construction, les cellules "visitées" seront identifiables par l'algorithme. On crée une pile (stack) dans laquelle on stockera l'ensemble des positions successives (l'ensemble des cases visitées dans l'ordre). Il suffira ensuite de choisir une cellule, d'ouvrir aléatoirement un des murs de celle-ci et d'avancer dans la suivante, jusqu'à un cul-de-sac. A ce moment, on retourne à une ancienne position dans la pile, qui nous permettra d'ouvrir un nouveau chemin et ainsi de suite jusqu'à la fin des possibilités.</p></div>
+  <div id="maze_container" style="overflow-wrap: break-word; line-height: 14px; letter-spacing: -2px;"></div>
+
+  <br>@CallMeKitsu. (C) 2022<br><br>
+  <script src="cell.js"></script>
+  <script src="generator.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
