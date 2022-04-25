@@ -244,7 +244,7 @@ function doActus(list, theme, modifier) {
     sec_actu_cover.src = modifier + actus[1].cover_path
     
   let sec_actu_title = document.createElement('h2')  
-    sec_actu_title.innerHTML = actus[1].name
+    sec_actu_title.innerHTML = md(actus[1].name, 14)
     
   let sec_actu_text = document.createElement('p')
     sec_actu_text.innerHTML = md(actus[1].desc, 120)
@@ -268,7 +268,7 @@ function doActus(list, theme, modifier) {
     third_actu_cover.src = modifier + actus[2].cover_path
     
   let third_actu_title = document.createElement('h2')  
-    third_actu_title.innerHTML = actus[2].name
+    third_actu_title.innerHTML = md(actus[2].name, 14)
     
   let third_actu_text = document.createElement('p')
     third_actu_text.innerHTML = md(actus[2].desc, 120)
