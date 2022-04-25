@@ -155,7 +155,7 @@ function md(text, truncate) {
 
   if(text.match(/(s\/)[^\s]+/g)) {
     for (const e of text.match(/(s\/)[^\s]+/g)) {
-      let name = e.replace('s/', '')
+      let name = e.replace('h/', '')
       res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/">${e}</a></pink>`)
     }
   }
@@ -214,7 +214,7 @@ function doActus(list, theme, modifier) {
     main_actu_cover_c.className = 'actu-main__cover-container'
   
   let main_actu_cover = document.createElement('img')
-    main_actu_cover.src = modifier + actus[0].cover_path
+    main_actu_cover.src = actus[0].cover_path.replace('__SITE__', modifier)
   
   let main_actu_sub = document.createElement('h4')  
     main_actu_sub.innerHTML = actus[0].sub
