@@ -26,12 +26,11 @@ div#main_container {
 
 }
 
-div#maze_container {
+.maze {
     width: 500px;
     height: 500px;
     margin: 0 auto;
     position: relative;
-    border: 2px white solid;
     margin-top: 25px;
     
 }
@@ -45,8 +44,6 @@ background: black;
 
 table td {
 background: black;
-    border: 1px white solid;
-
 }
 
 

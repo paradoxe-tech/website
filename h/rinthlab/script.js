@@ -1,4 +1,4 @@
-function createBlankMaze() {
+function createBlankMaze(type) {
 
   var rowIndex, colIndex;
 
@@ -12,22 +12,10 @@ function createBlankMaze() {
     for (colIndex = 1; colIndex <= mazeWidth; colIndex++) {
 
       var col = document.createElement("td");
-      if (rowIndex == 1 && colIndex == 1) {
 
-        col.style.backgroundColor = "rgb(244,0,0)";
-        col.setAttribute("type", "start");
+      col.style.backgroundColor = "black";
 
-      } else if (rowIndex == mazeHeight && colIndex == mazeWidth) {
-
-        col.style.backgroundColor = "rgb(0,244,0)";
-        col.setAttribute("type", "finish");
-
-      } else {
-
-        col.style.backgroundColor = "black";
-
-      }
-      col.setAttribute("id", "cell_" + (colIndex -1) + "_" + (rowIndex -1));
+      col.setAttribute("id", type + "_cell_" + (colIndex -1) + "_" + (rowIndex -1));
       col.setAttribute("class", "cells");
 
 
@@ -41,20 +29,25 @@ function createBlankMaze() {
 
   table.appendChild(tbody);
 
-  document.getElementById("maze_container").appendChild(table);
+  document.getElementById(type).appendChild(table);
 
 }
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
+var mazeWidth = urlParams.get("size") || 51
 
+if (mazeWidth % 2 === 0) {
+  mazeWidth = `${parseInt(mazeWidth) + 1}`
+}
 
-var mazeWidth = urlParams.get("size") || 50
 var mazeHeight = mazeWidth;
 
-window.addEventListener("load", () => {
-  let lab = new Lab(mazeWidth)
-  lab.load()
-});
-
-createBlankMaze()
+window.addEventListener('load', () => {
+  createBlankMaze("dfs")
+  dfs = new DFS(mazeWidth, "dfs")
+  dfs.load(1,1)
+  createBlankMaze("prim")
+  prim = new Prim(mazeWidth, "prim")
+  prim.load(Math.floor(mazeHeight/2),Math.floor(mazeHeight/2))
+})
