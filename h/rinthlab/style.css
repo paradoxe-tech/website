@@ -16,23 +16,23 @@ html, body  {
   width: 500px
 }
 
-div#main_container {
-    margin-top: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 1px 1px;
-    grid-template-areas: ". .";
+h3, h5 {
+  margin: 10px 0px 10px 0px
+}
 
+h5 {
+  color: #c7c7c7;
+  font-weight: normal;
+  font-style: italic
 }
 
 .maze {
     width: 500px;
     height: 500px;
-    margin: 0 auto;
+    margin: auto;
     position: relative;
     margin-top: 25px;
-    
+    margin-bottom: 50px
 }
 
 table {
