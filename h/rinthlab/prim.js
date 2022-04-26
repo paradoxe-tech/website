@@ -40,7 +40,7 @@ class Prim {
 
       var potential = false
       
-      if (dx < this.size -1 && dx >= 0 && dy < this.size -1 && dy >= 0) {
+      if (dx <= this.size -2 && dx >= 1 && dy <= this.size -2 && dy >= 1) {
         potential = this.findCell(dx, dy)
       }
 

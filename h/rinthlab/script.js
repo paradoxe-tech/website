@@ -49,5 +49,5 @@ window.addEventListener('load', () => {
   dfs.load(1,1)
   createBlankMaze("prim")
   prim = new Prim(mazeWidth, "prim")
-  prim.load(Math.floor(mazeHeight/2),Math.floor(mazeHeight/2))
+  prim.load(1,1)
 })
