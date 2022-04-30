@@ -6,6 +6,7 @@ class Cell {
     this.y = y
     this.visited = false
     this.type = type
+    this.id = 0
 
   }
 

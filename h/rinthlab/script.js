@@ -36,6 +36,8 @@ function createBlankMaze(type) {
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 var mazeWidth = urlParams.get("size") || 51
+var startX = urlParams.get("x") || 1
+var startY = urlParams.get("y") || 1
 
 if (mazeWidth % 2 === 0) {
   mazeWidth = `${parseInt(mazeWidth) + 1}`
@@ -46,8 +48,12 @@ var mazeHeight = mazeWidth;
 window.addEventListener('load', () => {
   createBlankMaze("dfs")
   dfs = new DFS(mazeWidth, "dfs")
-  dfs.load(1,1)
+  dfs.load(startX,startY)
   createBlankMaze("prim")
   prim = new Prim(mazeWidth, "prim")
-  prim.load(1,1)
+  prim.load(startX,startY)
+  
+  createBlankMaze("kruskal")
+  kruskal = new Kruskal(mazeWidth, "kruskal");
+  kruskal.load()
 })
