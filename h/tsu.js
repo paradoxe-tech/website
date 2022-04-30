@@ -1,4 +1,4 @@
-String.prototype.format = function(...vars) {
+export String.prototype.format = function(...vars) {
   res = this
 
   for (const e of vars) {
@@ -8,13 +8,13 @@ String.prototype.format = function(...vars) {
   return res
 }
 
-Array.prototype.random = function() {
+export Array.prototype.random = function() {
   
   return this[Math.floor(Math.random() * this.length)]
   
 }
 
-Array.prototype.remove = function(...indexes) {
+export Array.prototype.remove = function(...indexes) {
 
   i = 0
   
