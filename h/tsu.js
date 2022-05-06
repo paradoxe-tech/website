@@ -26,3 +26,7 @@ Array.prototype.remove = function(...indexes) {
   return this
   
 }
+
+const sleep = async function(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
