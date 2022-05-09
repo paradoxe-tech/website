@@ -40,7 +40,7 @@ var startX = urlParams.get("x") || 1
 var startY = urlParams.get("y") || 1
 
 if (mazeWidth % 2 === 0) {
-  mazeWidth = `${parseInt(mazeWidth) + 1}`
+  mazeWidth = parseInt(mazeWidth) + 1
 }
 
 var mazeHeight = mazeWidth;

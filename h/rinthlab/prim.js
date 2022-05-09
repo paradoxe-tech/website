@@ -4,6 +4,7 @@ class Prim {
 
     this.size = size
     this.map = []
+    this.startTimeStamp = Date.now()
 
     for (var line = 0; line < this.size; line++) {
       
@@ -44,7 +45,7 @@ class Prim {
         potential = this.findCell(dx, dy)
       }
 
-      if(potential && potential.visited == false) {
+      if(potential && potential.visited == 0) {
         valid_cells.push(potential)
       }
       
@@ -82,11 +83,12 @@ class Prim {
       await sleep(urlParams.get("speed") || 20)
 
       for (var style_cell of this.added) {
-        document.querySelector(`#prim_cell_${style_cell.x}_${style_cell.y}`).style.backgroundColor = "white"
+        style_cell.color('white')
       }
 
       this.visited += 1
       if( this.visited < (this.size - 1)**2 / 4 ) loop()
+      else return console.log(`Prim's: ${Date.now() - this.startTimeStamp}ms`)
       
     }
 

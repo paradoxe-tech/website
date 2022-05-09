@@ -4,19 +4,24 @@ class Cell {
 
     this.x = x
     this.y = y
-    this.visited = false
+    this.visited = 0
     this.type = type
     this.id = 0
 
   }
 
   add() {
-    this.visited = true
-    document.querySelector(`#${this.type}_cell_${this.x}_${this.y}`).style.backgroundColor = "white"
+    if(!this.visited) document.querySelector(`#${this.type}_cell_${this.x}_${this.y}`).style.backgroundColor = "white"
+    this.visited += 1
+    
   }
 
   color(string) {
     document.querySelector(`#${this.type}_cell_${this.x}_${this.y}`).style.backgroundColor = string
+  }
+
+  print(string) {
+    document.querySelector(`#${this.type}_cell_${this.x}_${this.y}`).innerHTML = string
   }
 
 }
@@ -27,6 +32,7 @@ class DFS {
 
     this.size = size
     this.map = []
+    this.startTimeStamp = Date.now()
 
     for (var line = 0; line < this.size; line++) {
       
@@ -67,7 +73,7 @@ class DFS {
         potential = this.findCell(dx, dy)
       }
 
-      if(potential && potential.visited == false) {
+      if(potential && potential.visited == 0) {
         valid_cells.push(potential)
       }
       
@@ -91,7 +97,7 @@ class DFS {
 
       await sleep(urlParams.get("speed") || 20)
 
-      if(!this.current) return 
+      if(!this.current) return console.log(`DFS: ${Date.now() - this.startTimeStamp}ms`)
       
       this.current.add()
 

@@ -4,7 +4,7 @@ class Kruskal {
 
     this.size = size
     this.map = []
-    this.sets = {}
+    this.startTimeStamp = Date.now()
 
     let i = 0
     
@@ -18,124 +18,88 @@ class Kruskal {
         let new_cell = new Cell(cell, line, type)
 
         new_cell.id = i
-
-        this.sets[i] = [new_cell]
         
         row.push(new_cell)
+        
       }
       
       this.map.push(row)
     }
+
+    this.walls = this.giveWallsList(this.size, this.map)
     
+  }
+
+  giveWallsList(size, matrix) {
+    let res = []
+    
+    for (var line = 1; line < size - 1; line += 2) {
+      for (var i = 1; i <= size -3; i += 2 ) {
+        res.push({
+          choice: this.findCell(i, line, '[WALLCHOICE]'),
+          pair: this.findCell(i+2, line, '[WALLPAIR]'),
+          mid: this.findCell(i+1, line, '[WALLMID]'),
+        })
+      }
+    }
+
+    for (var col = 1; col < size - 1; col += 2) {
+      for (var i = 1; i <= size -3; i += 2 ) {
+        res.push({
+          choice: this.findCell(col, i, '[WALLCHOICE]'),
+          pair: this.findCell(col, i+2, '[WALLPAIR]'),
+          mid: this.findCell(col, i+1, '[WALLMID]'),
+        })
+      }
+    }
+
+    return res
   }
 
   findCell(x, y) {
-    console.log('Finding cell at position: ' + x +","+y)
-    
     return this.map[y][x]
-  }
-
-  adjacents(cell) {
-    
-    let valid_cells = []
-
-    let directions = [
-      [2, 0],
-      [-2, 0],
-      [0, 2],
-      [0, -2]
-    ]
-
-    for (var direction of directions) {
-
-      let dx = cell.x + direction[0]
-      let dy = cell.y + direction[1]
-
-      var potential = false
-      
-      if (dx <= this.size -2 && dx >= 1 && dy <= this.size -2 && dy >= 1) {
-        potential = this.findCell(dx, dy)
-      }
-
-      if(potential && potential.visited == false) {
-        valid_cells.push(potential)
-      }
-      
-    }
-
-    return valid_cells
-    
   }
 
   load() {
 
-    this.visited = 0
+    this.added = []
     
     const loop = async () => {
 
-      console.log('-------------{ Here is a loop }-------------')
-      
+      if(this.walls.length == 0) return console.log(`Kruskal's: ${Date.now() - this.startTimeStamp}ms`)
+
       const sleep = (milliseconds) => {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
       }
-      
-      await sleep(urlParams.get("speed") || 2000)
-      
-      let choice = this.choseCell()
-      let pair = this.chosePair(choice)
-      let mid = this.findCell((choice.x + pair.x)/2, (choice.y + pair.y)/2)
 
-      choice.add()
-      let chosen_cells = [pair, mid]
+      let r = Math.floor(Math.random() * this.walls.length)
+
+      let randomWall = this.walls[r]
+      
+      let choice = randomWall.choice
+      let pair = randomWall.pair
+      let mid = randomWall.mid
+
+      this.walls = this.walls.filter(wall => wall.pair != pair)
+      
+      let chosen_cells = [mid, pair, choice]
 
       for (let chosen_cell of chosen_cells) {
         chosen_cell.add()
-        this.sets[choice.id] = this.sets[chosen_cell.id].concat(this.sets[choice.id])
-        this.sets[chosen_cell.id] = []
+        chosen_cell.color('red')
+        this.added.push(chosen_cell)
+      }
+      
+      await sleep(urlParams.get("speed") || 20)
+
+      for (var this_cell of this.added) {
+        this_cell.color('white')
       }
 
-      this.visited += 1
-
-      for (var i=0; i < this.sets.length; i++) {
-        if(this.sets[i].length === this.sets.length) return
-      }
-
-       if( this.visited < (this.size - 1)**2 / 4 ) loop()
+      loop()
     }
 
     loop()
-  }
-
-  choseCell() {
-    console.log('Recursively searching for a random cell')
-    
-    let randX = Math.floor(Math.random() * this.size)
-    let randY = Math.floor(Math.random() * this.size)
-
-    if(randX <= this.size -2) randX -= 2
-    if(randX >= 1) randY += 2
-    if(randY >= 1) randY += 2
-    if(randY >= this.size -2) randY -= 2
-
-    if(randX !== this.size -1 && randX % 2 === 0) randX += 1
-    else if(randX % 2 === 0) randX -= 1
-    if(randY !== this.size -1 && randY % 2 === 0) randY += 1
-    else if(randY % 2 === 0) randY -= 1
-    
-    let res = this.findCell(randX, randY)
-
-    if(!res) return choseCell()
-    return res
-  }
-
-  chosePair(choice) {
-    console.log('Recursively searching for pair to cell: ' + choice.x +","+choice.y)
-    
-    if(this.visited > (this.size - 1)**2 / 4) return
-    
-    let found = this.adjacents(choice)[Math.floor(Math.random() * this.adjacents(choice).length)]
-    if(!found) return this.chosePair(choice)
-    return found
   }
   
 }
