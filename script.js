@@ -90,7 +90,7 @@ function main() {
     return res
   }
 
-  // ================================================================= { COMPETENCES } 
+  /*/ ================================================================= { COMPETENCES } 
   
     function addComp(list) {
       let main_comp = document.createElement('div')
@@ -111,7 +111,7 @@ function main() {
   for (const _comp of competences) {
     doStat(`#comp__${_comp.name.split(' ')[0].toLowerCase()}`, _comp.value, _comp.type, `${_comp.name} `, ` 99%`)
   }
-  
+*/  
 }
 
 // ================================================================= { MOBILE-HANDLER } 
