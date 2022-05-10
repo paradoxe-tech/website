@@ -5,6 +5,7 @@ class Kruskal {
     this.size = size
     this.map = []
     this.startTimeStamp = Date.now()
+    this.sets = {}
 
     let i = 0
     
@@ -20,10 +21,12 @@ class Kruskal {
         new_cell.id = i
         
         row.push(new_cell)
+        this.sets[i] = [new_cell]
         
       }
       
       this.map.push(row)
+
     }
 
     this.walls = this.giveWallsList(this.size, this.map)
@@ -63,10 +66,17 @@ class Kruskal {
   load() {
 
     this.added = []
+
+    const shuffleArray = function(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+
+      return array
+    }
     
     const loop = async () => {
-
-      if(this.walls.length == 0) return console.log(`Kruskal's: ${Date.now() - this.startTimeStamp}ms`)
 
       const sleep = (milliseconds) => {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -80,14 +90,25 @@ class Kruskal {
       let pair = randomWall.pair
       let mid = randomWall.mid
 
-      this.walls = this.walls.filter(wall => wall.pair != pair)
-      
-      let chosen_cells = [mid, pair, choice]
+      if(choice.id == pair.id) return loop()
 
-      for (let chosen_cell of chosen_cells) {
+      for (let chosen_cell of [mid, pair, choice]) {
         chosen_cell.add()
         chosen_cell.color('red')
         this.added.push(chosen_cell)
+      }
+
+      this.walls = this.walls.filter(wall => wall != randomWall)
+
+      let shuffled = shuffleArray([pair, choice, mid])
+      
+      this.sets[ shuffled[0].id ] = this.sets[ shuffled[0].id ].concat(this.sets[ shuffled[2].id ])
+      this.sets[ shuffled[0].id ] = this.sets[ shuffled[0].id ].concat(this.sets[ shuffled[1].id ])
+      this.sets[ shuffled[1].id ] = []
+      this.sets[ shuffled[2].id ] = []
+
+      for(var set_cell of this.sets[shuffled[0].id]) {
+        set_cell.id = shuffled[0].id
       }
       
       await sleep(urlParams.get("speed") || 20)
@@ -95,11 +116,13 @@ class Kruskal {
       for (var this_cell of this.added) {
         this_cell.color('white')
       }
-
-      loop()
+      
+      return loop()
+      return console.log(`Kruskal's: ${Date.now() - this.startTimeStamp}ms`)
     }
 
     loop()
+    
   }
   
 }
