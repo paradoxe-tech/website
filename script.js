@@ -1,5 +1,25 @@
+const menu = document.querySelector('.menu')
+const hamburger = document.querySelector('#hamburger')
+
+hamburger.addEventListener("click", () => {
+  menu.classList.toggle("open");
+  updateHamburger()
+});
+
+function updateHamburger() {
+  if (menu.classList.contains("open")) {
+    hamburger.classList.replace("bx-menu", "bx-menu-alt-right");
+  } else {
+    hamburger.classList.replace("bx-menu-alt-right", "bx-menu");
+  }
+}
+
+function getPage(link) {
+  console.log(`trying to reach url : ${link}`)
+  document.querySelector('#loader').setAttribute("data", link)
+}
+
 function main() {
-  // ================================================================= { PROJECTS } 
   
   for (var k =0; k < 6; k++) {
   
@@ -142,7 +162,7 @@ function md(text, truncate) {
     for (const e of text.match(/\{(.*?)\}\((.*?)\)/g)) {
       let txt = e.match(/\{(.*?)\}/g)[0].replace('}', '').replace('{', '')
       let tip = e.match(/\((.*?)\)/g)[0].replace('(', '').replace(')', '')
-      res = res.replace(e, `<a title="${tip.replace("'", "\'").replace('"', '\"')}" style='color: white;cursor: help;'>${txt}</a>`)
+      res = res.replace(e, `<cyan><a title="${tip.replace("'", "\'").replace('"', '\"')}" style='color: white;cursor: help;'>${txt}</a></cyan>`)
     }
   }
   

@@ -16,10 +16,6 @@ body {
   color: white;
 }
 
-.main {
-  margin-bottom: 50px;
-}
-
 ::-moz-selection { /* Code for Firefox */
   color: black;
   background: #0ff;
@@ -106,7 +102,7 @@ p {
 }
 
 .main {
-  margin-left: calc(3% + 35px);
+  margin-left: 20px;
   width: 1100px;
 }
 
@@ -324,7 +320,6 @@ a {
 }
 
 a:hover {
-  color: #0ff;
   cursor: pointer;
 }
 
