@@ -14,7 +14,7 @@
   top: 0;
   height: 100%;
   width: 78px;
-  background: #212121;
+  background: black;
   padding: 6px 14px;
   transition: all 0.2s ease;
   z-index: 99;
@@ -98,7 +98,6 @@
   font-size: 20px;
   font-weight: 600;
   opacity: 0;
-  transition: all 0.5s ease;
 }
 
 .item-name {
@@ -143,7 +142,7 @@
   border: none;
   border-radius: 12px;
   /* transition: all 0.5s ease; */
-  background: black;
+  background: #212121;
 }
 
 .menu.open #recherche {
@@ -157,7 +156,7 @@
   left: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  background: black;
+  background: #212121;
   color: #FFF;
 }
 
@@ -190,18 +189,30 @@
   transition: all 0.5s ease;
 }
 
-.menu li a:hover{
+#loupe {
+  transition: all 0.4s ease;
+}
+
+#loupe:hover {
+  background: #0ff
+}
+
+.menu.open #loupe:hover {
+  background: #212121;
+}
+
+.menu li a:hover {
   background: #f0f;
 }
 
-.menu li i{
+.menu li i {
   height: 50px;
   line-height: 50px;
   font-size: 18px;
   border-radius: 12px;
 }
 
-.menu li a{
+.menu li a {
   display: flex;
   height: 100%;
   width: 100%;
@@ -209,7 +220,7 @@
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: black;
+  background: #212121;
 }
 
 @media (max-width: 420px) {
@@ -225,21 +236,13 @@
   top: 0;
   left: 78px;
   width: calc(100% - 78px);
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   z-index: 2;
 }
 
 .menu.open ~ .main {
   left: 250px;
   width: calc(100% - 250px);
-}
-
-.main .text{
-  display: inline-block;
-  color: #11101d;
-  font-size: 25px;
-  font-weight: 500;
-  margin: 18px
 }
 
 .item-title:hover {
