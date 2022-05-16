@@ -134,16 +134,31 @@
 }
 
 #recherche {
+  width: 0px;
   font-size: 15px;
-  color: #FFF;
+  color: #0ff;
   font-weight: 400;
   outline: none;
   height: 50px;
-  width: 100%;
   border: none;
   border-radius: 12px;
-  transition: all 0.5s ease;
-  background: #28282a;
+  /* transition: all 0.5s ease; */
+  background: black;
+}
+
+.menu.open #recherche {
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+
+.menu .bx-search {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: black;
+  color: #FFF;
 }
 
 .menu .item-name, .menu #recherche {

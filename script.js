@@ -1,10 +1,35 @@
-const menu = document.querySelector('.menu')
-const hamburger = document.querySelector('#hamburger')
+function makeMenu() {
+  const menu = document.querySelector('.menu')
+  const hamburger = document.querySelector('#hamburger')
+  const loupe = document.querySelector('#loupe')
+  const recherche = document.querySelector('#recherche')
+  
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    updateHamburger()
+  });
+  
+  loupe.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    recherche.focus()
+  });
 
-hamburger.addEventListener("click", () => {
-  menu.classList.toggle("open");
-  updateHamburger()
-});
+  document.addEventListener('keydown', (e) => {
+    if(!e) e = event;
+
+    if(e.ctrlKey && e.keyCode === 75) {
+      menu.classList.toggle("open");
+      recherche.focus()
+    }
+  })
+}
+
+function trySearch(ele) {
+  if(event.keyCode === 13) {
+    getPage( site_URL + recherche.value )
+    recherche.value = ''
+  }
+}
 
 function updateHamburger() {
   if (menu.classList.contains("open")) {
