@@ -14,7 +14,7 @@ function makeMenu() {
     recherche.focus()
   });
 
-  document.addEventListener('keydown', (e) => {
+  window.addEventListener('keydown', (e) => {
     if(!e) e = event;
 
     if(e.ctrlKey && e.keyCode === 75) {
@@ -22,6 +22,19 @@ function makeMenu() {
       recherche.focus()
     }
   })
+
+  handleLoader()
+}
+
+function handleLoader() {
+
+  console.log('The loader handler is now fixed.')
+  
+  document.querySelector('#loader').onerror = function () {
+    console.log("A loader error has been detected. The loader is now reset ;")
+    document.querySelector('#loader').outerHTML = `<div> <object id="loader" type="text/html" data="https://callmekitsu.kitsuforyou.repl.co/home.html" style="height: 100vh;width: 100%;overflow:auto;"><h1>Erreur de chargement de la page.</h1><pink><h4>Actualisez pour continuer votre navigation !</h4></pink><br>Cette page n'existe peut-être pas.<br>Elle peut aussi être en développement,<br>ou subir une maintenance temporaire.<br><br>CopyRight (c) CallMeKitsu. 2021-2022</object></div>`
+    handleLoader()
+  }
 }
 
 function trySearch(ele) {
@@ -42,6 +55,7 @@ function updateHamburger() {
 function getPage(link) {
   console.log(`trying to reach url : ${link}`)
   document.querySelector('#loader').setAttribute("data", link)
+  handleLoader()
 }
 
 function main() {
