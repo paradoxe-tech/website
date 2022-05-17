@@ -33,14 +33,16 @@ function handleLoader() {
   document.querySelector('#loader').onerror = function () {
     console.log("A loader error has been detected. The loader is now reset ;")
     document.querySelector('#loader').outerHTML = `<div> <object id="loader" type="text/html" data="https://callmekitsu.kitsuforyou.repl.co/home.html" style="height: 100vh;width: 100%;overflow:auto;"><h1>Erreur de chargement de la page.</h1><pink><h4>Actualisez pour continuer votre navigation !</h4></pink><br>Cette page n'existe peut-être pas.<br>Elle peut aussi être en développement,<br>ou subir une maintenance temporaire.<br><br>CopyRight (c) CallMeKitsu. 2021-2022</object></div>`
+    document.querySelector('title').innerHTML = `CMK. | Accueil`
     handleLoader()
   }
 }
 
 function trySearch(ele) {
   if(event.keyCode === 13) {
-    getPage( site_URL + recherche.value )
+    getPage( site_URL + recherche.value, recherche.value )
     recherche.value = ''
+    
   }
 }
 
@@ -52,9 +54,10 @@ function updateHamburger() {
   }
 }
 
-function getPage(link) {
+function getPage(link, title) {
   console.log(`trying to reach url : ${link}`)
   document.querySelector('#loader').setAttribute("data", link)
+  if(title) document.querySelector('title').innerHTML = `CMK. | ${title}`
   handleLoader()
 }
 
@@ -356,4 +359,5 @@ function styleDesc() {
     i += 1
     if(i === subtitles.length) i = 0
   },1000)
+  
 }
