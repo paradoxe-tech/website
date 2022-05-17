@@ -231,6 +231,9 @@ cyan {
 }
 
 .actu-2nd {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
   transition: transform .3s ease-out;
   grid-area: "2nd";
   display: inline-block;

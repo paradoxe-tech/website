@@ -290,6 +290,7 @@ function doActus(list, theme, modifier) {
   main_actu.appendChild(main_actu_text)
   //main_actu.appendChild(main_actu_sub)
   document.querySelector('#actus-wrapper').appendChild(main_actu)
+
   
   // ================================================================= { ACTU-2 } 
   if(!actus[1]) return 
@@ -306,15 +307,17 @@ function doActus(list, theme, modifier) {
     sec_actu_title.innerHTML = md(actus[1].name, 14)
     
   let sec_actu_text = document.createElement('p')
-    sec_actu_text.innerHTML = md(actus[1].desc, 120)
+    sec_actu_text.innerHTML = md(actus[1].desc)
     
   sec_actu_cover_c.appendChild(sec_actu_cover)
   sec_actu.appendChild(sec_actu_cover_c)
   sec_actu.appendChild(sec_actu_title)
   sec_actu.appendChild(sec_actu_text)
   document.querySelector('#actus-wrapper').appendChild(sec_actu)
+
   
   // ================================================================= { ACTU-3 } 
+  
   if(!actus[2]) return 
   
   let third_actu = document.createElement('div')
@@ -337,6 +340,7 @@ function doActus(list, theme, modifier) {
   third_actu.appendChild(third_actu_title)
   third_actu.appendChild(third_actu_text)
   document.querySelector('#actus-wrapper').appendChild(third_actu)
+
 }
 
 function styleDesc() {
