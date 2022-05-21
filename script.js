@@ -283,14 +283,18 @@ function doActus(list, theme, modifier) {
     
   let main_actu_title = document.createElement('h2')  
     main_actu_title.innerHTML = actus[0].name
-    
+
+  let main_actu_text_c = document.createElement('div')
+    main_actu_text_c.className = 'actu-main__text-container'
+  
   let main_actu_text = document.createElement('p')
     main_actu_text.innerHTML = md(actus[0].desc)
     
   main_actu_cover_c.appendChild(main_actu_cover)
   main_actu.appendChild(main_actu_cover_c)
   main_actu.appendChild(main_actu_title)
-  main_actu.appendChild(main_actu_text)
+  main_actu_text_c.appendChild(main_actu_text)
+  main_actu.appendChild(main_actu_text_c)
   //main_actu.appendChild(main_actu_sub)
   document.querySelector('#actus-wrapper').appendChild(main_actu)
 
@@ -308,6 +312,9 @@ function doActus(list, theme, modifier) {
     
   let sec_actu_title = document.createElement('h2')  
     sec_actu_title.innerHTML = md(actus[1].name, 14)
+
+  let sec_actu_text_c = document.createElement('div')
+    sec_actu_text_c.className = 'actu-2nd__text-container'
     
   let sec_actu_text = document.createElement('p')
     sec_actu_text.innerHTML = md(actus[1].desc)
@@ -315,7 +322,8 @@ function doActus(list, theme, modifier) {
   sec_actu_cover_c.appendChild(sec_actu_cover)
   sec_actu.appendChild(sec_actu_cover_c)
   sec_actu.appendChild(sec_actu_title)
-  sec_actu.appendChild(sec_actu_text)
+  sec_actu_text_c.appendChild(sec_actu_text)
+  sec_actu.appendChild(sec_actu_text_c)
   document.querySelector('#actus-wrapper').appendChild(sec_actu)
 
   
@@ -334,6 +342,9 @@ function doActus(list, theme, modifier) {
     
   let third_actu_title = document.createElement('h2')  
     third_actu_title.innerHTML = md(actus[2].name, 14)
+
+  let third_actu_text_c = document.createElement('div')
+    third_actu_text_c.className = 'actu-3rd__text-container'
     
   let third_actu_text = document.createElement('p')
     third_actu_text.innerHTML = md(actus[2].desc, 120)

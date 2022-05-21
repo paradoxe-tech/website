@@ -28,5 +28,13 @@ Array.prototype.remove = function(...indexes) {
 }
 
 const sleep = async function(ms) {
+  
   return new Promise(resolve => setTimeout(resolve, ms));
+  
+}
+
+const randomColor = function() {
+  
+  return `#${('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6)}`
+  
 }
