@@ -347,12 +347,13 @@ function doActus(list, theme, modifier) {
     third_actu_text_c.className = 'actu-3rd__text-container'
     
   let third_actu_text = document.createElement('p')
-    third_actu_text.innerHTML = md(actus[2].desc, 120)
+    third_actu_text.innerHTML = md(actus[2].desc)
   
   third_actu_cover_c.appendChild(third_actu_cover)
   third_actu.appendChild(third_actu_cover_c)
   third_actu.appendChild(third_actu_title)
-  third_actu.appendChild(third_actu_text)
+  third_actu_text_c.appendChild(third_actu_text)
+  third_actu.appendChild(third_actu_text_c)
   document.querySelector('#actus-wrapper').appendChild(third_actu)
 
 }

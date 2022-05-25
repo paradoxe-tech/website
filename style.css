@@ -14,6 +14,7 @@ body {
   margin: 0px;
   margin-top: 0px;
   color: white;
+  line-height: 1.2em;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -245,8 +246,16 @@ cyan {
 
 .actu-2nd:hover {transform: translate(0, -5px);}
 
-.actu-2nd p, .actu-2nd h2 {
+.actu-2nd h2 {
   padding-left: 175px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin: 0;
+}
+
+.actu-2nd p {
+  height: calc(5* 1.2em);
+  padding-left: 10px;
   padding-top: 10px;
   padding-right: 10px;
   margin: 0;
@@ -261,12 +270,25 @@ cyan {
 }
 
 .actu-2nd__cover-container {
+  display: inline-block;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   overflow: hidden;
   float: left;
   height: 165px;
   width: 165px;
+}
+
+.actu-2nd__text-container, .actu-3rd__text-container {
+  height: calc(5* 1.2em + 10px);
+  overflow: hidden;
+}
+
+.actu-2nd__text-container:hover::after, .actu-3rd__text-container:hover::after {
+  position: absolute;
+  text-align: center;
+  left: 250px;
+  content: "...";
 }
 
 .actu-2nd img:hover {
@@ -281,14 +303,19 @@ cyan {
   margin: 0;
   background: #212121;
   width: 360px;
-  border-radius: 10px
-  
+  border-radius: 10px 
 }
 
-.actu-3rd:hover {transform: translate(0, -5px);}
-
-.actu-3rd p, .actu-3rd h2 {
+.actu-3rd h2 {
   padding-left: 175px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin: 0;
+}
+
+.actu-3rd p {
+  height: calc(5* 1.2em);
+  padding-left: 10px;
   padding-top: 10px;
   padding-right: 10px;
   margin: 0;
@@ -310,6 +337,8 @@ cyan {
   height: 165px;
   width: 165px;
 }
+
+.actu-3rd:hover {transform: translate(0, -5px);}
 
 .actu-3rd img:hover {
   /* filter: brightness(50%); */
