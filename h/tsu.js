@@ -38,3 +38,20 @@ const randomColor = function() {
   return `#${('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6)}`
   
 }
+
+Array.prototype.shuffle = function() {
+  
+  let i = this.length, r
+
+  while (i != 0) {
+
+    r = Math.floor(Math.random() * i)
+    i--
+
+    [this[i], this[r]] = [ this[r], this[i] ]
+    
+  }
+
+  return this
+  
+}
