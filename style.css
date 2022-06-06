@@ -422,3 +422,57 @@ ion-icon {
 grey {
   color: #707070;
 }
+
+#hosts-wrapper {
+  width: calc(100% - margin-left);
+  padding-right: 10px;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 175px 175px 175px 175px 175px 175px;
+  grid-gap: 10px;
+}
+
+.host {
+  transition: transform .3s ease-out;
+  display: inline-block;
+  margin: 0;
+  background: #212121;
+  width: 175px;
+  border-radius: 10px
+}
+
+.host:hover {
+  transform: translate(0, -5px);
+}
+
+.host p, .host h2 {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin: 0;
+}
+
+.host p {
+  color: #c7c7c7;
+  padding-bottom: 15px;
+}
+
+.host img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 175px;
+  transition: transform 0.4s;
+}
+
+.host img:hover {
+  /* filter: brightness(50%); */
+  transform: scale(1.20);
+}
+
+.host__cover-container {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  height: 175px;
+  cursor: pointer;
+}
