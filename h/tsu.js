@@ -55,3 +55,15 @@ Array.prototype.shuffle = function() {
   return this
   
 }
+
+Array.prototype.filterNot = function(compFunc) {
+  
+  let res = []
+  
+  for (var element of this) {
+    if(!compFunc(element)) res.push(element)
+  }
+
+  return res
+  
+}
