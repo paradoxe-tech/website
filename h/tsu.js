@@ -67,3 +67,14 @@ Array.prototype.filterNot = function(compFunc) {
   return res
   
 }
+
+String.prototype.without = function(chars) {
+
+  res = this
+  
+  for (var char of chars) {
+    res = res.replaceAll(char, "")
+  }
+
+  return res
+}

@@ -238,14 +238,14 @@ function md(text, truncate) {
   
 }
 
-function doStat(selector, stat, color, start, end) {
+function doStat(selector, stat, color, start, end, time) {
   document.querySelector(selector).innerHTML = start + "<grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey><grey>▱</grey>" + end;
     
   (function myLoop(i) {
     setTimeout(function() {
       document.querySelector(selector).innerHTML = document.querySelector(selector).innerHTML.replace('<grey>▱</grey>', `<${color}>▰</${color}>`)
       if (--i) myLoop(i)
-    }, 200)
+    }, time)
   })(stat);
   
 }
@@ -370,9 +370,5 @@ function styleDesc() {
     i += 1
     if(i === subtitles.length) i = 0
   },1000)
-  
-}
-
-function doPortfolio() {
   
 }
