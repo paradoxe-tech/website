@@ -1,4 +1,4 @@
-body {
+.main {
   color: #c7c7c7;
 }
 
@@ -64,6 +64,14 @@ body {
   margin-left: 20px;
 }
 
+.folder {
+  background: #212121;
+}
+
+.folder:hover {
+  cursor: pointer;
+}
+
 .inactive {
   display: none;
 }
@@ -79,4 +87,8 @@ td.desc {
 
 td.type {
   width: 210px
+}
+
+td {
+  padding-top: 3px;
 }
