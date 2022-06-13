@@ -1,4 +1,5 @@
 String.prototype.format = function(...vars) {
+  
   res = this
 
   for (const e of vars) {
@@ -6,6 +7,7 @@ String.prototype.format = function(...vars) {
   }
 
   return res
+  
 }
 
 Array.prototype.random = function() {
@@ -77,4 +79,5 @@ String.prototype.without = function(chars) {
   }
 
   return res
+  
 }
