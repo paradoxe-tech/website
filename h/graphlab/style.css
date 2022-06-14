@@ -25,3 +25,12 @@ h5 {
   font-weight: normal;
   font-style: italic
 }
+
+canvas {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  width: 500px;
+  height: 500px;
+  display: block;
+  object-fit: contain;
+}

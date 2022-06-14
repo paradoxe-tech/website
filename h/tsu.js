@@ -81,3 +81,21 @@ String.prototype.without = function(chars) {
   return res
   
 }
+
+function polygon_dots(sides, centre, radius, rotation) {
+  let one_segment = Math.PI * 2 / sides
+
+  let points = []
+
+  if(!radius) radius = 150
+  if(!rotation) rotation = 0
+  if(!centre) centre = [0, 0]
+  
+  for (var i=0; i<sides; i++) {
+    let x = Math.sin(one_segment * i + rotation) * radius
+    let y = Math.cos(one_segment * i + rotation) * radius
+    points.push([ x + centre[0], y + centre[1] ])
+  }
+
+  return points
+}
