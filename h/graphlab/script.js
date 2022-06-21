@@ -134,13 +134,12 @@ class Graph {
         y: Math.floor(Math.random() * this.TAILLE),
         properties: properties || undefined
       })
-      this.nodes.push(new_node)
     }
   }
 
-  setClear(n, properties) {
+  setClear(n, properties, radius) {
 
-    let coords = polygon(n, [250, 250])
+    let coords = polygon(n, radius)
     
     for (var i=0; i<n; i++) {
       let new_node = this.node({
@@ -148,22 +147,18 @@ class Graph {
         y: coords[i][1],
         properties: properties || undefined
       })
-      this.nodes.push(new_node)
     }
   }
 
-  nodeClear(n, total, properties) {
+  nodeClear(n, total, properties, radius) {
     
-    let coords = polygon(total, [250, 250])
-    
+    let coords = polygon(total, radius)
 
       let new_node = this.node({
         x: coords[n][0],
         y: coords[n][1],
         properties: properties || undefined
       })
-    
-      this.nodes.push(new_node)
 
   }
 
@@ -204,4 +199,18 @@ async function complet(latency, nodesN) {
   }
   
   complet.complet(liste, latency)
+}
+
+function polygon(sides=4, radius=150, rotation=0, centre=[250, 250]) {
+  let one_segment = Math.PI * 2 / sides
+
+  let points = []
+  
+  for (var i=0; i<sides; i++) {
+    let x = Math.sin(one_segment * i + rotation) * radius
+    let y = Math.cos(one_segment * i + rotation) * radius
+    points.push([ x + centre[0], y + centre[1] ])
+  }
+
+  return points
 }
