@@ -103,14 +103,14 @@ function md(text, truncate) {
   if(text.match(/(p\/)[^\s]+/g)) {
     for (const e of text.match(/(p\/)[^\s]+/g)) {
       let name = e.replace('p/', '')
-      res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/">${e}</a></pink>`)
+      res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/?embed">${e}</a></pink>`)
     }
   }
 
   if(text.match(/(h\/)[^\s]+/g)) {
     for (const e of text.match(/(h\/)[^\s]+/g)) {
       let name = e.replace('h/', '')
-      res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/">${e}</a></pink>`)
+      res = res.replace(e, `<pink><a style='color: #f0f;' href="${site_URL}/${e}/?embed">${e}</a></pink>`)
     }
   }
 
