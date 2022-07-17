@@ -27,7 +27,7 @@ class Node {
     }
 
     if(this.properties && this.properties.name) {
-      this.placeText()
+      this.placeText(this.properties.fontStyle)
     }
 
   }
@@ -35,11 +35,11 @@ class Node {
   rewrite() {
     let color = this.properties ? this.properties.color : "white"
     this.placeDot(color)
-    this.placeText()
+    this.placeText(this.properties.fontStyle)
   }
 
-  placeText() {
-    this.ctx.font = "10px Arial";
+  placeText(font="10px Arial") {
+    this.ctx.font = font;
     let mText =  this.ctx.measureText(this.properties.name).width
       
       let relx = this.x + 5
@@ -150,9 +150,9 @@ class Graph {
     }
   }
 
-  nodeClear(n, total, properties, radius) {
+  nodeClear(n, total, properties, radius, rotation, centre, startat) {
     
-    let coords = polygon(total, radius)
+    let coords = polygon(total, radius, rotation, centre, startat)
 
       let new_node = this.node({
         x: coords[n][0],
@@ -181,6 +181,44 @@ class Graph {
   findNodes(compFunction) {
     return this.nodes.filter(compFunction)
   }
+
+  polygon(n, radius) {
+    let points = polygon(n, radius)
+
+    for(var point of points) {
+      this.node({
+        x: point[0],
+        y: point[1]
+      })
+    }
+
+    let rel_zero = this.nodes.length - n
+    
+    for (var i = rel_zero + 1; i <= rel_zero + n; i++) {
+      
+    let next = i + 1
+    if(i === rel_zero + n) next = rel_zero + 1
+      
+    this.link(
+      x => x.id === i, 
+      x => x.id === next
+    )
+  }
+
+  return this.ctx
+}
+}
+
+Array.prototype.deplace = function(x) {
+
+  let res = this
+
+  for (var i=0; i<x; i++) {
+    let poped = res.pop()
+    res.unshift(poped)
+  }
+
+  return res
 }
 
 const queryString = window.location.search;
@@ -201,7 +239,7 @@ async function complet(latency, nodesN) {
   complet.complet(liste, latency)
 }
 
-function polygon(sides=4, radius=150, rotation=0, centre=[250, 250]) {
+function polygon(sides=4, radius=150, rotation=0, centre=[250, 250], startat=0) {
   let one_segment = Math.PI * 2 / sides
 
   let points = []
@@ -212,5 +250,5 @@ function polygon(sides=4, radius=150, rotation=0, centre=[250, 250]) {
     points.push([ x + centre[0], y + centre[1] ])
   }
 
-  return points
+  return points.deplace(startat)
 }
