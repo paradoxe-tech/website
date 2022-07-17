@@ -105,6 +105,7 @@ p {
 .main {
   margin-left: 10px;
   width: 1100px;
+  margin-bottom: 100px;
 }
 
 #projects-wrapper {
