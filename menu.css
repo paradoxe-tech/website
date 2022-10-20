@@ -1,0 +1,250 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: black;
+  padding: 6px 14px;
+  transition: all 0.2s ease;
+  z-index: 99;
+}
+
+.menu.open {
+  width: 250px;
+}
+
+.item-title {
+  color: black;
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+  z-index: 3;
+}
+
+.menu i {
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.menu li:hover .item-title {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu.open .item-title {
+  display: none
+}
+
+.menu .menu-list {
+  margin-top: 20px;
+  height: 100%;
+}
+
+.menu li {
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+
+.menu li i {
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.menu .hamburger {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.menu .hamburger .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.titre {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.item-name {
+  opacity: 0;
+  transition: all 0.05s ease;
+}
+
+.menu.open .hamburger .icon,
+.menu.open .hamburger .titre {
+  opacity: 1;
+}
+
+#hamburger {
+  color: white;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.mnu-list {
+  margin-top: 20px;
+  height: 100%;
+}
+
+.menu.open #hamburger {
+  text-align: right;
+}
+
+#recherche {
+  width: 0px;
+  font-size: 15px;
+  color: #0ff;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  /* transition: all 0.5s ease; */
+  background: #212121;
+}
+
+.menu.open #recherche {
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+
+.menu .bx-search {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: #212121;
+  color: #FFF;
+}
+
+.menu .item-name, .menu #recherche {
+  opacity: 0;
+}
+
+.menu.open .item-name, .menu.open #recherche {
+  opacity: 1;
+  display: inline;
+}
+
+.menu li a .item-title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.menu.open li a .item-title{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu li a:hover .item-title,
+.menu li a:hover i{
+  transition: all 0.5s ease;
+}
+
+#loupe {
+  transition: all 0.4s ease;
+}
+
+#loupe:hover {
+  background: #0ff
+}
+
+.menu.open #loupe:hover {
+  background: #212121;
+}
+
+.menu li a:hover {
+  background: #f0f;
+}
+
+.menu li i {
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.menu li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #212121;
+}
+
+@media (max-width: 420px) {
+  .menu li .item-name {
+    display: none;
+  }
+}
+
+.main {
+  position: relative;
+  background: black;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.menu.open ~ .main {
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.item-title:hover {
+  color: white
+}

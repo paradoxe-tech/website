@@ -1,0 +1,27 @@
+#informations-wrapper {
+  padding-right: 10px;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px 300px;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-gap: 10px;
+}
+
+.information {
+  transition: transform .3s ease-out;
+  display: inline-block;
+  margin: 0;
+  background: #212121;
+  width: 100%;
+  border-radius: 10px;
+  height: fit-content;
+    align-self:flex-start;
+}
+
+h1 {
+  margin: 0px;
+}
+
+.information p, .information h1 {
+  padding-left: 10px;
+}
