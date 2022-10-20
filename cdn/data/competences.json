@@ -1,0 +1,37 @@
+[
+   {
+      "name":"Français",
+      "value":9,
+      "color":"cyan"
+   },
+   {
+      "name":"Anglais",
+      "value":7,
+      "color":"cyan"
+   },
+   {
+      "name":"Japonais",
+      "value":3,
+      "color":"cyan"
+   },
+   {
+      "name":"JavaScript",
+      "value":8,
+      "color":"pink"
+   },
+   {
+      "name":"Python 3.1",
+      "value":7,
+      "color":"pink"
+   },
+   {
+      "name":"HTML5 CSS",
+      "value":6,
+      "color":"pink"
+   },
+   {
+      "name":"Golang",
+      "value":6,
+      "color":"pink"
+   }
+]

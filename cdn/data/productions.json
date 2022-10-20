@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Kawan.py",
+    "project": false,
+    "date": 2021,
+    "type": "Développement",
+    "fileType": "Module Python",
+    "desc": "Version traduite et Simplifiée du module {turtle.py}(module simple de représentation graphique) de Python",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "https://github.com/CallMeKitsu/Kawan"
+  },
+  {
+    "name": "Tsu.js",
+    "project": false,
+    "date": 2022,
+    "type": "Développement",
+    "fileType": "Fichier JavaScript",
+    "desc": "Module JavaScript en ligne",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "https://callmekitsu.github.io/tsu.js/"
+  },
+  {
+    "name": "RinthLab",
+    "project": false,
+    "date": 2022,
+    "type": "Études",
+    "fileType": "Étude Interractive",
+    "desc": "Algorithmes de génération aléatoire de {labyrinthes parfaits}(dont chaque cellule peut rejoindre n'importe quelle autre par un chemin unique)",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "rinthlab"
+  },
+  {
+    "name": "Étoile Polaire",
+    "project": false,
+    "date": 2021,
+    "type": "Musique",
+    "fileType": "Album compressé",
+    "desc": "{F-Mixtape}(Fake Mixtape, une mixtape crée de toutes pièces par un créateur extérieur) rassemblant des tracks de rap français autour du thème de l'hiver",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "etoile_polaire"
+  },
+  {
+    "name": "Espylacopa",
+    "project": false,
+    "date": 2022,
+    "type": "Graphisme",
+    "fileType": "Collection compressée",
+    "desc": "Collection de Digital Art / GlitchCore",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "espylacopa"
+  },
+  {
+    "name": "VantaBoard",
+    "project": true,
+    "date": 2021,
+    "type": "Développement",
+    "fileType": "Site Web",
+    "desc": "Editeur de texte en ligne supportant le {GFM}(Github Flavoured Markdown, une syntaxe simple permettant l'utilisation de balises de style) et incluant des widjets évolutifs",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "vantaboard"
+  },
+  {
+    "name": "AlterHeart",
+    "project": true,
+    "date": 2021,
+    "type": "Développement",
+    "fileType": "Jeu Vidéo",
+    "desc": "Jeu {Side-scroller}(Type de jeux vidéos dans lesquels le personnage évolue au centre de l'image, le monde défilant horizontalement) en 8-bit qui mélange puzzle, exploration et RPG",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "alterheart"
+  },
+  {
+    "name": "GraphSandbox",
+    "project": false,
+    "date": 2022,
+    "type": "Développement",
+    "fileType": "Sandbox",
+    "desc": "Bac à sable libre d'utilisation pour la visualisation de données",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "graphlab/sandbox"
+  },
+  {
+    "name": "Weapons",
+    "project": false,
+    "date": 2022,
+    "type": "Études",
+    "fileType": "Encyclopédie",
+    "desc": "Encyclopédie dynamique et interactive d'armes historiques",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "weapons"
+  },
+  {
+    "name": "Gate",
+    "project": false,
+    "date": 2022,
+    "type": "Développement",
+    "fileType": "Éxécutable",
+    "desc": "Virus de type Trojan et recherches associées en cybersécurité",
+    "cover_path": "__SITE__assets/404.png",
+    "site_path": "gate"
+  }
+]
