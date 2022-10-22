@@ -42,6 +42,8 @@ body {
   font-family: "Poppins";
   background: black;
   color: white;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 h1, h2 {
@@ -271,30 +273,38 @@ p {
 }
 
 #menu {
-  position: fixed;
+  position: absolute;
   top: 0px;
   padding: 5px;
+  width: 100%;
+  height: fit-content;
   display: flex;
-  justify-content: left;
+  justify-content: right;
+  align-self: center;
   background: black;
   z-index: 888;
 }
 
-#upmenu {
-  border-bottom: 3px solid white;
+#menu a {
+  cursor: pointer;
+  margin: 10px 35px 10px 0;
+  background: black;
+  color: white;
+  height: 27px;
+  padding-top: 2px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 25px;
+  transition: all 0.2s;
+  border: 2px solid black;
 }
 
-#upmenu img {
-  margin: 10px;
-  width: 50px;
-  height: 60px;
+#menu a.active {
+  background: white;
+  color: black;
+  border: 2px solid white;
 }
 
-#menu-title {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 7px;
-  text-align: center;
-  font-size: 3em;
+#menu a:hover {
+  border: 2px solid white;
 }
