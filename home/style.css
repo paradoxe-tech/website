@@ -252,6 +252,8 @@ p {
 }
 
 #title {
+  margin-top: 5px;
+  line-height: 56px;
   font-size: 3em;
 }
 
