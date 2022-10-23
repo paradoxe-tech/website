@@ -1,94 +1,70 @@
-.main {
-  color: #c7c7c7;
+* {
+  transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 
-.explorer {
-  margin-top: 20px;
-  background: #212121;
+.item {
+  flex: 1 1 21%;
+  position: relative; 
+  width: 255px;
+  height: 255px;
   border-radius: 10px;
+  border: 2px solid white;
+  text-align: left;
+  padding: 15px;
 }
 
-.explorer .bar {
-  background: #454545;
-  height: 50px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.item-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-.explorer .bar h1 {
-  color: white;
-  padding: 0px;
-  padding-top: 20px;
-  padding-left: 10px;
-  margin: 0px;
-}
-
-.explorer .bar input {
-  margin-top: 13px;
-  float: right;
-  background-color: #454545;
-  color: white;
-  padding: 10px 0px 10px 10px;
-  border: none;
-  border-bottom: 2px solid #f0f;
-  text-decoration: none !important;
-}
-
-*:focus {
-  outline: none;
-}
-
-#explorer-wrapper {
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-bottom: 10px;
-  display: block;
-  padding-top: 10px;
-  display: grid;
-  grid-template-columns: 1100px;
-  grid-gap: 10px;
-}
-
-.explorer-line {
-  transition: transform .3s ease-out;
-  display: inline-block;
-  margin: 0;
+.item-type {
+  position: absolute; 
+  left: 12px;
+  bottom: 12px;
+  font-size: 2em;
+  padding: 7px;
   background: black;
-  width: calc(100% - 40px);
-  height: 30px;
-  border-radius: 10px;
-  margin-right: 10px;
 }
 
-.product {
-  margin-left: 20px;
+.item-name {
+  position: absolute;
+  left: 64px;
+  bottom: 12px;
+  background: black;
+  padding: 5px;
+  width: fit-content;
+  height: fit-content;
 }
 
-.folder {
-  background: #212121;
-}
-
-.folder:hover {
-  cursor: pointer;
-}
-
-.inactive {
+.item-desc {
+  position: absolute;
   display: none;
+  bottom: -82px;
+  left: 12px;
+  padding: 5px;
+  background-color: white;
+  color: black;
 }
 
-td.nom {
-  padding-left: 10px;
-  width: 120px;  
+.item:hover > .item-type, .item:hover > .item-name {
+  margin-bottom: 215px;
 }
 
-td.desc {
-  width: 660px;
+.item:hover > .item-cover {
+  filter: blur(3px) opacity(0.7);
 }
 
-td.type {
-  width: 210px
+.item:hover > .item-desc {
+  margin-bottom: 218px;
 }
 
-td {
-  padding-top: 3px;
+#container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
