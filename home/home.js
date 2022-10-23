@@ -5,7 +5,7 @@ function get(yourUrl) {
   return Httpreq.responseText
 }
 
-const site_URL = "https://callmekitsu.com/cdn/"
+const site_URL = `${window.location.origin}/cdn/`
 const projects = JSON.parse(get(site_URL + "data/projets.json"))
 
 document.onmousemove = (event) => {

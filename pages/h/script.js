@@ -5,7 +5,7 @@ function get(yourUrl) {
   return Httpreq.responseText
 }
 
-const site_URL = 
+const site_URL = `${window.location.origin}/cdn/`
 const productions = JSON.parse(get(site_URL + "data/productions.json"))
 
 const folders = ['Développement', 'Études', 'Musique', 'Graphisme']
