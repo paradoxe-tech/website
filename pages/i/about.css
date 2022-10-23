@@ -1,0 +1,169 @@
+@media all and (min-width: 100px) and (max-width: 700px) {
+
+  #menu {
+    display: none !important;
+  }
+
+  #main {
+    width: 100% !important;
+    top: 50px !important;
+  }
+
+  #title {
+    font-size: 1.5em !important;
+    min-height: 2.4em !important;
+  }
+
+  .info ion-icon {
+    font-size: 30px !important;
+  }
+
+  .info {
+    min-width: 40% !important;
+  }
+
+  #applications, #languages {
+    padding: 50px !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0px !important;
+  }
+
+  .perc {
+    width: 200px !important;
+  }
+
+  #last {
+    margin-top: 75vh !important;
+    padding: 50px !important;
+  }
+}
+
+#main {
+  position: absolute;
+  top: 25%;
+  background: black;
+  border-radius: 15px;
+  padding: 50px;
+  width: 70%;
+}
+
+#infos {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.info {
+  flex: 0 0 30%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.info ion-icon {
+  font-size: 50px;
+  display: inline-block;
+}
+
+.info div {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#title {
+  min-height: 1.2em;
+}
+
+.progressbar__text img {
+  width: 25px;
+}
+
+#apps {
+  padding: 50px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 70%;
+}
+
+.app {
+  max-width: 70px;
+  max-height: 70px;
+  flex: 1 1 10%;
+  padding-bottom: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.container {
+  margin: auto;
+}
+
+#languages ion-icon {
+  vertical-align: middle;
+  font-size: 25px;
+}
+
+#languages img {
+  vertical-align: middle;
+  width: 25px;
+}
+
+.perc {
+  margin: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  width: 300px;
+  height: 10px;
+  background: white;
+  border-radius: 25px;
+}
+
+.bar {
+  display: inline-block;
+  position: relative;
+  top: -7.6px;
+  left: 0;
+  height: 10px;
+  background: #f0f;
+  border-radius: 25px;
+  animation: perc 4s ease-in-out forwards;
+}
+
+@keyframes perc {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.info div span {
+  color: #f0f;
+}
+
+#languages, #applications {
+  display: inline-block;
+  width: 30%;
+}
+
+#applications {
+  width: 45%;
+  padding: 0px;
+  vertical-align: top;
+  margin-left: 15px;
+}
+
+#apps {
+  width: 100%;
+  padding: 0px;
+  margin: 0px
+}
+
+#last {
+  margin-top: 30vh;
+}

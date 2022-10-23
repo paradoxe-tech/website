@@ -6,9 +6,10 @@
     <link rel="icon" href="../../cdn/assets/branding/logo.png">
     <title>About | CMK.</title>
 
+    <link href="../../cdn/styles/perc.css" rel="stylesheet" type="text/css" />
     <link href="../../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
     <link href="../../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="about.css" rel="stylesheet" type="text/css" />
   </head>
   
   <body onload='new TypingMachine(document.querySelector(`#changing-title`))'>
@@ -21,52 +22,52 @@
     </div>
 
     <div class="enchained">
-    <div id="main">
-      <!--<img src="../../cdn/assets/branding/logo.png" width="100px" style="float: right; margin-left: 30px;">-->
-      <h1 id="title"><span id="changing-title" data-type='["Tripnaux-Moreau Mathéo", "CallMeKitsu."]'></span> </h1>
-      
-      <br/>
-
-      <div id="infos">
-        <div class="info">
-          <ion-icon name="today"></ion-icon>
-          <div>
-            <h3>Birthday</h3>
-            <span>16 years old</span>
-          </div>
-        </div>
-        <div class="info">
-          <ion-icon name="location"></ion-icon>
-          <div>
-            <h3>Location</h3>
-            <span>Nice, France</span>
-          </div>
-        </div>
-        <div class="info">
-          <ion-icon name="school"></ion-icon>
-          <div>
-            <h3>Education</h3>
-            <span>Term. Gén.</span>
-          </div>
-        </div>
+      <div id="main">
+        <h1 id="title"><span id="changing-title" data-type='["Tripnaux-Moreau Mathéo", "CallMeKitsu."]'></span> </h1>
         
-        <div class="info">
-          <ion-icon name="male-female"></ion-icon>
-          <div>
-            <h3>Gender</h3>
-            <span>Male</span>
+        <br/>
+  
+        <div id="infos">
+          <div class="info">
+            <ion-icon name="today"></ion-icon>
+            <div>
+              <h3>Birthday</h3>
+              <span>16 years old</span>
+            </div>
+          </div>
+          <div class="info">
+            <ion-icon name="location"></ion-icon>
+            <div>
+              <h3>Location</h3>
+              <span>Nice, France</span>
+            </div>
+          </div>
+          <div class="info">
+            <ion-icon name="school"></ion-icon>
+            <div>
+              <h3>Education</h3>
+              <span>Term. Gén.</span>
+            </div>
+          </div>
+          
+          <div class="info">
+            <ion-icon name="male-female"></ion-icon>
+            <div>
+              <h3>Gender</h3>
+              <span>Male</span>
+            </div>
+          </div>
+          <div class="info">
+            <ion-icon name="language"></ion-icon>
+            <div>
+              <h3>Languages</h3>
+              <span>FR, ENG, JP</span>
+            </div>
           </div>
         </div>
-        <div class="info">
-          <ion-icon name="language"></ion-icon>
-          <div>
-            <h3>Languages</h3>
-            <span>FR, ENG, JP</span>
-          </div>
-        </div>
-      </div>
-
-      <br/>
+  
+        <br/>
+        
         <a><ion-icon name="logo-discord"></ion-icon></a>
         <a><ion-icon name="logo-github"></ion-icon></a>
         <a href="https://www.instagram.com/callmekitsu_"><ion-icon name="logo-instagram"></ion-icon></a>
@@ -74,7 +75,157 @@
         <a><ion-icon name="logo-twitter"></ion-icon></a>
         <a><ion-icon name="logo-twitch"></ion-icon></a>
         <a><ion-icon name="logo-youtube"></ion-icon></a>
+      </div>
     </div>
+
+    <div class="content" id="competences" style="height: 50vh;margin-top: 0px;padding: 150px;">
+      <div id="languages">
+        <h1>Languages</h1>
+        <br/>
+        <div class="language">
+          <ion-icon name="logo-html5"></ion-icon>
+          <div class="perc">
+            <div class="bar" style="max-width: 70%"></div>
+          </div>70%
+        </div>
+        <div class="language">
+          <ion-icon name="logo-css3"></ion-icon>
+          <div class="perc">
+            <div class="bar" style="max-width: 55%"></div>
+          </div>55%
+        </div>
+        <div class="language">
+          <ion-icon name="logo-javascript"></ion-icon>
+          <div class="perc">
+            <div class="bar" style="max-width: 90%"></div>
+          </div>90%
+        </div>
+        <div class="language">
+          <ion-icon name="logo-python"></ion-icon>
+          <div class="perc">
+            <div class="bar" style="max-width: 85%"></div>
+          </div>85%
+        </div>
+        <div class="language">
+          <ion-icon name="terminal"></ion-icon>
+          <div class="perc">
+            <div class="bar" style="max-width: 20%"></div>
+          </div>20%
+        </div>
+        <div class="language">
+          <img src="../../cdn/assets/apps/java.png">
+          <div class="perc">
+            <div class="bar" style="max-width: 30%"></div>
+          </div>30%
+        </div>
+        <div class="language">
+          <img src="../../cdn/assets/apps/go.png">
+          <div class="perc">
+            <div class="bar" style="max-width: 25%"></div>
+          </div>25%
+        </div>
+      </div>
+      <div id="applications">
+        <h1>Applications</h1>
+        <br/>
+        <div id="apps">
+          <div class="app">
+            <div class="progressbar">
+            	<svg class="progressbar__svg">
+            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
+                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="veg"></circle>
+            	</svg>
+            	<span class="progressbar__text">
+                <img src="../../cdn/assets/apps/vegas.png">
+              </span>
+            </div>
+          </div>
+          <div class="app">
+            <div class="progressbar">
+            	<svg class="progressbar__svg">
+            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
+                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="ai"></circle>
+            	</svg>
+            	<span class="progressbar__text">
+                <img src="../../cdn/assets/apps/illustrator.png" style="border-radius: 10px">
+              </span>
+            </div>
+          </div>
+          <div class="app">
+            <div class="progressbar">
+            	<svg class="progressbar__svg">
+            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
+                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="ps"></circle>
+            	</svg>
+            	<span class="progressbar__text">
+                <img src="../../cdn/assets/apps/photoshop.png" style="border-radius: 10px">
+              </span>
+            </div>
+          </div>
+          <div class="app">
+            <div class="progressbar">
+            	<svg class="progressbar__svg">
+            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
+                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="vs"></circle>
+            	</svg>
+            	<span class="progressbar__text">
+                <img src="../../cdn/assets/apps/vs.png" style="border-radius: 10px">
+              </span>
+            </div>
+          </div>
+          <div class="app">
+            <div class="progressbar">
+            	<svg class="progressbar__svg">
+            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
+                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="pc"></circle>
+            	</svg>
+            	<span class="progressbar__text">
+                <img src="../../cdn/assets/apps/pycharm.png" style="border-radius: 10px">
+              </span>
+            </div>
+          </div>
+          <div class="app">
+            <div class="progressbar">
+            	<svg class="progressbar__svg">
+            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
+                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="pdn"></circle>
+            	</svg>
+            	<span class="progressbar__text">
+                <img src="../../cdn/assets/apps/paintdotnet.png" style="border-radius: 10px">
+              </span>
+            </div>
+          </div>
+          <div class="app">
+            <div class="progressbar">
+            	<svg class="progressbar__svg">
+            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
+                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="blender"></circle>
+            	</svg>
+            	<span class="progressbar__text">
+                <img src="../../cdn/assets/apps/blender.png" style="border-radius: 10px">
+              </span>
+            </div>
+          </div>
+          <div class="app">
+            <div class="progressbar">
+            	<svg class="progressbar__svg">
+            		<circle cx="124" cy="35" r="35" class="blank-circle">
+                </circle><circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="git"></circle>
+            	</svg>
+            	<span class="progressbar__text">
+                <img src="../../cdn/assets/apps/git.png" style="border-radius: 10px">
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content" id="last">
+        <h2>Professionnal contact</h2>
+      <br/>
+        <p><ion-icon name="mail"></ion-icon> matheo.tripnauxmoreau@gmail.com</p>
+        <p><ion-icon name="call"></ion-icon> +33 6 41 71 47 85</p>
     </div>
 
     <script src="../../cdn/scripts/typing.js"></script>
