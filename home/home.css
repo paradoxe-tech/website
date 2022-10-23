@@ -26,8 +26,6 @@ body {
   font-family: "Poppins";
   background: black;
   color: white;
-  max-width: 100% !important;
-  overflow-x: hidden !important;
 }
 
 

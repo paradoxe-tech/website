@@ -11,7 +11,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   
-  <body>
+  <body onload='new TypingMachine(document.querySelector(`#changing-title`))'>
     
     <div id="menu">
       <a href="../">Home</a>
@@ -19,40 +19,66 @@
       <a href="../s">Services</a>
       <a href="" class="active">About</a>
     </div>
-    
-    <div class='main'>
-      <div id='informations-wrapper'>
-        
 
-        <!--
-        <div id="networks">
-          <img src="../cdn/assets/networks/instagram.png" onclick="window.open('https://instagram.com/callmekitsu_', '_blank').focus()">
-          <img src="../cdn/assets/networks/discord.png" onclick="window.open('https://discord.gg/', '_blank').focus()">
-          <img src="../cdn/assets/networks/fiverr.png" onclick="window.open('https://', '_blank').focus()">
-          <img src="../cdn/assets/networks/twitch.png" onclick="window.open('https://twitch.tv/callmekitsu', '_blank').focus()">
+    <div class="enchained">
+    <div id="main">
+      <!--<img src="../../cdn/assets/branding/logo.png" width="100px" style="float: right; margin-left: 30px;">-->
+      <h1 id="title"><span id="changing-title" data-type='["Tripnaux-Moreau Mathéo", "CallMeKitsu."]'></span> </h1>
+      
+      <br/>
+
+      <div id="infos">
+        <div class="info">
+          <ion-icon name="today"></ion-icon>
+          <div>
+            <h3>Birthday</h3>
+            <span>16 years old</span>
+          </div>
         </div>
-        -->
-        <div id='networks' class='information' style="position: relative;top: -85px;">
-          <p><ion-icon name="logo-discord"></ion-icon> CallMeKitsu.<grey>#0284</grey></p>
-          <p><ion-icon name="logo-github"></ion-icon> CallMeKitsu</p>
-          <p onclick="window.location.replace('https://www.instagram.com/callmekitsu_/')"><ion-icon name="logo-instagram"></ion-icon> CallMeKitsu_</p>
-          <p><ion-icon name="logo-paypal"></ion-icon> CallMeKitsu</p>
-          <p><ion-icon name="logo-twitter"></ion-icon> CallMeKitsu</p>
-          <p><ion-icon name="logo-twitch"></ion-icon> CallMeKitsu</p>
-          <p><ion-icon name="logo-youtube"></ion-icon> CallMeKitsu</p>
+        <div class="info">
+          <ion-icon name="location"></ion-icon>
+          <div>
+            <h3>Location</h3>
+            <span>Nice, France</span>
+          </div>
         </div>
-        <div id='certifications'>
-          <p></p>
+        <div class="info">
+          <ion-icon name="school"></ion-icon>
+          <div>
+            <h3>Education</h3>
+            <span>Term. Générale</span>
+          </div>
+        </div>
+        
+        <div class="info">
+          <ion-icon name="male-female"></ion-icon>
+          <div>
+            <h3>Gender</h3>
+            <span>Male</span>
+          </div>
+        </div>
+        <div class="info">
+          <ion-icon name="language"></ion-icon>
+          <div>
+            <h3>Languages</h3>
+            <span>Frenh (native), English</span>
+          </div>
         </div>
       </div>
-      
+
+      <br/>
+        <a><ion-icon name="logo-discord"></ion-icon></a>
+        <a><ion-icon name="logo-github"></ion-icon></a>
+        <a href="https://www.instagram.com/callmekitsu_"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a><ion-icon name="logo-paypal"></ion-icon></a>
+        <a><ion-icon name="logo-twitter"></ion-icon></a>
+        <a><ion-icon name="logo-twitch"></ion-icon></a>
+        <a><ion-icon name="logo-youtube"></ion-icon></a>
     </div>
-    
-    <script src='https://callmekitsu.kitsuforyou.repl.co/h/tsu.js'></script>
+    </div>
+
+    <script src="../../cdn/scripts/typing.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="../script.js"></script>
-    <script src="../data.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>

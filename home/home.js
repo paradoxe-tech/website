@@ -50,7 +50,7 @@ document.onscroll = (event) => {
 
 function main() {
   
-  new TypingMachine(document.querySelector('#changing-title'))
+  new TypingMachine(document.querySelector('#changing-title'), 'pink')
   
   for (var k =0; k < 6; k++) {
   
