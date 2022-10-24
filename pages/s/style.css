@@ -1,0 +1,67 @@
+@media all and (min-width: 100px) and (max-width: 700px) {
+
+  img.banner {
+    display: none !important;
+  }
+
+  .content {
+    width: calc(100% - 50px) !important;
+    margin-top: 50px !important;
+    padding: 25px !important;
+    font-size: smaller;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  #gallery img {
+    max-width: 125px !important;
+  }
+
+  #hide-when-pc {
+    display: block !important;
+  }
+  
+}
+
+#hide-when-pc {
+  display: none;
+  margin-top: -35px;
+  margin-left: -25px;
+  width: 100%;
+}
+#banner {
+  position: relative;
+}
+
+#banner img {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  max-height: 90vh;
+  max-width: 400px;
+}
+
+#gallery img {
+  vertical-align: middle;
+  width: 75px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button#order {
+  cursor: pointer;
+  font-family: "Poppins";
+  font-size: 1.5em;
+  background: white;
+  color: black;
+  padding: 5px 15px 5px 15px;
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+}
+
+#order:hover {
+  background: transparent;
+  color: white;
+}

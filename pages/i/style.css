@@ -26,13 +26,14 @@
   }
 
   .perc {
-    width: 200px !important;
+    width: 150px !important;
   }
 
   #last {
     margin-top: 75vh !important;
     padding: 50px !important;
   }
+  
 }
 
 #main {
@@ -111,7 +112,7 @@
   margin: 10px;
   vertical-align: middle;
   display: inline-block;
-  width: 300px;
+  width: 250px;
   height: 10px;
   background: white;
   border-radius: 25px;
@@ -163,3 +164,13 @@
 #last {
   margin-top: 30vh;
 }
+
+#last ion-icon {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+ #last p {
+   vertical-align: middle;
+   display: inline;
+ }
