@@ -5,8 +5,8 @@ function get(yourUrl) {
   return Httpreq.responseText
 }
 
-const site_URL = `${window.location.origin}/cdn/`
-let productions = JSON.parse(get(site_URL + "data/productions.json"))
+const site_URL = `${window.location.origin}`
+let productions = JSON.parse(get(site_URL + "/cdn/data/productions.json"))
 
 function sortByDate(a, b) {
   
@@ -36,6 +36,8 @@ for (var product of productions) {
   document.querySelector('#container').innerHTML += `<div class="item">
       <img class="item-cover" src="../../cdn/assets/projects/${product.delta}.png">
       <ion-icon class="item-type" name="${product.type}"></ion-icon>
+      
+      <img class="item-run" src="../../cdn/assets/branding/arrow.png" onclick="location.href = site_URL + '/h/${product.delta}'">
       <span class="item-date">${day}${month}${year}</span>
       <h2 class="item-name">${product.name}</h2>
       <span class="item-desc">${md(product.desc)}</span>
