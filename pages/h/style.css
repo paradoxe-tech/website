@@ -1,12 +1,19 @@
+@media all and (min-width: 100px) and (max-width: 700px) {
+
+  .content, .centered, #container {
+    width: 100% !important;
+  }
+
+}
+
 * {
   transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 
 .item {
   flex: 1 1 21%;
-  position: relative; 
-  width: 255px;
-  height: 255px;
+  position: relative;
+  min-height: 255px;
   border-radius: 10px;
   border: 2px solid white;
   text-align: left;
@@ -18,8 +25,10 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   border-radius: 10px;
   object-fit: cover;
+  opacity: 0.3
 }
 
 .item-type {
@@ -41,14 +50,23 @@
   height: fit-content;
 }
 
-.item-desc {
+.item-date {
   position: absolute;
-  display: none;
-  bottom: -82px;
+  opacity: 0;
+  top: 256px;
   left: 12px;
   padding: 5px;
-  background-color: white;
-  color: black;
+  color: #f0f;
+  background: black;
+}
+
+.item-desc {
+  position: absolute;
+  opacity: 0;
+  top: 286px;
+  left: 12px;
+  padding: 5px;
+  color: white;
 }
 
 .item:hover > .item-type, .item:hover > .item-name {
@@ -56,11 +74,18 @@
 }
 
 .item:hover > .item-cover {
-  filter: blur(3px) opacity(0.7);
+  filter: blur(3px);
+  opacity: 0.7;
+}
+
+.item:hover > .item-date {
+  opacity: 1;
+  top: 63px;
 }
 
 .item:hover > .item-desc {
-  margin-bottom: 218px;
+  opacity: 1;
+  top: 96px;
 }
 
 #container {

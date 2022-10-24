@@ -1,9 +1,5 @@
 @media all and (min-width: 100px) and (max-width: 700px) {
 
-  #menu {
-    display: none !important;
-  }
-
   #main {
     width: 100% !important;
     top: 50px !important;
