@@ -1,116 +1,13 @@
 @media all and (min-width: 100px) and (max-width: 700px) {
 
-  .content, .centered, #container {
+  #container {
     width: 100% !important;
   }
 
-  .item {
-    width: 100% !important;
-    flex: 1 1 100% !important;
-  }
-
-}
-
-* {
-  transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-}
-
-.item {
-  flex: 1 1 21%;
-  position: relative;
-  min-height: 255px;
-  border-radius: 10px;
-  text-align: left;
-  padding: 15px;
-}
-
-.item-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  opacity: 0.5;
-}
-
-.item-type {
-  position: absolute; 
-  left: 12px;
-  bottom: 12px;
-  font-size: 2em;
-  padding: 7px;
-  background: black;
-}
-
-.item-name {
-  position: absolute;
-  left: 64px;
-  bottom: 12px;
-  background: black;
-  padding: 5px;
-  width: fit-content;
-  height: fit-content;
-}
-
-.item-date {
-  position: absolute;
-  opacity: 0;
-  top: 256px;
-  left: 12px;
-  padding: 5px;
-  color: #f0f;
-  background: black;
-  transition: top 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.75ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-}
-
-.item-desc {
-  position: absolute;
-  opacity: 0;
-  top: 150px;
-  left: 12px;
-  padding: 5px;
-  color: white;
-  transition: top 1s cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-}
-
-.item:hover > .item-type, .item:hover > .item-name {
-  margin-bottom: 215px;
-}
-
-.item:hover > .item-cover {
-  filter: blur(3px);
-  opacity: 0.2;
-}
-
-.item:hover > .item-date {
-  opacity: 1;
-  top: 63px;
-}
-
-.item:hover > .item-desc {
-  opacity: 1;
-  top: 96px;
-}
-
-.item:hover > .item-run {
-  opacity: 1;
-  right: 10px;
 }
 
 #container {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-}
-
-.item-run {
-  width: 35px;
-  position: absolute;
-  bottom: 10px;
-  right: 0px;
-  cursor: pointer;
-  opacity: 0;
-  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }

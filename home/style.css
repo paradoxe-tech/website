@@ -12,8 +12,6 @@
 
 }
 
-/* ================================================================== { TAG } === */
-
 body {
   position: absolute;
   height: 100%;
@@ -24,44 +22,6 @@ body {
   color: white;
 }
 
-
-/* ================================================================== { CLASSES } === */
-
-.project {
-  text-align: left;
-  flex: 1;
-  width: 100%;
-  height: 75px;
-  transition: transform .3s ease-out;
-  border-radius: 10px;
-  font-size: 1em;
-}
-
-.project img {
-  float: left;
-  margin-right: 10px;
-  width: 20%;
-  transition: all .1s ease;
-  border-radius: 10px;
-}
-
-.project:hover {
-  transform: translate(0, -3px);
-}
-
-.art {
-  flex: 0 1 auto;
-  object-fit: cover;
-  flex-basis: 15%;
-  border-radius: 10px;
-  max-width: 30%;
-  max-height: 30%;
-}
-
-.project h2 {
-  margin-top: 5px;
-}
-
 .wave {
   position: absolute;
   width: 50%;
@@ -69,17 +29,20 @@ body {
   transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 
-.column {
+#container {
   background: black;
   border: 2px solid white;
   border-radius: 10px;
-  padding: 15px;
-  width: 45%;
-  flex: 0 50%;
   margin: 5px;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* ================================================================== { IDS } === */
+.item-desc {
+  font-size: 0.9em;
+}
 
 #w1 {
   left: -15%;
@@ -111,26 +74,10 @@ body {
 
 #wrapper {
   display: flex;
+  flex-direction: column;
   margin-top: 20px;
   margin-left: 10%;
   margin-right: 10%;
-}
-
-#projects {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  row-gap: 10px;
-}
-
-#portfolio {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  height: fit-content;
 }
 
 #resume {
