@@ -14,10 +14,10 @@
 
 <body onload='main()'>
   <div id="menu">
-    <a href="" class="active">Home</a>
-    <a href="../h">Hosted</a>
+    <a href="" class="active">Accueil</a>
+    <a href="../a">Actualités</a>
     <a href="../s">Services</a>
-    <a href="../i">About</a>
+    <a href="../i">À propos</a>
   </div>
   
   <div style="position: static">
@@ -27,23 +27,25 @@
         <img src="../cdn/assets/branding/logo.png" width="150px">
         <hr style="width: 250px;height: 2px; background: white;">
         <h1 id="title">CallMeKitsu.</h1>
-        <h2>I love <span 
+        <h2>Je suis <span 
           id="changing-title"
           data-period="2000" 
-          data-type='[ "music !", "to design.", "to develop.", "all sciences !", "to write.", "to read.", "to draw !"  ]'></span>
+          data-type='[ "musicien !", "designer.", "développeur.", "étudiant en SVT !", "écrivain amateur.", "lecteur passionné.", "dessinateur occasionnel !"  ]'></span>
         </h2>
       </div>
       <img src="../cdn/assets/branding/wavey.png" class="wave gravity" id="w2">
     </div>
   </div>
 
-  <div id="resume" class="centered gravity" style="height: 100vh">
+  <div id="resume" class="centered gravity" style="height: fit-content">
     <br/>
     <br/>
-    <input id="searchbar" placeholder="Recherchez un écrit, une musique, une idée, un site..."></input>
+    <input id="searchbar" placeholder="Recherchez un de mes projets, un theme, un design..."></input>
     <div id="wrapper">
       <div id="container"></div>
+      <a href="/h" style="text-decoration: underline;"><grey>plus de projets</grey></a>
     </div>
+    
   </div>
 
   <script src="https://callmekitsu.kitsuforyou.repl.co/h/tsu.js"></script>

@@ -55,7 +55,7 @@
   flex: 0 0 30%;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid white;
+  background: #212121;
 }
 
 .info ion-icon {
