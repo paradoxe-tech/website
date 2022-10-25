@@ -1,3 +1,5 @@
+alert('cette page est en développement. Merci de ne pas tenir compte des erreurs potentielles.')
+
 let POSITION = 0
 
 setInterval(() => {
