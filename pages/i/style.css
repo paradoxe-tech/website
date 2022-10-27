@@ -1,6 +1,6 @@
 @media all and (min-width: 100px) and (max-width: 700px) {
 
-  #main {
+  .main {
     width: 100% !important;
     top: 50px !important;
   }
@@ -36,13 +36,17 @@
   
 }
 
-#main {
-  position: absolute;
-  top: 25%;
+.enchained {
+  height: fit-content;
+}
+
+.main {
   background: black;
   border-radius: 15px;
   padding: 50px;
-  width: 70%;
+  width: 80%;
+  margin-top: 100px;
+  margin-bottom: 150px;
 }
 
 #infos {
@@ -112,7 +116,7 @@
   margin: 10px;
   vertical-align: middle;
   display: inline-block;
-  width: 250px;
+  width: 70%;
   height: 10px;
   background: white;
   border-radius: 25px;
