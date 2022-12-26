@@ -1,4 +1,4 @@
-String.prototype.format = function (...vars) {
+String.prototype.format = function(...vars) {
   res = this;
 
   for (const e of vars) {
@@ -8,11 +8,11 @@ String.prototype.format = function (...vars) {
   return res;
 };
 
-Array.prototype.random = function () {
+Array.prototype.random = function() {
   return this[Math.floor(Math.random() * this.length)];
 };
 
-Array.prototype.remove = function (...indexes) {
+Array.prototype.remove = function(...indexes) {
   i = 0;
 
   for (var e of indexes) {
@@ -23,17 +23,17 @@ Array.prototype.remove = function (...indexes) {
   return this;
 };
 
-const sleep = async function (ms) {
+const sleep = async function(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-const randomColor = function () {
+const randomColor = function() {
   return `#${("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(
     -6
   )}`;
 };
 
-Array.prototype.shuffle = function () {
+Array.prototype.shuffle = function() {
   let i = this.length,
     r;
 
@@ -47,7 +47,7 @@ Array.prototype.shuffle = function () {
   return this;
 };
 
-Array.prototype.filterNot = function (compFunc) {
+Array.prototype.filterNot = function(compFunc) {
   let res = [];
 
   for (var element of this) {
@@ -57,7 +57,7 @@ Array.prototype.filterNot = function (compFunc) {
   return res;
 };
 
-String.prototype.without = function (chars) {
+String.prototype.without = function(chars) {
   res = this;
 
   for (var char of chars) {
@@ -294,9 +294,9 @@ class Fraction {
   }
 }
 
-function get(yourUrl){
+function get(yourUrl) {
   var Httpreq = new XMLHttpRequest();
-  Httpreq.open("GET",yourUrl,false);
+  Httpreq.open("GET", yourUrl, false);
   Httpreq.send(null);
   return Httpreq.responseText;
 }
