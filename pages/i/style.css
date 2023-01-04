@@ -33,6 +33,10 @@
     margin-top: 75vh !important;
     padding: 50px !important;
   }
+
+  .col {
+    flex-basis: 100% !important;
+  }
   
 }
 
@@ -44,9 +48,10 @@
   background: black;
   border-radius: 15px;
   padding: 50px;
-  width: 80%;
+  width: 90%;
   margin-top: 100px;
   margin-bottom: 150px;
+  overflow: clip;
 }
 
 #infos {
@@ -177,4 +182,18 @@
  #last p {
    vertical-align: middle;
    display: inline;
- }
+}
+
+#cols {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex-basis: 50%;
+}
+
+#avatar {
+  width: 75%;
+  filter: drop-shadow(0 0 17em #0ff);
+}
