@@ -19,10 +19,8 @@ app.get("/h/kawan", (req, res) => res.redirect(`https://github.com/callmekitsu/k
 app.get("/h/tsu-js", (req, res) => res.redirect(`https://callmekitsu.github.io/tsu.js`))
 app.get("/h/weapons", (req, res) => res.redirect(`https://weapons.kitsuforyou.repl.co`))
 app.get("/h/alterheart", (req, res) => res.redirect(`https://alterheart.kitsuforyou.repl.co`))
+app.get("/h/DRPC", (req, res) => res.redirect(`https://github.com/CallMeKitsu/DiscordRPC/releases`))
 app.get("/h/uni", (req, res) => res.redirect(`https://uni.kitsuforyou.repl.co/create`))
-
-app.get("/p/uni", (req, res) => res.redirect(`https://github.com/CallMeKitsu/UniCellAutomaton`))
-app.get("/p/DRPC", (req, res) => res.redirect(`https://github.com/CallMeKitsu/DiscordRPC`))
 
 app.get("/discord", (req, res) => res.redirect(`https://discord.gg/wxnsMRVqwa`))
 

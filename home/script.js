@@ -71,28 +71,4 @@ function main() {
   
   new TypingMachine(document.querySelector('#changing-title'), 'pink')
   
-  displayItems(productions, {
-    max: 4,
-  })
-
-  document.querySelector('#searchbar').addEventListener('keyup', (event) => {
-    document.querySelector('#container').innerHTML = ""
-    displayItems(productions, {
-      max: 4,
-      filter: x => {
-        let value = document.querySelector('#searchbar').value.toLowerCase()
-        if(value.startsWith('h/')) {
-          if(x.host !== true) return false 
-          value = value.replaceAll('h/', "")
-        }
-        if(value.startsWith('p/')) {
-          if(x.project !== true) return false
-          value = value.replaceAll('p/', "")
-        }
-        if(x.name.toLowerCase().includes(value)) return true
-        if(x.desc.toLowerCase().includes(value)) return true
-        return false
-      }
-    })
-  })
 }
