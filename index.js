@@ -34,14 +34,14 @@ for(let host of embeds.keys()) {
             <meta name="viewport" content="width=device-width">
             <title>h/${host} | CMK.</title>
             <link href="../style.css" rel="stylesheet" type="text/css" />
+            <link rel="icon" href="../../cdn/assets/branding/logo.png">
           </head>
           <body style='margin: 0px;overflow: hidden;'>
-             <div> 
-            <object type="text/html" data="${embeds.get(host)}" 
-            style="height: 100vh;width: 100%;overflow:auto;">
-            </object>
-         </div>
-        
+            <div> 
+              <object type="text/html" data="${embeds.get(host)}" 
+              style="height: 100vh;width: 100%;overflow:auto;">
+              </object>
+            </div>
           </body>
         </html>`
 
