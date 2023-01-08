@@ -12,20 +12,9 @@ app.use('/', express.static('home'))
 app.use('/cdn', express.static('cdn'))
 app.use('/', express.static('pages'))
 
-let embeds = new Map()
-embeds.set("vanta", "https://vanta.kitsuforyou.repl.co")
-embeds.set("paleossena", "https://paleossena.kitsuforyou.repl.co")
-embeds.set("gate", "https://gate-serv.kitsuforyou.repl.co")
-embeds.set("graphsandbox", "https://graphsandbox.kitsuforyou.repl.co")
-embeds.set("kawan", "https://github.com/callmekitsu/kawan")
-embeds.set("tsu-js", "https://callmekitsu.github.io/tsu.js")
-embeds.set("weapons", "https://weapons.kitsuforyou.repl.co")
-embeds.set("alterheart", "https://alterheart.kitsuforyou.repl.co")
-embeds.set("DRPC", "https://github.com/CallMeKitsu/DiscordRPC/releases")
-embeds.set("uni", "https://uni.kitsuforyou.repl.co/create")
-embeds.set("tuuupper", "https://paleossena.kitsuforyou.repl.co")
+let embeds = new Map(Object.entries(JSON.parse(fs.readFileSync('./cdn/data/redirect.json'))))
 
-for(let host of embeds.keys()) {
+for (let host of embeds.keys()) {
   app.use(`/h/${host}`, (req, res) => {
     let rawHTML = `<!DOCTYPE html>
         <html>
