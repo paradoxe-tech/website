@@ -22,10 +22,18 @@ for (let host of embeds.keys()) {
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width">
             <title>h/${host} | CMK.</title>
-            <link href="../style.css" rel="stylesheet" type="text/css" />
+            <link href="../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
             <link rel="icon" href="../../cdn/assets/branding/logo.png">
           </head>
           <body style='margin: 0px;overflow: hidden;'>
+            <div id="filigrane">
+              <img src="../../cdn/assets/branding/logo.png">
+              <p>
+                You are viewing <cyan>callmekitsu.com/</cyan><pink>h/${host}</pink><br/>
+                All Rights Reserved, (C) CallMeKitsu. 2020-2023<br/>
+                matheo.tripnauxmoreau@gmail.com for any ask.<br/>
+              </p>
+            </div>
             <div> 
               <object type="text/html" data="${embeds.get(host)}" 
               style="height: 100vh;width: 100%;overflow:auto;">
