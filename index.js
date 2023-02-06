@@ -39,6 +39,8 @@ for (let host of embeds.keys()) {
               style="height: 100vh;width: 100%;overflow:auto;">
               </object>
             </div>
+
+            <script src="../cdn/filigrane.js"></script>
           </body>
         </html>`
 
