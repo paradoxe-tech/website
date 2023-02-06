@@ -39,7 +39,7 @@ document.querySelector('#searchbar').addEventListener('keyup', (event) => {
         value = value.replaceAll('p/', "")
       }
       if (value.startsWith('c/')) {
-        if (sortByDate(x.date, Date.now()) != 1) return false
+        if (sortByDate(x, {date:Date.now()}) !== 1) return false
         value = value.replaceAll('c/', "")
       }
       
