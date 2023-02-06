@@ -38,8 +38,14 @@ document.querySelector('#searchbar').addEventListener('keyup', (event) => {
         if (x.project !== true) return false
         value = value.replaceAll('p/', "")
       }
+      if (value.startsWith('c/')) {
+        if (sortByDate(x.date, Date.now()) != 1) return false
+        value = value.replaceAll('c/', "")
+      }
+      
       if (x.name.toLowerCase().includes(value)) return true
       if (x.desc.toLowerCase().includes(value)) return true
+      
       return false
     }
   })
