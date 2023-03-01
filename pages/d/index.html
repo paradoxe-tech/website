@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../../cdn/assets/branding/logo.png">
+    <title>Devis | CMK.</title>
+
+    <link href="../../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
+    
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body>
+    
+    <div id="menu">
+      <a href="../">Accueil</a>
+      <a href="../e">Explorer</a>
+      <a href="../a" class="disabled">Actualités</a>
+      <a href="../s" class="disabled">Services</a>
+      <a href="../i">À propos</a>
+    </div>
+
+    <div class="page">
+      <div class="columns">
+        <div class="column col-left">
+          <div class="devis-logo">
+            <img src="../cdn/assets/branding/logo.png" width="50px">
+            <div>
+              <h1>CallMeKitsu.</h1>
+              <h3>Mathéo Tripnaux-Moreau</h3>
+            </div>
+          </div>
+          <p>
+            SIRET: <br/>
+            Délivré à <span id="devis-name">John Doe</span> le <span id="devis-date"></span>.<br/>
+          </p>
+        </div>
+        <div class="column col-right">
+          <p>
+            matheo.tripnauxmoreau@gmail.com<br/>
+            www.callmekitsu.com<br/>
+            06 41 71 47 85<br/>
+          </p>
+        </div>
+      </div>
+      <br/><br/><br/>
+      <hr/>
+      <table id="devis-wrapper">
+        <thead>
+          <th>Quantité</th>
+          <th>Détails de la prestation</th>
+          <th>Prix détaillé</th>
+          <th>Montant</th>
+        </thead>
+        <tbody id="devis-content"></tbody>
+      </table>
+      <br/><br/><br/><br/><br/><br/>
+      <hr/>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../../cdn/scripts/items.js"></script>
+    <script src="../../cdn/scripts/md.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
