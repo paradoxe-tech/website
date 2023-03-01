@@ -41,14 +41,23 @@ document.querySelector('#searchbar').addEventListener('keyup', (event) => {
       if (value.startsWith('c/')) {
         if (sortByDate(x, {date:Date.now()}) !== 1) return false
         value = value.replaceAll('c/', "")
+      } else {
+        if (sortByDate(x, {date:Date.now()}) !== -1) return false
       }
       
       if (x.name.toLowerCase().includes(value)) return true
       if (x.desc.toLowerCase().includes(value)) return true
+      if (x.fileType.toLowerCase().includes(value)) return true
+      if (x.status.toLowerCase().includes(value)) return true
       
       return false
     }
   })
 })
 
-displayItems(productions, {})
+displayItems(productions, {
+  filter: x => {
+    if (sortByDate(x, {date:Date.now()}) !== -1) return false
+    return true
+  }
+})

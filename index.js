@@ -16,6 +16,8 @@ let embeds = new Map(Object.entries(JSON.parse(fs.readFileSync('./cdn/data/redir
 
 for (let host of embeds.keys()) {
   app.use(`/h/${host}`, (req, res) => {
+    let params = req.url
+    console.log(params)
     let rawHTML = `<!DOCTYPE html>
         <html>
           <head>
@@ -26,21 +28,21 @@ for (let host of embeds.keys()) {
             <link rel="icon" href="../../cdn/assets/branding/logo.png">
           </head>
           <body style='margin: 0px;overflow: hidden;'>
-            <div id="filigrane">
+            <div id="filigrane" class="reduced">
               <img src="../../cdn/assets/branding/logo.png">
               <p>
-                You are viewing <cyan>callmekitsu.com/</cyan><pink>h/${host}</pink><br/>
+                You are viewing <cyan>callmekitsu</cyan>.com/h/<pink>${host}</pink><br/>
                 All Rights Reserved, (C) CallMeKitsu. 2020-2023<br/>
                 matheo.tripnauxmoreau@gmail.com for any ask.<br/>
               </p>
             </div>
             <div> 
-              <object type="text/html" data="${embeds.get(host)}" 
+              <object type="text/html" data="${embeds.get(host)}${params}" 
               style="height: 100vh;width: 100%;overflow:auto;">
               </object>
             </div>
 
-            <script src="../cdn/filigrane.js"></script>
+            <script src="../cdn/scripts/filigrane.js"></script>
           </body>
         </html>`
 
