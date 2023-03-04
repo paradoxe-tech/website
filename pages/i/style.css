@@ -179,21 +179,7 @@
   display: inline-block;
 }
 
- #last p {
+#last p {
    vertical-align: middle;
    display: inline;
-}
-
-#cols {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col {
-  flex-basis: 50%;
-}
-
-#avatar {
-  width: 75%;
-  filter: drop-shadow(0 0 17em #0ff);
 }

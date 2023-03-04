@@ -12,7 +12,7 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body onload='main()'>
+<body onload="main()">
   <div id="menu">
     <a href="" class="active">Accueil</a>
     <a href="../e">Explorer</a>
@@ -20,22 +20,52 @@
     <a href="../s" class="disabled">Services</a>
     <a href="../i">À propos</a>
   </div>
-  
-  <div style="position: static">
-    <div style="position: relative;">
-      <img src="../cdn/assets/branding/wavey.png" class="wave gravity" id="w1">
-      <div class="centered" id="main-logo">
-        <img src="../cdn/assets/branding/logo.png" width="150px">
-        <hr style="width: 250px;height: 2px; background: white;">
-        <h1 id="title">CallMeKitsu.</h1>
-        <h2>Je suis <span 
-          id="changing-title"
-          data-period="2000" 
-          data-type='[ "musicien !", "designer.", "développeur.", "étudiant en SVT !", "écrivain amateur.", "lecteur passionné.", "dessinateur occasionnel !"  ]'></span>
-        </h2>
-      </div>
-      <img src="../cdn/assets/branding/wavey.png" class="wave gravity" id="w2">
+
+  <div id="mouse"></div>
+
+  <div class="enchained" id="home-view">
+    <div class="creds">
+      <img src="cdn/assets/branding/logo.png" id="logo" width="175px">
+      <hr>
+      <h1>CallMeKitsu.</h1>
+      <a onclick="window.scrollTo({top: 900, behavior: 'smooth'})">visiter ↓</a>
     </div>
+  </div>
+  
+  <div class="parallax view" id="projects-view">
+    <div class="creds">
+      <h1>Create.</h1>
+      <span>(survolez un projet)</span>
+    </div>
+    <img src="cdn/assets/projects/weapons.png" class="project-card" style="left: -50px; top: 150px;">
+    <img src="cdn/assets/projects/clockwork.png" class="project-card" style="right: 50px; bottom: 550px;">
+    <img src="cdn/assets/projects/alterheart.png" class="project-card" style="right: 150px; top: 250px;">
+    <img src="cdn/assets/projects/etoile_polaire.png" class="project-card" style="left: 100px; top: 375px;">
+  </div>
+
+  <div class="parallax view" id="designs-view">
+    <div class="creds">
+      <h1>Design.</h1>
+      <span>(déplacez la souris)</span>
+    </div>
+    <img src="cdn/assets/designs/mask.png" id="design-mask" class="design" style="top: 240px;left: 135px;width: 35% !important;">
+    <img src="cdn/assets/designs/card.png" id="design-card" class="design" style="top: 250px;right: 70px;width: 35% !important;">
+    <img src="cdn/assets/designs/pendentif.png" id="design-pendentif" class="design" style="top: 150px;left: 75px;">
+  </div>
+
+  <div class="parallax view" id="designs-view">
+    <div class="creds">
+      <h1>Write.</h1>
+      <span>(commencez à écrire)</span>
+    </div>
+    <div id="writing-code" class="writing"></div>
+    <div id="writing-essay" class="writing"></div>
+    <div id="writing-sql" class="writing">
+      <div id="writing-sql-1"></div>
+      <div id="writing-sql-2"></div>
+      <div id="writing-sql-3"></div>
+    </div>
+    <div id="writing-bash" class="writing"></div>
   </div>
 
   <script src="https://callmekitsu.kitsuforyou.repl.co/h/tsu.js"></script>

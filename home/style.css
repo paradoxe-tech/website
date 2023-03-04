@@ -1,13 +1,13 @@
 @media all and (min-width: 100px) and (max-width: 700px) {
 
-  .wave {
+  .view, #mouse {
     display: none !important;
   }
 
-  #searchbar {
-    width: 80% !important;
+  body {
+    overflow: hidden !important;
   }
-
+  
 }
 
 body {
@@ -20,58 +20,177 @@ body {
   color: white;
 }
 
-.wave {
-  position: absolute;
-  width: 50%;
-  top: -10vh;
-  transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+.view {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#container {
+.project-card {
+  width: 400px !important;
+  height: 400px !important;
+  position: absolute;
+  border-radius: 15px;
+  filter: blur(5px);
+  transition: all 300ms ease-in-out;
+}
+
+.project-card:hover {
+  filter: blur(0px);
+}
+
+.creds {
+  text-align: center;
   background: black;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 15px;
+  z-index: 99;
+  padding: 25px;
+}
+
+.main {
+  background: black;
+  border-radius: 15px;
+  padding: 50px;
+  width: 90%;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  overflow: clip;
+}
+
+#infos {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  border: 2px solid white;
 }
 
-.item-desc {
-  font-size: 0.9em;
+.info {
+  flex: 1 1 30%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: #212121;
 }
 
-#w1 {
-  left: -15%;
-}
-
-#w2 {
-  right: -15%;
-  transform: rotate(289deg)
-}
-
-#main-logo {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
+.info ion-icon {
+  font-size: 50px;
   display: inline-block;
-  width: fit-content;
-  height: fit-content;
-  margin-top: 15%;
 }
 
-#wrapper {
+.info div {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#title {
+  min-height: 1.2em;
+}
+
+#biography-view {
   display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
-#resume {
-  position: absolute;
-  top: 120vh;
-  transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+.col {
+  flex-basis: 50%;
 }
+
+#avatar {
+  width: 75%;
+  filter: drop-shadow(0 0 17em #0ff);
+}
+
+.design {
+  position: absolute;
+  width: 20% !important;
+  height: fit-content !important;
+  filter: drop-shadow(0 0 0.5em #202020)
+}
+
+.animate {
+  animation: 1s ease-in-out 0s infinite alternate breathe;
+}
+
+@keyframes breathe {
+  
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-20px);
+  }
+  
+}
+
+#writing-code {
+  top: 75px;
+  left: 75px;
+  min-height: 300px;
+}
+
+#writing-essay {
+  top: 0px;
+  right: 25px;
+  font-family: times new roman;
+  max-width: 650px;
+  min-height: 300px;
+}
+
+#writing-sql {
+  bottom: 50px;
+  left: 70px;
+  min-height: 20px;
+}
+
+#writing-bash {
+  color: green;
+  bottom: 120px;
+  right: 0px;
+}
+
+#writing-sql, #writing-code, #writing-bash {
+  font-family: monospace;
+}
+
+.writing {
+  position: absolute;
+  padding: 25px;
+  white-space: pre-wrap;
+  filter: blur(1px);
+  min-width: 470px;
+  transition: filter 300ms ease-in-out;
+}
+
+#writing-code pink { color: #ff74ff !important }
+blue { color: #5b79ee}
+lightblue { color: #70c8ff}
+lightyellow { color: #fbfb9d}
+lightgreen { color: #a3fb9d}
+#writing-sql red { color: #f55656 }
+
+#home-view .creds {
+  margin: auto;
+  margin-top: 150px;
+  width: fit-content;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+#mouse {
+  position: fixed;
+  pointer-events: none;
+  top: 0px;
+  left: 0px;
+  mix-blend-mode: difference;
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  background: white;
+  z-index: 2000;
+  transition: transform 200ms ease-in-out;
+}
+
+a { cursor: pointer; }
