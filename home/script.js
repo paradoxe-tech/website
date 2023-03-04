@@ -1,21 +1,3 @@
-function get(yourUrl) {
-  var Httpreq = new XMLHttpRequest()
-  Httpreq.open("GET", yourUrl, false)
-  Httpreq.send(null)
-  return Httpreq.responseText
-}
-
-const site_URL = `${window.location.origin}`
-let productions = JSON.parse(get(site_URL + "/cdn/data/productions.json")).shuffle()
-productions = productions.filter(pj => sortByDate(pj, {date:Date.now()}) === -1)
-
-document.addEventListener('mousemove', (e) => {
-    
-  document.querySelector('#mouse').style.top = `${e.clientY - 10}px`
-  document.querySelector('#mouse').style.left = `${e.clientX - 10}px`
-    
-})
-
 function parallax_design() {
   document.querySelector('#designs-view').addEventListener('mousemove', (e) => {
     
@@ -85,17 +67,4 @@ function code_writing() {
 function main() {
   code_writing()
   parallax_design()
-}
-
-let mouse = document.querySelector('#mouse')
-
-for(let tag of ['h1', 'span', 'ion-icon', 'button', 'a', '#logo']) {
-  document.querySelectorAll(tag).forEach(el => {
-    el.addEventListener('mouseover', () => {
-      mouse.style.transform = "translate(-50%, -50%) scale(8)"
-    })
-    el.addEventListener('mouseout', () => {
-      mouse.style.transform = ""
-    })
-  })  
 }
