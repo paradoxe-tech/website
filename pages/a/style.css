@@ -1,4 +1,9 @@
+.view {
+  min-height: 70vh !important;
+}
+
 #timeline {
+  margin-left: 250px;
   width: 65%;
   background: black;
   border-radius: 15px;
@@ -6,26 +11,80 @@
 }
 
 .actu {
+  position: relative;
   padding: 0px 15px 15px 15px;
   border-left: 2px solid white;
+  height: 10px;
   padding-bottom: 75px;
+  font-size: 0.7em;
+  transition: all 500ms ease-out;
 }
 
-.actu p {
-  padding: 15px;
+.actu:hover {
+  height: 200px !important;
+}
+
+.pics {
+  position: relative;
+  top: -60px;
+  left: -240px;
+  width: 200px;
+  overflow: clip;
+  height: 200px;
+}
+
+.pics img {
+  position: absolute;
+  top: 0px;
+  left: 250px;
+  width: 200px;
   border-radius: 15px;
-  background: #212121;
-  transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1);
-  color: #b0b0b0;
+  transition: all 200ms ease-out;
 }
 
-.actu p:hover {
-  transform: translateY(-10px)
+.actu:hover .pics img {
+  left: 0px !important;
+  transition: all 500ms 200ms ease-out;
+}
+
+.title {
+  transition: all 500ms ease-out;
+  filter: opacity(0.7)
+}
+
+.title white, .title pink {
+  filter: grayscale(1)
+}
+
+.text {
+  overflow: clip;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  transition: all 200ms ease-out;
+}
+
+.text p {
+  padding: 0px 15px 15px 0px;
+  border-radius: 15px;
+  color: #808080;
+  font-size: 1.2em;
+}
+
+.actu:hover .title {
+  font-size: 1.2em;
+  color: white;
+  filter: opacity(1);
+}
+
+.actu:hover .text {
+  height: 200px !important;
+  transition: all 500ms ease-out;
 }
 
 .actu::before {
   content: "◉";
-  font-size: 1.5em;
+  font-size: 1.5em !important;
   display: block;
   font-family: monospace;
   position: relative;
@@ -33,5 +92,10 @@
   left: -24px;
   color: white;
   background: black;
+  z-index: 99;
   width: fit-content;
+}
+
+.text .link-h, .text .link-p {
+  color: inherit !important;
 }

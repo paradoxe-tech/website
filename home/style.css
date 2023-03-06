@@ -20,14 +20,6 @@ body {
   color: white;
 }
 
-.view {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20vh;
-}
-
 .project-card {
   width: 400px !important;
   height: 400px !important;
@@ -178,4 +170,8 @@ lightgreen { color: #a3fb9d}
   width: fit-content;
   border-radius: 15px;
   z-index: 2;
+}
+
+.view {
+  margin-bottom: 20vh;
 }
