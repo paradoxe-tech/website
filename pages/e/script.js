@@ -5,7 +5,7 @@ function get(yourUrl) {
   return Httpreq.responseText
 }
 
-const site_URL = `${window.location.origin}`
+const site_URL = window.location.origin
 let productions = JSON.parse(get(site_URL + "/cdn/data/productions.json"))
 productions = productions.sort(sortByDate).reverse()
 

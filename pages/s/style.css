@@ -1,0 +1,142 @@
+@media all and (min-width: 100px) and (max-width: 700px) {
+
+  img.banner {
+    display: none !important;
+  }
+
+  .content {
+    width: calc(100% - 50px) !important;
+    margin-top: 50px !important;
+    padding: 25px !important;
+    font-size: smaller;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  #gallery img {
+    max-width: 125px !important;
+  }
+
+  #hide-when-pc {
+    display: block !important;
+  }
+  
+}
+
+#hide-when-pc {
+  display: none;
+  margin-top: -35px;
+  margin-left: -25px;
+  width: 100%;
+}
+
+#banner {
+  position: relative;
+}
+
+#gallery {
+  display: none;
+}
+
+#banner img {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  max-height: 90vh;
+  max-width: 400px;
+}
+
+#gallery img {
+  filter: grayscale(1);
+  vertical-align: middle;
+  width: 75px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 500ms ease-in-out;
+}
+
+#gallery img:hover {
+  filter: none;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  font-family: "Poppins";
+  background: black;
+  color: white;
+  padding: 5px 15px 5px 15px;
+  border: 2px solid white;
+  border-radius: 25px;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+span {
+  color: grey;
+}
+
+select {
+  border: none;
+  background: black;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  appearance: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+select:hover {
+  border: none;
+  outline: none;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #f0f;
+  text-decoration-thickness: 3px;
+}
+
+label {
+  width: fit-content;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#title {
+  font-size: 4em !important;
+  margin-bottom: 10px;
+}
+
+.question {
+  position: relative;
+  background: black;
+  color: white;
+  border: none;
+  font-family: "Poppins";
+  font-size: 1em;
+}
+
+.question::placeholder {
+  color: white;
+}
+
+input[type="text"].question {
+  width: 150px;
+}
+
+textarea.question {
+  resize: none;
+}
+
+span {
+  display: block;
+  height: 2em;
+}

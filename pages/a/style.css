@@ -67,7 +67,7 @@
 .text p {
   padding: 0px 15px 15px 0px;
   border-radius: 15px;
-  color: #808080;
+  color: var(--text-grey);
   font-size: 1.2em;
 }
 

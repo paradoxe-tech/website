@@ -1,12 +1,11 @@
-const site_URL = `${window.location.origin}/`
-let actualites = JSON.parse(get(site_URL + "cdn/data/actus.json"))
-actualites = actualites.sort(sortByDate).reverse()
+let actualites = JSON.parse(get(window.location.origin + "/cdn/data/actus.json"))
+actualites = actualites.sort(sortByDate)
 
 for(var actu of actualites) {
 
-  let date = actu.sub.split(' - ')[1] || actu.sub
-  let board = md(` pour ${actu.sub.split(' - ')[0].toLowerCase()}`)
- // let board = actu.board ? `pour <a href="../p/${actu.board.toLowerCase()}"><pink>p/${actu.board}</pink>` : ""
+  let date = actu.date
+  let board = actu.sub.length > 0 ? md(` pour ${actu.sub.toLowerCase()}`) : ""
+  let img = actu.cover_path.length > 0 ? `<img src="${actu.cover_path.replaceAll('__SITE__', window.location.origin)}">` : ""
   
   document.querySelector('#timeline').innerHTML = `<div class="actu">
         <div class="title">
@@ -18,7 +17,7 @@ for(var actu of actualites) {
           <p>${md(actu.desc)}</p>
         </div>
         <div class="pics">
-          <img src="../cdn/assets/projects/alterheart.png">
+          ${img}
         </div>
       </div>
       ${document.querySelector('#timeline').innerHTML}`
