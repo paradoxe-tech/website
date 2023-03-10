@@ -45,3 +45,5 @@ displayItems(productions, {
     return true
   }
 })
+
+setMouseEvents()
