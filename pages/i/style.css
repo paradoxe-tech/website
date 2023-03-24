@@ -18,13 +18,6 @@
     min-width: 40% !important;
   }
 
-  #applications, #languages {
-    padding: 50px !important;
-    display: block !important;
-    width: 100% !important;
-    margin: 0px !important;
-  }
-
   .perc {
     width: 150px !important;
   }
@@ -51,47 +44,32 @@
   width: 90%;
   margin-top: 100px;
   margin-bottom: 150px;
-  overflow: clip;
-}
-
-#infos {
+  
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-}
-
-.info {
-  flex: 0 0 30%;
-  padding: 10px;
-  border-radius: 10px;
-  background: #212121;
-}
-
-.info ion-icon {
-  font-size: 50px;
-  display: inline-block;
-}
-
-.info div {
-  vertical-align: top;
-  display: inline-block;
-  margin-left: 5px;
-}
-
-#title {
-  min-height: 1.2em;
 }
 
 .progressbar__text img {
   width: 25px;
 }
 
-#apps {
-  padding: 50px;
+#apps, #languages {
   display: flex;
   gap: 30px;
+  padding: 0px;
+  margin: 0px;
   flex-wrap: wrap;
-  width: 70%;
+  width: 500px;
+  height: fit-content;
+}
+
+#languages {
+  flex-direction: column;
+  gap: 5px;
+}
+
+#languages .language {
+  height: 30px;
 }
 
 .app {
@@ -107,13 +85,9 @@
   margin: auto;
 }
 
-#languages ion-icon {
+#languages ion-icon, #languages img {
   vertical-align: middle;
   font-size: 25px;
-}
-
-#languages img {
-  vertical-align: middle;
   width: 25px;
 }
 
@@ -123,8 +97,9 @@
   display: inline-block;
   width: 70%;
   height: 10px;
-  background: white;
+  background: transparent;
   border-radius: 25px;
+  text-align: left;
 }
 
 .bar {
@@ -133,7 +108,7 @@
   top: -7.6px;
   left: 0;
   height: 10px;
-  background: #f0f;
+  background: var(--hl);
   border-radius: 25px;
   animation: perc 4s ease-in-out forwards;
 }
@@ -149,25 +124,7 @@
 }
 
 .info div span {
-  color: #f0f;
-}
-
-#languages, #applications {
-  display: inline-block;
-  width: 30%;
-}
-
-#applications {
-  width: 45%;
-  padding: 0px;
-  vertical-align: top;
-  margin-left: 15px;
-}
-
-#apps {
-  width: 100%;
-  padding: 0px;
-  margin: 0px
+  color: var(--text-grey);
 }
 
 #last {
@@ -182,4 +139,73 @@
 #last p {
    vertical-align: middle;
    display: inline;
+}
+
+#infos {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.info ion-icon {
+  font-size: 50px;
+  display: inline-block;
+}
+
+.info div {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#title {
+  height: 1.2em;
+}
+
+.col {
+  flex-basis: 50%;
+}
+
+#avatar {
+  width: 75%;
+  filter: drop-shadow(0 0 31vh #0ff);
+}
+
+.progressbar {
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	transform: rotate(-90deg);
+  width: 70px;
+  height: 70px;
+  top: 100px;
+}
+
+.progress-circle {
+	width: 50%;
+	height: 50%;
+	fill: none;
+	stroke-width: 10;
+	stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+	stroke: var(--hl);
+	stroke-linecap: round;
+	transform: translate(5px, 5px);
+  transition: all 4s ease-in-out;
+}
+
+.progress-text {
+	position: absolute;
+	top: 39px;
+	left: 127px;
+	padding: 0.25em 0.5em;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 0.25em;
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.progress-text img {
+  width: 25px;
+  border-radius: 5px;
 }

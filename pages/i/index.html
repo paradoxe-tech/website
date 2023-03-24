@@ -13,6 +13,8 @@
   </head>
   
   <body onload='new TypingMachine(document.querySelector(`#changing-title`))'>
+
+    <div id="mouse"></div>
     
     <div id="menu">
       <a href="../">Accueil</a>
@@ -22,22 +24,46 @@
       <a href="" class="active">À propos</a>
     </div>
 
-    <div class="enchained" style="background-image: url(../../cdn/assets/branding/waves.png">
-      <div class="main" id="cols">
+    <div class="enchained centered">
+      <div class="main">
         <div class="col" style="text-align: center">
           <img id="avatar" src="../../cdn/assets/renders/me.png"/>
         </div>
+        
         <div class="col">
-          <h1 id="title"><span id="changing-title" data-type='["Tripnaux-Moreau Mathéo", "CallMeKitsu."]'></span> </h1>
+          <h1 id="title"><span id="changing-title" data-type='["Tripnaux-Moreau M.", "CallMeKitsu."]'></span> </h1>
           
           <br/>
     
+          <p>Je m'appelle Mathéo, je suis élève de terminale et passionné d'apprendre. Je veux faire des études en biologie et en informatique ! Mon objectif est toujours de m'amuser, si possible en créant quelque chose qui me plaise et qui ait un impact.</p>
+    
+          <br/>
+          
+          <a href="https://discord.gg/wxnsMRVqwa"><ion-icon name="logo-discord"></ion-icon></a>
+          <a href="https://github.com/callmekitsu"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="https://www.instagram.com/callmekitsu_"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="https://paypal.me/callmekitsu"><ion-icon name="logo-paypal"></ion-icon></a>
+          <a href="https://twitter.com/callmekitsu"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="https://twitch.tv/callmekitsu"><ion-icon name="logo-twitch"></ion-icon></a>
+          <a href="https://youtube.com/@callmekitsu"><ion-icon name="logo-youtube"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="enchained text-centered">
+        <h1>Mathéo Tripnaux-Moreau</h1>
+        <h2><grey>mes stats' début 2023</grey></h2>
+        
+        <br>
+        <br>
+        
+        <div class="centered">
           <div id="infos">
             <div class="info">
               <ion-icon name="today"></ion-icon>
               <div>
                 <h3>Âge</h3>
-                <span>16 ans</span>
+                <span>17 ans</span>
               </div>
             </div>
             <div class="info">
@@ -65,168 +91,76 @@
               <ion-icon name="language"></ion-icon>
               <div>
                 <h3>Langues</h3>
-                <span>FR, ENG, JP</span>
+                <span>🇫🇷, 🇬🇧, 🇯🇵</span>
               </div>
             </div>
-          
           </div>
-    
-          <br/>
-          
-          <a><ion-icon name="logo-discord"></ion-icon></a>
-          <a><ion-icon name="logo-github"></ion-icon></a>
-          <a href="https://www.instagram.com/callmekitsu_"><ion-icon name="logo-instagram"></ion-icon></a>
-          <a><ion-icon name="logo-paypal"></ion-icon></a>
-          <a><ion-icon name="logo-twitter"></ion-icon></a>
-          <a><ion-icon name="logo-twitch"></ion-icon></a>
-          <a><ion-icon name="logo-youtube"></ion-icon></a>
-        </div>
-      </div>
-      <div class="main">
-        <div id="languages">
-        <h1>Langages</h1>
-        <br/>
-        <div class="language">
-          <ion-icon name="logo-html5"></ion-icon>
-          <div class="perc">
-            <div class="bar" style="max-width: 70%"></div>
-          </div>70%
-        </div>
-        <div class="language">
-          <ion-icon name="logo-css3"></ion-icon>
-          <div class="perc">
-            <div class="bar" style="max-width: 55%"></div>
-          </div>55%
-        </div>
-        <div class="language">
-          <ion-icon name="logo-javascript"></ion-icon>
-          <div class="perc">
-            <div class="bar" style="max-width: 90%"></div>
-          </div>90%
-        </div>
-        <div class="language">
-          <ion-icon name="logo-python"></ion-icon>
-          <div class="perc">
-            <div class="bar" style="max-width: 85%"></div>
-          </div>85%
-        </div>
-        <div class="language">
-          <ion-icon name="terminal"></ion-icon>
-          <div class="perc">
-            <div class="bar" style="max-width: 20%"></div>
-          </div>20%
-        </div>
-        <div class="language">
-          <img src="../../cdn/assets/icons/java.png">
-          <div class="perc">
-            <div class="bar" style="max-width: 30%"></div>
-          </div>30%
-        </div>
-        <div class="language">
-          <img src="../../cdn/assets/icons/go.png">
-          <div class="perc">
-            <div class="bar" style="max-width: 25%"></div>
-          </div>25%
-        </div>
-      </div>
-        <div id="applications">
-        <h1>Logiciels</h1>
-        <br/>
-        <div id="apps">
-          <div class="app">
-            <div class="progressbar">
-            	<svg class="progressbar__svg">
-            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
-                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="veg"></circle>
-            	</svg>
-            	<span class="progressbar__text">
-                <img src="../../cdn/assets/icons/vegas.png">
-              </span>
+          </br>
+          <div class="columns">
+            <div id="languages">
+              <div class="language">
+                <ion-icon name="logo-html5"></ion-icon>
+                <div class="perc">
+                  <div class="bar" style="max-width: 80%"></div>
+                </div>80%
+              </div>
+              <div class="language">
+                <ion-icon name="logo-css3"></ion-icon>
+                <div class="perc">
+                  <div class="bar" style="max-width: 60%"></div>
+                </div>60%
+              </div>
+              <div class="language">
+                <ion-icon name="logo-javascript"></ion-icon>
+                <div class="perc">
+                  <div class="bar" style="max-width: 90%"></div>
+                </div>90%
+              </div>
+              <div class="language">
+                <ion-icon name="logo-python"></ion-icon>
+                <div class="perc">
+                  <div class="bar" style="max-width: 85%"></div>
+                </div>85%
+              </div>
+              <div class="language">
+                <ion-icon name="terminal"></ion-icon>
+                <div class="perc">
+                  <div class="bar" style="max-width: 20%"></div>
+                </div>20%
+              </div>
+              <div class="language">
+                <img src="../../cdn/assets/icons/java.png">
+                <div class="perc">
+                  <div class="bar" style="max-width: 30%"></div>
+                </div>30%
+              </div>
+              <div class="language">
+                <img src="../../cdn/assets/icons/go.png">
+                <div class="perc">
+                  <div class="bar" style="max-width: 25%"></div>
+                </div>25%
+              </div>
+              <div class="language">
+                <img src="../../cdn/assets/icons/cpp.png">
+                <div class="perc">
+                  <div class="bar" style="max-width: 10%"></div>
+                </div>10%
+              </div>
+              <div class="language">
+                <img src="../../cdn/assets/icons/sql.png">
+                <div class="perc">
+                  <div class="bar" style="max-width: 60%"></div>
+                </div>60%
+              </div>
             </div>
-          </div>
-          <div class="app">
-            <div class="progressbar">
-            	<svg class="progressbar__svg">
-            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
-                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="ai"></circle>
-            	</svg>
-            	<span class="progressbar__text">
-                <img src="../../cdn/assets/icons/illustrator.png" style="border-radius: 10px">
-              </span>
-            </div>
-          </div>
-          <div class="app">
-            <div class="progressbar">
-            	<svg class="progressbar__svg">
-            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
-                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="ps"></circle>
-            	</svg>
-            	<span class="progressbar__text">
-                <img src="../../cdn/assets/icons/photoshop.png" style="border-radius: 10px">
-              </span>
-            </div>
-          </div>
-          <div class="app">
-            <div class="progressbar">
-            	<svg class="progressbar__svg">
-            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
-                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="vs"></circle>
-            	</svg>
-            	<span class="progressbar__text">
-                <img src="../../cdn/assets/icons/vs.png" style="border-radius: 10px">
-              </span>
-            </div>
-          </div>
-          <div class="app">
-            <div class="progressbar">
-            	<svg class="progressbar__svg">
-            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
-                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="pc"></circle>
-            	</svg>
-            	<span class="progressbar__text">
-                <img src="../../cdn/assets/icons/pycharm.png" style="border-radius: 10px">
-              </span>
-            </div>
-          </div>
-          <div class="app">
-            <div class="progressbar">
-            	<svg class="progressbar__svg">
-            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
-                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="pdn"></circle>
-            	</svg>
-            	<span class="progressbar__text">
-                <img src="../../cdn/assets/icons/paintdotnet.png" style="border-radius: 10px">
-              </span>
-            </div>
-          </div>
-          <div class="app">
-            <div class="progressbar">
-            	<svg class="progressbar__svg">
-            		<circle cx="124" cy="35" r="35" class="blank-circle"></circle>
-                <circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="blender"></circle>
-            	</svg>
-            	<span class="progressbar__text">
-                <img src="../../cdn/assets/icons/blender.png" style="border-radius: 10px">
-              </span>
-            </div>
-          </div>
-          <div class="app">
-            <div class="progressbar">
-            	<svg class="progressbar__svg">
-            		<circle cx="124" cy="35" r="35" class="blank-circle">
-                </circle><circle cx="124" cy="35" r="35" class="progressbar__svg-circle" id="git"></circle>
-            	</svg>
-            	<span class="progressbar__text">
-                <img src="../../cdn/assets/icons/git.png" style="border-radius: 10px">
-              </span>
-            </div>
+            <div id="apps"></div>
           </div>
         </div>
       </div>
-      </div>
-    </div>
 
+    <script src="../../cdn/scripts/mouse.js"></script>
     <script src="../../cdn/scripts/typing.js"></script>
+    <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
