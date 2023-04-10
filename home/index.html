@@ -14,6 +14,7 @@
 
 <body onload="main()">
   <div id="menu">
+    <img src="../cdn/assets/branding/logo.png" id="hamburger" onclick="document.querySelector('#menu').classList.toggle('active')">
     <a href="" class="active">Accueil</a>
     <a href="../e">Explorer</a>
     <a href="../a">Actualités</a>
@@ -28,7 +29,8 @@
       <img src="cdn/assets/branding/logo.png" id="logo" width="175px">
       <hr>
       <h1>CallMeKitsu.</h1>
-      <a onclick="window.scrollTo({top: 900, behavior: 'smooth'})">visiter ↓</a>
+      <a id="scrollto" onclick="window.scrollTo({top: 900, behavior: 'smooth'})">visiter ↓</a>
+      <a id="explore" onclick='document.querySelector("#menu").classList.toggle("active")'>explorer ↑</a>
     </div>
   </div>
   

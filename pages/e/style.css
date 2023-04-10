@@ -4,22 +4,27 @@
     width: 100% !important;
   }
 
+  #searchbar {
+    width: 80% !important;
+  }
+
 }
 
 #container {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   flex-wrap: wrap;
 }
 
 #searchbar {
-  border: 2px solid white;
+  border: none;
+  border-left: 2px solid white;
   background: black;
-  border-radius: 25px;
   color: white;
   padding: 7px 10px;
   padding-left: 10px;
-  width: 500px;
+  width: 30%;
   outline: none;
 }
 
@@ -28,5 +33,5 @@
 }
 
 #searchbar::placeholder {
-  color: white;
+  color: var(--text-grey);
 }

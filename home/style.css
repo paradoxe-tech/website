@@ -7,8 +7,14 @@
   body {
     overflow: hidden !important;
   }
+
+  #scrollto { display: none !important; }
+  #explore { display: block !important; }
   
 }
+
+#explore { display: none; }
+#hamburger { display: none !important; }
 
 body {
   position: absolute;
