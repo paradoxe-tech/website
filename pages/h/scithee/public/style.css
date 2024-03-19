@@ -1,0 +1,132 @@
+:root {
+  --background: #ffdfca;
+  --font: black;
+  --btn-background: #532828;
+  --btn-background-darker: #271111; 
+}
+
+body {
+  margin: 0px;
+  font-family: "Roboto"
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  gap: 20px;
+  background: var(--background);
+  padding: 50px;
+  position: fixed;
+  top: 100px;
+  left: 200px;
+  width: calc(100vw - 300px);
+  height: calc(100vh - 200px);
+}
+
+.menu {
+  background: black;
+  color: white;
+  z-index: 99;
+}
+
+#horizontal {
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+#side {
+  width: 200px;
+  height: calc(100vh - 100px);
+  position: fixed;
+  top: 100px;
+  left: 0;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#userinfos, .menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#userpp {
+  border-radius: 50%;
+  border: 2px solid white;
+  width: 50px;
+}
+
+#username, #account {
+  font-size: 2em;
+}
+
+#account::after {
+  content: " ⧉";
+}
+
+#login {
+  padding: 10px 20px; 
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+}
+
+#main .video {
+  flex: 0 0;
+  cursor: pointer;
+  position: relative;
+  transition: transform 200ms ease-in-out;
+}
+
+#main .video:hover {
+  transform: translateY(-5px);
+}
+
+
+#main .video img {
+  width: 200px !important;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 110px;
+}
+
+#main .video h2 {
+  font-size: 1em;
+  margin: 5px 0;
+  max-height: 2.35em;
+  margin-bottom: 15px;
+  overflow: clip;
+}
+
+#main.recoms {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#side .tag {
+  cursor: pointer;
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+}
+
+#side .tag:hover {
+  background: grey;
+}
+
+.playlist .playlist-tag {
+  position: absolute;
+  padding: 5px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  top: 5px;
+  right: 5px;
+}

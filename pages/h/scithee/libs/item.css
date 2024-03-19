@@ -1,0 +1,158 @@
+.item, #popup {
+  padding: 50px; 
+  background: #fbccac;
+  color: var(--btn-background);
+  border-radius: 25px;
+  height: fit-content;
+  max-width: 300px;
+}
+
+.item .options {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item .options.row {
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.item .options.stars {
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1px;
+}
+
+.item .options.stars .option {
+  font-size: 1.9em;
+  background: transparent;
+  padding: 0px;
+  color: var(--btn-background);
+}
+
+.item .options.stars .option:hover {
+  background: transparent !important;
+}
+
+.item .options .option, button {
+  background: var(--btn-background);
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none; 
+}
+
+.item .options .option:hover,
+.item .likert:hover {
+  filter: brightness(70%);
+}
+
+.item button.green {
+  background: green !important;
+}
+
+.item button.red {
+  background: red !important;
+}
+
+.item h1 {
+  font-size: 1.5em;
+  margin: 0px;
+}
+
+.item p {
+  font-size: 0.8em;
+}
+
+.item .topics {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: clip;
+  width: 100%;
+  gap: 5px;
+}
+
+.item .topics .topic {
+  font-size: 0.7em;
+  border-radius: 50px;
+  background: #f2b58c;
+  padding: 3px 7px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
+.item .topics .topic:hover {
+  background: #d58d5d;
+  color: black;
+}
+
+.item .likert {
+  aspect-ratio: 1 / 1;
+  flex: 0 0 ;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.likert.type4 {width: 45px; height: 45px;}
+.likert.type3 {width: 35px; height: 35px;}
+.likert.type2 {width: 25px; height: 25px;}
+.likert.type1 {width: 15px; height: 15px;}
+.likert.neg {background: red}
+.likert.pos {background: green}
+.likert.neutral {background: grey}
+
+*:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+input[type=range].option {
+  padding: 0 !important;
+  height: 5px;
+  border-radius: 100%;
+  cursor: default !important;
+}
+
+input[type=range]::-ms-thumb,
+input[type=range]::-moz-range-thumb {
+  height: 23px;
+  width: 23px;
+  background: red;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 23px;
+  width: 23px;
+  background: red;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#popup {
+  display: block;
+  position: fixed;
+  top: 150px;
+  left: 50px;
+  background: black;
+  color: wheat;
+  z-index: 99;
+}
+
+#form > button {
+  width: fit-content;
+  background: black;
+}
+
+.hidden {
+ display: none !important;
+}

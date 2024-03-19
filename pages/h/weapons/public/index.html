@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Encyclopédie d'Armes</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="popup" class="disabled">
+    <img id="close-btn" onclick="close_popup()" src="assets/others/close.png">
+    <div id="popup-content"></div>
+    <div id="popup-stats"></div>
+    <canvas id="view"></canvas>
+  </div>
+  <div id="main">
+    <div id="menu">
+      <div id="logo">
+        <img id="weapon-logo">
+        <img src="assets/logo.png" style="width: 200px;">
+      </div>
+      <h1 style="margin: 0px;margin-left: 10px;">Encyclopédie d'Armes</h1>
+      <div id='pannel' style='padding: 10px;'>
+        <select onload="resize(this)" onchange="resize(this, true)" name="genre" id="genre">
+          <option value="">Toutes les armes</option>
+          <option value="sabre">Sabres</option>
+          <option value="épée">Épées</option>
+          <option value="glaive">Glaives</option>
+          <option value="couteau">Couteaux</option>
+          <option value="dague">Dagues</option>
+          <option value="faux">Faux</option>
+          <option value="lance">Lances</option>
+          <option value="masse">Masses</option>
+          <option value="hache">Haches</option>
+        </select> <select onchange="resize(this, true)" name="type" id="type">
+          <option value="">de tous les types</option>
+          <option value="main">de poing</option>
+          <option value="hast">d'hast</option>
+          <option value="contondante">contondant.e.s</option>
+          <option value="jet">de jet</option>
+        </select> <select onchange="resize(this, true)" name="epoque" id="epoque">
+          <option value="">de toutes les époques</option>
+          <option value="antiquite">datant de l'Antiquité</option>
+          <option value="moyen-age">datant du Moyen-Âge</option>
+          <option value="renaissance">datant de la Renaissance</option>
+          <option value="actuelle">relativement récentes</option>
+        </select>, <select onchange="resize(this, true)" name="region" id="region">
+          <option value="">de toutes les régions</option>
+          <option value="asie">originaires d'Asie</option>
+          <option value="europe">originaires d'Europe</option>
+          <option value="moyen-orient">originaires du Moyen-Orient</option>
+          <option value="afrique">originaires d'Afrique</option>
+        </select> et qui se manient à <select onchange="resize(this, true)" name="tenue" id="tenue">
+          <option value="">1 ou 2 mains</option>
+          <option value="1">1 main</option>
+          <option value="2">2 mains</option>
+        </select>.<br/>
+
+        <select onchange="resize(this, true)" name="unfinished" id="unfinished">
+          <option value="orange">Les résultats et ébauches</option>
+          <option value="green">Les résultats complets</option>
+          <option value="red">Les résultats, même incomplets</option>
+        </select> <span id="counter"></span> sont triés dans un ordre <select onchange="resize(this, true)" name="revert" id="revert">
+          <option value="">décroissant</option>
+          <option value="croissant">croissant</option>
+        </select> <select onchange="resize(this, true)" name="sort" id="sort">
+          <option value="">Aléatoire</option>
+          <option value="potentiel">comparant le potentiel</option>
+          <option value="longueur">comparant l'allonge</option>
+          <option value="taille">comparant la taille</option>
+          <option value="estoc">comparant l'estoc</option>
+          <option value="maniabilite">comparant la maniabilité</option>
+          <option value="poids">comparant le poids</option>
+        </select>. <br/><br/>
+      </div>
+    </div>
+    <div id="wrapper"></div>
+  </div>
+  <script src="https://callmekitsu.kitsuforyou.repl.co/h/tsu.js"></script>
+  <script src="libs/getTextWidth.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -67,4 +67,28 @@ function code_writing() {
 function main() {
   code_writing()
   parallax_design()
+  new TypingMachine(document.querySelector(`#changing-title`))
 }
+
+let slides = Array.from(document.querySelectorAll('.view'))
+let _SLIDE_ = window.location.hash.includes("avatar") ? slides.length : 0
+let lastY = window.pageYOffset
+let lastStamp = new Date()
+
+document.addEventListener("mousewheel", (e) => {
+  let down = e.deltaY > 0
+
+  if(Math.abs(Date.diff(new Date(), lastStamp)) < 500) return
+
+  if(down && _SLIDE_ < slides.length - 1) _SLIDE_ ++
+  if(!down && _SLIDE_ > 0) _SLIDE_ --
+  
+  slides[_SLIDE_].scrollIntoView({
+    block: "start",
+    behavior: "smooth"
+  })
+
+  lastStamp = new Date()
+  
+  return false
+});

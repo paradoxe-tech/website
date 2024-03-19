@@ -10,34 +10,71 @@
   <link href="../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
   <link href="../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta property="og:title" content="CallMeKitsu.">
+  <meta name="description" content="Je suis Kitsu, graphiste, développeur et étudiant en Biologie et Informatique. Voici mon portfolio et l'ensemble de mes travaux, recherches et outils !">
+  <meta property="og:description" content="Je suis Kitsu, graphiste, développeur et étudiant en Biologie et Informatique. Voici mon portfolio et l'ensemble de mes travaux, recherches et outils !">
+  <meta property="og:image" content="https://callmekitsu.com/cdn/assets/branding/logo.png">
 </head>
 
 <body onload="main()">
   <div id="menu">
     <img src="../cdn/assets/branding/logo.png" id="hamburger" onclick="document.querySelector('#menu').classList.toggle('active')">
-    <a href="" class="active">Accueil</a>
+    <a onclick="document.querySelector('#home-view').scrollIntoView({
+        block: 'start',
+        behavior: 'smooth'
+      });_SLIDE_ = 0" class="active">Accueil</a>
     <a href="../e">Explorer</a>
     <a href="../a">Actualités</a>
+    <a href="../p" class="disabled">Publications</a>
+    <a href="../c" class="disabled">Participer</a>
     <a href="../s" class="disabled">Services</a>
-    <a href="../i">À propos</a>
+    <a onclick="document.querySelector('#avatar').scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+      });_SLIDE_ = slides.length - 1">À propos</a>
   </div>
 
   <div id="mouse"></div>
 
-  <div class="enchained" id="home-view">
+  <div class="enchained view" id="home-view">
     <div class="creds">
       <img src="cdn/assets/branding/logo.png" id="logo" width="175px">
-      <hr>
+
       <h1>CallMeKitsu.</h1>
-      <a id="scrollto" onclick="window.scrollTo({top: 900, behavior: 'smooth'})">visiter ↓</a>
+      <a class="scrollto" onclick="document.querySelector('#home-view + .view .creds').scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+      })">visiter ↓</a>
       <a id="explore" onclick='document.querySelector("#menu").classList.toggle("active")'>explorer ↑</a>
     </div>
   </div>
-  
+
+  <div class="view" id="kledge-view">
+    <div class="creds">
+      <h1>Comprendre.</h1>
+      <span>(continuez à descendre)</span>
+      <a href="/a" class="button">Actualités</a>
+      <a class="scrollto" onclick="document.querySelector('#kledge-view + .view .creds').scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+      })">↓</a>
+    </div>
+    
+    <img id="bayes" class="formula" src="cdn/assets/renders/bayes.png">
+    <img id="modus" class="formula" src="cdn/assets/renders/modus.png">
+    <img id="feynmann" class="formula" src="cdn/assets/renders/feynmann.png">
+    <img id="matheme" class="formula" src="cdn/assets/renders/matheme.png">
+  </div>
+
   <div class="parallax view" id="projects-view">
     <div class="creds">
-      <h1>Create.</h1>
+      <h1>Créer.</h1>
       <span>(survolez un projet)</span>
+      <a href="/e" class="button">Explorer</a>
+      <a class="scrollto" onclick="document.querySelector('#projects-view + .view .creds').scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+      })">↓</a>
     </div>
     <img src="cdn/assets/projects/weapons.png" class="project-card" style="left: -50px; top: 150px;">
     <img src="cdn/assets/projects/clockwork.png" class="project-card" style="right: 50px; bottom: 550px;">
@@ -45,20 +82,15 @@
     <img src="cdn/assets/projects/etoile_polaire.png" class="project-card" style="left: 100px; top: 375px;">
   </div>
 
-  <div class="parallax view" id="designs-view">
+  <div class="parallax view" id="writing-view">
     <div class="creds">
-      <h1>Design.</h1>
-      <span>(déplacez la souris)</span>
-    </div>
-    <img src="cdn/assets/designs/mask.png" id="design-mask" class="design" style="top: 240px;left: 135px;width: 35% !important;">
-    <img src="cdn/assets/designs/card.png" id="design-card" class="design" style="top: 250px;right: 70px;width: 35% !important;">
-    <img src="cdn/assets/designs/pendentif.png" id="design-pendentif" class="design" style="top: 150px;left: 75px;">
-  </div>
-
-  <div class="parallax view" id="designs-view">
-    <div class="creds">
-      <h1>Write.</h1>
+      <h1>Écrire.</h1>
       <span>(commencez à écrire)</span>
+      <a href="/p" class="button disabled">Publications</a>
+      <a class="scrollto" onclick="document.querySelector('#writing-view + .view .creds').scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+      })">↓</a>
     </div>
     <div id="writing-code" class="writing"></div>
     <div id="writing-essay" class="writing"></div>
@@ -70,7 +102,51 @@
     <div id="writing-bash" class="writing"></div>
   </div>
 
-  <script src="https://callmekitsu.kitsuforyou.repl.co/h/tsu.js"></script>
+  <div class="parallax view" id="designs-view">
+    <div class="creds">
+      <h1>Concevoir.</h1>
+      <span>(déplacez la souris)</span>
+      <a href="/s" class="button disabled">Services</a>
+      <a class="scrollto" onclick="document.querySelector('#avatar').scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+      })">↓</a>
+    </div>
+    <img src="cdn/assets/designs/mask.png" id="design-mask" class="design" style="top: 240px;left: 135px;width: 35% !important;">
+    <img src="cdn/assets/designs/card.png" id="design-card" class="design" style="top: 250px;right: 70px;width: 35% !important;">
+    <img src="cdn/assets/designs/pendentif.png" id="design-pendentif" class="design" style="top: 150px;left: 75px;">
+  </div>
+
+
+
+  <div class="view reverse" id="view-profile">
+    <div class="col" id="avatar-wrapper" style="text-align: center">
+      <div id="bubble"></div>
+      <img id="avatar" src="../../cdn/assets/renders/me_2.png"/>
+    </div>
+
+    <div class="col">
+      <h1 id="title"><span id="changing-title" data-type='["Tripnaux-Moreau M.", "CallMeKitsu."]'></span> </h1>
+
+      <br/>
+
+      <p style="max-width: 80%;">Je m'appelle Mathéo, je suis étudiant en licence double diplôme Biologie / Informatique à l'Université Paris-Saclay et passionné d'apprendre. Mon objectif est toujours de m'amuser, si possible en créant quelque chose qui me plaise et qui ait un impact sur le monde.</p>
+
+      <br/>
+
+      <a href="https://www.linkedin.com/in/callmekitsu/"><ion-icon name="logo-linkedin"></ion-icon></a>
+      <a href="https://discord.gg/wxnsMRVqwa"><ion-icon name="logo-discord"></ion-icon></a>
+      <a href="https://github.com/callmekitsu"><ion-icon name="logo-github"></ion-icon></a>
+      <a href="https://www.instagram.com/callmekitsu_"><ion-icon name="logo-instagram"></ion-icon></a>
+      <a href="https://paypal.me/callmekitsu"><ion-icon name="logo-paypal"></ion-icon></a>
+      <!--<a href="https://twitter.com/callmekitsu"><ion-icon name="logo-twitter"></ion-icon></a>
+      <a href="https://twitch.tv/callmekitsu"><ion-icon name="logo-twitch"></ion-icon></a>
+      <a href="https://youtube.com/@callmekitsu"><ion-icon name="logo-youtube"></ion-icon></a>-->
+    </div>
+  </div>
+
+  <script src="/h/tsu.js"></script>
+  <script src="cdn/scripts/typing.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="../cdn/scripts/mouse.js"></script>

@@ -27,7 +27,6 @@ function dashOff(perc) {
 
 function animate(app, perc) {
   setTimeout( () => {
-    console.log("ezz")
     document.querySelector(`#progress-${app}`).style.setProperty("stroke-dashoffset", dashOff(perc))
   }, 110)
 }

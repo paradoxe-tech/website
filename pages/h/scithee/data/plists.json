@@ -1,0 +1,202 @@
+[
+    {
+        "title": "Machine Learning",
+        "id": "PLtzmb84AoqRTl0m1b82gVLcGU38miqdrC",
+        "tags": [
+            "informatique",
+            "vulgarisation"
+        ],
+        "unwrap": false,
+        "language": "fr"
+    },
+    {
+        "title": "ST Informatique",
+        "id": "PLlIhDApC6j93AZSWbekjvj0iaA1rIsf-Z",
+        "tags": [
+            "informatique",
+            "vulgarisation"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+    {
+        "title": "Philosophie Morale",
+        "id": "PLlIhDApC6j90pfHCd7s-f8Qfl55xVP23X",
+        "tags": [
+            "philosophie",
+            "vulgarisation"
+        ],
+        "unwrap": false,
+        "language": "fr"
+    },
+    {
+      "title": "ST Philosophie",
+      "id": "PLlIhDApC6j91NCTP_Pwxgh1p1lndJ2KHO",
+      "tags": [
+          "philosophie",
+          "vulgarisation"
+      ],
+      "unwrap": true,
+      "language": "fr"
+  },
+    {
+        "title": "ST Logique",
+        "id": "PLlIhDApC6j91UoqFIth4TrDDJS_8MITj1",
+        "tags": [
+            "logique",
+            "vulgarisation"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+    {
+        "title": "ST Épistémo",
+        "id": "PLlIhDApC6j90tazh87jSFRl0JFxE5q9wf",
+        "tags": [
+            "épistémologie",
+            "vulgarisation"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+    {
+        "title": "Le Bayésianisme",
+        "id": "PLtzmb84AoqRQkc4f38dueiPf8YUegsg8n",
+        "tags": [
+            "épistémologie",
+            "vulgarisation"
+        ],
+        "unwrap": false,
+        "language": "fr"
+    },
+    {
+        "title": "Le Paradoxe de Newcomb",
+        "id": "PLlIhDApC6j91ZLThhbK13CmhwP8adwxQt",
+        "tags": [
+            "épistémologie",
+            "vulgarisation"
+        ],
+        "unwrap": false,
+        "language": "fr"
+    },
+    {
+        "title": "ST Physique",
+        "id": "PLlIhDApC6j91Ap14hk5NkjIKbYlgy4y-1",
+        "tags": [
+            "physique",
+            "vulgarisation"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+    {
+        "title": "Géopolitique du Racisme",
+        "id": "PL2IDfo9G6-u3iK7wXe1dH73aqOj9sXUXt",
+        "tags": [
+            "géopolitique",
+            "vulgarisation"
+        ],
+        "unwrap": false,
+        "language": "fr"
+    },
+    {
+        "title": "ST Biologie",
+        "id": "PLlIhDApC6j92Df31f3VlT4Me0OT3P3kvU",
+        "tags": [
+            "biologie",
+            "vulgarisation"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+    {
+        "title": "ST Géopo",
+        "id": "PLlIhDApC6j90x5XqhSg8c_zvPbSpZl7Hp",
+        "tags": [
+            "géopolitique",
+            "vulgarisation"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+    {
+        "title": "Les portraits du Précepteur",
+        "id": "PLpMaQhYcSrf9aCxk573AY_IO-zINw7P8p",
+        "tags": [
+            "philosophie",
+            "audio"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+    {
+        "title": "ST Stats",
+        "id": "PLlIhDApC6j92GlZ6kROL-XNCjVBFEoZT2",
+        "tags": [
+            "statistiques",
+            "vulgarisation"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+    {
+        "title": "ST Zététique",
+        "id": "PLlIhDApC6j92_nPGfx012Lfu2bEGK_wa7",
+        "tags": [
+            "zététique",
+            "vulgarisation"
+        ],
+        "unwrap": true,
+        "language": "fr"
+    },
+  {
+      "title": "ST Économie",
+      "id": "PLlIhDApC6j912hxaj84IagOlD0Jh69Mt4",
+      "tags": [
+          "économie",
+          "vulgarisation"
+      ],
+      "unwrap": true,
+      "language": "fr"
+  },
+  {
+      "title": "La quatrième Dimension",
+      "id": "PLNefH6S6myiOfykOcgIc2sYrpr1Zk5Mhi",
+      "tags": [
+          "mathématiques",
+          "vulgarisation"
+      ],
+      "unwrap": false,
+      "language": "fr"
+  },
+  {
+      "title": "ST Maths",
+      "id": "PLlIhDApC6j92Yj1P-K8Q6X41RHeO1DFF7",
+      "tags": [
+          "mathématiques",
+          "vulgarisation"
+      ],
+      "unwrap": true,
+      "language": "fr"
+  },
+  {
+      "title": "El JI",
+      "id": "PLlrxd3f47yy2mvLivlFU1a9ukoG8-Dkvs",
+      "tags": [
+          "mathématiques",
+          "vulgarisation"
+      ],
+      "unwrap": true,
+      "language": "fr"
+  },
+  {
+      "title": "ST Sociologie",
+      "id": "PLlIhDApC6j93-Rqjc2Xoh7w_ZELA0z9hm",
+      "tags": [
+          "sociologie",
+          "vulgarisation"
+      ],
+      "unwrap": true,
+      "language": "fr"
+  }
+]

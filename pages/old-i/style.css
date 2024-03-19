@@ -33,6 +33,10 @@
   
 }
 
+:root {
+  --progress: #007a7a
+}
+
 .enchained {
   height: fit-content;
 }
@@ -108,7 +112,7 @@
   top: -7.6px;
   left: 0;
   height: 10px;
-  background: var(--hl);
+  background: var(--progress);
   border-radius: 25px;
   animation: perc 4s ease-in-out forwards;
 }
@@ -188,7 +192,7 @@
 	stroke-width: 10;
 	stroke-dasharray: 220;
   stroke-dashoffset: 220;
-	stroke: var(--hl);
+	stroke: var(--progress);
 	stroke-linecap: round;
 	transform: translate(5px, 5px);
   transition: all 4s ease-in-out;

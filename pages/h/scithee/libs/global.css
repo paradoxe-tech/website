@@ -1,0 +1,77 @@
+:root {
+  --background: #ffdfca;
+  --font: black;
+  --btn-background: #532828;
+  --btn-background-darker: #271111; 
+}
+
+body {
+  margin: 0px;
+  font-family: "Poppins"
+}
+
+#main {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  
+  overflow-y: scroll;
+  background: var(--background);
+  padding: 50px;
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 200px);
+}
+
+.menu {
+  background: black;
+  color: white;
+}
+
+#horizontal {
+  padding: 0 20px;
+  justify-content: space-between;
+  height: 100px;
+}
+
+#userinfos, .menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#userpp {
+  border-radius: 50%;
+  border: 2px solid white;
+  width: 50px;
+}
+
+#username, #account {
+  font-size: 2em;
+}
+
+#account::after {
+  content: " ⧉";
+}
+
+#login {
+  padding: 10px 20px; 
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: fit-content;
+  width: 400px;
+  align-items: center;
+}
+
+h2, h1 {margin: 0px}

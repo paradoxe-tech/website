@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(cdn/Poppins-Regular.ttf)
+}
+
+@media all and (min-width: 300px) and (max-width: 700px) {
+
+  body, html {
+    font-size: 0.9em;
+  }
+
+
+ .box {
+     width: calc(100% - 20px) !important;
+   }
+
+
+  #main {
+    padding: 10px  !important;
+   width: calc(100% - 20px) !important;
+  }
+} 
+
+body, html {
+  margin: 0px;
+  font-family: "Poppins";
+  background-size: cover;
+  overflow: hidden;
+  background: #f5caa6 /* #76ea7c */;
+  background-image: url(https://img.freepik.com/premium-photo/brown-dry-soil-desert-cracked-ground-texture_29332-2468.jpg?w=2000);
+  background-blend-mode: multiply;
+}
+
+fieldset {
+  width: 100%;
+}
+
+.option {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#main {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 0.6em;
+  transition: margin-left 300ms ease-in-out;
+  overflow: auto;
+}
+
+.box {
+  background: white;
+  padding: 35px 50px;
+  border-radius: 25px;
+  min-width: 190px;
+  height: fit-content;
+}
+
+.menu {
+  position: fixed;
+  background: white;
+  padding: 35px 50px;
+  min-width: 315px;
+  height: fit-content;
+  transition: left 300ms ease-in-out;
+}
+
+fieldset:disabled {
+  display: none;
+}
+
+.espece {
+  cursor: pointer;
+}
+
+.espece:hover {
+  font-style: italic;
+}
+
+h1, h2, h3, h4 {margin-top: 0px}
+
+.columns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.columns fieldset {
+  margin: 0px;
+}
+
+input[type=text] {
+  width: 150px;
+} 
+
+.genre {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.genre h2 {
+  font-size: 0.9em;
+  margin: 0px;
+}
+
+.genre .espece {
+  margin-left: 10px;
+}
+
+#render {
+  width: 150px;
+  transition: height 2s ease-in-out;
+  padding: 30px;
+}
+
+#render img {
+  margin-left: -30px;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  width: 250px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 25px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.links a {
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid green;
+}
+
+.links a:hover {
+  color: white;
+  background: green
+}
+
+#vertical, #horizontal {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 0 0;
+  gap: 15px;
+}
+
+#vertical {
+  padding: 20px;
+  height: calc(100vh - 175px);
+  flex-direction: column;
+  overflow-y: scroll;
+  font-size: 0.7em;
+  min-width: 245px;
+  left: 0px;
+}
+
+#vertical fieldset {
+  width: calc(100% - 40px);
+}
+
+#viewport {
+  display: flex;
+  position: relative;
+}
+
+#horizontal {
+  position: relative;
+  min-height: 60px;
+  padding: 30px 30px 0px;
+}
+
+#vertical input[type=checkbox] {
+  width: 10px;
+}
+
+input[type=checkbox], label {
+  vertical-align: middle;
+}
+
+#taxonomie {
+  position: absolute;
+  left: 400px;
+  width: fit-content;
+}
+
+ul {
+  margin: 0px;
+  padding-left: 15px;
+  list-style: circle;
+}
+
+#brand {
+  cursor: pointer;
+  margin-top: -10px;
+}
+
+#brand > div, #brand img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#brand * {
+  margin: 0px;
+}
+
+#horizontal .option {
+  margin-left: 100px
+}
+
+#horizontal input, #horizontal select {
+  outline: none;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  border-bottom: 1px solid #e0e0e0;
+  appearance: none;
+  font-size: 15px;
+}
+
+#horizontal input:focus, #horizontal select:focus {
+  border-bottom: 1px solid black;
+}
+
+#results {
+  width: 461px;
+  height: calc(100vh - 340px);
+  overflow: clip;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#render.hidden {display: none !important}
+
+.menu.hidden {
+  left: -100% !important;
+}
+
+.marged {
+  margin-left: 300px !important;
+}
+
+td.month {
+  background: #e6e6e6;
+  width: 11px;
+  height: 10px;
+  text-align: center;
+  font-size: 0.5em;
+}
+
+td.month.red {background: #45d356}
+td.month.orange {background: #75fd85}
+td.month.yellow {background: #d0ffd5}
+
+select {
+  outline: none;
+  border: none;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+}

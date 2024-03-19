@@ -44,7 +44,6 @@
 
 .actu:hover .pics img {
   left: 0px !important;
-  transition: all 500ms 200ms ease-out;
 }
 
 .title {
@@ -94,8 +93,4 @@
   background: black;
   z-index: 99;
   width: fit-content;
-}
-
-.text .link-h, .text .link-p {
-  color: inherit !important;
 }

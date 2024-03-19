@@ -1,0 +1,337 @@
+<html>
+  <head>
+    <title>AntFind</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="horizontal" class="menu">
+      <div id="brand" onclick="popMenu()">
+        <img src="cdn/images/logo.svg" width="100px" id="logo">
+        <div>
+          <h1>AntFind</h1>
+          <span>@CallMeKitsu</span>  
+        </div>
+      </div>
+
+          <div class="option">
+            <select onchange='select(this)' id="subf">
+              <option value="" default>Sous-famille</option>
+              <option value="formicinae">Formicinés</option>
+              <option value="myrmicinae">Myrmicinés</option>
+              <option value="ponerinae">Ponérines</option>
+              <option value="dolichoderinae" disabled>Dolichoderinae</option>
+            </select>
+            <input type="text" id="genre" onchange='input(this)' placeholder="Genre">
+            <input type="text" id="espece" onchange='input(this)' placeholder="espèce">
+          </div>
+    </div>
+    <div id="viewport">
+      <div id="vertical" class="menu">
+
+        <fieldset id="fondation">
+              <legend>Colonie</legend>
+
+              <div class="option">
+                <select onchange='select(this)' id="colonie/fondation">
+                  <option value="" style="color: #e3e3e3">sélectionner</option>
+                  <option value="claustrale">Claustrale</option>
+                  <option value="semi_claustrale">Semi-claustrale</option>
+                </select>
+                <label>Fondation</label>
+              </div>
+
+              <div class="option">
+                <select onchange='select(this)' id="colonie/gynie">
+                  <option value="" style="color: #e3e3e3">sélectionner</option>
+                  <option value="monogyne">Espèce monogyne</option>
+                  <option value="polygyne">Espèce polygyne</option>
+                  <option value="oligogyne">Espèce oligogyne</option>
+                </select>
+                <label>Gynie</label>
+              </div>
+
+              <div class="option">
+                <select onchange='select(this)' id="colonie/diapause">
+                  <option value="" style="color: #e3e3e3">sélectionner</option>
+                  <option value="hétérodynamique">Hétérodynamique</option>
+                  <option value="homodynamique">Homodynamique</option>
+                </select>
+                <label>Diapause</label>
+              </div>
+
+          <div class="option">
+            <select onchange='select(this)' id="habitat/type">
+              <option value="" style="color: #e3e3e3">sélectionner un type</option>
+              <option value="terricole">Nids terricoles</option>
+              <option value="arboricole">Nids arboricoles</option>
+              <option value="lignicole">Nids lignicoles</option>
+              <option value="marabunta">Bivouacs / Marabunta</option>
+            </select>
+            <label>Mode</label>
+          </div>
+
+        </fieldset>
+
+        <fieldset id="relations">
+            <legend>Relations</legend>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/relations-trophobiose">
+              <label>Trophobiose / Élevage</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/relations-parabiose">
+              <label>Parabiose / Cohabitation</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/relations-parasitisme_social">
+              <label>Parasitisme social</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/relations-myrmécotrophie">
+              <label>Myrmécotrophie</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/relations-mimétisme_batésien">
+              <label>Mimétisme Batésien</label>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Morphologie</legend>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/morphologie-aiguillon_venimeux">
+              <label>Aiguillon venimeux</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/morphologie-hypertrophie_du_jabot_social">
+              <label>Hypertrophie du jabot social</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/morphologie-absence_de_jabot_social">
+              <label>Absence de jabot social</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/morphologie-phragmose">
+              <label>Tête aplatie / Phragmose</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/morphologie-autothyse">
+              <label>Glandes-Suicide / Autothyse</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/morphologie-hypertélie_des_mandibules">
+              <label>Hypertélie des mandibules</label>
+            </div>
+
+        </fieldset>
+
+        <fieldset id="capacites">
+            <legend>Capacités</legend>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/capacites-tisserande">
+              <label>Tisserandes</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" onchange="checkbox(this)" id="particularites/capacites-boulangère">
+              <label>Boulangères</label>
+            </div>
+
+        </fieldset>
+
+        <fieldset id="habitat">
+          <legend>Climat</legend>
+
+          <div class="option">
+            <input type="checkbox" onchange="checkbox(this)" id="habitat/climat-tropical">
+            <label>Tropical</label>
+          </div>
+
+          <div class="option">
+            <input type="checkbox" onchange="checkbox(this)" id="habitat/climat-aride">
+            <label>Aride</label>
+          </div>
+
+          <div class="option">
+            <input type="checkbox" onchange="checkbox(this)" id="habitat/climat-tempéré">
+            <label>Tempéré</label>
+          </div>
+        </fieldset>
+
+        <fieldset id="taille">
+          <legend>Taille</legend>
+
+          <div class="option">
+            <select onchange='setFilter(this)' id="taille/gyne">
+              <option value="" style="color: #e3e3e3">sélectionner une taille</option>
+              <option value="0-5">en dessous de 5mm</option>
+              <option value="5-8">entre 5 et 8mm</option>
+              <option value="8-10">entre 8 et 10mm</option>
+              <option value="10-15">entre 10 et 15mm</option>
+              <option value="15-20">entre 15 et 20mm</option>
+              <option value="20-25">entre 20 et 25mm</option>
+              <option value="25-30">entre 25 et 30mm</option>
+              <option value="30-70">plus de 30mm</option>
+            </select>
+            <label>Gyne</label>
+          </div><div class="option">
+            <select onchange='setFilter(this)' id="taille/media" disabled>
+              <option value="" style="color: #e3e3e3">sélectionner une taille</option>
+              <option value="0-5">en dessous de 5mm</option>
+              <option value="5-10">entre 5 et 10mm</option>
+              <option value="10-20">entre 10 et 20mm</option>
+              <option value="20-30">entre 20 et 30mm</option>
+              <option value="30-70">plus de 30mm</option>
+            </select>
+            <label>Media</label>
+          </div><div class="option">
+            <select onchange='setFilter(this)' id="taille/major">
+              <option value="" style="color: #e3e3e3">sélectionner une taille</option>
+              <option value="0-5">en dessous de 5mm</option>
+              <option value="5-10">entre 5 et 10mm</option>
+              <option value="10-20">entre 10 et 20mm</option>
+              <option value="20-30">entre 20 et 30mm</option>
+              <option value="30-70">plus de 30mm</option>
+            </select>
+            <label>Major</label>
+          </div><div class="option">
+            <select onchange='setFilter(this)' id="taille/minor">
+              <option value="" style="color: #e3e3e3">sélectionner une taille</option>
+              <option value="0-5">en dessous de 5mm</option>
+              <option value="5-10">entre 5 et 10mm</option>
+              <option value="10-20">entre 10 et 20mm</option>
+              <option value="20-30">entre 20 et 30mm</option>
+              <option value="30-70">plus de 30mm</option>
+            </select>
+            <label>Minor</label>
+          </div><div class="option" disabled>
+            <select onchange='setFilter(this)' id="taille/male" disabled>
+              <option value="" style="color: #e3e3e3">sélectionner une taille</option>
+              <option value="0-5">en dessous de 5mm</option>
+              <option value="5-10">entre 5 et 10mm</option>
+              <option value="10-20">entre 10 et 20mm</option>
+              <option value="20-30">entre 20 et 30mm</option>
+              <option value="30-70">plus de 30mm</option>
+            </select>
+            <label>Mâle</label>
+          </div>
+        </fieldset>
+
+        <!--
+        <fieldset>
+          <legend>Couleur(s) de la tête</legend>
+
+          <input type="checkbox" onchange="checkbox(this)" id="tete-noire">
+          <label>noire</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="tete-brune">
+          <label>brune</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="tete-beige">
+          <label>beige</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="tete-rouge">
+          <label>rouge</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="tete-orange">
+          <label>orange</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="tete-verte">
+          <label>verte</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Couleur(s) du thorax</legend>
+
+          <input type="checkbox" onchange="checkbox(this)" id="thorax-noir">
+          <label>noir</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="thorax-brun">
+          <label>brun</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="thorax-beige">
+          <label>beige</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="thorax-rouge">
+          <label>rouge</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="thorax-orange">
+          <label>orange</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="thorax-vert">
+          <label>vert</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Couleur(s) du gastre</legend>
+          <input type="checkbox" onchange="checkbox(this)" id="gastre-noir">
+          <label>noir</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="gastre-brun">
+          <label>brun</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="gastre-beige">
+          <label>beige</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="gastre-rouge">
+          <label>rouge</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="gastre-orange">
+          <label>orange</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="gastre-vert">
+          <label>vert</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Couleur(s) des pattes et des mandibules</legend>
+
+          <input type="checkbox" onchange="checkbox(this)" id="membres-noir">
+          <label>noir</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="membres-brun">
+          <label>brun</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="membres-beige">
+          <label>beige</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="membres-rouge">
+          <label>rouge</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="membres-orange">
+          <label>orange</label>
+
+          <input type="checkbox" onchange="checkbox(this)" id="membres-vert">
+          <label>vert</label>
+      </fieldset>-->
+      </div>
+
+    <div id="main" class="marged">
+        <div class="box">
+          <h1>Résultats <span id="n-results"></span></h1>
+          <div id="results"></div>
+        </div>
+      <div id="render" class="hidden box"></div>
+    </div>
+    </div>
+
+    <script src="https://callmekitsu.com/h/tsu.js" type="text/javascript"></script>
+    <script src="../tsu.js" type="text/javascript"></script>
+    <script src="cdn/libs/data.js" type="text/javascript"></script>
+    <script src="cdn/libs/events.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,1389 @@
+[
+  {
+    "genre": "Camponotus",
+    "espece": "lateralis",
+    "subf": "formicinae",
+    "specimen": "casent0179871",
+    "taille": {
+      "gyne": 9,
+      "minor": 5,
+      "major": 7,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-3-2-0-0-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [
+        "mimétisme_batésien",
+        "parabiose"
+      ],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Camponotus",
+    "espece": "vagus",
+    "subf": "formicinae",
+    "specimen": "casent0008640",
+    "taille": {
+      "gyne": 19,
+      "minor": 6,
+      "major": 12,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-3-0-0-0-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "aride",
+      "humidite": "inconnu",
+      "type": "lignicole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Meranoplus",
+    "espece": "bicolor",
+    "subf": "myrmicinae",
+    "specimen": "casent0740801",
+    "taille": {
+      "gyne": 8,
+      "minor": 4,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Myrmica",
+    "espece": "rubra",
+    "subf": "myrmicinae",
+    "specimen": "casent0010684",
+    "taille": {
+      "gyne": 6,
+      "minor": 3,
+      "major": 3,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "semi_claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "aiguillon_venimeux"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Crematogaster",
+    "espece": "scutellaris",
+    "subf": "myrmicinae",
+    "specimen": "casent0173120",
+    "taille": {
+      "gyne": 8,
+      "minor": 5,
+      "major": 7,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-0-0-0-2-3-0-0"
+    },
+    "habitat": {
+      "climat": "aride",
+      "humidite": "inconnu",
+      "type": "lignicole"
+    },
+    "particularites": {
+      "relations": [
+        "trophobiose",
+        "parabiose"
+      ],
+      "morphologie": [
+        "aiguillon_venimeux"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Atta",
+    "espece": "cephalotes",
+    "subf": "myrmicinae",
+    "specimen": "casent0173617",
+    "taille": {
+      "gyne": 30,
+      "minor": 5,
+      "major": 23,
+      "male": -1,
+      "media": 18
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [
+        "myrmécotrophie"
+      ],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Messor",
+    "espece": "barbarus",
+    "subf": "myrmicinae",
+    "specimen": "casent0281547",
+    "taille": {
+      "gyne": 13,
+      "minor": 8,
+      "major": 12,
+      "male": 9,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-0-0-0-2-3-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "absence_de_jabot_social"
+      ],
+      "capacites": [
+        "boulangère"
+      ]
+    }
+  },
+  {
+    "genre": "Harpegnathos",
+    "espece": "venator",
+    "subf": "ponerinae",
+    "specimen": "casent0098078",
+    "taille": {
+      "gyne": 16,
+      "minor": 15,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "oligogyne",
+      "diapause": "homodynamique",
+      "fondation": "semi_claustrale",
+      "essaimage": "0-0-0-0-2-2-0-0-0-2-2-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "aiguillon_venimeux",
+        "absence_de_jabot_social"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Oecophylla",
+    "espece": "smaragdina",
+    "subf": "formicinae",
+    "specimen": "casent0173647",
+    "taille": {
+      "gyne": 16,
+      "minor": 8,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "inconnu",
+      "type": "arboricole"
+    },
+    "particularites": {
+      "relations": [
+        "trophobiose"
+      ],
+      "morphologie": [
+        "aiguillon_venimeux"
+      ],
+      "capacites": [
+        "tisserande"
+      ]
+    }
+  },
+  {
+    "genre": "Oecophylla",
+    "espece": "longinoda",
+    "subf": "formicinae",
+    "specimen": "casent0281136",
+    "taille": {
+      "gyne": 14,
+      "minor": 7,
+      "major": -1,
+      "male": 7,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "50% à 80%",
+      "type": "arboricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": [
+        "tisserande"
+      ]
+    }
+  },
+  {
+    "genre": "Myrmecocystus",
+    "espece": "mexicanus",
+    "subf": "formicinae",
+    "specimen": "casent0005421",
+    "taille": {
+      "gyne": 17,
+      "minor": 8,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "hypertrophie_du_jabot_social"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Myrmecocystus",
+    "espece": "mimicus",
+    "subf": "formicinae",
+    "specimen": "casent0280512",
+    "taille": {
+      "gyne": 9,
+      "minor": 5,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "hypertrophie_du_jabot_social"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Prenolepis",
+    "espece": "nitens",
+    "subf": "formicinae",
+    "specimen": "casent0179603",
+    "taille": {
+      "gyne": 9,
+      "minor": 5,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-1-2-3-0-0-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "hypertrophie_du_jabot_social"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Pogonomyrmex",
+    "espece": "barbatus",
+    "subf": "myrmicinae",
+    "specimen": "casent0006306",
+    "taille": {
+      "gyne": 10,
+      "minor": 7,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-0-2-3-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "aiguillon_venimeux"
+      ],
+      "capacites": [
+        "boulangère"
+      ]
+    }
+  },
+  {
+    "genre": "Camponotus",
+    "espece": "micans",
+    "subf": "formicinae",
+    "specimen": "casent0249991",
+    "taille": {
+      "gyne": 12,
+      "minor": 6,
+      "major": 10,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-2-3-0-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "aride",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Acromyrmex",
+    "espece": "sp.",
+    "subf": "myrmicinae",
+    "specimen": "casent0173806",
+    "taille": {
+      "gyne": 12,
+      "minor": 9,
+      "major": 20,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [
+        "myrmécotrophie"
+      ],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Formica",
+    "espece": "polyctena",
+    "subf": "formicinae",
+    "specimen": "casent0173865",
+    "taille": {
+      "gyne": 12,
+      "minor": 8,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [
+        "trophobiose"
+      ],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Formica",
+    "espece": "sanguinea",
+    "subf": "formicinae",
+    "specimen": "casent0173153",
+    "taille": {
+      "gyne": 10,
+      "minor": 8,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-2-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [
+        "trophobiose",
+        "parasitisme_social"
+      ],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Formica",
+    "espece": "rufibarbis",
+    "subf": "formicinae",
+    "specimen": "casent0173858",
+    "taille": {
+      "gyne": 10,
+      "minor": 6,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-2-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Formica",
+    "espece": "cunicularia",
+    "subf": "formicinae",
+    "specimen": "casent0173175",
+    "taille": {
+      "gyne": 10,
+      "minor": 5,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-2-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Formica",
+    "espece": "fusca",
+    "subf": "formicinae",
+    "specimen": "casent0173170",
+    "taille": {
+      "gyne": 9,
+      "minor": 6,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-2-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Manica",
+    "espece": "rubida",
+    "subf": "formicinae",
+    "specimen": "casent0173135",
+    "taille": {
+      "gyne": 10,
+      "minor": 8,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "semi_claustrale",
+      "essaimage": "0-0-0-2-3-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "aiguillon_venimeux"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Pheidole",
+    "espece": "pallidula",
+    "subf": "myrmicinae",
+    "specimen": "antweb1008081",
+    "taille": {
+      "gyne": 7,
+      "minor": 2,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-1-2-3-2-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Neoponera",
+    "espece": "apicalis",
+    "subf": "ponerinae",
+    "specimen": "casent0103059",
+    "taille": {
+      "gyne": 18,
+      "minor": 17,
+      "major": -1,
+      "male": 18,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "homodynamique",
+      "fondation": "semi_claustrale",
+      "essaimage": "1-1-2-3-2-1-1-1-1-1-1"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "75% à 85%",
+      "type": "lignicole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "aiguillon_venimeux",
+        "absence_de_jabot_social"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Tetramorium",
+    "espece": "caespitum",
+    "subf": "myrmicinae",
+    "specimen": "casent0919632",
+    "taille": {
+      "gyne": 8,
+      "minor": 3,
+      "major": -1,
+      "male": 6,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-0-2-3-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "30% à 60%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Tetramorium",
+    "espece": "semilaeve",
+    "subf": "myrmicinae",
+    "specimen": "casent0008637",
+    "taille": {
+      "gyne": 7,
+      "minor": 2,
+      "major": -1,
+      "male": 6,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-0-2-3-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "30% à 60%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Camponotus",
+    "espece": "maculatus",
+    "subf": "formicinae",
+    "specimen": "casent0055750",
+    "taille": {
+      "gyne": 16,
+      "minor": 8,
+      "major": 14,
+      "male": 11,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-2-3-3-3-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "aride",
+      "humidite": "30% à 60%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Crematogaster",
+    "espece": "biroi",
+    "subf": "myrmicinae",
+    "specimen": "casent0916605",
+    "taille": {
+      "gyne": 6,
+      "minor": 2,
+      "major": -1,
+      "male": 4,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-2-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "60% à 80%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [
+        "trophobiose"
+      ],
+      "morphologie": [
+        "aiguillon_venimeux"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Rhytidoponera",
+    "espece": "metallica",
+    "subf": "ponerinae",
+    "specimen": "casent0172345",
+    "taille": {
+      "gyne": 7,
+      "minor": 5,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "semi_claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "60% à 70%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "aiguillon_venimeux",
+        "absence_de_jabot_social"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Lasius",
+    "espece": "flavus",
+    "subf": "formicinae",
+    "specimen": "casent0173167",
+    "taille": {
+      "gyne": 9,
+      "minor": 4,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-2-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "60% à 70%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [
+        "trophobiose"
+      ],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Lasius",
+    "espece": "niger",
+    "subf": "formicinae",
+    "specimen": "casent0178774",
+    "taille": {
+      "gyne": 8,
+      "minor": 4,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "3-3-2-0-0-0-0-0-0-0-2-3"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "30% à 70%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Lasius",
+    "espece": "emarginatus",
+    "subf": "formicinae",
+    "specimen": "casent0172762",
+    "taille": {
+      "gyne": 8,
+      "minor": 4,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-2-3-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "30% à 70%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Acanthomyrmex",
+    "espece": "thailandensis",
+    "subf": "myrmicinae",
+    "specimen": "thnhm-i-00044",
+    "taille": {
+      "gyne": 8,
+      "minor": 3,
+      "major": 7,
+      "male": 4,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "homodynamique",
+      "fondation": "semi_claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "60% à 80%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Gesomyrmex",
+    "espece": "sp.",
+    "subf": "formicinae",
+    "specimen": "casent0102384",
+    "taille": {
+      "gyne": 9,
+      "minor": 3,
+      "major": 7,
+      "male": 7,
+      "media": 4
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "semi_claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "inconnu",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "absence_de_jabot_social"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Eciton",
+    "espece": "sp.",
+    "subf": "formicinae",
+    "specimen": "casent0009218",
+    "taille": {
+      "gyne": null,
+      "minor": 15,
+      "major": 25,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogynie",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "inconnu",
+      "type": "marabunta"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "hypertélie_des_mandibules"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Dorylus",
+    "espece": "sp.",
+    "subf": "formicinae",
+    "specimen": "casent0249444",
+    "taille": {
+      "gyne": 17,
+      "minor": 11,
+      "major": 15,
+      "male": 13,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "aride",
+      "humidite": "inconnu",
+      "type": "marabunta"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Solenopsis",
+    "espece": "fugax",
+    "subf": "myrmicinae",
+    "specimen": "casent0173147",
+    "taille": {
+      "gyne": 6,
+      "minor": 2,
+      "major": -1,
+      "male": 4,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "3-3-2-0-0-0-0-0-0-0-2-3"
+    },
+    "habitat": {
+      "climat": "aride",
+      "humidite": "30% à 70%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "aiguillon_venimeux"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Solenopsis",
+    "espece": "invicta",
+    "subf": "myrmicinae",
+    "specimen": "casent0178134",
+    "taille": {
+      "gyne": 6,
+      "minor": 2,
+      "major": -1,
+      "male": 4,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "30% à 70%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "aiguillon_venimeux"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Cephalotes",
+    "espece": "varians",
+    "subf": "myrmicinae",
+    "specimen": "casent0103758",
+    "taille": {
+      "gyne": 7.5,
+      "minor": 6,
+      "major": -1,
+      "male": 4,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "inconnu",
+      "type": "arboricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "phragmose"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Cephalotes",
+    "espece": "texanus",
+    "subf": "myrmicinae",
+    "specimen": "casent0104842",
+    "taille": {
+      "gyne": -1,
+      "minor": -1,
+      "major": -1,
+      "male": -1,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "inconnu",
+      "type": "arboricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "phragmose"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Colobopsis",
+    "espece": "truncata",
+    "subf": "formicinae",
+    "specimen": "casent0249998",
+    "taille": {
+      "gyne": 7,
+      "minor": 4,
+      "major": 6,
+      "male": 5,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "monogyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-0-0-2-3-3-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "tempéré",
+      "humidite": "10% à 40%",
+      "type": "lignicole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "phragmose"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Colobopsis",
+    "espece": "explodens",
+    "subf": "formicinae",
+    "specimen": "cocy01565",
+    "taille": {
+      "gyne": 10,
+      "minor": 4,
+      "major": 7,
+      "male": 7,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "inconnu",
+      "type": "arboricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "autothyse"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Myrmoteras",
+    "espece": "sp.",
+    "subf": "formicinae",
+    "specimen": "casent0003210",
+    "taille": {
+      "gyne": 7,
+      "minor": 7,
+      "major": -1,
+      "male": 6,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "30% à 60%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "hypertélie_des_mandibules"
+      ],
+      "capacites": []
+    }
+  },
+  {
+    "genre": "Messor",
+    "espece": "structor",
+    "subf": "myrmicinae",
+    "specimen": "antweb1008070",
+    "taille": {
+      "gyne": 11,
+      "minor": 6,
+      "major": 10,
+      "male": 7,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "hétérodynamique",
+      "fondation": "claustrale",
+      "essaimage": "0-0-0-2-3-0-0-0-0-0-0-0"
+    },
+    "habitat": {
+      "climat": "aride",
+      "humidite": "30% à 70%",
+      "type": "terricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [
+        "absence_de_jabot_social"
+      ],
+      "capacites": [
+        "boulangère"
+      ]
+    }
+  },
+  {
+    "genre": "Polyrhachis",
+    "espece": "dives",
+    "subf": "formicinae",
+    "specimen": "casent0227526",
+    "taille": {
+      "gyne": 9,
+      "minor": 6,
+      "major": -1,
+      "male": 7,
+      "media": -1
+    },
+    "colonie": {
+      "gynie": "polygyne",
+      "diapause": "homodynamique",
+      "fondation": "claustrale",
+      "essaimage": "inconnu"
+    },
+    "habitat": {
+      "climat": "tropical",
+      "humidite": "30% à 80%",
+      "type": "arboricole"
+    },
+    "particularites": {
+      "relations": [],
+      "morphologie": [],
+      "capacites": [
+        "tisserande"
+      ]
+    }
+  }
+]

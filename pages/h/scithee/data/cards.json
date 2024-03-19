@@ -1,0 +1,114 @@
+[
+	{
+		"id": "1",
+		"title": "Le lait, avant ou après les céréales ?",
+		"topics": [
+			"société",
+			"débat"
+		],
+		"type": "QCU",
+		"options": [
+			"avant",
+			"après"
+		],
+		"answers": {
+			"0": 1
+		}
+	},
+	{
+		"id": "2",
+		"title": "Escargots aux raisins...",
+		"desc": "On cherche à comprendre pourquoi certains ne comprennent pas l'expression 'escargot' pour désigner les 'pains au raisin' en France.",
+		"topics": [
+			"société",
+			"cuisine",
+			"expression",
+			"langue"
+		],
+		"type": "YN",
+		"answers": {
+			"1": 1
+		}
+	},
+	{
+		"id": "3",
+		"title": "Self-évaluation",
+		"desc": "Comment évalueriez-vous votre capacité à comprendre les attentes et besoins des autres, en société ?",
+		"topics": [
+			"psychologie",
+			"anthropologie",
+			"étude"
+		],
+		"type": "RATE",
+		"note": 5,
+		"answers": {
+			"1": 1,
+			"4": 1
+		}
+	},
+	{
+		"id": "4",
+		"title": "Tu préfères...",
+		"topics": [
+			"tu préfères",
+			"société",
+			"débat"
+		],
+		"type": "QCU",
+		"options": [
+			"te battre contre un requin",
+			"te battre contre un ours"
+		],
+		"answers": {
+			"0": 2
+		}
+	},
+	{
+		"id": "5",
+		"title": "L'Euthanasie",
+		"desc": "Avoir la possibilité de mettre fin à ses jours si l'on souffre et qu'on le souhaite, à l'aide de procédés médicaux qui garantissent une mort sans douleur et rapide.",
+		"topics": [
+			"dilemme",
+			"société",
+			"débat"
+		],
+		"type": "YN",
+		"answers": {
+			"1": 1
+		}
+	},
+	{
+		"id": "6",
+		"title": "Tu préfères...",
+		"topics": [
+			"tu préfères",
+			"société",
+			"débat"
+		],
+		"type": "QCU",
+		"options": [
+			"manger des clous",
+			"manger des vis"
+		],
+		"answers": {
+			"1": 1
+		}
+	},
+	{
+		"id": "7",
+		"title": "Tu préfères...",
+		"topics": [
+			"tu préfères",
+			"société",
+			"débat"
+		],
+		"type": "QCU",
+		"options": [
+			"être immortel",
+			"aller sur Mars et mourir juste après"
+		],
+		"answers": {
+			"0": 2
+		}
+	}
+]

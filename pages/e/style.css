@@ -12,9 +12,10 @@
 
 #container {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 #searchbar {
@@ -26,10 +27,6 @@
   padding-left: 10px;
   width: 30%;
   outline: none;
-}
-
-.item-docs, .item-run {
-  filter: invert(1);
 }
 
 #searchbar::placeholder {
