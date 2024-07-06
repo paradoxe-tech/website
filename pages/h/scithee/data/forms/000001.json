@@ -1,139 +1,142 @@
-[
-  {
-    "type": "title",
-    "text": "Évaluation des normes d'affection"
-  },
-  {
-    "type": "text",
-    "text": "L'objectif du sondage est d'établir un ordre de grandeur vis-à-vis des valeurs numériques correspondantes à la majorité dans le cadre de la modélisation de l'affection."
-  },
-  {
-    "type": "YN",
-    "title": "Pensez-vous avoir déjà été amoureux ?",
-    "desc": "Par amoureux, on entend une correspondance totale ou partielle avec le standard sociétal de l'amour. Si incertitude, merci de répondre 'non' pour le bien du traitement des données."
-  },
-  {
-    "type": "text",
-    "text": "On considèrera ici que l'amour est une forme d'affection, et que la haine l'est aussi. Merci de prendre en compte cette définition pour réaliser l'expérience de pensée qui suit."
-  },
-  {
-    "type": "RANGE",
-    "title": "Acception affective",
-    "desc": "Quelle quantité d'affection vous estimez-vous vous capable de recevoir en l'espace d'une journée ? On considèrera que répondre le maximum correspond à une aisance à gérer le fait d'être aimé, adoré même.",
-    "min": 0,
-    "max": 1000
-  },
-  {
-    "type": "text",
-    "text": "On ne parle pas ici de besoin ou de plaisir à recevoir de l'affection, simplement, dans un certains sens, de capacité à l'encaisser."
-  },
-  {
-    "type": "DROP",
-    "title": "Étiquetage",
-    "desc": "Comment caractériseriez-vous cette quantité (votre acception quotidienne d'affection) ?  Merci de répondre le plus spontanément possible. S'agit-il d'un affect...",
-    "options": [
-      "inexistant",
-      "petit",
-      "grand",
-      "passionné",
-      "fou"
-    ]
-  },
-  {
-    "type": "LIKERT",
-    "title": "À quel point êtes-vous sûr de votre choix ?",
-    "desc": "Essayez de donner une estimation d'à quel point l'étiquetage que vous venez de réaliser colle avec votre compréhension intuitive de la donnée qu'il quantifie.",
-    "choices": 3
-  },
-  {
-    "type": "RANGE",
-    "title": "Besoin affectif",
-    "desc": "À quelle quantité estimez-vous votre besoin de recevoir de l'affection (qu'elle soit sous forme d'amour, de haine, d'intérêt ou d'attention) au cours d'une journée ?",
-    "min": 0,
-    "max": 1000
-  },
-  {
-    "type": "DROP",
-    "title": "Étiquetage",
-    "desc": "Comment caractériseriez-vous cette quantité (votre besoin quotidien d'affection) ?  Merci de répondre le plus spontanément possible. S'agit-il d'un affect...",
-    "options": [
-      "inexistant",
-      "petit",
-      "grand",
-      "passionné",
-      "fou"
-    ]
-  },
-  {
-    "type": "LIKERT",
-    "title": "À quel point êtes-vous sûr de votre choix ?",
-    "desc": "Essayez de donner une estimation d'à quel point l'étiquetage que vous venez de réaliser colle avec votre compréhension intuitive de la donnée qu'il quantifie.",
-    "choices": 3
-  },
-  {
-    "type": "RANGE",
-    "title": "Affectivité",
-    "desc": "À quelle quantité estimez-vous votre capacité à donner de l'affection au cours d'une journée ? La cible de cette affection peut ne pas être la même au cours de la journée.",
-    "min": 0,
-    "max": 1000
-  },
-  {
-    "type": "DROP",
-    "title": "Étiquetage",
-    "desc": "Comment caractériseriez-vous cette quantité (votre capacité à donner de l'affection) ?  Merci de répondre le plus spontanément possible. S'agit-il d'un affect...",
-    "options": [
-      "inexistant",
-      "petit",
-      "grand",
-      "passionné",
-      "fou"
-    ]
-  },
-  {
-    "type": "LIKERT",
-    "title": "À quel point êtes-vous sûr de votre choix ?",
-    "desc": "Essayez de donner une estimation d'à quel point l'étiquetage que vous venez de réaliser colle avec votre compréhension intuitive de la donnée qu'il quantifie.",
-    "choices": 3
-  },
-  {
-    "type": "text",
-    "text": "On s'intéresse maintenant à l'évolution de votre affection pour une personne. Par exemple, à la manière avec laquelle votre rancoeur à l'égard de quelqu'un s'amenuise au cours du temps."
-  },
-  {
-    "type": "DROP",
-    "title": "Votre amour évolue...",
-    "desc": "Par exemple, repensez à la période pendant laquelle vous êtes tombé amoureux ou devenu ami avec quelqu'un qui vous est cher actuellement. Était-ce progressif mais toujours régulier, ou plutôt y avait-il une sorte de pallier à franchir avant de l'aimer plus fort que précédemment, après lequel votre affection a augmenté d'un seul coup ?",
-    "options": [
-      "linéairement",
-      "par étapes",
-      "chaotiquement",
-      "ça dépend"
-    ]
-  },
-  {
-    "type": "text",
-    "text": "Il est important de noter qu'il faut penser à l'évolution en l'absence d'évènements marquants. Par exemple, une augmentation brutale de votre amour pour quelqu'un après qu'il ait effectué un acte positif de votre point de vue ne devrait pas être considérée comme une étape."
-  },
-  {
-    "type": "YN",
-    "title": "Votre réponse changerait-elle avec ces évènements ?",
-    "desc": "Si on considérait ces évènements marquants comme les seuils d'accès aux palliers, est-ce que votre réponse à la question précédente serait différente ?"
-  },
-  {
-    "type": "DROP",
-    "title": "Votre haine évolue...",
-    "desc": "Par exemple, imaginez quelqu'un pour qui vous avez une certaine animosité. Pensez vous qu'elle augmente à chaque fois que vous vous cotôyez de la même manière, ou qu'elle stagne pendant une période avant d'évoluer d'un coup (comme à partir d'un seuil) ?",
-    "options": [
-      "linéairement",
-      "par étapes",
-      "chaotiquement",
-      "ça dépend"
-    ]
-  },
-  {
-    "type": "LIKERT",
-    "title": "Avez vous vraiment compris cette notion ?",
-    "desc": "Essayez de donner une estimation d'à quel point le concept d'évolution de votre affection est flou ou précis pour vous.",
-    "choices": 3
-  }
-]
+{
+	"content": [
+		{
+			"type": "title",
+			"text": "Évaluation des normes d'affection"
+		},
+		{
+			"type": "text",
+			"text": "L'objectif du sondage est d'établir un ordre de grandeur vis-à-vis des valeurs numériques correspondantes à la majorité dans le cadre de la modélisation de l'affection."
+		},
+		{
+			"type": "YN",
+			"title": "Pensez-vous avoir déjà été amoureux ?",
+			"desc": "Par amoureux, on entend une correspondance totale ou partielle avec le standard sociétal de l'amour. Si incertitude, merci de répondre 'non' pour le bien du traitement des données."
+		},
+		{
+			"type": "text",
+			"text": "On considèrera ici que l'amour est une forme d'affection, et que la haine l'est aussi. Merci de prendre en compte cette définition pour réaliser l'expérience de pensée qui suit."
+		},
+		{
+			"type": "RANGE",
+			"title": "Acception affective",
+			"desc": "Quelle quantité d'affection vous estimez-vous vous capable de recevoir en l'espace d'une journée ? On considèrera que répondre le maximum correspond à une aisance à gérer le fait d'être aimé, adoré même.",
+			"min": 0,
+			"max": 1000
+		},
+		{
+			"type": "text",
+			"text": "On ne parle pas ici de besoin ou de plaisir à recevoir de l'affection, simplement, dans un certains sens, de capacité à l'encaisser."
+		},
+		{
+			"type": "DROP",
+			"title": "Étiquetage",
+			"desc": "Comment caractériseriez-vous cette quantité (votre acception quotidienne d'affection) ?  Merci de répondre le plus spontanément possible. S'agit-il d'un affect...",
+			"options": [
+				"inexistant",
+				"petit",
+				"grand",
+				"passionné",
+				"fou"
+			]
+		},
+		{
+			"type": "LIKERT",
+			"title": "À quel point êtes-vous sûr de votre choix ?",
+			"desc": "Essayez de donner une estimation d'à quel point l'étiquetage que vous venez de réaliser colle avec votre compréhension intuitive de la donnée qu'il quantifie.",
+			"choices": 3
+		},
+		{
+			"type": "RANGE",
+			"title": "Besoin affectif",
+			"desc": "À quelle quantité estimez-vous votre besoin de recevoir de l'affection (qu'elle soit sous forme d'amour, de haine, d'intérêt ou d'attention) au cours d'une journée ?",
+			"min": 0,
+			"max": 1000
+		},
+		{
+			"type": "DROP",
+			"title": "Étiquetage",
+			"desc": "Comment caractériseriez-vous cette quantité (votre besoin quotidien d'affection) ?  Merci de répondre le plus spontanément possible. S'agit-il d'un affect...",
+			"options": [
+				"inexistant",
+				"petit",
+				"grand",
+				"passionné",
+				"fou"
+			]
+		},
+		{
+			"type": "LIKERT",
+			"title": "À quel point êtes-vous sûr de votre choix ?",
+			"desc": "Essayez de donner une estimation d'à quel point l'étiquetage que vous venez de réaliser colle avec votre compréhension intuitive de la donnée qu'il quantifie.",
+			"choices": 3
+		},
+		{
+			"type": "RANGE",
+			"title": "Affectivité",
+			"desc": "À quelle quantité estimez-vous votre capacité à donner de l'affection au cours d'une journée ? La cible de cette affection peut ne pas être la même au cours de la journée.",
+			"min": 0,
+			"max": 1000
+		},
+		{
+			"type": "DROP",
+			"title": "Étiquetage",
+			"desc": "Comment caractériseriez-vous cette quantité (votre capacité à donner de l'affection) ?  Merci de répondre le plus spontanément possible. S'agit-il d'un affect...",
+			"options": [
+				"inexistant",
+				"petit",
+				"grand",
+				"passionné",
+				"fou"
+			]
+		},
+		{
+			"type": "LIKERT",
+			"title": "À quel point êtes-vous sûr de votre choix ?",
+			"desc": "Essayez de donner une estimation d'à quel point l'étiquetage que vous venez de réaliser colle avec votre compréhension intuitive de la donnée qu'il quantifie.",
+			"choices": 3
+		},
+		{
+			"type": "text",
+			"text": "On s'intéresse maintenant à l'évolution de votre affection pour une personne. Par exemple, à la manière avec laquelle votre rancoeur à l'égard de quelqu'un s'amenuise au cours du temps."
+		},
+		{
+			"type": "DROP",
+			"title": "Votre amour évolue...",
+			"desc": "Par exemple, repensez à la période pendant laquelle vous êtes tombé amoureux ou devenu ami avec quelqu'un qui vous est cher actuellement. Était-ce progressif mais toujours régulier, ou plutôt y avait-il une sorte de pallier à franchir avant de l'aimer plus fort que précédemment, après lequel votre affection a augmenté d'un seul coup ?",
+			"options": [
+				"linéairement",
+				"par étapes",
+				"chaotiquement",
+				"ça dépend"
+			]
+		},
+		{
+			"type": "text",
+			"text": "Il est important de noter qu'il faut penser à l'évolution en l'absence d'évènements marquants. Par exemple, une augmentation brutale de votre amour pour quelqu'un après qu'il ait effectué un acte positif de votre point de vue ne devrait pas être considérée comme une étape."
+		},
+		{
+			"type": "YN",
+			"title": "Votre réponse changerait-elle avec ces évènements ?",
+			"desc": "Si on considérait ces évènements marquants comme les seuils d'accès aux palliers, est-ce que votre réponse à la question précédente serait différente ?"
+		},
+		{
+			"type": "DROP",
+			"title": "Votre haine évolue...",
+			"desc": "Par exemple, imaginez quelqu'un pour qui vous avez une certaine animosité. Pensez vous qu'elle augmente à chaque fois que vous vous cotôyez de la même manière, ou qu'elle stagne pendant une période avant d'évoluer d'un coup (comme à partir d'un seuil) ?",
+			"options": [
+				"linéairement",
+				"par étapes",
+				"chaotiquement",
+				"ça dépend"
+			]
+		},
+		{
+			"type": "LIKERT",
+			"title": "Avez vous vraiment compris cette notion ?",
+			"desc": "Essayez de donner une estimation d'à quel point le concept d'évolution de votre affection est flou ou précis pour vous.",
+			"choices": 3
+		}
+	],
+	"results": {}
+}

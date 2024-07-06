@@ -1,6 +1,7 @@
+const fs = require("fs")
+
 module.exports.run = (app, apiPath, loacalHostPath) => {
   
-  const fs = require("fs")
   const fourmis = JSON.parse(fs.readFileSync(loacalHostPath + "/" + 'database.json'))
 
   app.get(apiPath + '/all', (req, res) => {

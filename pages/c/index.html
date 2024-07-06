@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../../cdn/assets/branding/favicon.png">
+    <title>Contribuer | Mathéo Tripnaux-Moreau</title>
+
+    <link href="../../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <div id="mouse"></div>
+
+    <div id="menu">
+      <img src="../cdn/assets/branding/logo.png" id="hamburger" onclick="document.querySelector('#menu').classList.toggle('active')">
+      <a href="../">Accueil</a>
+      <a href="../e">Explorer</a>
+      <a href="../a">Actualités</a>
+      <a class="active">Contribuer</a>
+      <a href="../s" class="disabled">Services</a>
+      <a href="../i">À propos</a>
+    </div>
+
+    <div class='content'>
+      <div class="wide-content">
+        <h1 class="page-slash">/c</h1>
+        <div class="inner">
+          <h1>Contribuer</h1>
+          <p>Participez à mes études, supportez mes projets et obtenez des avantages de choix pour les projets futurs ! Cela inclut certains accès en avant-première, un droit au vote pour les décisions décisives et le droit d'être beta-testeur (en plus d'être crédité comme donateur ou participant !)</p>
+        </div>
+      </div>
+      <br/><br/><br/>
+      <div class="centered">
+      <div id="contribute">
+        <div>
+          <h1>Participer à ClockWork</h1>
+          <h3>ajouter des musiques à la playlist</h3>
+          <br/>
+          <p>Votre contribution sera validée ou non par des expériences sur plusieurs autres utilisateurs. Si elle est retenue, vous aurez apporté votre pièce à l'édifice ! La publication qui soutient le projet est disponible à p/Clockwork.</p>
+          <br/>
+          <button class="c-action" data-gain="1 / son">essayer</button>
+        </div>
+        <div>
+          <h1>Faire un don</h1>
+          <h3>pourquoi pas ?</h3>
+          <br/>
+          <p>Les fonds sont principalement investis dans l'hébergement des projets, mais peuvent aussi supporter la mise en place d'expériences ou l'amélioration des conditions de mon travail !</p>
+          <br/>
+          <button class="c-action" data-gain="1 / €">supporter</button>
+        </div>
+        <div>
+          <h1>Répondre à un sondage</h1>
+          <h3>plein d'études n'attendent que vous !</h3>
+          <br/>
+          <p>Votre réponse sera anonymysée, et la connexion ne nécessite qu'un compte google. Le temps que prend la réponse au sondage est proportionnel à la récompense affichée.</p>
+          <div id="surveys"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../../h/tsu.js"></script>
+    <script src="../../cdn/scripts/mouse.js"></script>
+    <script src="../../cdn/scripts/md.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

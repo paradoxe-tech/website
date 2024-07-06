@@ -1,0 +1,289 @@
+@font-face {
+  font-family: "Poppins";
+  src: url('./assets/Poppins-Regular.ttf')
+}
+
+@font-face {
+  font-family: "Sergio Trendy";
+  src: url('./assets/Sergio Trendy.ttf')
+}
+
+:root {
+  --contour: black;
+  --darker: #05BE70;
+  --darkest: #049A5B;
+  --hl: #12EB90;
+  --hl-light: #08D57F;
+  --lightest: #32FCA7;
+  --font: var(--contour);
+  --background: black;
+}
+
+green {
+  color: var(--hl)
+}
+
+body, html {
+  margin: 0px;
+  background: var(--background);
+  background-size: 100% 100vh;
+  background-repeat: repeat;
+  font-family: "Poppins";
+  font-size: 0.9em;
+  width: 100%;
+}
+
+* {
+  font-family: 'Itim', cursive;
+}
+
+h1.title {
+  font-family: "Sergio Trendy";
+  color: #ffffff;
+  font-size: 4em;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+h1.title green {
+  font-family: "Sergio Trendy";
+}
+
+#main {
+  margin: auto;
+  margin-top: 150px;
+  width: 900px;
+}
+
+#main > div {
+  border-radius: 10px;
+  width: 100%;
+  height: fit-content;
+  min-height: 100px;
+}
+
+#info-panel {
+  position: absolute;
+  z-index: 99;
+  /* left: -63px; */
+  background: white;
+  padding: 10px 10px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+table {
+  border: 0px;
+  border-collapse: collapse;
+  border-radius: 15px;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+val.squared table {
+  padding: 5px 0;
+}
+
+td {
+  width: 10px;
+  height: 10px;
+}
+
+.alive {
+  background-color: var(--hl);
+  cursor: no-drop;
+}
+
+#buttons {
+  border-radius: 25px;
+  background: white;
+  overflow: clip;
+}
+
+button {
+  padding: 10px 20px;
+  background: white;
+  color: var(--font);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--hl);
+}
+
+button.red:hover {
+  background: #fe3e3e;
+}
+
+.cols {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  position: relative;
+}
+
+.info {
+  background: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: block;
+  margin: 5px 0px;
+  color: var(--contour);
+}
+
+*:focus {
+  outline: none;
+}
+
+.entity {
+  width: 5px;
+  height: 5px;
+  background: red;
+  margin: 2px;
+}
+
+.uni-param {
+  margin-bottom: 15px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+input, select {
+  background: white;
+  border-radius: 50px;
+  -webkit-appearance: none;
+  overflow: clip;
+  border: none;
+}
+
+input[type="range"] {
+  width: 100%;
+  overflow: clip;
+}
+
+input[type="number"] {
+  width: 25px;
+  padding: 5px 10px;
+}
+
+select {
+  padding: 5px 10px;
+  width: 100%;
+}
+
+#universe {
+  position: relative;
+  padding: 10px;
+  background: black;
+  border-radius: 15px;
+  overflow: clip;
+  width: 480px;
+  height: 480px;
+  border: 5px solid white;
+}
+
+#universe.killed, #universe.killed table td {
+  background: #c7c7c7;
+  border: none !important;
+  pointer-events: none;
+}
+
+#universe.killed::after {
+  content: "Avant le Big Bang, rien n'était.";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+op, val, select.val {
+  display: inline-block;
+  padding: 5px 10px;
+  background: white;
+  border-radius: 50px;
+  border: 1px solid grey;
+}
+
+val, select.val {
+  background: var(--hl);
+  vertical-align: middle;
+}
+
+.rule {
+  border-radius: 7px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: white;
+}
+
+#rules {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  cursor: cell;
+}
+
+td.black {
+  background: black; 
+  outline: 1px solid var(--hl);
+}
+
+td.white {
+  background: var(--darker); 
+  outline: 1px solid var(--hl);
+}
+
+val.squared {
+  border-radius: 5px;
+}
+
+select.val, select.inbubble  {
+  width: fit-content;
+  display: inline-block;
+  cursor: pointer;
+}
+
+val select.val, select.inbubble {
+  background: white;
+  border: none;
+  vertical-align: top;
+}
+
+#rules-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: clip;
+}
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b6b6b;
+  font: "Poppins";
+}

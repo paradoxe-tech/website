@@ -5,7 +5,6 @@ document.body.addEventListener('mousemove', () => {
   mouseMoved = true
   
   document.querySelectorAll(".item .options.stars .option").forEach(star => {
-    console.log("done")
     star.addEventListener('mousemove', e => {
       let qId = star.id.split('-')[1]
       let note = parseInt(star.id.split('-')[2].replaceAll('rate', ''))

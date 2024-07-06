@@ -1,0 +1,675 @@
+/* ================================================================ { RULES } == */
+
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("cdn/assets/Poppins-SemiBold.ttf")
+}
+
+@media all and (min-width: 100px) and (max-width: 700px) {
+
+  .bubble {
+    display: none !important;
+  }
+  
+  #raw-content, #rendered-content {
+    min-height: 80vh !important;
+    padding-bottom: 200px;
+    left: 20px !important;
+    width: calc(100% - 40px) !important;
+  }
+
+  #rendered-content {
+    width: calc(100% - 60px) !important;
+  }
+
+  #bottom-menu ion-icon:hover {
+    transform: rotate(0deg) !important;
+  }
+
+  body {
+    overflow: visible !important;
+  }
+  
+  sigma sup {
+    top: -23px !important;
+    left: -3px !important;
+  }
+
+  sigma sub {
+    bottom: -12px !important;
+  }
+
+  .window {
+    min-width: 60%;
+  }
+
+  :root {
+    --font-size: 0.8em !important;
+    --lh: 1.4em !important;
+  }
+  
+}
+
+/* ================================================================ { ROOT } == */
+
+:root {
+  --fontcolor: white;
+  --bgcolor: black;
+  --bgcode: #212121;
+  --bgbubble: #282828;
+  --fontcode: #dbdbdb;
+  --selectionbg: white;
+  --selectioncolor: black;
+  --font-fam: "Montserrat";
+  --titles-font-fam: "Poppins Bold";
+  --font-size: 1em;
+  --lh: 1.5em;
+  --cursor: auto;
+  --point: auto;
+}
+
+body.light {
+  --fontcolor: black;
+  --bgcolor: white;
+  --bgcode: #d7d7d7;
+  --bgbubble: #f0f0f0;
+  --fontcode: black;
+  --selectionbg: black;
+  --selectioncolor: white;
+}
+
+::selection {
+  background-color: var(--selectionbg, white); 
+  color: var(--selectioncolor, black);
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--selectioncolor); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--selectioncolor);
+  border-radius: 25px;
+  cursor: ns-resize !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fontcode); 
+}
+
+/* ================================================================ { TAGS } == */
+
+head {
+  overflow: hidden
+}
+
+body {
+  font-family: var(--font-fam);
+  overflow: hidden;
+
+  background-color: var(--bgcolor, black);
+  color: var(--fontcolor, white);
+  transition: color 1s ease background 0.3s;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 15px 0px 15px 0px;
+  font-family: var(--titles-font-fam);
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+hr {
+  border-top: 1px solid var(--fontcolor, white);
+  margin-bottom: 15px;
+}
+
+ion-icon {
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+p {
+  margin: 0px;
+}
+
+p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+li {
+  position: relative;
+  left: 10px;
+  list-style: square;
+}
+
+li span {
+  position: relative;
+  left: -10px;
+}
+
+.hidden {
+  left: -100% !important;
+  display: none !important;
+}
+
+button {
+  color: var(--fontcolor, white);
+  background: var(--bgcode, #272727);
+  outline: 2px var(--fontcolor, white);
+  padding: 5px;
+  border: none;
+  cursor: var(--point);
+}
+
+button:hover {
+  color: yellow;
+}
+
+input[type=text], select {
+  color: var(--fontcolor, white);
+  background: var(--bgcode, #272727);
+  padding: 5px;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+hr {
+  background: var(--fontcolor)
+}
+
+table {
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 10px;
+  border: 2px solid white;
+}
+
+table th {
+  background: var(--fontcolor);
+  color: var(--bgcolor);
+}
+
+line {
+  white-space: pre-wrap;
+}
+
+/* ================================================================ { CONTENT } == */
+
+#content {
+  margin: 0px;
+  position: fixed;
+  top: 50px;
+  width: calc(100vw - 80px);
+  padding: 40px;
+  height: calc(100vh - 230px);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#content-container {
+  width: 900px;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex: 1 1;
+  overflow-y: scroll;
+}
+
+#rendered-content, #raw-content {
+
+  background: var(--bgbubble);
+  transition: color 1s ease background 0.3s;
+  
+  color: var(--fontcolor, white);
+  font-size: var(--font-size);
+  font-family: var(--font-fam);
+
+  width: 100%;
+  height: fit-content;
+  margin: 0px;
+
+  border-radius: 20px;
+  padding: 50px;
+
+  resize: none;
+  outline: none;
+  border: none;
+  word-break: break-word;
+}
+
+#raw-content::placeholder {
+  color: var(--fontcode);
+  font-family: var(--titles-font-fam);
+}
+
+#content-container.sliced #lexique {
+  display: flex;
+}
+
+#content-container.sliced #raw-content {
+  height: 50% !important;
+  overflow-y: scroll !important;
+}
+
+#content-container.sliced #rendered-content {
+  height: 100% !important;
+  overflow-y: scroll !important;
+}
+
+#content-container.sliced #left-col {
+  justify-content: center;
+}
+
+#raw-content {
+  cursor: text !important;
+}
+
+#rendered-content>:first-child {
+  margin-top: 0px !important;
+  line-height: normal;
+}
+
+#rendered-content {
+  margin-bottom: 20px;
+  min-height: 400px;
+}
+
+/* ================================================================ { MENU } == */
+
+#vanta-logo {
+  margin-top: 10px;
+  cursor: help;
+}
+
+#menu {
+  text-align: center;
+  width: 100% !important;
+  padding: 15px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 99;
+  background: var(--bgcolor, black);
+}
+
+#bottom-menu {
+  background: var(--bgcolor);
+  z-index: 99;
+  position: fixed;
+  bottom: 0;
+  width: calc( 100% - 50px);
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  justify-content: center;
+  height: 25px;
+}
+
+#bottom-menu ion-icon {
+  cursor: var(--point);
+  transition: transform 150ms ease-out;
+}
+
+#bottom-menu ion-icon:hover {
+  transform: rotate(15deg);
+}
+
+#menu img {
+  width: 90px !important;
+}
+
+#menu img, #menu ion-icon {
+  vertical-align: middle;
+}
+
+/* ================================================================ { BLOCKS } == */
+
+maths, code {
+  color: var(--fontcode, #B9BBBE);
+  background-color: var(--bgcode, #272727);
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+}
+
+pre > code, maths {
+  padding: 30px;
+  width: calc(100% - 60px);
+  white-space: break-spaces;
+} 
+
+maths {
+  white-space: normal !important;
+}
+
+maths::after, code.maths {
+  content: "⚠  Vanta Flavoured maths expressions are no longer supported since v2.0.0. Please use LaTeX instead.";
+  color: yellow;
+  display: inline-block;
+  margin-top: 20px;
+  font-family: monospace;
+}
+
+code {
+  font-family: monospace;
+}
+
+maths {
+  font-family: times new roman;
+}
+
+blockquote {
+  padding: 15px;
+  border-left: 2px solid var(--fontcode);
+  color: var(--fontcode);
+  display: block;
+  background: var(--bgcode);
+  margin: 10px 10px 5px 0;
+}
+
+moy {
+  border-top: 1px solid var(--fontcode);
+}
+
+sigma {
+  position: relative;
+  top: 5px;
+}
+
+sup.sigma {
+  position: absolute;
+  top: -30px;
+  left: -3px;
+}
+
+sub.sigma  {
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+}
+
+square-root {
+  position: relative;
+}
+
+square-root::before {
+  content: "√";
+}
+
+square-root::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--sqrt-length);
+  border-top: 1px solid var(--fontcode);
+}
+
+.widget {
+  background-color: var(--bgcode, #272727);
+  border-radius: 5px;
+  display: block;
+  padding: 15px;
+  width: fit-content;
+}
+
+.fraction {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.fraction > span { 
+  display: block; 
+  padding: 0.1em; 
+}
+
+.fraction span.fdn {
+  border-top: thin solid var(--fontcode, #B9BBBE);
+}
+
+.fraction span.bar {display: none;}
+
+block {
+  color: var(--fontcode, #B9BBBE);
+  background-color: var(--bgcode, #272727);
+  font-family: times new roman;
+  padding: 5px 10px;
+}
+
+#rendered-content def {
+  display: block;
+  position: relative;
+  background: var(--bgccolor);
+  border: 2px solid var(--fontcode);
+  padding: 20px;
+}
+
+#rendered-content def concept {
+  padding: 5px 10px;
+  background: var(--bgbubble);
+  position: absolute;
+  top: -1em;
+  left: 35px;
+}
+
+/* ================================================================ { WINDOWS } == */
+
+.window {
+  border-radius: 25px;
+  padding: 50px;
+  width: fit-content;
+  height: fit-content;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  background: var(--bgcode, #272727);
+  z-index: 999;
+  transition: left 800ms ease-out;
+}
+
+.window ul {
+  padding: 0;
+  padding-right: 25px;
+}
+
+.window ul li {
+  list-style: none;
+  cursor: var(--point);
+  padding: 10px;
+}
+
+.window ul li ion-icon {
+  margin-right: 10px;
+}
+
+.window ul li:hover {
+  color: yellow;
+}
+
+#fileuploader {
+  display: none;
+}
+
+#filed-drop {
+  width: 100%;
+  height: 150px;
+  outline: 2px dotted var(--fontcolor);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: cell;
+}
+
+/* ================================================================ { COLORS } == */
+
+red {
+  color: red
+}
+
+green {
+  color: #438443
+}
+
+yellow {
+  color: yellow
+}
+
+blue {
+  color: #2990ff
+}
+
+grey {
+  color: #8f8f8f
+}
+
+pink {
+  color: #f051eb
+}
+
+lightyellow {
+  color: #fdfdaf
+}
+
+lightgreen {
+  color: #b2ffa8
+}
+
+orange {
+  color: #CE9178
+}
+
+interogation {
+  color: yellow;
+}
+
+#lexique {
+  display: none;
+}
+
+#left-col, #right-col {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  flex-basis: 23%;
+  flex-direction: column;
+  width: 23%;
+}
+
+#lexique-data {
+  gap: 5px;
+  width: fit-content;
+}
+
+.tag {
+  background: var(--bgcode);
+  color: var(--fontcode);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.7em;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+/* =============== */
+
+.bubble {
+/*  background: var(--bgbubble); */
+  border-radius: 20px;
+  padding: 50px;
+  height: fit-content;
+  width: calc(100% - 100px);
+}
+
+.bubble > ul {
+  padding: 0 0 0 20px;
+}
+
+.bubble > h1 {
+  margin: 0px;
+}
+
+.bubble def {
+  padding: 10px 0; 
+  width: 100%;
+  display: flex;
+}
+
+.bubble def concept::after {
+  content: "→";
+  margin-right: 5px;
+}
+
+.bubble def description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: calc(100% - 100px);
+  vertical-align: middle;
+}
+
+#rendered-content img {
+  max-width: 70%;
+}
+
+#rendered-content *:has(.footnote) {
+  display: none;
+}
+
+.footnote-a {
+  color: yellow;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.bubble span.footnote {
+  margin: 5px 0 0 0;
+  display: block;
+}
+
+#rendered-content a {
+  color: yellow;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#rendered-content a:hover {
+  text-decoration: underline;
+}
+
+#content.vBot word:hover {
+  border-bottom: 2px solid yellow;
+  cursor: pointer;
+}
+
+emphase {
+  border-bottom: 2px solid yellow;
+}
+
+highlight {
+  background: yellow;
+  color: black;
+}

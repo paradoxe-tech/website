@@ -1,0 +1,66 @@
+@media all and (min-width: 100px) and (max-width: 900px) {
+  #contribute {
+    flex-direction: column !important;
+  }
+}
+
+#contribute {
+  display: flex;
+  gap: 100px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 0.8em;
+}
+
+#contribute > div {
+  max-width: 320px;
+}
+
+#contribute > div > h3 {
+  color: white;
+  font-weight: normal;
+}
+
+#contribute > div > p {
+  color: grey;
+  font-weight: normal;
+}
+
+.c-action {
+  display: block;
+  padding: 10px 20px;
+  color: black;
+  background: white;
+  transition: all 200ms ease-in-out;
+  position: relative;
+  border: none;
+  border-radius: 50px;
+}
+
+.c-action:hover {
+  color: white;
+  background: black;
+  outline: 2px solid white;
+}
+
+.c-action:after {
+  content: " " attr(data-gain) " ⧉";
+  position: absolute;
+  left: calc(100% + 10px);
+  font-size: 1.5em;
+  color: white !important;
+  text-align: left;
+  width: 100%;
+}
+
+#surveys .c-action:after {
+  right: -75px;
+}
+
+#surveys {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  width: calc(100% - 75px)
+}

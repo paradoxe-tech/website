@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../../cdn/assets/branding/logo.png">
+    <title>Entre 2 Lignes</title>
+
+    <link href="../../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div id="mouse"></div>
+
+    <div id="menu">
+      <img src="../cdn/assets/branding/logo.png" id="hamburger" onclick="document.querySelector('#menu').classList.toggle('active')">
+      <a href="../">Accueil</a>
+      <a href="../e">Explorer</a>
+      <a href="../a">Actualités</a>
+      <a href="../c">Contribuer</a>
+      <a href="../s" class="disabled">Services</a>
+      <a href="../i">À propos</a>
+    </div>
+
+    <div class="view" style="height: 30vh;">
+      <hr style="width: 100px;">
+      <h1>Entre deux Lignes</h1>
+      <hr style="width: 100px;">
+    </div>
+
+    <div class="parallax centered" style="background-image: url(assets/design1.png);height: 300px !important;">
+      <h1>Internet is Art</h1>
+    </div>
+
+    <div class="content" style="">
+      <div class="carroussel-container">
+        <ion-icon name="chevron-back" onclick="carr.prev()"></ion-icon>
+        <div class="carroussel-wrapper">
+          <div class="carroussel">
+            <div class="e2l-design">
+              <img src="assets/design1.png">
+              <div class="e2l-content">
+                <h2>Reminiscence of Buried times</h2>
+                <p>Picture named "Bliss", used as the windows 95 default wallpaper.
+                  Originally taken by Charles O'Rear for National Geographic.</p>
+              </div>
+            </div>
+            <div class="e2l-design">
+              <img src="assets/design2.png">
+              <div class="e2l-content">
+                <h2>The last rebel angel has fallen</h2>
+                <p>Original artwork named "The Fall of the Rebel Angels" by Luca Giordano, 1666
+                "An nescis, mi fili, quantilla prudentia mundus regatur"
+                Composition by @CallMeKitsu</p>
+              </div>
+            </div>
+            <div class="e2l-design">
+              <img src="assets/design3.png">
+              <div class="e2l-content">
+                <h2>Reminiscence of Buried times</h2>
+                <p>Picture named "Bliss", used as the windows 95 default wallpaper.
+                  Originally taken by Charles O'Rear for National Geographic.</p>
+              </div>
+            </div>
+            <div class="e2l-design">
+              <img src="assets/design4.png">
+              <div class="e2l-content">
+                <h2>Reminiscence of Buried times</h2>
+                <p>Picture named "Bliss", used as the windows 95 default wallpaper.
+                  Originally taken by Charles O'Rear for National Geographic.</p>
+              </div>
+            </div>
+            <div class="e2l-design">
+              <img src="assets/design5.png">
+              <div class="e2l-content">
+                <h2>Back to Level 188 once again</h2>
+                <p>Picture used in the lore of the Backrooms, describing level 188
+                RL Location is Holiday inn, Heathrow Terminal 4
+                51.45882562938608, -0.443596125859249</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ion-icon name="chevron-forward" onclick="carr.next()"></ion-icon>
+      </div>
+      <br/>
+      <br/>
+      <ul>
+        <li>468th rabbit hole I fell in</li>
+        <li>Ulterior motives</li>
+        <li>Eating terracotta</li>
+      </ul>
+    </div>
+
+    <div class="parallax centered" style="background-image: url(assets/design2.png);height: 300px !important;">
+      <h1>Renaissance is not dead</h1>
+    </div>
+    
+
+    <script src="../h/tsu.js"></script>
+    <script src="../../cdn/scripts/mouse.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

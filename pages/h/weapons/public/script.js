@@ -5,7 +5,7 @@ function Get(yourUrl) {
   return Httpreq.responseText;
 }
 
-let WEAPONS = JSON.parse(Get(window.location.origin + "api/weapons/data"))
+let WEAPONS = JSON.parse(Get(window.location.origin + "/api/weapons/data"))
 
 function dataSet(queryString) {
 
@@ -121,7 +121,7 @@ function display(data, queryString) {
     }
     if(weapon.genre === "") weapon.genre = "Arme"
     div_weapon.innerHTML = `
-        <div data-weapon="${weapon.url}" class="cover-c"><img data-weapon="${weapon.url}" class="weaponimg" src="assets/glyphs/${weapon.url}.png"></div>
+        <div data-weapon="${weapon.url}" class="cover-c"><img data-weapon="${weapon.url}" class="weaponimg" src="cdn/assets/glyphs/${weapon.url}.png"></div>
         <h3 data-weapon="${weapon.url}" class="title">${weapon.nom}${link}</h3>
         <h6 data-weapon="${weapon.url}" class="subtt">${weapon.genre} à ${weapon.tenue} main${weapon.tenue.includes('2') ? "s" : ""}</h6>
         <br data-weapon="${weapon.url}" >
@@ -196,13 +196,13 @@ function popup(weapon) {
   context.setTransform(1,0,0,1,0,0);
 
   let base_image = new Image()
-  base_image.src = 'assets/others/human.png'
+  base_image.src = 'cdn/assets/others/human.png'
   base_image.onload = function() {
     context.drawImage(base_image, 0, 0)
   }
 
   let weapon_img = new Image()
-    weapon_img.src = `assets/glyphs/${weapon.url}.png`
+    weapon_img.src = `cdn/assets/glyphs/${weapon.url}.png`
 
   weapon_img.onload = function() {
     const scale = 1
@@ -264,4 +264,4 @@ for(let [key, value] of Object.entries(WEAPONS)) {
   deltas.push(value.url)
 }
 
-document.querySelector('#weapon-logo').src = `assets/glyphs/${deltas.random()}.png`
+document.querySelector('#weapon-logo').src = `cdn/assets/glyphs/${deltas.random()}.png`

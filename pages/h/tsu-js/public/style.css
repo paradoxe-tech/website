@@ -1,0 +1,152 @@
+:root {
+  --fontcolor: black;
+  --linkcolor: blue;
+  --grey: #e8e8e8;
+  --menuwidth: 450px;
+  --highlight: #ff4df9;
+}
+
+html, body {
+  margin: 0px;
+  overflow-x: hidden;
+  font-family: "Roboto";
+  background: #f5f5f5;
+  color: var(--fontcolor)
+}
+
+#side-menu, #viewport {
+  position: fixed;
+  transition: all 300ms ease-in-out;
+}
+
+#viewport {
+  margin-top: 75px;
+  padding: 100px;
+  height: calc(100vh - 75px);
+  left: var(--menuwidth);
+  width: calc(calc(100% - var(--menuwidth)) - 200px);
+}
+
+#side-menu {
+  top: 75px;
+  overflow-y: scroll;
+  height: calc(100vh - 125px);
+  padding: 25px 50px;
+  padding-left: 20px;
+  width: calc(var(--menuwidth) - 100px);
+  background: #fafafa;
+}
+
+body.folded #side-menu {
+  left: -100%;
+}
+
+body.folded #viewport {
+  left: 0px;
+}
+
+.link {
+  color: var(--highlight);
+}
+
+.summary li, .link {
+  cursor: pointer;  
+}
+
+.summary li:hover, .link:hover {
+  text-decoration: underline;
+}
+
+#viewport li {
+  margin-bottom: 5px;
+}
+
+case, code {
+  font-family: monospace;
+  padding: 5px;
+  border-radius: 2px;
+  background: var(--grey) !important;
+}
+
+code {
+  display: block;
+  padding: 15px;
+}
+
+ul ul li, ul ul ul li {
+  padding: 0px;
+  display: list-item;
+  padding-inline-start: 1ch;
+}
+
+ul ul li {
+  color: var(--highlight);
+  list-style-type: ">>";
+  list-style-color: black;
+}
+
+ul ul ul li {
+  color: black;
+  list-style-type: "↳";
+}
+
+ul ul, ul ul ul {
+  padding-left: 40px;
+}
+
+li ion-icon {
+  margin-left: 5px;
+  cursor: pointer;
+  color: grey;
+  vertical-align: top;
+}
+
+ul ul ul li ion-icon {
+  vertical-align: middle;
+}
+
+.tag {
+  height: fit-content;
+  padding: 4px 10px; 
+  border-radius: 25px;
+  background: #00aaff;
+  font-size: 0.8em;
+  color: white;
+}
+
+a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#horizontal-menu {
+  height: 75px;
+  background: white;
+  display: flex;
+  gap: 5px;
+  position: fixed;
+  top: 0px;
+  width: calc(100% - 50px);
+  padding: 0 25px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+input[type="text"] {
+  height: 20px;
+  background: var(--grey);
+  border: none;
+  border-left: 3px solid #ff4df9;
+  outline: 0px;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+*::focus {
+  outline: none;
+  border: none;
+}

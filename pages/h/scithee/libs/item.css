@@ -11,13 +11,15 @@
   margin-top: 25px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .item .options.row {
+  z-index: 99;
   flex-direction: row !important;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .item .options.stars {
@@ -30,7 +32,7 @@
   font-size: 1.9em;
   background: transparent;
   padding: 0px;
-  color: var(--btn-background);
+  color: black;
 }
 
 .item .options.stars .option:hover {
@@ -48,9 +50,9 @@
   -webkit-appearance: none; 
 }
 
-.item .options .option:hover,
-.item .likert:hover {
-  filter: brightness(70%);
+.item .options .option.active:not(.star), button.active {
+  background: black;
+  outline: none;
 }
 
 .item button.green {
@@ -94,8 +96,10 @@
 }
 
 .item .likert {
+  display: block;
+  z-index: 99;
   aspect-ratio: 1 / 1;
-  flex: 0 0 ;
+  flex: 0 0;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -110,7 +114,7 @@
 
 *:focus {
   border: none !important;
-  outline: none !important;
+  outline: none;
 }
 
 input[type=range].option {
@@ -155,4 +159,15 @@ input[type=range]::-webkit-slider-thumb {
 
 .hidden {
  display: none !important;
+}
+
+.item .options > * {
+  transition: outline 100ms ease-in-out;
+}
+
+.item .options .option.red.active,
+.item .options .option.green.active,
+.item .options .likert.active,
+.item .options button:focus {
+  outline: 3px solid black;
 }

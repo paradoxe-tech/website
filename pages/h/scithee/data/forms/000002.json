@@ -1,0 +1,114 @@
+{
+	"content": [
+		{
+			"type": "title",
+			"text": "Intuition de Responsabilité Morale"
+		},
+		{
+			"type": "text",
+			"text": "Bob rentre du travail. Il est tard, et au croisement de deux avenues, un enfant qu'il n'aurait pas pu voir traverse brusquement. Bob l'écrase, et l'enfant meurt sur le coup. Il est important de garder en tête qu'en aucune manière Bob n'aurait pu éviter cet accident."
+		},
+		{
+			"type": "RANGE",
+			"title": "Bob est responsable",
+			"desc": "À quel point Bob est moralement responsable dans la mort de l'enfant ? Le nombre minimal (0) correspond à une responsabilité nulle, et (1 sur l'axe) à une responsabilité minime de Bob.",
+			"min": 0,
+			"max": 5
+		},
+		{
+			"type": "text",
+			"text": "Dans un univers alternatif, Michel prend tous les soirs le volant alcoolisé, en comettant plusieurs délits dangereux. Cependant, par chance, ce soir là l'enfant qui allait traverser a trébuché et rien ne s'est produit."
+		},
+		{
+			"type": "LIKERT",
+			"title": "Bob est le vrai coupable",
+			"desc": "Vous considérez que la responsabilité morale de Bob est plus engagée que celle de Michel. Bob est plus coupable, par ses agissements, que Michel. Autrement dit, le résultat prévaut sur les risques pris.",
+			"choices": 3
+		},
+		{
+			"type": "text",
+			"text": "Dans les tribunaux, en pratique, on juge le résultat. Cela signifie que Michel, même si toutes les conditions sont connues de la justice, purgera une peine moindre comparée à celle de Bob."
+		},
+		{
+			"type": "YN",
+			"title": "Est-ce juste ?",
+			"desc": "Si vous répondez OUI, vous considérez que le système de justice actuel a raison de juger prioritairement le résultat. Si vous pensez que Michel et Bob devraient obtenir des peines similaires, répondez NON."
+		},
+		{
+			"type": "DROP",
+			"title": "Le jugement de Bob",
+			"desc": "Quelle sentence appliqueriez-vous aux agissements de Bob si vous étiez le juge de l'affaire ? On admettra que vous connaissez en détail toutes les conditions de l'évènements, mais uniquement ceux de l'univers de Bob.",
+			"options": [
+				"aucune sanction",
+				"une petite amende",
+				"une amende conséquente",
+				"un retrait de permis",
+				"quelques années de sursis",
+				"des travaux d'intérêt général",
+				"quelques années de prison",
+				"peine de mort"
+			]
+		},
+		{
+			"type": "DROP",
+			"title": "Le jugement de Michel",
+			"desc": "Quelle sentence appliqueriez-vous aux agissements de Michel si vous étiez le juge de l'affaire ? On admettra que vous connaissez en détail toutes les conditions de l'évènements, mais uniquement ceux de l'univers de Michel.",
+			"options": [
+				"aucune sanction",
+				"une petite amende",
+				"une amende conséquente",
+				"un retrait de permis",
+				"quelques années de sursis",
+				"des travaux d'intérêt général",
+				"quelques années de prison",
+				"peine de mort"
+			]
+		},
+		{
+			"type": "YN",
+			"title": "l'Univers unique",
+			"desc": "Votre jugement serait-il différent si Michel était passé juste avant Bob, dans le même univers, et n'avait pas heurté l'enfant ?"
+		},
+		{
+			"type": "DROP",
+			"title": "L'accident de Michel",
+			"desc": "Si, ce soir là, Michel avait tué l'enfant, quelle serait la sentence que vous auriez choisie pour lui, en connsaissant toutes les conditions qui le concernent ?",
+			"options": [
+				"aucune sanction",
+				"une petite amende",
+				"une amende conséquente",
+				"un retrait de permis",
+				"quelques années de sursis",
+				"des travaux d'intérêt général",
+				"quelques années de prison",
+				"peine de mort"
+			]
+		},
+		{
+			"type": "LIKERT",
+			"title": "Avez vous vraiment compris cette notion ?",
+			"desc": "Essayez de donner une estimation d'à quel point le concept de chance morale est flou ou précis pour vous.",
+			"choices": 3
+		},
+		{
+			"type": "RANGE",
+			"title": "Un fin connaisseur ?",
+			"desc": "À quel point estimez-vous bonne votre connaissance de la philosophie morale ?",
+			"min": 0,
+			"max": 10
+		}
+	],
+	"results": {
+		"115841286576307211024": {
+			"Q1": 1,
+			"Q2": -2,
+			"Q3": false,
+			"Q4": "quelques années de sursis",
+			"Q5": "quelques années de sursis",
+			"Q6": false,
+			"Q7": "peine de mort",
+			"Q8": 3,
+			"Q9": 5
+		}
+	}
+}

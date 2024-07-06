@@ -1,0 +1,259 @@
+:root {
+  --hue: 3;
+  --background: #1B1B1B;
+  --background-red: #290505;
+  --background-green: #0e3201;
+  --background-orange: #462c16;
+  --weapon-bg: #e8bfbf;
+  --menu-fontcolor: white;
+  --text: black;
+  --highlight-faded: #518B3C;
+  --highlight-base: #dd514a;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  margin: 0px;
+}
+
+::selection {
+  background-color: var(--highlight-faded);
+  color: white;
+}
+
+#wrapper {
+  margin: auto;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: center;
+}
+
+.weapon {
+  position: relative;
+  width: 160px;
+  height: fit-content;
+  background: var(--weapon-bg);
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
+  text-align: left;
+}
+
+.weapon:hover {
+  transform: translateY(-5px);
+}
+
+p {
+  margin: 0px;
+}
+
+.stat:before {
+  content: attr(title);
+  display: block;
+  color: var(--highlight-base);
+  font-weight: bolder;
+  font-size: 70%;
+}
+
+.title {
+  margin-bottom: 0px;
+}
+
+.subtt {
+  margin: 0px;
+  color: var(--highlight-faded);
+  font-size: 85%;
+}
+
+img.weaponimg {
+  width: 100%;
+}
+
+img.weaponimg, #view {
+  image-rendering: crisp-edges;
+}
+
+.cover-c {
+  height: 50px;
+  width: 100%;
+  display:flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center
+}
+
+.green {
+  background: var(--background-green) !important
+}
+
+.red:after {
+  content: "incomplet";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.orange:after {
+  content: "ébauche";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+select {
+  border: none;
+  background: var(--background);
+  color: var(--menu-fontcolor);
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  appearance: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+select:hover {
+  border: none;
+  outline: none;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: var(--highlight-faded);
+  text-decoration-thickness: 3px;
+}
+
+label {
+  width: fit-content;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button {
+  background: transparent;
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  padding: 5px;
+  border: 2px solid var(--highlight-base);
+}
+
+#popup {
+  vertical-align: top;
+  position: fixed;
+  top: 10%;
+  width: 60%;
+  height: fit-content;
+  background: black;
+  border-radius: 15px;
+  padding: 35px;
+  padding-top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 999;
+  min-height: 400px;
+}
+
+.disabled {
+  display: none;
+}
+
+#view {
+  position: absolute;
+  right: -220px;
+  width: 500px;
+  height: 400px;
+}
+
+#popup-content, #popup-stats {
+  display: inline-block;
+  text-align: left;
+}
+
+#popup-stats {
+  position: absolute;
+  left: 40%;
+  padding-top: 20px;
+  width: 210px;
+}
+
+#popup-content {
+  margin-left: 15px;
+  width: 270px;
+}
+
+#popup p, #popup h3, #popup .stat {
+  color: white;
+}
+
+#popup-content p {
+  margin-top: 5px;
+}
+
+#popup-content h3 {
+  margin-top: 0px;
+}
+
+.blurred {
+  filter: blur(10px)
+}
+
+#close-btn {
+  filter: invert(1);
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 35px;
+  cursor: pointer;
+}
+
+#pannel {
+  vertical-align: top;
+}
+
+h1 {
+  color: var(--highlight-base)
+}
+
+#menu {
+  margin-top: 50px;
+  width: 100%;
+  color: var(--menu-fontcolor);
+  text-align: center;
+}
+
+#main {
+  margin: auto;
+}
+
+#logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+#weapon-logo {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 450px;
+  filter: invert(44%) 
+    sepia(93%) 
+    saturate(309%) 
+    hue-rotate(59deg) 
+    brightness(90%) 
+    contrast(82%);
+}

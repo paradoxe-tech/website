@@ -1,4 +1,4 @@
-const fetch = require("node-fetch")
+const axios = require('axios');
 const fs = require("fs");
 
 module.exports.run = (app, apiPath, localHostPath) => {
@@ -12,8 +12,8 @@ module.exports.run = (app, apiPath, localHostPath) => {
       let pId = subscription.id
       let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${pId}&key=${api}`
 
-      let playlist = await fetch(url)
-      playlist = await playlist.json()
+      let playlist = await axios.get(url)
+      playlist = playlist.data
       if(!playlist) return res.json({})
 
       for (let video of playlist.items) {
@@ -49,27 +49,34 @@ module.exports.run = (app, apiPath, localHostPath) => {
     res.end()
   })
 
-  app.post(apiPath + '/set/:discordId/:qId/:choice', (req, res) => {
-    let filePath = localHostPath + '/data/cards.json'
-    let data = JSON.parse(fs.readFileSync(filePath))
-    let index = data.indexOf(data.find(x => x.id == req.params.qId))
+  app.post(apiPath + '/answer/:formId', (req, res) => {
+    let filePath = localHostPath + `/data/forms/${req.params.formId}.json`
+    let formData = JSON.parse(fs.readFileSync(filePath))
 
-    if (data[index]["answers"][req.params.choice]) {
-      data[index]["answers"][req.params.choice] += 1
-    } else {
-      data[index]["answers"][req.params.choice] = 1
-    }
-
-    fs.writeFileSync(filePath, JSON.stringify(data, null, "\t"))
-
-    filePath = localHostPath + '/data/users.json'
-    let users = JSON.parse(fs.readFileSync(filePath))
-    index = users.indexOf(users.find(x => x.id == req.params.discordId))
-    users[index].account += 1
-    users[index].done.push(req.params.qId)
-
-    fs.writeFileSync(filePath, JSON.stringify(users, null, "\t"))
+    formData.results[req.body.user] = req.body.answer
+    fs.writeFileSync(filePath, JSON.stringify(formData, null, "\t"))
 
     res.end()
+  })
+
+  app.get(apiPath + '/forms', (req, res) => {
+    let allForms = []
+    
+    for(let formFileName of fs.readdirSync(localHostPath + "/data/forms")) {
+      let formId = formFileName.replaceAll('.json', '')
+      let form = JSON.parse(fs.readFileSync(localHostPath + "/data/forms/" + formFileName))
+      let formTitle = form.content.find(block => block.type == "title")
+      if(!formTitle.text) formTitle = "No title found"
+      formTitle = formTitle.text
+
+      allForms.push({
+        id: formId,
+        title: formTitle,
+        blocks: form.content.length,
+        results: Object.keys(form.results).length
+      })
+    }
+
+    res.json(allForms)
   })
 }

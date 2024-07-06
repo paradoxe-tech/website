@@ -1,8 +1,4 @@
-@media all and (min-width: 100px) and (max-width: 700px) {
-
-  .view, #mouse {
-    display: none !important;
-  }
+@media all and (min-width: 100px) and (max-width: 900px) {
 
   body {
     overflow: hidden !important;
@@ -10,11 +6,16 @@
 
   #scrollto { display: none !important; }
   #explore { display: block !important; }
+
+  .view:not(#home-view)  {
+    display: none !important;
+  }
+
+  #explore { display: none !important; } 
   
 }
 
 #explore { display: none; }
-#hamburger { display: none !important; }
 
 body {
   position: absolute;

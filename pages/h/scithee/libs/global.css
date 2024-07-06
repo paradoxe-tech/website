@@ -1,3 +1,34 @@
+@media all and (min-width: 100px) and (max-width: 1100px) {
+
+  .menu {
+    display: none !important;
+  }
+
+  html, body, #main {
+    width: 300px !important;
+  }
+
+  #main {
+    top: 0px !important;
+    height: calc(100% - 100px) !important;
+  }
+
+  #form {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  #form .item {
+    width: 100% !important;
+    border-radius: 0 !important;
+    max-width: 100%;
+  }
+
+  .item .likert {
+    flex: 1 0 !important;
+  }
+} 
+
 :root {
   --background: #ffdfca;
   --font: black;
@@ -5,9 +36,10 @@
   --btn-background-darker: #271111; 
 }
 
-body {
+body, html {
   margin: 0px;
-  font-family: "Poppins"
+  font-family: "Poppins";
+  width: 100%;
 }
 
 #main {
@@ -22,8 +54,8 @@ body {
   position: fixed;
   top: 100px;
   left: 0px;
-  width: calc(100vw - 100px);
-  height: calc(100vh - 200px);
+  width: calc(100% - 100px);
+  height: calc(100% - 200px);
 }
 
 .menu {
@@ -55,14 +87,6 @@ body {
 
 #account::after {
   content: " ⧉";
-}
-
-#login {
-  padding: 10px 20px; 
-  text-decoration: none;
-  border: 2px solid white;
-  border-radius: 25px;
-  color: white;
 }
 
 #form {

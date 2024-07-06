@@ -1,0 +1,78 @@
+body {
+  --carr-el-width: 235px;
+}
+
+.carroussel {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  transition: left 200ms ease-in-out;
+}
+
+.carroussel * {
+  flex: 0 0 150px;
+}
+
+h2.stylic {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.e2l-design {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.e2l-design img {
+  width: 225px;
+  height: 300px;
+}
+
+.e2l-content h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.carroussel-wrapper {
+  position: relative;
+  width: calc(var(--carr-el-width) * 5);
+  height: 420px;
+  overflow: clip;
+}
+
+.carroussel-wrapper:before, .carroussel-wrapper:after {
+  content: "";
+  display: block;
+  background: black;
+  opacity: 0.7;
+  width: calc(var(--carr-el-width) * 2);
+  height: 100%;
+  position: absolute;
+  z-index: 99;
+}
+
+.carroussel-wrapper:before {
+  left: 0px;
+}
+
+.carroussel-wrapper:after {
+  right: 0px;
+}
+
+.carroussel-container {
+  display: flex;
+  color: white;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.carroussel-container ion-icon {
+  font-size: 3em;
+}
+
+.carroussel p {
+  display: none;
+}

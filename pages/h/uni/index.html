@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Uni by CMK.</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/uni-logo.png">
+</head>
+
+<body>
+  
+  <div id="main">
+    <h1 class="title">Create your <green>Uni</green></h1>
+    <div class="cols" style="flex-direction: row;">
+      <div class="cols">
+        <div id="info-panel">
+          <span class="info">👥 <span id="population">0</span></span>
+          <span class="info">💡 <span id="score">0</span></span>
+          <span class="info">👨‍🦳 <span id="generation">0</span></span>
+          <!--<span class="info">⏱ <span id="time">0</span>s</span>-->
+        </div>
+        <div id="universe">
+          <canvas id="grid"></canvas>
+        </div>
+        <div id="details">
+          <div id="buttons">
+            <button onclick="prev()"><ion-icon name="arrow-back"></ion-icon></button>
+            <button onclick="play()"><ion-icon id="player" name="play"></ion-icon></button>
+            <button onclick="next()"><ion-icon name="arrow-forward"></ion-icon></button>
+            <button onclick="reset()" class="red"><ion-icon name="trash-bin"></ion-icon></button>
+            <button onclick="random()"><ion-icon name="sparkles"></ion-icon></button>
+            <button onclick="cherrypick()"><ion-icon name="golf"></ion-icon></button>
+            <button onclick="removal()"><ion-icon name="remove-circle"></ion-icon></button>
+            <button onclick="addition()"><ion-icon name="add-circle"></ion-icon></button>
+          </div>
+          
+          <div id="params"><!--
+            <div class="uni-param">
+              <span><input value="40" min="40" style="width: 40px" oninput="USER_WIDTH = this.value" type="number"> x <input value="40" type="number" style="width: 40px"
+                min="40" oninput="USER_HEIGHT = this.value"></span>
+            </div>
+            <div class="uni-param">
+              <span>génerations = <span id="gens-display">1000</span></span><br />
+              <input value="1000" type="range" min="0" max="10000" id="gen"
+                oninput="document.querySelector('#gens-display').innerHTML = this.value;document.querySelector('#generations').innerHTML = this.value">
+            </div>
+            <div class="uni-param">
+              <span>gen / seconde = <span id="gen-secs">10</span></span><br />
+              <input value="10" type="range" min="1" max="10000" id="g-s"
+                oninput="document.querySelector('#gen-secs').innerHTML = this.value;document.querySelector('#delta').innerHTML = this.value">
+            </div>
+          -->
+          </div>
+          
+        </div>
+      </div>
+      <div>
+        <div class="uni-param">
+          <select id="pet-select" oninput="template(this.value)">
+            <optgroup label="Conway Rule">
+              <option value="B3/S23">The Game of Life - Conway Rule B3/S23</option>
+              <option value="B36/S23">Highlife - Conway Rule B36/S23</option>
+              <option value="B34/S34">34 Life - Conway Rule B34/S34</option>
+              <option value="B3SALL">Life without Death - Conway Rule B3/SALL</option>
+              <option value="B3678/S34678">Day and Night - Conway Rule B3678/S34678</option>
+              <option value="B2/S">Seeds - Conway Rule B2/S</option>
+              <option value="B3/S1234">The Maze - B3/S1234</option>
+              <option value="B367/S140678">Slow Blob - B367/S140678</option>
+            </optgroup>
+            <optgroup label="Wolfram Rule">
+              <option value="W126">Sierpiński - Wolfram Rule 126</option>
+              <option value="W30">Conus textile - Wolfram Rule 30</option>
+              <option value="W110">Chaos - Wolfram Rule 110</option>
+            </optgroup>
+            <option disabled value="fungi">Automate Fongique</option>
+            <option value="sand">Piles de sable</option>
+            <option value="BB">Brian's Brain</option>
+            <option value="GHM">Greenberg–Hastings</option>
+            <option value="FF">Feux de fôret</option>
+            <option disabled value="langton">Langton's Ant</option>
+            <option value="move">Move</option>
+            <optgroup label="Margolus Rule">
+              <option value="marg{0;1;2;12;4;10;9;7;8;6;5;11;3;13;14;15}">
+                StringThing</option>
+              <option disabled value="billiard">
+                Billiard Ball Machine</option>
+              <option 
+                value="marg{0;8;4;12;2;10;9;14;1;6;5;13;3;11;7;15}">
+                HPP (Hardy-Pazzis-Pomeau)</option>
+            </optgroup>
+            <option value="custom">Custom Automaton</option>
+          </select>
+        </div>
+        <div class="uni-param" id="rules"></div>
+        <div class="uni-param" id="rules-buttons"></div>
+      </div>
+    </div>
+  </div>
+  <script id="vertexShader" type="x-shader/x-vertex">
+    #version 300 es
+
+    precision mediump float;
+    in vec2 vertexPosition;
+
+    void main() {
+      gl_Position = vec4(vertexPosition, 0.0, 1.0);
+    }
+  </script>
+
+  <script id="fragmentShader" type="x-shader/x-fragment">
+    #version 300 es
+    
+    precision mediump float;
+    out vec4 fragColor;
+
+    void main() {
+      fragColor = vec4(18.0/255.0, 235.0/255.0, 144.0/255.0, 1.0);
+    }
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://twgljs.org/dist/twgl.min.js"></script>
+  <script src="data.js"></script>
+  <script src="../tsu.js"></script>
+  <script src="./src/renderer.js"></script>
+  <script src="./src/scratch.js"></script>
+  <script src="./src/Rules.js"></script>
+  <script src="./src/Universe.js"></script>
+  <script src="script.js"></script>
+</body>
+<footer>
+  (C) Mathéo Tripnaux-Moreau 2024 (callmekitsu.com)
+</footer>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../../cdn/assets/branding/favicon.png">
+    <title>Publications | Mathéo Tripnaux-Moreau</title>
+
+    <link href="../../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body onload="displayPubs()">
+    <div id="mouse"></div>
+
+    <div id="menu">
+      <img src="../cdn/assets/branding/logo.png" id="hamburger" onclick="document.querySelector('#menu').classList.toggle('active')">
+      <a href="../">Accueil</a>
+      <a href="../e">Explorer</a>
+      <a href="../a">Actualités</a>
+      <a href="../c">Contribuer</a>
+      <a href="../s">Services</a>
+      <a href="../i">À propos</a>
+    </div>
+
+    <div class="view" id="pubs-container">
+      <div class="wide-content">
+        <h1 class="page-slash">/p</h1>
+        <div class="inner">
+          <h1>Publications</h1>
+          <p>Articles universitaires ou amateurs, billets de blog et tribunes, tous recensés ici.</p>
+        </div>
+      </div>
+      <div id="publications"></div>
+    </div>
+
+    <script src="../h/tsu.js"></script>
+    <script src="../../cdn/scripts/mouse.js"></script>
+    <script src="../../cdn/scripts/publications.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

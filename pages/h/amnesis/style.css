@@ -1,0 +1,104 @@
+@media all and (min-width: 100px) and (max-width: 1000px) {
+
+  body {
+    width: 100% !important;
+    font-size: 3em;
+ } 
+
+  textarea, input {
+    font-size: 1em !important;
+ } 
+
+  #main {
+    width: 100% !important;
+    flex-direction: column;
+    padding: 0px !important;
+    gap: 30px;
+  }
+
+  input[type=date] {
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    padding: 50px !important;
+    height: 500px;
+    border-radius: 50px !important;
+  }
+
+  textarea:focus, input[type=date]:focus {
+    filter: drop-shadow(0 0 50px deepskyblue) !important;
+  }
+
+}
+
+@font-face {
+  font-family: "Groupe";
+  src: url(Groupe.otf)
+}
+
+h1 {
+  font-size: 2.5em;
+  font-family: "Groupe";
+  margin: 0px;
+}
+
+h3 {
+  font-size: 0.7em;
+  color: grey;
+  margin: 0px;
+}
+
+* {
+  font-family: "Poppins";
+  color: white;
+}
+
+input[type=date] {
+  background: black;
+  border: 1px solid deepskyblue;
+  border-radius: 15px;
+  color: white;
+  padding: 5px 10px;
+  transition: all 300ms ease-in-out;
+}
+
+#main, body {
+  background: #092134;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  width: calc(100% - 100px);
+}
+
+#main {
+  gap: 20px;
+}
+
+body {
+  flex-direction: column;
+}
+
+textarea {
+  position: relative;
+  width: calc(100% - 20px);
+  outline: none;
+  border: none;
+  resize: none;
+  background: #000000;
+  outline: 1px solid deepskyblue;
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 300ms ease-in-out;
+  min-height: 200px;
+}
+
+textarea:focus, input[type=date]:focus {
+  filter: drop-shadow(0 0 10px deepskyblue);
+}
+
+h3 span {
+  color: grey;
+}

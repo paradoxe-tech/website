@@ -1,0 +1,24 @@
+#pubs-container {
+  align-items: flex-start;
+  padding: 100px;
+  width: 60%;
+  min-height: calc(100vh - 210px);
+  margin: auto;
+}
+
+#publications {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+#publications div {
+  transition: all 200ms ease-in-out;
+}
+
+#publications div:hover {
+  transform: translateX(10px);
+}
