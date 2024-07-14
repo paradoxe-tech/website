@@ -1,93 +1,59 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="../../cdn/assets/branding/favicon.png">
-    <title>Services | Mathéo Tripnaux-Moreau</title>
+<div class="view">
+  <div id="logotypes">
+    <img src="../cdn/assets/designs/mom.png">
+    <img src="../cdn/assets/designs/plume.png">
+    <img src="../cdn/assets/designs/tendance.png">
+  </div>
+  <br/>
+  <a class="button">Commander</a>
+</div>
 
-    <link href="../../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
-    <link href="../../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+<div class="content" style="margin-top: 150px;">
+  <img id="hide-when-pc" src="../../cdn/assets/renders/plume.png">
+  <h1 id="title">Je cherche...</h1>
+  <span id="service-line">
+    <select onchange="resize(this, true)" id="service-type">
+      <optgroup label="Logos">
+        <option value="logo_symbole">Un symbole</option>
+        <option value="logo_monogramme">Un monogramme</option>
+        <option value="logo_typo">Un logotype</option>
+        <option value="logo_embleme">Un emblème</option>
+        <option value="illu_mascotte">Une mascotte</option>
+      </optgroup><optgroup label="Vidéo">
+        <option value="edit">Un montage vidéo</option>
+        <option value="pub">Une publicité vidéo</option>
+        <option value="anim">Une animation de logo</option>
+      </optgroup><optgroup label="Développement">
+        <option value="web_static">Un site statique</option>
+        <option value="web_site">Un site complet</option>
+        <option value="web_app">Une application web</option>
+        <option value="dev_function">Un fonction logicielle</option>
+      </optgroup>
+    </select> qu'on remarque pour <select onchange="resize(this, true)" id="service-owner">
+      <option value="pro">mon entreprise</option>
+      <option value="network">mes réseaux sociaux</option>
+      <option value="asso">mon association</option>
+      <option value="perso">un projet personnel</option>
+    </select> !
+  </span>
   
-  <body onload="main()">
-    <div id="mouse"></div>
-    
-    <div id="menu">
-      <img src="../cdn/assets/branding/logo.png" id="hamburger" onclick="document.querySelector('#menu').classList.toggle('active')">
-      <a href="../">Accueil</a>
-      <a href="../e">Explorer</a>
-      <a href="../a">Actualités</a>
-      <a href="../c">Contribuer</a>
-      <a href="" class="active">Services</a>
-      <a href="../i">À propos</a>
-    </div>
+  <div id="questions"></div>
+  <br/>
+  <div id="options"></div>
+  
+  <br/>
+  <div id="banner">
+    <img class="banner" src="../../cdn/assets/renders/plume_1.png" style="top: -282px;right: 50px;">
+  </div>
+  
+  <div id="gallery">
+    <img src="../../cdn/assets/renders/rdr.png">
+    <img src="../../cdn/assets/renders/JetFruit.png">
+    <img src="../../cdn/assets/renders/ezukau.png">
+    <img src="../../cdn/assets/renders/dkb.png" style="width: 150px !important">
+    <img src="../../cdn/assets/renders/KAKTS.png" style="width: 150px !important">
+  </div>
 
-    <div class="view">
-      <div id="logotypes">
-        <img src="../cdn/assets/designs/mom.png">
-        <img src="../cdn/assets/designs/plume.png">
-        <img src="../cdn/assets/designs/tendance.png">
-      </div>
-      <br/>
-      <a class="button">Commander</a>
-    </div>
-
-    <div class="content" style="margin-top: 150px;">
-      <img id="hide-when-pc" src="../../cdn/assets/renders/plume.png">
-      <h1 id="title">Je cherche...</h1>
-      <span id="service-line">
-        <select onchange="resize(this, true)" id="service-type">
-          <optgroup label="Logos">
-            <option value="logo_symbole">Un symbole</option>
-            <option value="logo_monogramme">Un monogramme</option>
-            <option value="logo_typo">Un logotype</option>
-            <option value="logo_embleme">Un emblème</option>
-            <option value="illu_mascotte">Une mascotte</option>
-          </optgroup><optgroup label="Vidéo">
-            <option value="edit">Un montage vidéo</option>
-            <option value="pub">Une publicité vidéo</option>
-            <option value="anim">Une animation de logo</option>
-          </optgroup><optgroup label="Développement">
-            <option value="web_static">Un site statique</option>
-            <option value="web_site">Un site complet</option>
-            <option value="web_app">Une application web</option>
-            <option value="dev_function">Un fonction logicielle</option>
-          </optgroup>
-        </select> qu'on remarque pour <select onchange="resize(this, true)" id="service-owner">
-          <option value="pro">mon entreprise</option>
-          <option value="network">mes réseaux sociaux</option>
-          <option value="asso">mon association</option>
-          <option value="perso">un projet personnel</option>
-        </select> !
-      </span>
-      
-      <div id="questions"></div>
-      <br/>
-      <div id="options"></div>
-      
-      <br/>
-      <div id="banner">
-        <img class="banner" src="../../cdn/assets/renders/plume_1.png" style="top: -282px;right: 50px;">
-      </div>
-      
-      <div id="gallery">
-        <img src="../../cdn/assets/renders/rdr.png">
-        <img src="../../cdn/assets/renders/JetFruit.png">
-        <img src="../../cdn/assets/renders/ezukau.png">
-        <img src="../../cdn/assets/renders/dkb.png" style="width: 150px !important">
-        <img src="../../cdn/assets/renders/KAKTS.png" style="width: 150px !important">
-      </div>
-
-      <br/><br/>
-      <button onclick="start()">Oui, je le veux !</button>
-    </div>
-
-    <script src="../../cdn/scripts/mouse.js"></script>
-    <script src="../../h/tsu.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="script.js"></script>
-  </body>
-</html>
+  <br/><br/>
+  <button onclick="start()">Oui, je le veux !</button>
+</div>

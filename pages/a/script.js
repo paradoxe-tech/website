@@ -1,5 +1,9 @@
+
+
 let actualites = JSON.parse(get(window.location.origin + "/cdn/data/actus.json"))
 actualites = actualites.sort(sortByDate)
+
+
 
 for(var actu of actualites) {
 
@@ -22,5 +26,3 @@ for(var actu of actualites) {
       </div>
       ${document.querySelector('#timeline').innerHTML}`
 }
-
-setMouseEvents()

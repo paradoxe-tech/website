@@ -22,4 +22,3 @@ function openSurvey(id) {
 }
 
 displaySurveys()
-setMouseEvents()

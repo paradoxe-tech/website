@@ -1,48 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="../../cdn/assets/branding/favicon.png">
-    <title>Actualités | Mathéo Tripnaux-Moreau</title>
-
-    <link href="../../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
-    <link href="../../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
-    
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  
-  <body>
-
-    <div id="mouse"></div>
-    
-    <div id="menu">
-      <img src="../cdn/assets/branding/logo.png" id="hamburger" onclick="document.querySelector('#menu').classList.toggle('active')">
-      <a href="../">Accueil</a>
-      <a href="../e">Explorer</a>
-      <a href="" class="active">Actualités</a>
-      <a href="../c">Contribuer</a>
-      <a href="../s" class="disabled">Services</a>
-      <a href="../i">À propos</a>
+<div class='enchained view'>
+  <div class="wide-content">
+    <h1 class="page-slash">/a</h1>
+    <div class="inner">
+      <h1>Actualités</h1>
+      <p>Retrouvez ici l'historique de mes projets, aboutis ou non, et de toutes les explorations qui en ont découlé. Certaines actualités sont liées à des <span style="color: white">/h</span>ébergements et d'autres à des <span color: >/p</span>ublications déjà documentées ! Si vous êtes intéressé.e par un sujet, vous pouvez venir en discuter sur le <a href="../discord">serveur communautaire</a>.</p>
     </div>
-    
-    <div class='enchained view'>
-      <div class="wide-content">
-        <h1 class="page-slash">/a</h1>
-        <div class="inner">
-          <h1>Actualités</h1>
-          <p>Retrouvez ici l'historique de mes projets, aboutis ou non, et de toutes les explorations qui en ont découlé. Certaines actualités sont liées à des <span style="color: white">/h</span>ébergements et d'autres à des <span color: >/p</span>ublications déjà documentées ! Si vous êtes intéressé.e par un sujet, vous pouvez venir en discuter sur le <a href="../discord">serveur communautaire</a>.</p>
-        </div>
-      </div>
-      <div id="timeline"></div>
-    </div>
-    
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="../../h/tsu.js"></script>
-    <script src="../../cdn/scripts/items.js"></script>
-    <script src="../../cdn/scripts/mouse.js"></script>
-    <script src="../../cdn/scripts/md.js"></script>
-    <script src="script.js"></script>
-  </body>
-</html>
+  </div>
+  <div id="timeline"></div>
+</div>

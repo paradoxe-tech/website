@@ -1,155 +1,106 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Mathéo Tripnaux-Moreau</title>
-  <link rel="icon" href="../cdn/assets/branding/favicon.png">
-  
-  <link href="../cdn/styles/menu.css" rel="stylesheet" type="text/css" />
-  <link href="../cdn/styles/rules.css" rel="stylesheet" type="text/css" />
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <meta property="og:title" content="CallMeKitsu.">
-  <meta name="description" content="Je suis graphiste, développeur et étudiant en Biologie et en Informatique. Voici mon portfolio et l'ensemble de mes travaux !">
-  <meta property="og:description" content="Je suis graphiste, développeur et étudiant en Biologie et en Informatique. Voici mon portfolio et l'ensemble de mes travaux !">
-  <meta property="og:image" content="https://callmekitsu.com/cdn/assets/branding/logo.png">
-</head>
-
-<body onload="main()">
-  <div id="menu">
-    <img src="../cdn/assets/branding/logo.png" id="hamburger" onclick="document.querySelector('#menu').classList.toggle('active')">
-    <a onclick="document.querySelector('#home-view').scrollIntoView({
-        block: 'start',
-        behavior: 'smooth'
-      });_SLIDE_ = 0" class="active">Accueil</a>
-    <a href="../e">Explorer</a>
-    <a href="../a">Actualités</a>
-    <a href="../c">Contribuer</a>
-    <a href="../s" class="disabled">Services</a>
-    <a onclick="document.querySelector('#avatar').scrollIntoView({
-        block: 'center',
-        behavior: 'smooth'
-      });_SLIDE_ = slides.length - 1">À propos</a>
+<div class="view dark animate" style="height: 110vh;">
+  <h1 id="welcome">Bienvenue.</h1></div>
+<div class="view light cols">
+  <div class="jumbo">
+    <h3>ACTUALITÉS</h3>
+    <h1>Tenez vous informés de mes découvertes jour après jour</h1>
+    <br/>
+    <a href="/a" class="button hide-mobile">voir plus</a>
   </div>
-
-  <div id="mouse"></div>
-
-  <div class="enchained view" id="home-view">
-    <div class="creds">
-      <img src="cdn/assets/branding/logo.png" id="logo" width="175px">
-
-      <h1>CallMeKitsu.</h1>
-      <a class="scrollto" onclick="document.querySelector('#home-view + .view .creds').scrollIntoView({
-        block: 'center',
-        behavior: 'smooth'
-      })">visiter ↓</a>
-      <a id="explore" onclick='document.querySelector("#menu").classList.toggle("active")'>explorer ↑</a>
-    </div>
+  <div id="timeline" class="bubble"></div>
+</div>
+<div class="view light spaced fit" style="padding-bottom: 30vh">
+  <div class="jumbo">
+    <h3>INTÉRÊTS</h3>
+    <h1>Et si on discutait d'un sujet qui nous passionne tous les deux ?</h1>
   </div>
-
-  <div class="view" id="kledge-view">
-    <div class="creds">
-      <h1>Comprendre.</h1>
-      <span>(continuez à descendre)</span>
-      <a href="/a" class="button">Actualités</a>
-      <a class="scrollto" onclick="document.querySelector('#kledge-view + .view .creds').scrollIntoView({
-        block: 'center',
-        behavior: 'smooth'
-      })">↓</a>
-    </div>
-    
-    <img id="bayes" class="formula" src="cdn/assets/renders/bayes.png">
-    <img id="modus" class="formula" src="cdn/assets/renders/modus.png">
-    <img id="feynmann" class="formula" src="cdn/assets/renders/feynmann.png">
-    <img id="matheme" class="formula" src="cdn/assets/renders/matheme.png">
+  <div class="gallery">
+    <div class="tag">biologie synthétique</div>
+    <div class="tag">philosophie analytique</div>
+    <div class="tag">informatique théorique</div>
+    <div class="tag">littérature</div>
+    <div class="tag">physique fondamentale</div>
+    <div class="tag">écosystèmes</div>
+    <div class="tag">articial life</div>
+    <div class="tag">bioinspiration</div>
+    <div class="tag">modélisation de foules</div>
+    <div class="tag">escrimes traditionnelles</div>
+    <div class="tag">design</div>
+    <div class="tag">systèmes bayésiens</div>
+    <div class="tag">comportementalisme</div>
+    <div class="tag">vulgarisation</div>
+    <div class="tag">programmation</div>
+    <div class="tag">insectes eusociaux</div>
+    <div class="tag">internet art</div>
+    <div class="tag">sciences sociales</div>
+    <div class="tag">horlogerie</div>
+    <div class="tag">géopolitique</div>
+    <div class="tag">dessin</div>
+    <div class="tag">mythologie</div>
+    <div class="tag">théorie des ensembles</div>
   </div>
-
-  <div class="parallax view" id="projects-view">
-    <div class="creds">
-      <h1>Créer.</h1>
-      <span>(survolez un projet)</span>
-      <a href="/e" class="button">Explorer</a>
-      <a class="scrollto" onclick="document.querySelector('#projects-view + .view .creds').scrollIntoView({
-        block: 'center',
-        behavior: 'smooth'
-      })">↓</a>
-    </div>
-    <img src="cdn/assets/projects/weapons.png" class="project-card" style="left: -50px; top: 150px;">
-    <img src="cdn/assets/projects/clockwork.png" class="project-card" style="right: 50px; bottom: 550px;">
-    <img src="cdn/assets/projects/alterheart.png" class="project-card" style="right: 150px; top: 250px;">
-    <img src="cdn/assets/projects/etoile_polaire.png" class="project-card" style="left: 100px; top: 375px;">
-  </div>
-
-  <div class="parallax view" id="writing-view">
-    <div class="creds">
-      <h1>Écrire.</h1>
-      <span>(commencez à écrire)</span>
-      <a href="/c" class="button">Contribuer</a>
-      <a class="scrollto" onclick="document.querySelector('#writing-view + .view .creds').scrollIntoView({
-        block: 'center',
-        behavior: 'smooth'
-      })">↓</a>
-    </div>
-    <div id="writing-code" class="writing"></div>
-    <div id="writing-essay" class="writing"></div>
-    <div id="writing-sql" class="writing">
-      <div id="writing-sql-1"></div>
-      <div id="writing-sql-2"></div>
-      <div id="writing-sql-3"></div>
-    </div>
-    <div id="writing-bash" class="writing"></div>
-  </div>
-
-  <div class="parallax view" id="designs-view">
-    <div class="creds">
-      <h1>Concevoir.</h1>
-      <span>(déplacez la souris)</span>
-      <a href="/s" class="button disabled">Services</a>
-      <a class="scrollto" onclick="document.querySelector('#avatar').scrollIntoView({
-        block: 'center',
-        behavior: 'smooth'
-      })">↓</a>
-    </div>
-    <img src="cdn/assets/designs/mask.png" id="design-mask" class="design" style="top: 240px;left: 135px;width: 35% !important;">
-    <img src="cdn/assets/designs/card.png" id="design-card" class="design" style="top: 250px;right: 70px;width: 35% !important;">
-    <img src="cdn/assets/designs/pendentif.png" id="design-pendentif" class="design" style="top: 150px;left: 75px;">
-  </div>
-
-
-
-  <div class="view reverse" id="view-profile">
-    <div class="col" id="avatar-wrapper" style="text-align: center">
-      <div id="bubble"></div>
-      <img id="avatar" src="../../cdn/assets/renders/me_2.png"/>
-    </div>
-
-    <div class="col">
-      <h1 id="title"><span id="changing-title" data-type='["Tripnaux-Moreau M.", "CallMeKitsu."]'></span> </h1>
-
+</div>
+<div style="margin: 10vh 0;">
+  <div class="view dark padded">
+    <div class="jumbo mozaic top left">
+      <h3>À L'AFFICHE</h3>
+      <h1>Imaginez… un <hl>simulateur universel intuitif d'automates cellulaires totallistiques</hl></h1>
       <br/>
-
-      <p style="max-width: 80%;">Je m'appelle Mathéo, je suis étudiant en licence double diplôme Biologie / Informatique à l'Université Paris-Saclay et passionné d'apprendre. Mon objectif est toujours de m'amuser, si possible en créant quelque chose qui me plaise et qui ait un impact sur le monde.</p>
-
-      <br/>
-
-      <a href="https://www.linkedin.com/in/callmekitsu/"><ion-icon name="logo-linkedin"></ion-icon></a>
-      <a href="/discord"><ion-icon name="logo-discord"></ion-icon></a>
-      <a href="https://github.com/callmekitsu"><ion-icon name="logo-github"></ion-icon></a>
-      <a href="https://www.instagram.com/callmekitsu_"><ion-icon name="logo-instagram"></ion-icon></a>
-      <a href="https://paypal.me/callmekitsu"><ion-icon name="logo-paypal"></ion-icon></a>
-      <!--<a href="https://twitter.com/callmekitsu"><ion-icon name="logo-twitter"></ion-icon></a>
-      <a href="https://twitch.tv/callmekitsu"><ion-icon name="logo-twitch"></ion-icon></a>
-      <a href="https://youtube.com/@callmekitsu"><ion-icon name="logo-youtube"></ion-icon></a>-->
+      <a href="/h/uni" class="button hide-mobile">découvrir h/Uni</a>
+    </div>
+    <img style="width: 50%;z-index: 1;margin-top: 100px;filter: invert(1);" src="../cdn/assets/renders/CWGOL.gif">
+    <div class="caption mozaic bottom right">
+      Uni est un bac à sable de simulation d'automates cellulaires sur un plan (2 dimensions). Créé pour être adaptable à tous les modèles simples, et facile à prendre en main et à programmer même pour un néophyte. Son objectif est la vulgarisation du domaine de l'informatique théorique auprès d'un nouveau public.
     </div>
   </div>
+  <!--<div class="view dark padded">
+    <div class="jumbo mozaic top right">
+      <h3>À L'AFFICHE</h3>
+      <h1>Imaginez… un <hl>éditeur de texte surpuissant, minimaliste et contrôlé par votre clavier</hl></h1>
+      <br/>
+      <a href="/h/vanta" class="button hide-mobile">découvrir h/Vanta</a>
+    </div>
+    <img style="width: 50%;z-index: 1;margin-top: 100px;" src="../cdn/assets/projects/vanta.png">
+    <div class="caption mozaic bottom left">
+      Vanta est un éditeur de texte en ligne supportant le {GFM}(Github Flavoured Markdown, une syntaxe simple permettant l'utilisation de balises de style) et des widgets évolutifs. Pensé pour une prise de notes intelligente, rapide et orientée clavier.
+    </div>
+  </div>-->
+</div>
 
-  <script src="/h/tsu.js"></script>
-  <script src="cdn/scripts/typing.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="../cdn/scripts/mouse.js"></script>
-  <script src="script.js"></script>
-</body>
+<div class="view light cols">
+  <div id="productions" class="bubble"></div>
+  <div class="jumbo">
+    <h3>PRODUCTIONS</h3>
+    <h1>Apprenez à me connaître en voyageant parmi tous mes projets</h1>
+    <br/>
+    <a href="/e" class="button hide-mobile">voir plus</a>
+  </div>
+</div>
 
-</html>
+<!--<div id="slider"></div>-->
+<div class="view dark">
+  <div class="hero"> 
+  <h1 style="margin-bottom: 130px;">Soutenez mon travail !</h1>
+  </div>
+  <div id="contribute">
+    <div>
+      <h1>Participer à ClockWork</h1>
+      <h3>ajouter des musiques à la playlist</h3>
+      <br/>
+      <p>Votre contribution sera validée ou non par des expériences sur plusieurs autres utilisateurs. Si elle est retenue, vous aurez apporté votre pièce à l'édifice ! La publication qui soutient le projet est disponible à p/Clockwork.</p>
+    </div>
+    <div class="bubble" style="padding: 50px;">
+      <h1>Faire un don</h1>
+      <h3>pourquoi pas ?</h3>
+      <br/>
+      <p>Les fonds sont principalement investis dans l'hébergement des projets, mais peuvent aussi supporter la mise en place d'expériences ou l'amélioration des conditions de mon travail !</p>
+    </div>
+    <div>
+      <h1>Répondre à un sondage</h1>
+      <h3>plein d'études n'attendent que vous !</h3>
+      <br/>
+      <p>Votre réponse sera anonymysée, et la connexion ne nécessite qu'un compte google. Le temps que prend la réponse au sondage est proportionnel à la récompense affichée.</p>
+      <div id="surveys"></div>
+    </div>
+  </div>
+</div>

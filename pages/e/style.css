@@ -32,3 +32,7 @@
 #searchbar::placeholder {
   color: var(--text-grey);
 }
+
+.item-docs, .item-run {
+  filter: invert(1);
+}
