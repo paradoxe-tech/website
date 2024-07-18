@@ -1,0 +1,152 @@
+[
+  [
+    {
+      "nom": "athéisme",
+      "desc": "absence de croyance en quelque divinité que ce soit"
+    }, 
+    {
+      "nom": "déisme",
+      "desc": "accepter l'existence d'une divinité sans admettre de religion"
+    },
+    {
+      "nom": "agnosticisme",
+      "desc": "il est impossible pour l'homme d'avoir un avis sur Dieu"
+    },
+    {
+      "nom": "religion",
+      "desc": "croyance en une divinité définie par une religion"
+    }
+  ],
+  [
+    {
+      "nom":"dualisme",
+      "desc": "l'esprit est discernable du corps"
+    }, 
+    {
+      "nom": "monisme idéaliste",
+      "desc": "le monde existe dans notre imagination"
+    },
+    {
+      "nom": "monisme matérialiste",
+      "desc": "le monde est fait uniquement de matière"
+    }
+  ],
+  [
+    {
+      "nom":"anthropocentrisme",
+      "desc": "l'humain est le plus important dans l'univers"
+    }, 
+    {
+      "nom": "ecocentrisme",
+      "desc": "les êtres vivants sont tous aussi significatifs"
+    }
+  ],
+  [
+    {
+      "nom":"hédonisme",
+      "desc": "le but de la vie est de profiter du plaisir"
+    }, 
+    {
+      "nom": "épicurisme",
+      "desc": "l'objectif ultime est le bonheur par la tranquilité"
+    }, 
+    {
+      "nom": "stoïcisme",
+      "desc": "il faut se séparer de ce qui nous atteint pour être heureux"
+    }
+  ],
+  [
+    {
+      "nom": "absolutisme",
+      "desc": "il existe des vérités absolues"
+    }, 
+    {
+      "nom": "relativisme",
+      "desc": "aucune vérité n'est absolue"
+    }
+  ],
+  [
+    {
+      "nom": "existentialisme",
+      "desc": "chacun peut donner un sens à sa propre vie"
+    }, 
+    {
+      "nom": "absurdisme",
+      "desc": "il est nécessaire d'embrasser le non-sens de la vie"
+    }, 
+    {
+      "nom": "nihilisme",
+      "desc": "rien n'a de sens"
+    }
+  ],
+  [
+    {
+      "nom":"déontologisme",
+      "desc": "les actes doivent être jugés selon leur conformité à la morale"
+    }, 
+    {
+      "nom": "conséquentialisme",
+      "desc": "les actes doivent être jugés selon leurs conséquences"
+    }
+  ],
+  [
+    {
+      "nom": "natalisme",
+      "desc": "pour un être sentient enfanter est moral et souhaitable"
+    },
+    {
+      "nom": "antinatalisme",
+      "desc": "la procréation d'un être sensible est un acte immoral"
+    }
+  ],
+  [
+    {
+      "nom":"empirisme",
+      "desc": "le savoir s'acquiert uniquement par l'expérience"
+    }, 
+    {
+      "nom": "rationalisme",
+      "desc": "la connaissance découle de la raison"
+    }
+  ],
+  [
+    {
+      "nom":"individualisme",
+      "desc": "l'individu occupe la place centrale et est prioritaire"
+    }, 
+    {
+      "nom": "holisme social",
+      "desc": "prédominance du groupe social"
+    }
+  ],
+  [
+    {
+      "nom":"protectionnisme",
+      "desc": "forte régulation des marchés financiers inter-étatiques"
+    }, 
+    {
+      "nom": "libre échange",
+      "desc": "aucun obstacle ne freine les échanges commerciaux"
+    }
+  ],
+  [
+    {
+      "nom":"cosmopolitisme",
+      "desc": "se considère comme un citoyen du monde"
+    }, 
+    {
+      "nom": "nationalisme",
+      "desc": "attachement à une nation et patriotisme"
+    }
+  ],
+  [
+    {
+      "nom":"essentialisme",
+      "desc": "ce qu'on est est déterminé par essence"
+    }, 
+    {
+      "nom": "constructivisme",
+      "desc": "on devient qui on est avec l'expérience et l'apprentissage"
+    }
+  ]
+]

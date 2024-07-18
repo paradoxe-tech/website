@@ -5,9 +5,16 @@ const path = require('path')
 
 app.use(express.json())
 
-app.use('/cdn', express.static('cdn'))
+
 app.get("/discord", (req, res) => res.redirect(`https://discord.gg/KkW88YnheT`))
 app.get("/i", (req, res) => res.redirect(`/#about`))
+
+app.get("/u/:username", (req, res) => {
+  let users = JSON.parse(fs.readFileSync('cdn/data/users.json'))
+  let user = users.find(x => x.username == req.params.username)
+  if(!user) res.end(`No user called @${req.params.username} here.`)
+  res.render('user.ejs', user)
+})
 
 for(let api of fs.readdirSync('./api')) {
   let apiName = api.replaceAll(".js", "")
@@ -41,11 +48,14 @@ function getRelPath(req, res) {
     else res.redirect(req.url.replace('public', '') + "/")
   } else relPath = relPath.replace(/\/$/, '')
 
+  if(relPath.startsWith('/')) relPath = relPath.replace('/', '')
+
   return relPath
 }
 
 app.use('/', (req, res) => {
   let relPath = getRelPath(req, res)
+  console.log(`Trying to fetch [${relPath}]`)
 
   let file = readFile(relPath)
   if(file.length == 0) {
@@ -54,7 +64,10 @@ app.use('/', (req, res) => {
       file = file[file.length - 1]
       let before = relPath.split(file)[0]
       let attempt = `${before}/public/${file}`
-      if(readFile(attempt).length > 0) relPath = attempt
+      if(readFile(attempt).length > 0) {
+        relPath = attempt
+        console.info(`\tNew path found at [${relPath}] working.`)
+      }
       else res.redirect("https://" + req.get('host') + "/404")
     } else res.redirect("https://" + req.get('host') + "/404")
   }
@@ -68,8 +81,8 @@ app.use('/', (req, res) => {
     try {
       res.sendFile(path.join(__dirname, relPath));
     } catch (err) {
-      if(err.code === 'ENOENT') console.error(`No file at [${relPath}] found.`);
-      else if(err.code === 'EISDIR') console.error(`File [${relPath}] isn't a directory.`);
+      if(err.code === 'ENOENT') console.error(`\tNo file at [${relPath}] found.`);
+      else if(err.code === 'EISDIR') console.error(`\tFile [${relPath}] isn't a directory.`);
       else throw err;
     }
   }
@@ -83,8 +96,9 @@ function readFile(relPath) {
   try {
     result = fs.readFileSync(relPath, 'utf8');
   } catch (err) {
-    if(err.code === 'ENOENT') console.error(`No file at [${relPath}] found.`);
-    else if(err.code === 'EISDIR') console.error(`File [${relPath}] isn't a directory.`);
+    
+    if(err.code === 'ENOENT') console.error(`\tNo file at [${relPath}] found.`);
+    else if(err.code === 'EISDIR') console.error(`\tFile [${relPath}] isn't a directory.`);
     else throw err;
   }
   

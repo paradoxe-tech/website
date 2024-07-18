@@ -1,0 +1,125 @@
+@media all and (min-width: 100px) and (max-width: 900px) {
+  body {
+    font-size: 0.7em;
+  }
+
+  #main {
+    scale: 0.5;
+  }
+
+  #menu {
+    justify-content: center !important;
+  }
+
+  #viewport {
+    justify-content: flex-start !important;
+  }
+
+  #question {
+    width: 500px !important;
+  }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #e0e0e0;
+  font-family: "Poppins";
+  margin: 0px;
+}
+
+#viewport {
+  width: 100%;
+  min-height: calc(100% - 200px);
+  height: fit-content;
+  position: absolute;
+  top: 100px;
+  justify-content: flex-start;
+  padding: 50px 0;
+}
+
+#menu {
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+  align-items: center;
+  background: #e8e8e8;
+  padding: 0 50px;
+}
+
+#menu a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+#viewport, #main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#question {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 700px;
+  padding: 50px;
+}
+
+#question button {
+  cursor: pointer;
+  margin-right: 20px;
+  transition: all 100ms ease-in-out;
+}
+
+#question button:hover {
+  box-shadow:  4px 4px 12px #ffffff,
+   -4px -4px 12px #c1c1c1;
+}
+
+#binaire {
+  display: none;
+}
+
+.code, #question button, .tag {
+  background: #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow:  4px 4px 12px #c1c1c1,
+               -4px -4px 12px #ffffff;
+  border: none;
+}
+
+.code {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+#results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+  max-width: 500px;
+  flex-wrap: wrap;
+}
+
+#compare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+  width: 600px;
+  flex-wrap: wrap;
+}
+
+.space-btwn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

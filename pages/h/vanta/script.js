@@ -73,6 +73,13 @@ function save_utf8() {
   _global.saveAs(blob, `${name}${ext}`)
 }
 
+function save_html() {
+  let ext = document.querySelector('#filetype-save').value
+  let name = document.querySelector('#filename-export').value
+  let blob = new Blob([VANTA.output()], { type: "text/html;charset=utf-8" })
+  _global.saveAs(blob, `${name}${ext}`)
+}
+
 function switch_save() {
   if (document.querySelector('#filetype-save').value == ".pdf") save_pdf()
   if (document.querySelector('#filetype-save').value == ".html") save_html()

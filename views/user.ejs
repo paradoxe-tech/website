@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <%- include('head').replaceAll('_ROOT_/', '../../'); %>
+    <link rel="stylesheet" type="text/css" href="../../cdn/styles/user.css"/>
+  </head>
+  <body class="container">
+    <nav><%- include('menu'); %></nav>
+
+    <div id="mouse"></div>
+
+    <main>
+      <div class="view fit" style="height: 80vh">
+        <div class="profile">
+          
+          <h1 class="username">@<%- username %></h1>
+          <div class="tags">
+            <span class="tag"><%= pronouns %></span>
+            <span class="tag"><%= age %></span>
+            <span class="tag"><%= locale %></span>
+          </div><br/>
+          <span class="coins"><%- account %></span>
+          <span class="joindate">membre depuis le <%- join %></span>
+          <table>
+            <tr>
+              <td>AXES</td>
+              <td><%= links.axes ? links.axes : "" %></td>
+            </tr>
+            <tr>
+              <td>Tuuupper.</td>
+              <td><%= links.tupper ? links.tupper : "" %></td>
+            </tr>
+            <tr>
+              <td>Goodreads</td>
+              <td><%= links.goodreads ? links.goodreads : "" %></td>
+            </tr>
+            <tr>
+              <td>MBTI</td>
+              <td><%= links.mbti ? links.mbti : "" %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer><%- include('footer'); %></footer>
+  </body>
+</html>
