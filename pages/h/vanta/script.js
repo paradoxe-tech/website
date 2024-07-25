@@ -1,8 +1,8 @@
 let VANTA = new Vanta()
 
-function closeAllWindows() {}
+function closeAllWindows() { }
 
-function switch_render() {
+function switch_render(icon) {
   document.querySelector('#rendered-content').innerHTML = VANTA.output()
   document.querySelector('#raw-content').classList.toggle("hidden")
   document.querySelector('#rendered-content').classList.toggle("hidden")
@@ -10,31 +10,36 @@ function switch_render() {
   hljs.highlightAll()
   udpate(VANTA.rawtext)
   VANTA.footnotes()
+
+  if (icon.name == "create") icon.name = "document-text"
+  else if (icon.name == "document-text") icon.name = "create"
 }
 
 function udpate(text) {
   VANTA.input(text)
   let summary = VANTA.summary()
-  if(summary) {
+  if (summary) {
     document.querySelector('#summary').classList.remove('hidden')
     document.querySelector('#summary').innerHTML = "<h1>Sommaire</h1>" + summary
   } else document.querySelector('#summary').classList.add('hidden')
 
   let definitions = VANTA.definitions()
-  if(definitions) {
+  if (definitions) {
     document.querySelector('#definitions').classList.remove('hidden')
     document.querySelector('#definitions').innerHTML = "<h1>Définitions</h1>" + VANTA.definitions()
   } else document.querySelector('#definitions').classList.add('hidden')
 
   let footnotes = VANTA.footnotes()
-  if(footnotes) {
+  if (footnotes) {
     document.querySelector('#footnotes').classList.remove('hidden')
     document.querySelector('#footnotes').innerHTML = "<h1>Références</h1>" + VANTA.footnotes()
   } else document.querySelector('#footnotes').classList.add('hidden')
 }
 
-function switch_theme() {
+function switch_theme(icon) {
   document.body.classList.toggle('light')
+  if (icon.name == "partly-sunny") icon.name = "cloudy-night"
+  else if (icon.name == "cloudy-night") icon.name = "partly-sunny"
 }
 
 function load_utf8() {
@@ -53,15 +58,15 @@ function load_utf8() {
     textarea.innerHTML = fileLoadedEvent.target.result
     VANTA.input(fileLoadedEvent.target.result)
     switch_render()
-    
-    if(document.querySelector('#rendered-content').classList.contains('hidden')) {
+
+    if (document.querySelector('#rendered-content').classList.contains('hidden')) {
       switch_render()
-    } 
+    }
 
     closeAllWindows()
   }
 
-  
+
 
   fileReader.readAsText(file, "UTF-8")
 }
@@ -89,10 +94,10 @@ function switch_save() {
 function switch_file() {
   document.querySelector('#filemenu').classList.toggle('hidden')
 
-  if (document.querySelector('#files-button').name !== "folder-outline") {
-    document.querySelector('#files-button').name = "folder-outline"
+  if (document.querySelector('#files-button').name !== "folder") {
+    document.querySelector('#files-button').name = "folder"
   } else {
-    document.querySelector('#files-button').name = "folder-open-outline"
+    document.querySelector('#files-button').name = "folder-open"
   }
 }
 

@@ -1,16 +1,27 @@
+:root {
+  --green: #c9ffc9;
+  --red: #ffa8a8
+}
+
 .item, #popup {
-  padding: 50px; 
-  background: #fbccac;
-  color: var(--btn-background);
+  padding: 50px;
   border-radius: 25px;
+}
+
+.item {
   height: fit-content;
-  max-width: 300px;
+  background: white;
+  border: 2px solid #ededed;
+  width: calc(100% - 104px);
+}
+
+.item + .item {
+  margin-top: 20px;
 }
 
 .item .options {
   margin-top: 25px;
   display: flex;
-  flex-direction: column;
   gap: 12px;
 }
 
@@ -40,27 +51,30 @@
 }
 
 .item .options .option, button {
-  background: var(--btn-background);
-  color: white;
-  border-radius: 25px;
+  background: #e8e8e8;
+  color: black;
+  border-radius: 5px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   appearance: none;
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
 }
 
-.item .options .option.active:not(.star), button.active {
-  background: black;
-  outline: none;
+.item .options:has(.active) :not(.active) {
+  background: #e8e8e8 !important;
+}
+
+select.active {
+  background: var(--green) !important;
 }
 
 .item button.green {
-  background: green !important;
+  background: var(--green) !important;
 }
 
 .item button.red {
-  background: red !important;
+  background: var(--red) !important;
 }
 
 .item h1 {
@@ -84,7 +98,7 @@
 .item .topics .topic {
   font-size: 0.7em;
   border-radius: 50px;
-  background: #f2b58c;
+  background: var(--red);
   padding: 3px 7px;
   cursor: pointer;
   transition: all 100ms ease-in-out;
@@ -96,21 +110,23 @@
 }
 
 .item .likert {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   z-index: 99;
   aspect-ratio: 1 / 1;
-  flex: 0 0;
+  flex: 1 0;
   border-radius: 50%;
   cursor: pointer;
+  margin: 0 6px;
 }
 
 .likert.type4 {width: 45px; height: 45px;}
 .likert.type3 {width: 35px; height: 35px;}
 .likert.type2 {width: 25px; height: 25px;}
 .likert.type1 {width: 15px; height: 15px;}
-.likert.neg {background: red}
-.likert.pos {background: green}
-.likert.neutral {background: grey}
+.likert.neg {background: var(--red)}
+.likert.pos {background: var(--green)}
+.likert.neutral {background: #e8e8e8}
 
 *:focus {
   border: none !important;
@@ -122,13 +138,14 @@ input[type=range].option {
   height: 5px;
   border-radius: 100%;
   cursor: default !important;
+  width: 100%;
 }
 
 input[type=range]::-ms-thumb,
 input[type=range]::-moz-range-thumb {
   height: 23px;
   width: 23px;
-  background: red;
+  background: var(--red);
   cursor: pointer;
   border-radius: 50%;
 }
@@ -137,37 +154,20 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 23px;
   width: 23px;
-  background: red;
+  background: var(--red);
   cursor: pointer;
   border-radius: 50%;
 }
 
-#popup {
-  display: block;
-  position: fixed;
-  top: 150px;
-  left: 50px;
-  background: black;
-  color: wheat;
-  z-index: 99;
-}
-
 #form > button {
   width: fit-content;
-  background: black;
+  background: #ababab;
 }
 
 .hidden {
  display: none !important;
 }
 
-.item .options > * {
-  transition: outline 100ms ease-in-out;
-}
-
-.item .options .option.red.active,
-.item .options .option.green.active,
-.item .options .likert.active,
-.item .options button:focus {
-  outline: 3px solid black;
-}
+.options:has(.likert) {
+  display: block !important;
+} 

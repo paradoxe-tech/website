@@ -4,72 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Vanta</title>
+  <link href="cdn/libs/Vanta.css" rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="cdn/libs/hljs-theme.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="cdn/assets/ico.png" />
+  <link rel="icon" type="image/png" href="cdn/assets/vanta_icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="viewport">
+  <main id="viewport">
     <div id="menu">
-      <img id="vanta-logo" src="cdn/assets/logo_krispy.png" width="70px" onclick="window.open(window.location.origin + '/docs','_blank');">
+      <img id="vanta-logo" src="cdn/assets/shard_border.png" width="70px" 
+        onclick="window.open(window.location.origin + '/docs','_blank');">
+      <h1>Vanta</h1>
     </div>
     <div id="filemenu" class="hidden window">
-      <input id="filename-export" type="text" placeholder="Nom_de_fichier"></input><select id="filetype-save">
+      <input id="filename-export" type="text" 
+        placeholder="Nom_de_fichier"></input>
+      <select id="filetype-save">
         <option value=".vanta">.vanta</option>
         <option value=".txt">.txt</option>
         <option value=".md">.md</option>
         <option value=".pdf">.pdf</option>
         <option value=".html">.html</option>
       </select>
-      
       <button onclick="closeAllWindows();switch_save()">exporter</button>
-      
       </br></br></br>
-      
       <input id="fileuploader" type="file" accept=".vanta,.txt,.md">
        <div id="filed-drop">
           Ouvrir un fichier VANTA
       </div>
     </div>
-    <div id="widgetmenu" class="hidden window">
-      <ul>
-        <li onclick="switch_wopt([
-            {name: 'Youtube Video ID', html: `<input type='text' id='youtube-video-id'/>`}
-            ], 'widg_yt()')">
-          <ion-icon name="logo-youtube"></ion-icon>Youtube Player
-        </li>
-        <li onclick="switch_wopt([
-            {name: 'Expression', html: `<input type='text' id='maths-expression'/>`}
-            ], 'widg_mathsExpr()')">
-          <ion-icon name="calculator"></ion-icon>Maths Expression
-        </li>
-        <!-- <li><ion-icon name="map-outline"></ion-icon> Dynamic Map</li> -->
-      </ul>
-    </div>
-    <div id="presmenu" class="hidden window">
-      <li><input type="checkbox" id="tickhighlight"> Highlight</li>
-    </div>
-    <div id="dicomenu" class="hidden window">
-      <ul>
-        <li><input type="checkbox" checked id="abbr_FR"> Français (Global)</li>
-        <li><input type="checkbox" id="abbr_texto_FR"> Texto (FR)</li>
-        <li><input type="checkbox" id="abbr_bio_FR"> Biologie (FR)</li>
-        <li><input type="checkbox" id="abbr_physique_FR"> Physique (FR)</li>
-        <li><input type="checkbox" id="abbr_informatique_FR"> Informatique (FR)</li>
-      </ul>
-    </div>
-    <div id="widgetoptions" class="hidden window"></div>
   
-    <div id="content" class="vBot" onclick="closeAllWindows()">
+    <div id="content" onclick="closeAllWindows()">
       <div id="left-col">
-        <div class="bubble" id="lexique"></div>
-        <div class="bubble" id="definitions"></div>
-        <div class="bubble" id="summary"></div>
+        <div class="bubble hidden" id="lexique"></div>
+        <div class="bubble hidden" id="definitions"></div>
+        <div class="bubble hidden" id="summary"></div>
       </div>
       <div id="content-container">
         <div id="raw-content" 
@@ -82,40 +56,30 @@
         <div id="rendered-content" class="hidden"></div>        
       </div>
       <div id="right-col">
-        <div class="bubble" id="footnotes"></div>
-        <div class="bubble" id="abreviations"></div>
+        <div class="bubble hidden" id="footnotes"></div>
+        <div class="bubble hidden" id="abreviations"></div>
       </div>
     </div>
   
     <div id="bottom-menu">
-      <!--<ion-icon 
-        id="dico-button" 
-        onclick="closeAllWindows('dico');switch_dico()" 
-        name="book-outline"
-        title="Dictionnaire"
-      ></ion-icon>--><ion-icon 
+      <ion-icon 
         id="files-button" 
         onclick="closeAllWindows('files');switch_file()" 
-        name="folder-outline"
+        name="folder"
         title="Run cells"
       ></ion-icon><ion-icon 
         id="render-button" 
-        onclick="switch_render()" 
-        name="document-text-outline" 
+        onclick="switch_render(this)" 
+        name="document-text" 
         title="Edit / Render"
-      ></ion-icon><!--<ion-icon 
-        id="widget-button" 
-        onclick="closeAllWindows('widget');switch_widget()" 
-        name="sparkles-outline"
-        title="Menu des modules"
-      ></ion-icon>--><ion-icon 
+      ></ion-icon><ion-icon 
         id="theme-button" 
-        onclick="switch_theme()" 
-        name="partly-sunny-outline" 
+        onclick="switch_theme(this)" 
+        name="partly-sunny" 
         title="Changer de thème"
       ></ion-icon>
     </div>
-  </div>
+  </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/javascript.min.js"></script>

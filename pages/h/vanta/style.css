@@ -1,10 +1,5 @@
 /* ================================================================ { RULES } == */
 
-@font-face {
-  font-family: "Poppins Bold";
-  src: url("cdn/assets/Poppins-SemiBold.ttf")
-}
-
 @media all and (min-width: 100px) and (max-width: 700px) {
 
   .bubble {
@@ -56,12 +51,12 @@
   --fontcolor: white;
   --bgcolor: black;
   --bgcode: #212121;
-  --bgbubble: #282828;
+  --bgbubble: #1c1c1c;
   --fontcode: #dbdbdb;
   --selectionbg: white;
   --selectioncolor: black;
   --font-fam: "Montserrat";
-  --titles-font-fam: "Poppins Bold";
+  --titles-font-fam: "Poppins";
   --font-size: 1em;
   --lh: 1.5em;
   --cursor: auto;
@@ -115,21 +110,6 @@ body {
   color: var(--fontcolor, white);
   transition: color 1s ease background 0.3s;
   margin: 0px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 15px 0px 15px 0px;
-  font-family: var(--titles-font-fam);
-}
-
-h1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-hr {
-  border-top: 1px solid var(--fontcolor, white);
-  margin-bottom: 15px;
 }
 
 ion-icon {
@@ -187,38 +167,14 @@ input[type=text], select {
   outline: none;
 }
 
-hr {
-  background: var(--fontcolor)
-}
-
-table {
-  border: 2px solid white;
-  border-collapse: collapse;
-}
-
-td, th {
-  padding: 10px;
-  border: 2px solid white;
-}
-
-table th {
-  background: var(--fontcolor);
-  color: var(--bgcolor);
-}
-
-line {
-  white-space: pre-wrap;
-}
-
 /* ================================================================ { CONTENT } == */
 
 #content {
   margin: 0px;
   position: fixed;
-  top: 50px;
-  width: calc(100vw - 80px);
-  padding: 40px;
-  height: calc(100vh - 230px);
+  top: 108px;
+  width: 100vw;
+  height: calc(100vh - 200px);
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -232,11 +188,10 @@ line {
   justify-content: center;
   flex: 1 1;
   overflow-y: scroll;
+  border: 4px solid var(--fontcolor);
 }
 
 #rendered-content, #raw-content {
-
-  background: var(--bgbubble);
   transition: color 1s ease background 0.3s;
   
   color: var(--fontcolor, white);
@@ -246,8 +201,6 @@ line {
   width: 100%;
   height: fit-content;
   margin: 0px;
-
-  border-radius: 20px;
   padding: 50px;
 
   resize: none;
@@ -261,24 +214,6 @@ line {
   font-family: var(--titles-font-fam);
 }
 
-#content-container.sliced #lexique {
-  display: flex;
-}
-
-#content-container.sliced #raw-content {
-  height: 50% !important;
-  overflow-y: scroll !important;
-}
-
-#content-container.sliced #rendered-content {
-  height: 100% !important;
-  overflow-y: scroll !important;
-}
-
-#content-container.sliced #left-col {
-  justify-content: center;
-}
-
 #raw-content {
   cursor: text !important;
 }
@@ -290,25 +225,23 @@ line {
 
 #rendered-content {
   margin-bottom: 20px;
-  min-height: 400px;
 }
 
 /* ================================================================ { MENU } == */
 
-#vanta-logo {
-  margin-top: 10px;
-  cursor: help;
-}
-
 #menu {
   text-align: center;
   width: 100% !important;
-  padding: 15px;
+  padding: 10px 15px 15px 15px;
   position: fixed;
   right: 0px;
   top: 0px;
   z-index: 99;
   background: var(--bgcolor, black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
 }
 
 #bottom-menu {
@@ -333,8 +266,15 @@ line {
   transform: rotate(15deg);
 }
 
-#menu img {
-  width: 90px !important;
+#menu h1 {
+  font-family: "Poppins";
+}
+
+#menu img#vanta-logo {
+  height: 40px !important;
+  margin-top: 10px;
+  object-fit: contain;
+  width: fit-content;
 }
 
 #menu img, #menu ion-icon {
@@ -343,133 +283,12 @@ line {
 
 /* ================================================================ { BLOCKS } == */
 
-maths, code {
-  color: var(--fontcode, #B9BBBE);
-  background-color: var(--bgcode, #272727);
-  border-radius: 5px;
-  display: inline-block;
-  padding: 5px;
-}
-
-pre > code, maths {
-  padding: 30px;
-  width: calc(100% - 60px);
-  white-space: break-spaces;
-} 
-
-maths {
-  white-space: normal !important;
-}
-
-maths::after, code.maths {
-  content: "⚠  Vanta Flavoured maths expressions are no longer supported since v2.0.0. Please use LaTeX instead.";
-  color: yellow;
-  display: inline-block;
-  margin-top: 20px;
-  font-family: monospace;
-}
-
-code {
-  font-family: monospace;
-}
-
-maths {
-  font-family: times new roman;
-}
-
-blockquote {
-  padding: 15px;
-  border-left: 2px solid var(--fontcode);
-  color: var(--fontcode);
-  display: block;
-  background: var(--bgcode);
-  margin: 10px 10px 5px 0;
-}
-
-moy {
-  border-top: 1px solid var(--fontcode);
-}
-
-sigma {
-  position: relative;
-  top: 5px;
-}
-
-sup.sigma {
-  position: absolute;
-  top: -30px;
-  left: -3px;
-}
-
-sub.sigma  {
-  position: absolute;
-  bottom: -17px;
-  left: 0;
-}
-
-square-root {
-  position: relative;
-}
-
-square-root::before {
-  content: "√";
-}
-
-square-root::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: var(--sqrt-length);
-  border-top: 1px solid var(--fontcode);
-}
-
-.widget {
-  background-color: var(--bgcode, #272727);
-  border-radius: 5px;
-  display: block;
-  padding: 15px;
-  width: fit-content;
-}
-
-.fraction {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.fraction > span { 
-  display: block; 
-  padding: 0.1em; 
-}
-
-.fraction span.fdn {
-  border-top: thin solid var(--fontcode, #B9BBBE);
-}
-
-.fraction span.bar {display: none;}
 
 block {
   color: var(--fontcode, #B9BBBE);
   background-color: var(--bgcode, #272727);
   font-family: times new roman;
   padding: 5px 10px;
-}
-
-#rendered-content def {
-  display: block;
-  position: relative;
-  background: var(--bgccolor);
-  border: 2px solid var(--fontcode);
-  padding: 20px;
-}
-
-#rendered-content def concept {
-  padding: 5px 10px;
-  background: var(--bgbubble);
-  position: absolute;
-  top: -1em;
-  left: 35px;
 }
 
 /* ================================================================ { WINDOWS } == */
@@ -525,46 +344,6 @@ block {
 
 /* ================================================================ { COLORS } == */
 
-red {
-  color: red
-}
-
-green {
-  color: #438443
-}
-
-yellow {
-  color: yellow
-}
-
-blue {
-  color: #2990ff
-}
-
-grey {
-  color: #8f8f8f
-}
-
-pink {
-  color: #f051eb
-}
-
-lightyellow {
-  color: #fdfdaf
-}
-
-lightgreen {
-  color: #b2ffa8
-}
-
-orange {
-  color: #CE9178
-}
-
-interogation {
-  color: yellow;
-}
-
 #lexique {
   display: none;
 }
@@ -596,11 +375,14 @@ interogation {
 /* =============== */
 
 .bubble {
-/*  background: var(--bgbubble); */
+  position: relative;
+  background: var(--bgbubble);
   border-radius: 20px;
   padding: 50px;
   height: fit-content;
   width: calc(100% - 100px);
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
 }
 
 .bubble > ul {
@@ -615,11 +397,39 @@ interogation {
   padding: 10px 0; 
   width: 100%;
   display: flex;
+  border: none;
+}
+
+.bubble def concept {
+  display: inline-block;
+  padding: 0px;
+  background: transparent;
+  position: static;
 }
 
 .bubble def concept::after {
   content: "→";
   margin-right: 5px;
+}
+
+#left-col .bubble {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  left: -90%;
+}
+
+#right-col .bubble {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  right: -90%;
+}
+
+#right-col .bubble:hover {
+  right: 0px;
+}
+
+#left-col .bubble:hover {
+  left: 0px;
 }
 
 .bubble def description {

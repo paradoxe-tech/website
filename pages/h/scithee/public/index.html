@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Contribute</title>
+    <title>SciThee</title>
     <link rel="stylesheet" href="libs/global.css">
     <link rel="stylesheet" href="libs/item.css" type="text/css">
 
@@ -9,23 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
-  <body>
+  <body onload="displayForms()">
     <div class="hidden" id="popup"></div>
-    <div id="viewport">
-      <div class="menu" id="horizontal">
-        <span id="account">-</span>
-        <div id="userinfos">
-          <!--
-          <span id="username"></span>
-          <img id="userpp">
-          -->
-        </div>
-      </div>
-      <div id="main">
-        <div id="form"></div>
-      </div>
-    </div>
-
+    <div class="hidden" id="click-catcher" onclick="killPopup()"></div>
+    
+    <nav class="horizontal">
+      <div id="logo"><h1>Sci<i>Thee</i></h1></div>
+      <div id="k-login"></div>
+    </nav>
+    <nav class="vertical">
+      <a class="active"><ion-icon name="stats-chart-outline"></ion-icon>Sondages</a>
+      <a><ion-icon name="game-controller-outline"></ion-icon>Quizz Bayésiens</a>
+    </nav>
+    <main>
+      <h1>Sondages</h1><br/>
+      <div id="forms"></div>
+    </main>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
     <script src="https://accounts.google.com/gsi/client" async></script>
     <script src="../tsu.js"></script>
     <script src="../../cdn/scripts/login.js"></script>
