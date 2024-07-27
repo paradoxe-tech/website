@@ -66,16 +66,21 @@ function load_utf8() {
     closeAllWindows()
   }
 
-
-
   fileReader.readAsText(file, "UTF-8")
 }
 
-function save_utf8() {
-  let ext = document.querySelector('#filetype-save').value
-  let name = document.querySelector('#filename-export').value
+function open_file() {
+  document.querySelector('#fileuploader').click()
+
+  document.querySelector('#fileuploader').addEventListener('change', () => {
+    load_utf8()
+  })
+}
+
+function save_utf8(ext) {
+  let name = prompt('Nom du document ?')
   let blob = new Blob([VANTA.rawtext], { type: "text/plain;charset=utf-8" })
-  _global.saveAs(blob, `${name}${ext}`)
+  _global.saveAs(blob, `${name}.${ext}`)
 }
 
 function save_html() {

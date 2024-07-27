@@ -174,7 +174,7 @@ input[type=text], select {
   position: fixed;
   top: 108px;
   width: 100vw;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 108px);
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -188,7 +188,7 @@ input[type=text], select {
   justify-content: center;
   flex: 1 1;
   overflow-y: scroll;
-  border: 4px solid var(--fontcolor);
+  border: 3px solid var(--fontcolor);
 }
 
 #rendered-content, #raw-content {
@@ -231,17 +231,95 @@ input[type=text], select {
 
 #menu {
   text-align: center;
-  width: 100% !important;
-  padding: 10px 15px 15px 15px;
+  width: calc(100% - 60px);
+  padding: 20px 30px;
   position: fixed;
   right: 0px;
   top: 0px;
   z-index: 99;
   background: var(--bgcolor, black);
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+#menu div#top-menu {
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   gap: 11px;
+}
+
+#menu div#top-menu > * {
+  margin: 0px;
+}
+
+#menu nav {
+  display: flex;
+  gap: 5px;
+  font-size: 0.7em;
+}
+
+#menu nav div a {
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#menu nav div:hover a {
+  background: var(--bgbubble);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#menu nav div {
+  position: relative;
+}
+
+#menu nav div .dropdown {
+  display: none;
+  position: absolute;
+  top: 19px;
+  left: 0;
+  width: 250px;
+}
+
+#menu nav div .dropdown .menu-option {
+  width: 100%;
+  text-align: left;
+  padding: 10px 10px;
+  background: var(--bgbubble);
+  cursor: pointer;
+}
+
+.menu-option.disabled {
+  cursor: not-allowed !important;
+  color: grey;
+}
+
+#menu nav div .dropdown .menu-option:hover {
+  background: var(--bgcode);
+}
+
+#menu nav div .dropdown .menu-option .shortcut {
+  float: right;
+}
+
+#menu nav div .dropdown .menu-option ion-icon {
+  width: 20px;
+  margin-right: 5px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+#menu nav div:hover .dropdown,
+#menu nav div .dropdown:hover {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 #bottom-menu {
@@ -272,7 +350,6 @@ input[type=text], select {
 
 #menu img#vanta-logo {
   height: 40px !important;
-  margin-top: 10px;
   object-fit: contain;
   width: fit-content;
 }

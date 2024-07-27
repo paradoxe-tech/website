@@ -17,28 +17,74 @@
 <body>
   <main id="viewport">
     <div id="menu">
-      <img id="vanta-logo" src="cdn/assets/shard_border.png" width="70px" 
-        onclick="window.open(window.location.origin + '/docs','_blank');">
+      <img id="vanta-logo" src="cdn/assets/shard_border.png" width="70px">
+      <div id="top-menu">
       <h1>Vanta</h1>
-    </div>
-    <div id="filemenu" class="hidden window">
-      <input id="filename-export" type="text" 
-        placeholder="Nom_de_fichier"></input>
-      <select id="filetype-save">
-        <option value=".vanta">.vanta</option>
-        <option value=".txt">.txt</option>
-        <option value=".md">.md</option>
-        <option value=".pdf">.pdf</option>
-        <option value=".html">.html</option>
-      </select>
-      <button onclick="closeAllWindows();switch_save()">exporter</button>
-      </br></br></br>
-      <input id="fileuploader" type="file" accept=".vanta,.txt,.md">
-       <div id="filed-drop">
-          Ouvrir un fichier VANTA
+      <nav>
+        <div>
+          <a>Fichier</a>
+          <div class="dropdown">
+            <div class="menu-option" onclick="open_file()">
+              <ion-icon name="folder"></ion-icon>Ouvrir un fichier
+              <span class="shortcut"><kbd>Ctrl</kbd> + <kbd>O</kbd></span>
+            </div>
+            <div class="menu-option" onclick="save_utf8('vanta')">
+              <ion-icon name="save"></ion-icon>Enregistrer sous (.vanta)
+              <span class="shortcut"><kbd>Ctrl</kbd> + <kbd>S</kbd></span>
+            </div>
+            <div class="menu-option disabled">
+              <ion-icon name="download"></ion-icon>Exporter au format pdf</div>
+            <div class="menu-option disabled">
+              <ion-icon name="logo-html5"></ion-icon>Exporter au format html</div>
+            <div class="menu-option" onclick="save_utf8('md')">
+              <ion-icon name="logo-markdown"></ion-icon>Exporter au format markdown</div>
+          </div>
+        </div>
+        <div><a>Outils</a>
+          <div class="dropdown">
+            <div class="menu-option" onclick="switch_render()">
+              <ion-icon name="sparkles"></ion-icon>Changer de rendu
+              <span class="shortcut"><kbd>Ctrl</kbd> + <kbd>Enter</kbd></span>
+            </div>
+            <div class="menu-option disabled">
+              <ion-icon name="bar-chart"></ion-icon>Statistiques</div>
+          </div>
+        </div>
+        <div><a>Affichage</a>
+          <div class="dropdown">
+            <div class="menu-option" onclick="switch_theme()">
+              <ion-icon name="partly-sunny"></ion-icon>Changer de thème
+              <span class="shortcut"><kbd>Ctrl</kbd> + <kbd>alt</kbd> + <kbd>T</kbd></span>
+            </div>
+            <div class="menu-option disabled">
+              <ion-icon name="scan"></ion-icon>Interface minimaliste
+              <span class="shortcut"><kbd>Ctrl</kbd> + <kbd>alt</kbd> + <kbd>I</kbd></span>
+            </div>
+            <div class="menu-option disabled">
+              <ion-icon name="list"></ion-icon>Sommaire automatique</div>
+            <div class="menu-option disabled">
+              <ion-icon name="library"></ion-icon>Annuaire des définitions</div>
+            <div class="menu-option disabled">
+              <ion-icon name="color-wand"></ion-icon>Dictionnaire d'abréviations</div>
+            <div class="menu-option disabled">
+              <ion-icon name="school"></ion-icon>Notes et références</div>
+          </div>
+        </div>
+        <div><a>À propos</a>
+          <div class="dropdown">
+            <div class="menu-option disabled">
+              <ion-icon name="book"></ion-icon>Documentation</div>
+            <div class="menu-option disabled">
+              <ion-icon name="logo-github"></ion-icon>Open Source
+            </div>
+          </div>
+        </div>
       </div>
+      </nav>
     </div>
-  
+
+    <input type="file" id="fileuploader" class="hidden" accept=".vanta,.txt,.md">
+    
     <div id="content" onclick="closeAllWindows()">
       <div id="left-col">
         <div class="bubble hidden" id="lexique"></div>
@@ -51,7 +97,7 @@
           contenteditable="plaintext-only"
           onkeypress="udpate(this.textContent)"  
           onkeydown="udpate(this.textContent)"  
-          onkeyup="udpate(this.textContent)"  
+          onkeyup="udpate(this.textContent)"
         ></div>
         <div id="rendered-content" class="hidden"></div>        
       </div>
@@ -59,25 +105,6 @@
         <div class="bubble hidden" id="footnotes"></div>
         <div class="bubble hidden" id="abreviations"></div>
       </div>
-    </div>
-  
-    <div id="bottom-menu">
-      <ion-icon 
-        id="files-button" 
-        onclick="closeAllWindows('files');switch_file()" 
-        name="folder"
-        title="Run cells"
-      ></ion-icon><ion-icon 
-        id="render-button" 
-        onclick="switch_render(this)" 
-        name="document-text" 
-        title="Edit / Render"
-      ></ion-icon><ion-icon 
-        id="theme-button" 
-        onclick="switch_theme(this)" 
-        name="partly-sunny" 
-        title="Changer de thème"
-      ></ion-icon>
     </div>
   </main>
 
