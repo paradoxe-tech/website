@@ -2,17 +2,25 @@ let VANTA = new Vanta()
 
 function closeAllWindows() { }
 
-function switch_render(icon) {
+function moveCursorToEnd(contentEle) {
+  let range = document.createRange();
+  let selection = window.getSelection();
+  range.setStart(contentEle, contentEle.childNodes.length);
+  range.collapse(true);
+  selection.removeAllRanges();
+  selection.addRange(range);
+};
+
+function switch_render() {
   document.querySelector('#rendered-content').innerHTML = VANTA.output()
   document.querySelector('#raw-content').classList.toggle("hidden")
   document.querySelector('#rendered-content').classList.toggle("hidden")
+  document.querySelector('#raw-content').focus()
+  moveCursorToEnd(document.querySelector('#raw-content'))
   document.querySelector('#content-container').scrollTo(0, 0)
   hljs.highlightAll()
   udpate(VANTA.rawtext)
   VANTA.footnotes()
-
-  if (icon.name == "create") icon.name = "document-text"
-  else if (icon.name == "document-text") icon.name = "create"
 }
 
 function udpate(text) {
@@ -106,15 +114,6 @@ function switch_file() {
   }
 }
 
-document.querySelector('#filed-drop').addEventListener('click', () => {
-  document.querySelector('#fileuploader').click()
-
-  document.querySelector('#fileuploader').addEventListener('change', () => {
-    closeAllWindows()
-    load_utf8()
-  })
-})
-
 function closeAllWindows(not) {
   if (not !== "files" && !document.querySelector('#filemenu').classList.contains('hidden')) {
     switch_file()
@@ -132,3 +131,11 @@ function closeAllWindows(not) {
     switch_dico()
   }
 }
+
+hotkeys.filter = function(event){
+  return true;
+}
+
+hotkeys('ctrl+enter', () => switch_render());
+
+function closeAllWindows() { }
