@@ -2,47 +2,31 @@
 
 @media all and (min-width: 100px) and (max-width: 700px) {
 
-  .bubble {
-    display: none !important;
-  }
-  
-  #raw-content, #rendered-content {
-    min-height: 80vh !important;
-    padding-bottom: 200px;
-    left: 20px !important;
-    width: calc(100% - 40px) !important;
-  }
-
-  #rendered-content {
-    width: calc(100% - 60px) !important;
-  }
-
-  #bottom-menu ion-icon:hover {
-    transform: rotate(0deg) !important;
-  }
-
-  body {
-    overflow: visible !important;
-  }
-  
-  sigma sup {
-    top: -23px !important;
-    left: -3px !important;
-  }
-
-  sigma sub {
-    bottom: -12px !important;
-  }
-
-  .window {
-    min-width: 60%;
-  }
-
   :root {
     --font-size: 0.8em !important;
     --lh: 1.4em !important;
   }
-  
+
+  #content-container {
+    width: 100% !important;
+    border: none !important;
+    border-top: 3px solid var(--fontcolor) !important;
+  }
+
+  #left-col, #right-col, #vanta-logo {
+    display: none !important
+  }
+
+  #menu {
+    padding: 0px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  #top-menu {
+    flex-direction: column !important;    
+    margin-top: 10px;
+  }
 }
 
 /* ================================================================ { ROOT } == */
@@ -234,8 +218,6 @@ input[type=text], select {
   width: calc(100% - 60px);
   padding: 20px 30px;
   position: fixed;
-  right: 0px;
-  top: 0px;
   z-index: 99;
   background: var(--bgcolor, black);
   display: flex;
