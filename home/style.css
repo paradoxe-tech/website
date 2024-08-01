@@ -14,3 +14,11 @@
 body {
   background: red !important;
 }
+
+.tag {
+  transition: all 50ms ease-in-out;
+}
+
+.tag.active { 
+  color: var(--highlight-color); 
+}

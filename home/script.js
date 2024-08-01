@@ -49,4 +49,14 @@ displayItems(productions, {
   },
   container: "#productions",
   max: 6
-})
+});
+
+(async () => {
+  let tags = document.querySelectorAll('.tag')
+  for(let tag=0; true; tag++) {
+    let thisTag = tags[tag % tags.length]
+    tags.forEach(t => t.classList.remove('active'))
+    thisTag.classList.add('active')
+    await sleep(700)
+  }
+})();

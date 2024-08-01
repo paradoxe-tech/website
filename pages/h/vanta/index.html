@@ -21,7 +21,7 @@
       <div id="top-menu">
       <h1>Vanta</h1>
       <nav>
-        <div>
+        <div onclick="">
           <a>Fichier</a>
           <div class="dropdown">
             <div class="menu-option" onclick="open_file()">
@@ -40,7 +40,7 @@
               <ion-icon name="logo-markdown"></ion-icon>Exporter au format markdown</div>
           </div>
         </div>
-        <div><a>Outils</a>
+        <div onclick=""><a>Outils</a>
           <div class="dropdown">
             <div class="menu-option" onclick="switch_render()">
               <ion-icon name="sparkles"></ion-icon>Changer de rendu
@@ -50,7 +50,7 @@
               <ion-icon name="bar-chart"></ion-icon>Statistiques</div>
           </div>
         </div>
-        <div><a>Affichage</a>
+        <div onclick=""><a>Affichage</a>
           <div class="dropdown">
             <div class="menu-option" onclick="switch_theme()">
               <ion-icon name="partly-sunny"></ion-icon>Changer de thème
@@ -70,7 +70,7 @@
               <ion-icon name="school"></ion-icon>Notes et références</div>
           </div>
         </div>
-        <div><a>À propos</a>
+        <div onclick=""><a>À propos</a>
           <div class="dropdown">
             <div class="menu-option disabled">
               <ion-icon name="book"></ion-icon>Documentation</div>
@@ -83,7 +83,7 @@
       </nav>
     </div>
 
-    <input type="file" id="fileuploader" class="hidden" accept=".vanta,.txt,.md">
+    <input type="file" id="fileuploader" class="hidden" accept="application/vanta,.vanta,.txt,.md">
     
     <div id="content" onclick="closeAllWindows()">
       <div id="left-col">

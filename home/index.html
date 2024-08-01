@@ -1,5 +1,5 @@
 <div class="view dark animate" style="height: 110vh;">
-  <h1 id="welcome">Bienvenue.</h1></div>
+  <h1 id="welcome">Bienvenue<hl>.</hl></h1></div>
 <div class="view light cols">
   <div class="jumbo">
     <h3>ACTUALITÉS</h3>
@@ -21,7 +21,7 @@
     <div class="tag">littérature</div>
     <div class="tag">physique fondamentale</div>
     <div class="tag">écosystèmes</div>
-    <div class="tag">articial life</div>
+    <div class="tag active">artificial life</div>
     <div class="tag">bioinspiration</div>
     <div class="tag">modélisation de foules</div>
     <div class="tag">escrimes traditionnelles</div>
@@ -44,7 +44,7 @@
   <div class="view dark padded">
     <div class="jumbo mozaic top left">
       <h3>À L'AFFICHE</h3>
-      <h1>Imaginez… un <hl>simulateur universel intuitif d'automates cellulaires totallistiques</hl></h1>
+      <h1>Imaginez… un <hlu>simulateur universel intuitif</hlu> d'automates cellulaires totallistiques</h1>
       <br/>
       <a href="/h/uni" class="button hide-mobile">découvrir h/Uni</a>
     </div>
@@ -80,7 +80,7 @@
 <!--<div id="slider"></div>-->
 <div class="view dark">
   <div class="hero"> 
-  <h1 style="margin-bottom: 130px;">Soutenez mon travail !</h1>
+  <h1 style="margin-bottom: 130px;">Soutenez mon <hl>travail</hl> !</h1>
   </div>
   <div id="contribute">
     <div>
@@ -104,3 +104,53 @@
     </div>
   </div>
 </div>
+
+<script type="module">
+  import {
+    queueWrite,
+    presets
+  } from "https://cdn.skypack.dev/glitched-writer@2.0.29";
+
+  queueWrite([
+       "Bienvenue<hl>.</hl>",
+       "Paradoxe.<hl>tech</hl>"
+     ], 
+    "#welcome", {
+    ...presets.neo,
+    steps: [3, 8],
+    fillSpace: false,
+    html: true,
+    letterize: true,
+    genGlyph: (char, base) => {
+    if (char.gl === "") return "";
+      const { stepsLeft: n } = char;
+      let l = "-";
+      if (n > 5) l = "_";
+      else if (n > 2) l = "/";
+      return l;
+    },
+    genDelay: (char) => {
+      const { index } = char;
+      return index * 40;
+    }
+  }, 1200, true);
+
+  queueWrite(
+    [
+      "Neo,",
+      "sooner or later",
+      "you're going to realize",
+      "just as I did",
+      "that there's a difference",
+      "between knowing the path",
+      "and walking the path"
+    ],
+    ".text",
+    {
+      ...presets.neo,
+      letterize: true
+    },
+    800,
+    true
+  );
+</script>
