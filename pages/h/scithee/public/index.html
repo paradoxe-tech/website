@@ -6,20 +6,22 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body onload="displayForms()">
     <div class="hidden" id="popup"></div>
     <div class="hidden" id="click-catcher" onclick="killPopup()"></div>
     
     <nav class="horizontal">
-      <div id="logo"><h1>Sci<i>Thee</i></h1></div>
+      <div id="logo"><img src=""><h1>Synapse</h1></div>
       <div id="synapse-login"></div>
     </nav>
     <nav class="vertical">
-      <a class="active"><ion-icon name="stats-chart-outline"></ion-icon>Sondages</a>
-      <a><ion-icon name="game-controller-outline"></ion-icon>Quizz Bayésiens</a>
+      <a class="active"><ion-icon name="home-outline"></ion-icon>Accueil</a>
+      <a><ion-icon name="globe-outline"></ion-icon>Découvertes</a>
+      <a><ion-icon name="play-outline"></ion-icon>Vulgarisation</a>
+      <a><ion-icon name="stats-chart-outline"></ion-icon>Sondages</a>
+      <a onclick="document.body.classList.toggle('dark')"><ion-icon name="game-controller-outline"></ion-icon>Serious Games</a>
     </nav>
     <main>
       <h1>Sondages</h1><br/>
@@ -35,6 +37,6 @@
     <script src="script.js"></script>
     <script src="libs/animateStars.js"></script>
     
-    <script src="https://c922b0b4-faa7-4843-a36a-5d117f94fbe2-00-2rvq4synzbykl.janeway.replit.dev/Synapse.js"></script>
+    <script src="https://c922b0b4-faa7-4843-a36a-5d117f94fbe2-00-2rvq4synzbykl.janeway.replit.dev/dist/SynapseClient.js"></script>
   </body>
 </html>

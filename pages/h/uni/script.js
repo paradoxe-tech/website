@@ -1,11 +1,13 @@
 const queryString = window.location.search
 const url = new URLSearchParams(queryString)
 
+let cnvDims = document.querySelector('#universe canvas').getBoundingClientRect()
+
 let CONFIG = {
   ENTITIES: url.has('ent'),
   TEMPLATE: url.has('template'),
-  WIDTH: url.has('size') ? parseInt(url.get('size')) : 40,
-  HEIGHT: url.has('size') ? parseInt(url.get('size')) : 40,
+  WIDTH: url.has('size') ? parseInt(url.get('size')) : Math.floor(cnvDims.width / 10),
+  HEIGHT: url.has('size') ? parseInt(url.get('size')) : Math.floor(cnvDims.width / 10),
   DELTA: url.has('delta') ? parseInt(url.get('delta')) : 10,
   BORDERS: url.has('no_grid') ? false : true,
   GENERATIONS: url.has('G') ? parseInt(url.get('G')) : 1000,
@@ -46,18 +48,6 @@ if(CONFIG.BORDERS) {
   document.querySelectorAll('table td').forEach(el => el.style.border = "0.5px solid white")
 }
 
-/*
-let c1 = undefined;
-
-if (CONFIG.ENTITIES) {
-  let coords = url.get('ent').replace('(', '').replace(')', '').split(',')
-  c1 = new Entity(UNI, parseInt(coords[0]), parseInt(coords[1]))
-} else if (CONFIG.TEMPLATE && automatons[url.get('template')] && automatons[url.get('template')].entities) {
-  let coords = automatons[url.get('template')].entities.spawn.replace('(', '').replace(')', '').split(',')
-  c1 = new Entity(UNI, parseInt(coords[0]), parseInt(coords[1]))
-}
-*/
-
 function play() {
   
   if(CONFIG.STATE % 2 == 0) {
@@ -85,13 +75,13 @@ function next() {
 function prev() {
   UNI.teleport(UNI.generation - 1)
   UNI.updateMetrics()
-  UNI.refresh()
+  UNI.draw()
 }
 
 function reset() {
   UNI.running = false
   UNI.bigbang()
-  UNI.refresh()
+  UNI.draw()
   UNI.updateMetrics()
   document.querySelector('#player').name = "play"
 }
@@ -187,18 +177,10 @@ function template(name) {
 template('B3/S23')
 cherrypick()
 
-const canvas = document.querySelector('canvas')
-canvas.addEventListener('mousedown', (event) => {
-  const rect = canvas.getBoundingClientRect()
-  const x = event.clientX - rect.left
-  const y = event.clientY - rect.top
 
-  let size = 480 / UNI.width
-  let cx = Math.floor(x / size)
-  let cy = Math.floor(y / size)
-  
-  UNI.click(cx, cy, CLICK_TYPE)
-})
+function zoomCanvas(value) {
+  UNI.gl.scale(value, value)
+}
 
 function drawMatrix(matrix, clickable=false) {
   let res = `<table data="${stringifyMatrix(matrix)}">`

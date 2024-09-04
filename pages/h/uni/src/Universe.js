@@ -5,26 +5,21 @@ class Universe {
     const canvas = document.getElementById("grid")
     canvas.width = config.width
     canvas.height = config.height
+
+    this.pixi = new PixiApp({
+      view: canvas,
+      width: config.width,
+      height: config.height,
+      backgroundColor: "black"
+    });
     
-    this.gl = canvas.getContext("webgl2")
     this.width = config.width
     this.height = config.height
+    this.n = this.width * this.height
+    
     this.rules = config.rules
     this.rules.universe = this
     this.defaultState = config.alive ? config.alive : 0
-
-    if(!this.gl) {
-      this.gl = canvas.getContext("experimental-webgl")
-    }
-    
-    if(!this.gl) {
-      return alert('Votre navigateur ne supporte pas WebGL')
-    } else {
-      this.gl.clearColor(0.0, 0.0, 0.0, 1.0);
-      this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
-      this.gl.viewport(0, 0, this.gl.canvas.width, this.gl.canvas.width);
-      this.program = setupGL(this.gl)
-    }
 
     this.bigbang()
     this.updateMetrics()
@@ -36,31 +31,55 @@ class Universe {
     this.history = {}
     this.history[this.generation] = []
     this.edited = false
-    this.modified = {0:[]}
+    this.pixicells = []
 
-    this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
+    // CLEAR CANVAS WITH PIXI
     
     for (var y = 0; y < this.height; y++) {
       if(!this.history[0][y]) this.history[0].push(Array(this.height))
-      
+      let pixiLine = []
       for (var x = 0; x < this.width; x++) {
-        this.history[0][y][x] = this.defaultState
+        this.history[0][y*this.width + x] = this.defaultState
+
+        const cell = new PIXI.Graphics();
+
+        cell.beginFill("white");
+        cell.drawRect(0, 0, 1, 1)
+        cell.endFill();
+
+        cell.x = x;
+        cell.y = y;
+        cell.tint = 0x0000
+
+        this.pixi.stage.addChild(cell);
+        pixiLine.push(cell)
       }
+      this.pixicells.push(pixiLine)
     }
   }
 
-  refresh() {
-    for(let [x, y] of this.modified[this.generation]) {
-      this.drawCell(x, y)
-    }
+  render() {
+    this.pixi.render()
+  }
+
+  #coords(ci) {
+    let y = Math.floor(ci / this.width)
+    let x = ci - y*this.width
+    
+    return [x, y]
+  }
+
+  #ci(x, y) {
+    return this.width*y + x
   }
   
   draw() {
-    for (var y = 0; y < this.height; y++) {
-      for (var x = 0; x < this.width; x++) {
-        this.drawCell(x, y)
-      }
+    for (var ci = 0; ci < this.n; ci++) {
+      let [x, y] = this.#coords(ci)
+      this.drawCell(x, y)
     }
+    
+    this.pixi.render()
   }
 
   updateMetrics() {
@@ -69,47 +88,35 @@ class Universe {
     this.document.querySelector('#generation').innerHTML = this.generation
   }
 
+  findPixiCell(x, y) {
+    return this.pixicells[y][x]
+  }
+
   drawCell(x, y) {
     let states = this.rules.type == "QL" ? 1 : this.width / 2
     let state = this.findCell(x, y) / states
 
-    x /= this.width / 2
-    y /= this.height / 2
-    let w = 1 / (this.width / 2)
-    let h = 1 / (this.height / 2)
+    let color = 0
 
-    x = -1 + x
-    y = 1 - y
+    if(state == 0) color = "black";
+    if(state == 0.5) color = "#BBB";
+    if(state == 1) color = "#12EB90";
+    if(state == 2) color = "#ff5959";
+    if(state == 3) color = "#fff87d";
+    if(state == 4) color = "#43dcfa";
+    if(state == 5) color = "#ff6bfa";
 
-    
-    this.gl.enable(this.gl.SCISSOR_TEST);
-    this.gl.scissor(x, y, w, h);
-    this.gl.clear(this.gl.COLOR_BUFFER_BIT);
-    this.gl.disable(this.gl.SCISSOR_TEST);
-    
-    if(state == 1) {
-      let vertices = [[x, y],[x+w, y],[x, y-h],[x+w, y-h]]
-
-      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.gl.createBuffer());
-      this.gl.bufferData(this.gl.ARRAY_BUFFER, new Float32Array(vertices.flat()), this.gl.STATIC_DRAW);
-
-      let vertexPosition = this.gl.getAttribLocation(this.program, "vertexPosition");
-      this.gl.enableVertexAttribArray(vertexPosition);
-      this.gl.vertexAttribPointer(vertexPosition, vertices[0].length, this.gl.FLOAT, false, 0, 0);
-
-      this.gl.drawArrays(this.gl.TRIANGLE_STRIP, 0, vertices.length);
-    }
+    let cell = this.findPixiCell(x, y)
+    cell.tint = color;
   }
 
   findCell(x, y, gen=this.generation) {
     if(!this.history[gen]) return false
-    if(!this.history[gen][y]) return false
-    if(!this.history[gen][y][x]) return false
-    return this.history[gen][y][x]
+    return this.history[gen][this.#ci(x, y)]
   }
 
   setCell(x, y, state) {
-    this.history[this.generation][y][x] = state
+    this.history[this.generation][this.#ci(x,y)] = state
   }
 
   switchCell(x, y) {
@@ -119,21 +126,11 @@ class Universe {
   }
 
   population() {
-    return this.modified[this.generation].filter(c => this.findCell(c[0], c[1]) !== 0).length
+    return this.history[this.generation].filter(c => c !== 0).length
   }
 
   score() {
-    let res = 0
-    for(let [x, y] of this.modified[this.generation]) {
-      res += this.findCell(x, y)
-    }
-    return res
-  }
-
-  listCell(x, y) {
-    if(!this.modified[this.generation].find(c => c[0] == x && c[1] == y)) {
-      this.modified[this.generation].push([x, y])
-    }
+    return this.history[this.generation].reduce((partialSum, a) => partialSum + a, 0);
   }
 
   neighbours(x, y, matrix, callback) {
@@ -178,9 +175,9 @@ class Universe {
       else this.setCell(x, y, 0)
     }
     if(type == "cherry") this.switchCell(x, y)
-
-    this.listCell(x, y)
-    this.refresh()
+    
+    this.drawCell(x, y)
+    this.render()
     this.edited = true
     this.updateMetrics()
   }
@@ -202,32 +199,21 @@ class Universe {
       this.teleport(this.generation + 1)
     } else {
       if(!this.history[this.generation + 1]) this.history[this.generation + 1] = []
-      if(!this.modified[this.generation + 1]) this.modified[this.generation + 1] = []
       
       let effects = []
-      
-      for(let y=0; y < this.height; y++) {
-        if(!this.history[this.generation + 1][y]) this.history[this.generation + 1].push([])
-        for(let x=0; x < this.width; x++) {
-          let state = this.history[this.generation][y][x]
-          this.history[this.generation + 1][y][x] = state
-          effects = effects.concat(this.rules.apply(x,y, state))
-        }
+
+      for(let ci=0; ci < this.n; ci++) {
+        let [x, y] = this.#coords(ci)
+        let state = this.findCell(x, y)
+        
+        this.history[this.generation + 1][ci] = state
+        effects = effects.concat(this.rules.apply(x,y, state))
       }
 
       this.generation ++
 
-      for(let effect of effects) {
-        effect()
-      }
+      for(let effect of effects) effect()
 
-      for(let y=0; y < this.height; y++) {
-        for(let x=0; x < this.width; x++) {
-          let oldState = this.history[this.generation - 1][y][x]
-          let newState = this.history[this.generation][y][x]
-          if(oldState !== newState) this.listCell(x, y)
-        }
-      }
     }
     
     this.draw()

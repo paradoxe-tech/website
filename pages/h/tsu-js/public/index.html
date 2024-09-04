@@ -9,7 +9,7 @@
   <link rel="icon" href="">
 
   <link href="style.css" rel="stylesheet" type="text/css"/>
-  <link href="cdn/styles/hljs-theme.css" rel="stylesheet" type="text/css"/>
+  <link href="cdn/styles/github-dark.css" rel="stylesheet" type="text/css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
@@ -28,9 +28,18 @@
   <body onload="load()">
 
     <div id="horizontal-menu">
-      <input type="text" id="searchbar" placeholder="Rechercher" onkeydown="load(this.value)" onkeyup="load(this.value)">
-      <h1>Tsu.js</h1>
-      <span class="tag">v3.2.1</span>
+      <div>
+        <h1>Tsu.js</h1>
+        <span class="tag">v3.2.1</span>
+      </div>
+      <div>
+        <input type="text" id="searchbar" placeholder="Rechercher" onkeydown="load(this.value)" onkeyup="load(this.value)">
+        <nav>
+          <a href="../../../h/tsu.js">CDN</a>
+          <a href="../../../../">Auteur</a>
+          <a href="https://github.com/CallMeKitsu/website/blob/server/pages/h/tsu.js">Github</a>
+        </nav>
+      </div>
     </div>
     <div id="side-menu"></div>
     <div id="viewport"></div>

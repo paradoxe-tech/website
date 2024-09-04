@@ -6,6 +6,7 @@ function getForm() {
 }
 
 function loadForm(id) {
+  if(!id) return
   let form = JSON.parse(get(`${window.location.origin}/h/scithee/data/forms/${id}.json`))
 
   let stringHTML = ""

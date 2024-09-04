@@ -1,5 +1,5 @@
 :root {
-  --fontcolor: black;
+  --fontcolor: rgba(255, 255, 245, .86);
   --linkcolor: blue;
   --grey: #e8e8e8;
   --menuwidth: 450px;
@@ -10,7 +10,7 @@ html, body {
   margin: 0px;
   overflow-x: hidden;
   font-family: "Roboto";
-  background: #f5f5f5;
+  background: #1b1b1f;
   color: var(--fontcolor)
 }
 
@@ -24,7 +24,7 @@ html, body {
   padding: 100px;
   height: calc(100vh - 75px);
   left: var(--menuwidth);
-  width: calc(calc(100% - var(--menuwidth)) - 200px);
+  width: calc(calc(85% - var(--menuwidth)) - 200px);
 }
 
 #side-menu {
@@ -34,7 +34,7 @@ html, body {
   padding: 25px 50px;
   padding-left: 20px;
   width: calc(var(--menuwidth) - 100px);
-  background: #fafafa;
+  background: #161618;
 }
 
 body.folded #side-menu {
@@ -63,15 +63,21 @@ body.folded #viewport {
 
 case, code {
   font-family: monospace;
-  padding: 5px;
-  border-radius: 2px;
-  background: var(--grey) !important;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #22272e;
 }
 
 code {
   display: block;
-  padding: 15px;
+  padding: 2em;
 }
+
+pre code.hljs {
+  padding: 2em !important;
+  border-radius: 10px !important;
+}
+
 
 ul ul li, ul ul ul li {
   padding: 0px;
@@ -79,19 +85,19 @@ ul ul li, ul ul ul li {
   padding-inline-start: 1ch;
 }
 
-ul ul li {
+ul.summary > li {
   color: var(--highlight);
-  list-style-type: ">>";
-  list-style-color: black;
+  list-style-type: "";
+  list-style-color: var(--fontcolor);
 }
 
-ul ul ul li {
-  color: black;
-  list-style-type: "↳";
+ul ul li {
+  color: var(--fontcolor);
+  list-style-type: "";
 }
 
 ul ul, ul ul ul {
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 li ion-icon {
@@ -125,28 +131,75 @@ a:hover {
 
 #horizontal-menu {
   height: 75px;
-  background: white;
+  background: transparent;
   display: flex;
   gap: 5px;
   position: fixed;
   top: 0px;
-  width: calc(100% - 50px);
-  padding: 0 25px;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
+  border-bottom: 1px solid black;
+}
+
+#horizontal-menu > :first-child {
+  padding-left: 35px;
+  width: calc(var(--menuwidth) - 65px);
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  background: #161618;
+}
+
+#horizontal-menu > :last-child {
+  padding: 0 20px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  width: calc(90% - 470px);
+}
+
+#horizontal-menu > :last-child nav {
+  display: flex;
+  gap: 20px;
+} 
+
+#horizontal-menu > :last-child nav a {
+  color: var(--fontcolor);
+  cursor: pointer;
+}
+
+#horizontal-menu > :last-child nav a:hover {
+  color: var(--highlight);
+  text-decoration: none !important;
 }
 
 input[type="text"] {
   height: 20px;
-  background: var(--grey);
-  border: none;
-  border-left: 3px solid #ff4df9;
+  background: #161618;
+  border: 0px;
   outline: 0px;
-  border-radius: 5px;
-  padding: 5px 15px;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 75px;
+  color: var(--fontcolor)
+}
+
+input[type="text"]:placeholder {
+  color: var(--fontcolor)
 }
 
 *::focus {
   outline: none;
   border: none;
+}
+
+#viewport h1 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333333;
+  margin-bottom: 20px;
 }

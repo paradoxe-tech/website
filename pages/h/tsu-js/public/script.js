@@ -6,7 +6,7 @@ function load(search) {
   let content = `<ul class="summary">`
 
   for(let classType of Object.keys(classesDocs)) {
-    content += `<li>${classType}</li><ul>`
+    // content += `<li>${classType}</li><ul>`
     for(let [classe, classProps] of Object.entries(classesDocs[classType])) {
       content += `<li style="--highlight: ${classType == "Custom_Classes" ? '#ff4df9' : '#00aaff'}">
       ${classe}</li><ul>`
@@ -31,7 +31,7 @@ function load(search) {
       }
       content += "</ul>"
     }
-    content += "</ul><br/>"
+    //content += "</ul><br/>"
   }
 
   sideMenu.innerHTML = content + `</ul>`

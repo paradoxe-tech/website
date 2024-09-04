@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Sergio Trendy";
-  src: url('./assets/Sergio Trendy.ttf')
+  src: url('./assets/Sergio-Trendy.ttf') format('truetype');
 }
 
 :root {
@@ -25,12 +25,13 @@ green {
 
 body, html {
   margin: 0px;
-  background: var(--background);
+  background: white;
   background-size: 100% 100vh;
   background-repeat: repeat;
   font-family: "Poppins";
   font-size: 0.9em;
   width: 100%;
+  height: 100%;
 }
 
 * {
@@ -39,7 +40,7 @@ body, html {
 
 h1.title {
   font-family: "Sergio Trendy";
-  color: #ffffff;
+  color: black;
   font-size: 4em;
   margin: 0px;
   margin-bottom: 10px;
@@ -50,16 +51,15 @@ h1.title green {
 }
 
 #main {
-  margin: auto;
-  margin-top: 150px;
-  width: 900px;
+  width: 100%;
+  height: 100%;
 }
 
-#main > div {
-  border-radius: 10px;
+#main > .cols {
   width: 100%;
-  height: fit-content;
+  height: 100%;
   min-height: 100px;
+  background: white;
 }
 
 #info-panel {
@@ -99,6 +99,14 @@ td {
   border-radius: 25px;
   background: white;
   overflow: clip;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin: auto;
+  z-index: 99;
+  min-width: 448px;
+  width: fit-content;
 }
 
 button {
@@ -145,10 +153,6 @@ button.red:hover {
   margin: 2px;
 }
 
-.uni-param {
-  margin-bottom: 15px;
-}
-
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -184,15 +188,17 @@ select {
   width: 100%;
 }
 
+#template-select {
+  margin-bottom: 15px;
+}
+
 #universe {
   position: relative;
   padding: 10px;
   background: black;
-  border-radius: 15px;
   overflow: clip;
-  width: 480px;
-  height: 480px;
-  border: 5px solid white;
+  width: 50%;
+  height: calc(100% - 20px);
 }
 
 #universe.killed, #universe.killed table td {
@@ -229,6 +235,7 @@ val, select.val {
   display: inline-block;
   padding: 10px 20px;
   background: white;
+  width: fit-content;
 }
 
 #rules {
@@ -236,6 +243,11 @@ val, select.val {
   flex-wrap: wrap;
   flex-direction: column;
   gap: 10px;
+  background: #ededed;
+  padding: 40px;
+  width: calc(100% - 80px);
+  height: calc(100% - 195px);
+  overflow-x: auto;
 }
 
 canvas {
@@ -286,4 +298,34 @@ footer {
   align-items: center;
   color: #6b6b6b;
   font: "Poppins";
+}
+
+#side-panel {
+  padding: 30px;
+  width: calc(50% - 60px);
+}
+
+#zoom-panel {
+  position: absolute;
+  z-index: 99;
+  right: 20px;
+  top: 20px;
+  background: white;
+  border-radius: 50px;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+#zoom-panel button {
+  padding: 10px 12px !important;
+}
+
+#grid {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
 }

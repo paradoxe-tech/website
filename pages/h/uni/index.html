@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Uni by CMK.</title>
+  <title>Paradoxe Uni (C)</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,17 +15,17 @@
 <body>
   
   <div id="main">
-    <h1 class="title">Create your <green>Uni</green></h1>
     <div class="cols" style="flex-direction: row;">
-      <div class="cols">
+      <div id="universe">
+        <div id="zoom-panel">
+          <button onclick="zoom(1, UNI.pixi.stage.x, UNI.pixi.stage.y)"><ion-icon name="add"></ion-icon></button>
+          <button onclick="zoom(0, UNI.pixi.stage.x, UNI.pixi.stage.y)"><ion-icon name="remove"></ion-icon></button>
+        </div>
         <div id="info-panel">
           <span class="info">👥 <span id="population">0</span></span>
           <span class="info">💡 <span id="score">0</span></span>
           <span class="info">👨‍🦳 <span id="generation">0</span></span>
           <!--<span class="info">⏱ <span id="time">0</span>s</span>-->
-        </div>
-        <div id="universe">
-          <canvas id="grid"></canvas>
         </div>
         <div id="details">
           <div id="buttons">
@@ -38,29 +38,12 @@
             <button onclick="removal()"><ion-icon name="remove-circle"></ion-icon></button>
             <button onclick="addition()"><ion-icon name="add-circle"></ion-icon></button>
           </div>
-          
-          <div id="params"><!--
-            <div class="uni-param">
-              <span><input value="40" min="40" style="width: 40px" oninput="USER_WIDTH = this.value" type="number"> x <input value="40" type="number" style="width: 40px"
-                min="40" oninput="USER_HEIGHT = this.value"></span>
-            </div>
-            <div class="uni-param">
-              <span>génerations = <span id="gens-display">1000</span></span><br />
-              <input value="1000" type="range" min="0" max="10000" id="gen"
-                oninput="document.querySelector('#gens-display').innerHTML = this.value;document.querySelector('#generations').innerHTML = this.value">
-            </div>
-            <div class="uni-param">
-              <span>gen / seconde = <span id="gen-secs">10</span></span><br />
-              <input value="10" type="range" min="1" max="10000" id="g-s"
-                oninput="document.querySelector('#gen-secs').innerHTML = this.value;document.querySelector('#delta').innerHTML = this.value">
-            </div>
-          -->
-          </div>
-          
         </div>
+        <canvas id="grid"></canvas>
       </div>
-      <div>
-        <div class="uni-param">
+      <div id="side-panel">
+        <h1 class="title">Create your <green>Uni</green></h1>
+        <div class="uni-param" id="template-select">
           <select id="pet-select" oninput="template(this.value)">
             <optgroup label="Conway Rule">
               <option value="B3/S23">The Game of Life - Conway Rule B3/S23</option>
@@ -101,27 +84,9 @@
       </div>
     </div>
   </div>
-  <script id="vertexShader" type="x-shader/x-vertex">
-    #version 300 es
 
-    precision mediump float;
-    in vec2 vertexPosition;
-
-    void main() {
-      gl_Position = vec4(vertexPosition, 0.0, 1.0);
-    }
-  </script>
-
-  <script id="fragmentShader" type="x-shader/x-fragment">
-    #version 300 es
-    
-    precision mediump float;
-    out vec4 fragColor;
-
-    void main() {
-      fragColor = vec4(18.0/255.0, 235.0/255.0, 144.0/255.0, 1.0);
-    }
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.2/pixi.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://twgljs.org/dist/twgl.min.js"></script>
@@ -132,9 +97,7 @@
   <script src="./src/Rules.js"></script>
   <script src="./src/Universe.js"></script>
   <script src="script.js"></script>
+  <script src="./src/pixi.js"></script>
 </body>
-<footer>
-  (C) Mathéo Tripnaux-Moreau 2024 (callmekitsu.com)
-</footer>
 
 </html>
