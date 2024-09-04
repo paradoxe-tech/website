@@ -1,3 +1,90 @@
+Date.prototype.add = function (duration) {
+  return new Date(this.getTime() + duration.getTime())
+}
+
+Date.prototype.plus = function(duration) {
+  return new Date(this.getTime() + duration.getTime())
+}
+
+Date.prototype.substract = function (duration) {
+  return new Date(this.getTime() - duration.getTime())
+}
+
+class Duration {
+  constructor(days=0, hours=0, minutes=0, seconds=0, ms=0) {
+    this.days = days
+    this.hours = hours
+    this.minutes = minutes
+    this.seconds = seconds
+    this.ms = ms
+
+    this.#stack()
+
+    return this
+  }
+
+  getTime() {
+    let ms = 8.64e+7 * this.days
+    ms += 3.6e+6 * this.hours
+    ms += 60001.2 * this.minutes
+    ms += 1000 * this.seconds
+    ms += this.ms
+
+    return ms
+  }
+
+  add(duration) {
+    this.ms += duration.getTime()
+    this.#stack()
+    return this
+  }
+
+  substract(duration) {
+    this.ms -= duration.getTime()
+    this.#stack()
+    return this
+  }
+
+  #stack() {
+    let total = this.getTime()
+
+    this.days = Math.floor(total / 8.64e+7)
+    total -= this.days * 8.64e+7
+    this.hours = Math.floor(total / 3.6e+6)
+    total -= this.hours * 3.6e+6
+    this.minutes = Math.floor(total / 60001.2)
+    total -= this.minutes * 60001.2
+    this.seconds = Math.floor(total / 1000)
+    total -= this.seconds * 1000
+
+    this.ms = total
+  }
+
+  toString() {
+    return `${this.days}d ${this.hours}:${this.minutes}:${this.seconds}+${this.ms}`
+  }
+}
+
+Array.prototype.sortedBy = function (getter) {
+  return this.toSorted((a, b) => {
+    let va = getter(a)
+    let vb = getter(b)
+    if (va < vb) return -1;
+    else if (va > vb) return 1;
+    return 0;
+  })
+}
+
+Array.prototype.sortBy = function (getter) {
+  return this.sort((a, b) => {
+    let va = getter(a)
+    let vb = getter(b)
+    if (va < vb) return -1;
+    else if (va > vb) return 1;
+    return 0;
+  })
+}
+
 Array.prototype.random = function() {
   return this[Math.floor(Math.random() * this.length)];
 };
@@ -50,10 +137,6 @@ String.prototype.without = function(chars) {
 
   return res;
 };
-
-Date.prototype.plus = function(duration) {
-  return new Date(this.getTime() + duration.getTime())
-}
 
 Date.diff = function(momentA, momentB) {
   return momentA.getTime() - momentB.getTime()
