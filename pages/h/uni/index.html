@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Paradoxe Uni (C)</title>
+  <title>Paradoxe Uni</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,56 @@
   <link rel="icon" href="./assets/uni-logo.png">
 </head>
 
-<body>
+<body onload="cherrypick()">
+  <div id="popup-screen" class="hidden" onclick="togglePopup()"></div>
+  <div id="popup" class="hidden">
+    <h1 id="uniyourpocketuniverse">Uni - Your pocket universe</h1>
+    <h3 id="simulateuruniverselintuitifdautomatescellulaires">Simulateur universel intuitif d'automates cellulaires</h3>
+    <h2 id="leprojet">Le projet</h2>
+    <p>Uni, c'est avant tout la vulgarisation du monde des automates cellulaires à toute une partie de la population : ceux qui ne savent pas coder ! L'objectif était clair : un bac à sable programmable par bloc (from scratch) capable de simuler une grande majorité des règles intéressantes. Et voilà chose faite ! Il y a encore beaucoup de défauts, mais on peut déjà s'amuser avec le projet et repousser ses limites.</p>
+    <blockquote>
+      <p>🌍 <a href="https://callmekitsu.com/h/uni">Version Stable</a> / <a href="https://callmekitsu.replit.app/h/uni">Version Stable (actualisation rapide)</a></p>
+      <p>🌍 <a href="https://b8a210d6-fd04-4d4e-8d99-c38dcbba5b0b-00-1eslt0xo4n2r5.kirk.replit.dev/h/uni">Version Canary</a> (par conséquent souvent indisponible)</p>
+    </blockquote>
+    <h2 id="automatecellulaire">Automate cellulaire ?</h2>
+    <p>Une grille, théoriquement infinie, dans laquelle les cellules (cases de la grille) ont un état, généralement un nombre. On représente ici les états par des couleurs (avec noir = 0). Cet univers évolue au cours des générations en fonction de règles, souvent simples, définies à l'avance. Par exemple, on peut penser à des règles de voisinage, qui comptent les voisins "vivants" (état &gt; 0) d'une cellule ; ou encore, une règle d'état, qui vérifie qu'une cellule est dans un état donné.</p>
+    <h2 id="templates">Templates</h2>
+    <p>La plate-forme propose une liste de templates, qui sont en fait des jeux de règles pour éenregistrées qui correspondent à des automates célèbres pour leurs propriétés. Vous pouvez aussi choisir à tout moment "custom automata" dans la liste déroulante pour créer votre propre univers ! À ce jour, certaines configurations de règles ne sont pas pour évues par le panel de configuration en blocs ; elles seront certainement ajoutées avec le temps !</p>
+    <h2 id="interface">Interface</h2>
+    <p>Quelques boutons s'offrent à vous dans l'interface ! Les premiers sont les flèches directionnelles, "avant" et "arrière" qui vous permettent tout simplement de passer d'une génération à une autre. Ensuite, le bouton "play / pause" avance dans les générations en continu tant qu'il n'est pas pressé à nouveau. Les sélécteurs de curseur sont au nombre de trois : "switch", représenté par un drapeau, vous donnera la possibilité de cliquer sur une cellule pour faire passer son état de 0 à 1 et inversement ; "plus" d'ajouter 1 à l'état actuel de la cellule et "moins" à y enlever 1. Enfin, le bouton "étincelles" redéfinit l'état d'un certain nombre de cellule dans l'univers à "vivante".</p>
+    <p>En haut à gauche de l'univers, quelques valeurs sont affichées et s'actualisent en continu ! Il s'agit respectivement de la population (nombre de cellules dont l'état n'est pas nul) ; du score de l'univers (somme des valeurs des états) et de la génération en cours.</p>
+    <h2 id="objectifs">Objectifs</h2>
+    <p>La propagation du projet dans les écoles et collèges du monde serait un grand pas pour la sensibilisation à l'informatique théorique ! En effet, les enjeux sont plutôt faciles à comprendre : un grand nombre de comportements complexes émerge de règles élémentaires. En attendant, il serait souhaitable de partager le projet à un maximum de personnes intéressées ou non par la thématique !</p>
+    <h2 id="dpendances">Dépendances</h2>
+    <p>L'affichage utilise <a href="https://get.webgl.org/webgl2/">WebGL2</a>. Le calcul des états ne fait appel à aucune librairie externe, si ce n'est <a href="https://callmekitsu.com/h/tsu-js">Tsu.js</a>. Enfin, les icônes vectorielles des boutons de l'interface proviennent d'<a href="https://ionic.io/icons">ionicons</a> et la police utilisée est <a href="https://fonts.google.com/specimen/Itim">Itim, cursive</a> ; détenue par Google Fonts.</p>
+    <h2 id="algorithme">Algorithme</h2>
+    <p>L'ensenble des états est stocké dans une matrice d'états, fonction de la génération actuelle. Un jeu de règles lui est appliqué et renvoie une matrice de transformation, utilisée sur l'univers au temps <code>t</code> pour obtenir le temps <code>t+1</code>. Pragmatiquement, la matrice de transformation est une pile de procédures visant chacune une cellule de la grille, parmi l'ensemble des cellules modifiées depuis le temps pour écédent.</p>
+    <h2 id="limitations">Limitations</h2>
+    <p>La puissance de calcul est limitée par le navigateur et sa portabilité, mais l'utilisation de shaders rend son affichage beaucoup plus optimisé. Cependant, à partir d'une taille de fenêtre environ égale à 100, le temps de génération pour certains jeux de règles peut drastiquement augmenter, allant jusqu'à l'ordre de la seconde. Tout ceci ne s'applique que pour la version actuelle du projet, et des optimisations algorithmiques sont évidemment pour évues.  </p>
+    <h2 id="cequepeutsimuleruni">Ce que peut simuler Uni</h2>
+    <ul>
+    <li>Tous les <a href="https://fr.wikipedia.org/wiki/Automate_cellulaire#Automates_totalistiques">automates totalistiques</a> (chaque état dépend du voisinage et de l'état pour écédent)</li>
+    <li>Toutes les règles de Conway</li>
+    <li>Toutes les règles de Wolfram</li>
+    <li>[Piles de sable] et ses variantes</li>
+    </ul>
+    <h2 id="cequenepeutpassimuleruniupourlinstantu">Ce que ne peut pas simuler Uni <u>pour l'instant</u></h2>
+    <ul>
+    <li>Les automates faisant intervenir une Entité</li>
+    <li><a href="https://en.wikipedia.org/wiki/HPP_model">Simulation de gaz</a> ou autres, modélisant des flèches directionnelles</li>
+    <li><a href="https://fr.wikipedia.org/wiki/Fourmi_de_Langton">Fourmi de Langton</a> et ses variantes</li>
+    <li>Les automates dont le voisinage évolue au cours du temps</li>
+    <li><a href="https://www.cell-auto.com/bbm/2d/index.html">Billiard Ball Machine</a> et autres dérivées du <a href="https://www.cell-auto.com/neighbourhood/margolus/index.html">voisinage de Margolus</a></li>
+    <li>Les automates qui font intervenir des modes de transition</li>
+    <li>[Automates fongiques] et ses variantes</li>
+    <li>Les <a href="https://fr.wikipedia.org/wiki/Automate_cellulaire#Automates_cellulaires_probabilistes">automates probabilistes</a> et / ou faisant intervenir des choix</li>
+    </ul>
+    <h2 id="cequenepourrajamaissimuleruni">Ce que ne pourra jamais simuler Uni</h2>
+    <ul>
+    <li>Les automates à dimension supérieure à 2</li>
+    <li>Les automates à cellules non carées</li>
+    </ul>
+  </div>
   
   <div id="main">
     <div class="cols" style="flex-direction: row;">
@@ -43,10 +92,17 @@
       </div>
       <div id="side-panel">
         <h1 class="title">Create your <green>Uni</green></h1>
+        <div id="panel-options">
+          <ion-icon name="information-circle" onclick="togglePopup()"></ion-icon>
+          <ion-icon name="scan" onclick="toggleEditingMode()"></ion-icon>
+          <ion-icon name="code-download" onclick="downloadRuleSet()"></ion-icon>
+        </div>
         <div class="uni-param" id="template-select">
           <select id="pet-select" oninput="template(this.value)">
+            <option value="blank">Commencer avec un jeu vierge</option>
+            <option value="upload">Charger un jeu de règles existant</option>
             <optgroup label="Conway Rule">
-              <option value="B3/S23">The Game of Life - Conway Rule B3/S23</option>
+              <option default selected value="B3/S23">The Game of Life - Conway Rule B3/S23</option>
               <option value="B36/S23">Highlife - Conway Rule B36/S23</option>
               <option value="B34/S34">34 Life - Conway Rule B34/S34</option>
               <option value="B3SALL">Life without Death - Conway Rule B3/SALL</option>
@@ -76,20 +132,21 @@
                 value="marg{0;8;4;12;2;10;9;14;1;6;5;13;3;11;7;15}">
                 HPP (Hardy-Pazzis-Pomeau)</option>
             </optgroup>
-            <option value="custom">Custom Automaton</option>
           </select>
         </div>
-        <div class="uni-param" id="rules"></div>
-        <div class="uni-param" id="rules-buttons"></div>
+        <div class="uni-param editing" id="rules"></div>
       </div>
     </div>
   </div>
+
+  <input type="file" id="fileuploader" class="hidden" accept="text/html,.html">
 
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.2/pixi.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://twgljs.org/dist/twgl.min.js"></script>
+  <script src="../vanta/cdn/libs/Filesaver.js"></script>
   <script src="data.js"></script>
   <script src="../tsu.js"></script>
   <script src="./src/renderer.js"></script>

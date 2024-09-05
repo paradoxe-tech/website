@@ -16,7 +16,8 @@
   --hl-light: #08D57F;
   --lightest: #32FCA7;
   --font: var(--contour);
-  --background: black;
+  --background: white;
+  --light-grey: #ededed;
 }
 
 green {
@@ -25,7 +26,7 @@ green {
 
 body, html {
   margin: 0px;
-  background: white;
+  background: var(--background);
   background-size: 100% 100vh;
   background-repeat: repeat;
   font-family: "Poppins";
@@ -40,7 +41,7 @@ body, html {
 
 h1.title {
   font-family: "Sergio Trendy";
-  color: black;
+  color: var(--font);
   font-size: 4em;
   margin: 0px;
   margin-bottom: 10px;
@@ -59,14 +60,13 @@ h1.title green {
   width: 100%;
   height: 100%;
   min-height: 100px;
-  background: white;
+  background: var(--background);
 }
 
 #info-panel {
   position: absolute;
-  z-index: 99;
   /* left: -63px; */
-  background: white;
+  background: var(--background);
   padding: 10px 10px;
   border-bottom-right-radius: 15px;
   border-top-left-radius: 15px;
@@ -97,21 +97,20 @@ td {
 
 #buttons {
   border-radius: 25px;
-  background: white;
+  background: var(--background);
   overflow: clip;
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translate(-50%, 0);
   margin: auto;
-  z-index: 99;
   min-width: 448px;
   width: fit-content;
 }
 
 button {
   padding: 10px 20px;
-  background: white;
+  background: var(--background);
   color: var(--font);
   border: none;
   outline: none;
@@ -134,7 +133,7 @@ button.red:hover {
 }
 
 .info {
-  background: white;
+  background: var(--background);
   padding: 5px 10px;
   border-radius: 15px;
   display: block;
@@ -166,7 +165,7 @@ button.red:hover {
 }
 
 input, select {
-  background: white;
+  background: var(--background);
   border-radius: 50px;
   -webkit-appearance: none;
   overflow: clip;
@@ -186,6 +185,7 @@ input[type="number"] {
 select {
   padding: 5px 10px;
   width: 100%;
+  cursor: pointer;
 }
 
 #template-select {
@@ -199,22 +199,6 @@ select {
   overflow: clip;
   width: 50%;
   height: calc(100% - 20px);
-}
-
-#universe.killed, #universe.killed table td {
-  background: #c7c7c7;
-  border: none !important;
-  pointer-events: none;
-}
-
-#universe.killed::after {
-  content: "Avant le Big Bang, rien n'était.";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
 }
 
 op, val, select.val {
@@ -243,7 +227,7 @@ val, select.val {
   flex-wrap: wrap;
   flex-direction: column;
   gap: 10px;
-  background: #ededed;
+  background: var(--light-grey);
   padding: 40px;
   width: calc(100% - 80px);
   height: calc(100% - 195px);
@@ -307,7 +291,6 @@ footer {
 
 #zoom-panel {
   position: absolute;
-  z-index: 99;
   right: 20px;
   top: 20px;
   background: white;
@@ -328,4 +311,119 @@ footer {
   left: 0px;
   width: 100%;
   height: 100%;
+}
+
+.rule-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.rule-wrapper .edit-btn {
+  padding: 10px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  color: grey;
+}
+
+#rules:not(.editing) .edit-btn,
+#rules:not(.editing) .new-rule-btns {
+  display: none;
+}
+
+.rule-wrapper:hover .edit-btn {
+  display: inline-block !important;
+}
+
+.cols > div {
+  transition: width 200ms ease-in-out;
+}
+
+#universe.hidden {
+  padding: 0px;
+  width: 0px;
+}
+
+#side-panel.deployed {
+  width: calc(100% - 100px)
+}
+
+.new-rule-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.new-rule-btn {
+  font-size: 2em;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 7px;
+  background: white;
+  color: grey;
+}
+
+#panel-options {
+  position: absolute;
+  right: 30px;
+  top: 45px;
+  font-size: 1.5em;
+  display: flex;
+  gap: 10px;
+}
+
+#panel-options ion-icon {
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--light-grey);
+  cursor: pointer;
+}
+
+table.uneditable {
+  pointer-events: none !important;
+}
+
+#info-panel, #buttons, #zoom-panel {
+  z-index: 97;
+}
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background: white;
+  padding: 50px;
+  height: 70vh;
+  overflow-y: scroll;
+  border-radius: 15px;
+  overflow-x: clip;
+}
+
+#popup-screen {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  opacity: 0.7;
+  z-index: 98;
+  transition: all 100ms ease-out;
+}
+
+#popup-screen.hidden {
+  opacity: 0;
+  pointer-events: none !important;
+}
+
+#popup.hidden {
+  opacity: 0;
+  pointer-events: none !important;
+}
+
+#fileuploader.hidden {
+  display: none;
 }

@@ -8,7 +8,8 @@ Uni, c'est avant tout la vulgarisation du monde des automates cellulaires à tou
 > 🌍 [Version Stable](https://callmekitsu.com/h/uni) / [Version Stable (actualisation rapide)](https://callmekitsu.replit.app/h/uni)
 
 > 🌍 [Version Canary](https://b8a210d6-fd04-4d4e-8d99-c38dcbba5b0b-00-1eslt0xo4n2r5.kirk.replit.dev/h/uni) (par conséquent souvent indisponible)
-> 
+
+
 ## Automate cellulaire ?
 
 Une grille, théoriquement infinie, dans laquelle les cellules (cases de la grille) ont un état, généralement un nombre. On représente ici les états par des couleurs (avec noir = 0). Cet univers évolue au cours des générations en fonction de règles, souvent simples, définies à l'avance. Par exemple, on peut penser à des règles de voisinage, qui comptent les voisins "vivants" (état > 0) d'une cellule ; ou encore, une règle d'état, qui vérifie qu'une cellule est dans un état donné.

@@ -3,11 +3,9 @@ document.addEventListener("mousewheel", (e) => {
   document.querySelector('#welcome').style.marginTop = `${slider * 80}%`
 });
 
-
-
 function loadActus(n) {
   let actualites = JSON.parse(get(window.location.origin + "/cdn/data/actus.json"))
-  actualites = actualites.sort(sortByDate)
+  actualites = actualites.sort(sortByDate).reverse()
   let string = ""
   let i = 0;
   

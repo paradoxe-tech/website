@@ -1,6 +1,8 @@
 const queryString = window.location.search
 const url = new URLSearchParams(queryString)
 
+const $ = (selector) => document.querySelector(selector)
+
 let cnvDims = document.querySelector('#universe canvas').getBoundingClientRect()
 
 let CONFIG = {
@@ -9,7 +11,6 @@ let CONFIG = {
   WIDTH: url.has('size') ? parseInt(url.get('size')) : Math.floor(cnvDims.width / 10),
   HEIGHT: url.has('size') ? parseInt(url.get('size')) : Math.floor(cnvDims.width / 10),
   DELTA: url.has('delta') ? parseInt(url.get('delta')) : 10,
-  BORDERS: url.has('no_grid') ? false : true,
   GENERATIONS: url.has('G') ? parseInt(url.get('G')) : 1000,
   STATE: 0,
   ALIVE: false,
@@ -42,10 +43,6 @@ function addition() {
 function removal() {
   CLICK_TYPE = "rem"
   document.querySelector('#grid').style.cursor = "not-allowed"
-}
-
-if(CONFIG.BORDERS) {
-  document.querySelectorAll('table td').forEach(el => el.style.border = "0.5px solid white")
 }
 
 function play() {
@@ -91,33 +88,82 @@ function displayRules(rules=RULES) {
   container.innerHTML = ""
 
   if(rules.matrix !== false) {
-    let neibm = ""
-      let squared = false
+    let neibm = drawMatrix(rules.matrix)
+    let squared = rules.matrix.length > 1
 
-      if(sameMatrix(NEWMAN, rules.matrix)) neibm = "de Von Neumann"
-      else if(sameMatrix(MOORE, rules.matrix)) neibm = "de Moore"
-      else {
-        neibm = drawMatrix(rules.matrix)
-        if(this.matrix.length > 1) squared = true
-      }
-
-      container.innerHTML += `<div class="rule">VOISINAGE   
-     <val class="${squared ? "squared" : ""}">${neibm}</val> UTILISÉ</div>`
+    container.innerHTML += `<div class="rule-wrapper">
+        <div class="rule">VOISINAGE <val class="${squared ? "squared" : ""}">${neibm}</val> UTILISÉ</div>
+        <ion-icon name="trash" onclick="deleteRule(this.parentNode)" class="edit-btn"></ion-icon>
+      </div>`
   }
 
   if(rules.type == "QN") {
-    container.innerHTML += `<div class="rule">AUTOMATE <val>continu dans ℕ</val></div>`
+    container.innerHTML += `
+    <div class="rule-wrapper">
+      <div class="rule">AUTOMATE <val>continu dans ℕ</val></div>
+      <ion-icon name="trash" onclick="deleteRule(this.parentNode)" class="edit-btn"></ion-icon>
+    </div>`
   }
   
   for(let rule of rules.verbatim) {
-    container.innerHTML += `<div class="rule">SI <cond>${rule.condition}</cond> ALORS <res>${rule.result}</res></div>`
+    container.innerHTML += `<div class="rule-wrapper">
+      <div class="rule">SI <cond>${rule.condition}</cond> ALORS <res>${rule.result}</res></div>
+      <ion-icon name="trash" onclick="deleteRule(this.parentNode)" 
+      class="edit-btn"></ion-icon>
+    </div>`
   }
+
+  container.innerHTML += `<div class="new-rule-btns">
+    <ion-icon name="add-circle" class="new-rule-btn" onclick="newCustomRule()"></ion-icon>
+    <ion-icon name="grid" onclick="setCustomMatrix()" class="new-rule-btn"></ion-icon>
+    <ion-icon name="flag" onclick="playCustom()" class="new-rule-btn"></ion-icon>
+  </div>`
 }
 
 function template(name) {
-  if(name == "custom") return startCustomBuild()
   
   let RULES = new Rules(UNI)
+
+  if(name == "blank") {
+    displayRules(RULES)
+
+    stop()
+
+    UNI = new Universe({
+      webpage: document,
+      grid_selector: "#grid",
+      width: CONFIG.WIDTH,
+      height: CONFIG.HEIGHT,
+      alive: CONFIG.ALIVE,
+      maxGen: CONFIG.GENERATIONS,
+      rules: RULES
+    })
+    
+    return
+  }
+
+
+  if(name == "upload") {
+    loadFile(() => {
+      RULES = parseRules()
+      displayRules(RULES)
+      
+      stop()
+
+      UNI = new Universe({
+        webpage: document,
+        grid_selector: "#grid",
+        width: CONFIG.WIDTH,
+        height: CONFIG.HEIGHT,
+        alive: CONFIG.ALIVE,
+        maxGen: CONFIG.GENERATIONS,
+        rules: RULES
+      })
+    })
+    
+
+    return
+  }
   
   let template = "_"
   
@@ -141,13 +187,13 @@ function template(name) {
     template = margolus(tab, RULES)
     RULES.type = "QL"
     
-  } else {
-    if(!TEMPLATES[name]) return alert("Template inconnu !")
+  } else if(TEMPLATES[name]) {
     
     template = TEMPLATES[name].rules(RULES)
     RULES.type = TEMPLATES[name].type ? TEMPLATES[name].type : "QL"
     RULES.matrix = TEMPLATES[name].voisinage ? TEMPLATES[name].voisinage : false
-  }
+    
+  } else return alert("Template inconnu !")
 
   if(RULES.type == "QN") addition()
   
@@ -157,8 +203,7 @@ function template(name) {
       rule.result
     )
   }
-
-  document.querySelector('#rules-buttons').innerHTML = ""
+  
   displayRules(RULES)
 
   stop()
@@ -175,12 +220,6 @@ function template(name) {
 }
 
 template('B3/S23')
-cherrypick()
-
-
-function zoomCanvas(value) {
-  UNI.gl.scale(value, value)
-}
 
 function drawMatrix(matrix, clickable=false) {
   let res = `<table data="${stringifyMatrix(matrix)}">`
@@ -228,4 +267,39 @@ function random() {
 
   UNI.draw()
   UNI.updateMetrics()
+}
+
+function togglePopup() {
+  $("#popup-screen").classList.toggle('hidden')
+  $("#popup").classList.toggle('hidden')
+}
+
+function downloadRuleSet() {
+  let ruleset = Array.from(document.querySelectorAll('.rule')).map(e => e.outerHTML).join('')
+  let blob = new Blob([ruleset], { type: "text/html;charset=utf-8" })
+  _global.saveAs(blob, `Paradoxe_Uni_Ruleset-${Date.now()}.html`)
+}
+
+function loadFile(callback) {
+  let fileuploader = document.querySelector('#fileuploader')
+  fileuploader.click()
+
+  fileuploader.addEventListener('change', () => {
+    var file = fileuploader.files[0]
+    if (!file) return alert('Aucun fichier importé.')
+    let extension = file.name.split('.').pop()
+    let accepted_ext = ['html']
+    if (!accepted_ext.includes(extension)) return alert(`l\'extension de fichier n\'est pas reconnue.`)
+
+    var fileReader = new FileReader()
+
+    fileReader.onload = function(fileLoadedEvent) {
+      $('#rules').innerHTML = fileLoadedEvent.target.result
+      callback()
+    }
+
+    fileReader.readAsText(file, "UTF-8")
+
+    
+  })
 }

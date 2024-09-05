@@ -12,6 +12,8 @@ class Universe {
       height: config.height,
       backgroundColor: "black"
     });
+
+    this.pixi.renderer.plugins.interaction.cursorStyles.default = 'crosshair'
     
     this.width = config.width
     this.height = config.height
@@ -23,6 +25,7 @@ class Universe {
 
     this.bigbang()
     this.updateMetrics()
+    this.draw()
   }
 
   bigbang() {

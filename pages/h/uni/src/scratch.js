@@ -1,15 +1,3 @@
-function startCustomBuild() {
-  document.querySelector('#rules').innerHTML = ""
-  document.querySelector('#rules-buttons').innerHTML = `
-    <button onclick="newCustomRule()">ajouter une règle</button>
-    <button onclick="saveNewRule()">enregistrer la règle</button>
-    <button onclick="setCustomMatrix()">choisir le voisinage</button>
-    <button onclick="changeAutomataType()">changer le type d'automate</button>
-    <button onclick="playCustom()">play</button>
-  `
-  newCustomRule()
-}
-
 function dropChoiceCondition() {
   return `<select class="val" onchange="evaluateSelect('cond', this)">
     <option selected="selected" disabled>CONDITION</option>
@@ -49,25 +37,41 @@ function dropChoiceGates() {
 }
 
 function newCustomRule() {
-  let container = document.querySelector('#rules')
-  container.innerHTML += `
-    <div class="rule">SI <cond>${dropChoiceCondition()}</cond> ALORS <res>${dropChoiceResult()}</res>
-    </div>
-  `
+  let container = $('#rules')
+  let buttons = $('.new-rule-btns')
+  
+  let wrapper = document.createElement('div')
+  wrapper.className = "rule-wrapper"
+  wrapper.innerHTML += htmlRule(`<div class="rule">SI <cond>${dropChoiceCondition()}</cond> ALORS <res>${dropChoiceResult()}</res>
+    </div>`)
+  
+  container.insertBefore(wrapper, buttons)
 }
 
 function setCustomMatrix() {
-  let container = document.querySelector('#rules')
-  container.innerHTML += `
-    <div class="rule">
+  let container = $('#rules')
+  let buttons = $('.new-rule-btns')
+
+  let wrapper = document.createElement('div')
+  wrapper.className = "rule-wrapper"
+  wrapper.innerHTML += htmlRule(`<div class="rule">
       VOISINAGE <cond><select class="val" onchange="evaluateSelect('matrix', this)">
-    <option selected="selected" disabled>CONDITION</option>
+    <option selected="selected" disabled>VOISINAGE</option>
     <option value="moore">de Moore</option>
     <option value="neumann">de Von Neumann</option>
     <option value="matrix">personalisé</option>
   </select></cond> UTILISÉ</res>
-    </div>
-  `
+    </div>`)
+
+  container.insertBefore(wrapper, buttons)
+}
+
+function htmlRule(body) {
+  return `${body}
+    <ion-icon name="trash" onclick="deleteRule(this.parentNode)" 
+      class="edit-btn"></ion-icon>
+    <ion-icon name="save" onclick="saveNewRule(this.parentNode)" 
+      class="edit-btn"></ion-icon>`
 }
 
 function evaluateSelect(table, element) {
@@ -158,8 +162,7 @@ function stringifyMatrix(matrix) {
   return res + ']'
 }
 
-function saveNewRule() {
-  let container = document.querySelector('#rules')
+function saveNewRule(container) {
 
   for(let input of container.querySelectorAll('input')) {
     if(!input.value) return false
@@ -173,6 +176,10 @@ function saveNewRule() {
     
     select.outerHTML = select.options[select.selectedIndex].value
   }
+  
+  container.querySelectorAll('table').forEach(t => t.classList.add('uneditable'))
+
+  container.querySelector('ion-icon[name="save"]').remove()
 
   return true
 }
@@ -247,13 +254,10 @@ function buildCondFunc(html, RULES) {
 }
 
 function buildResFunc(html, RULES) {
-  console.log(html)
   let text = decodeEntities(html.innerHTML)
 
   if(text.includes('état')) {
     let value = +(text.split('= ')[1])
-    console.log(text)
-    console.log(value)
     return RULES.set(value)
   } 
 
@@ -286,7 +290,6 @@ var decodeEntities = (function() {
 })();
 
 function playCustom() {
-  if(!saveNewRule()) return
   RULES = parseRules()
   displayRules(RULES)
 
@@ -302,5 +305,16 @@ function playCustom() {
     rules: RULES
   })
 
-  alert("let's go !")
+  alert("Jeu de règles chargé !")
+}
+
+function toggleEditingMode() {
+  $('#universe').classList.toggle('hidden')
+  $('#side-panel').classList.toggle('deployed')
+}
+
+function deleteRule(ruleElement) {
+  if(confirm('Voulez vous vraiment supprimer cette règle ?')) {
+    ruleElement.remove()
+  }
 }

@@ -76,17 +76,11 @@ class Rules {
   }
 
   alive() {
-    return [
-      (x, y , state) => this.universe.setCell(x, y, 1),
-      `<val>vivante</val>`
-    ]
+    return this.set(1)
   }
 
   dead() {
-    return [
-      (x, y , state) => this.universe.setCell(x, y, 0),
-      "<val>meurt</val>"
-    ]
+    return this.set(0)
   }
 
   set(newState) {
