@@ -1,11 +1,12 @@
 const express = require('express')
+const req = require('express/lib/request')
 const fs = require('fs')
 let app = express()
 const path = require('path')
 
 app.use(express.json())
 
-
+app.get('/.well-known/discord', (req, res) => res.send(process.env.DISCORD_RECORD))
 app.get("/discord", (req, res) => res.redirect(`https://discord.gg/KkW88YnheT`))
 app.get("/i", (req, res) => res.redirect(`/#about`))
 
