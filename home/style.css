@@ -22,3 +22,48 @@ body {
 .tag.active { 
   color: var(--highlight-color); 
 }
+
+.big-searchbar {
+  display: flex;
+  gap: 20px;
+  align-content: center;
+  background: black;
+  color: white;
+  width: 50%;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.big-searchbar input {
+  width: 100%;
+  background: black;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.big-searchbar ::placeholder {
+  color: white;
+}
+
+#events {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.participation {
+  display: flex;
+  gap: 30px;
+}
+
+.participation > div > img {
+  width: 75px;
+  filter: brightness(0) invert(1);
+}
+
+.participation > div:has(h2) {
+  display: flex;
+  flex-direction: column;
+}

@@ -3,6 +3,8 @@ document.addEventListener("mousewheel", (e) => {
   document.querySelector('#welcome').style.marginTop = `${slider * 80}%`
 });
 
+const $ = (sel) => document.querySelector(sel)
+
 function loadActus(n) {
   let actualites = JSON.parse(get(window.location.origin + "/cdn/data/actus.json"))
   actualites = actualites.sort(sortByDate).reverse()
@@ -58,3 +60,33 @@ displayItems(productions, {
     await sleep(700)
   }
 })();
+
+function loadEvents(n) {
+  let container = $('#events')
+  let string = ""
+
+  let events = JSON.parse(get(`${window.location.origin}/cdn/data/events.json`)).slice(0, n)
+  
+  for(let event of events) {
+    let prizes = ""
+    if(event.prizes.length > 0) {
+      prizes = `<ul><li>${event.prizes.join('</li><li>')}</li></ul>`
+    }
+    
+    string += `<div class="participation">
+      <div>
+        <img src="${event.avatar}">
+      </div>
+      <div>
+        <h2>${event.name}</h2>
+        <span>organisé par <a>${event.by}</a></span>
+        <span>participation ${event.with.length > 0 ? `avec ${event.with}` : "en solo"}  du ${event.from} au ${event.to}</span>
+        ${prizes}
+      </div>
+    </div>`
+  }
+
+  container.innerHTML = string
+}
+
+loadEvents(3)
